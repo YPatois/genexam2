@@ -1,5 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{titlesec}
+\usepackage{circuitikz}
+\usepackage{siunitx}
 
 \usepackage{csvsimple}%
 
@@ -106,7 +108,21 @@ Durée : 30 minutes.
 }
 
 \element{generalites}{
-  \begin{questionmult}{pref}    
+  \begin{questionmult}{pref}
+  	 
+\begin{circuitikz}[european]
+ \draw (0,0) -- (4,0);
+ \draw (0,3) -- (4,3);
+
+ \draw (0,0)
+ to [ american voltage source, invert, i_>=${i_3}$, o-o] (0,3);
+ \draw (2,0)
+ to [ lamp=$L_178$, i<_=${i_2=\SI{140}{\mA}}$, o-o]  (2,3);
+ \draw (4,0)
+ to [ lamp=$L_179$, i^<=${i_1=\SI{100}{\mA}}$, o-o]  (4,3);
+\end{circuitikz}
+
+
     Ce montage est-il en série ou en dérivation~?
     \begin{reponses}
       \bonne{Le montage est branché en série}
