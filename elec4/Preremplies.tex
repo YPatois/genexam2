@@ -1,0 +1,112 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{csvsimple}%
+
+\usepackage[francais,bloc]{automultiplechoice}
+
+\newcommand{\sujet}{
+\exemplaire{1}{%
+
+\AMCsetFoot{\niveau{}°\classe{} -- \prenom{}~\nom{} -- \thepage}
+
+%%% debut de l'en-tête des copies :  
+\begin{center}
+\vfill
+\noindent{\large \bf Classe de \niveau{}°\classe{}}
+
+\vspace*{3mm}
+
+{\Large\bf Évaluation sur table - Électricité 27/05/2024}
+
+\vfill
+\noindent{}\fbox{\vspace*{3mm}
+         \Huge\bf\prenom{}~\nom{}\normalsize{}% 
+         \vspace*{3mm}
+      }
+\end{center}
+\vfill
+
+\begin{center}\em
+Durée : 30 minutes.
+
+  Aucun document n'est autorisé.
+  L'usage de la calculatrice est interdit.
+
+  Les questions faisant apparaitre le symbole \multiSymbole{} peuvent
+  présenter zéro, une ou plusieurs bonnes réponses. Les autres ont
+  une unique bonne réponse.
+
+  Des points négatifs pourront être affectés à de \emph{très
+  mauvaises} réponses.
+\end{center}
+\vspace{1ex}
+\vfill
+\pagebreak
+%%% fin de l'en-tête
+
+\restituegroupe{general}
+ 
+
+
+\AMCassociation{\id}
+
+%\AMCaddpagesto{3}
+	  }
+}
+
+%%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+\begin{document}
+
+%%%Options
+\AMCrandomseed{10}
+
+\def\AMCformQuestion#1{{\sc Question #1 :}}
+
+\setdefaultgroupmode{withoutreplacement}
+%%% Fin Options
+
+%%% groupes
+
+\element{general}{
+  \begin{question}{prez}
+  \input{"|/home/ypatois/unison/work/enseignement/college_nelson_mandela/evaluations/elec4/test-script.sh"}
+    Parmi les personnalités suivantes, laquelle a été présidente de la république française~?
+    \begin{reponses}
+      \bonne{René Coty}
+      \mauvaise{Alain Prost}
+      \mauvaise{Marcel Proust}
+      \mauvaise{Claude Monet}
+    \end{reponses}
+  \end{question}
+}
+
+\element{general}{
+  \begin{questionmult}{pref}    
+    Parmi les villes suivantes, lesquelles sont des préfectures~?
+    \begin{reponses}
+      \bonne{Poitiers}
+      \mauvaise{Sainte-Menehould}
+      \bonne{Avignon}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{general}{
+  \begin{question}{nb-ue}
+    Combien d'états sont membres de l'Union Européenne en janvier 2009~?
+    \begin{reponseshoriz}[o]
+      \mauvaise{15}
+      \mauvaise{21}
+      \mauvaise{25}
+      \bonne{27}
+      \mauvaise{31}
+    \end{reponseshoriz}
+  \end{question}
+}
+
+%%%% fin des groupes
+
+\csvreader[head to column names]{liste.csv}{}{\sujet}
+
+\end{document}

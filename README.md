@@ -1,2 +1,5 @@
 # genexam2
-For large exams (may be merged one day)
+Complete rewrite around AMC (https://www.auto-multiple-choice.net/).
+Is just plugged in an ACM project.
+
+
