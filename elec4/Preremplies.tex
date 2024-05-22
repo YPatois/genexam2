@@ -1,13 +1,28 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage{titlesec}
 
 \usepackage{csvsimple}%
 
 \usepackage[francais,bloc]{automultiplechoice}
 
+\titleformat{\section}
+  {\centering\hrule\vspace{2mm}}
+  {\thesection}
+  {1em}
+  {}
+  [\vspace{1mm}\hrule]
+
+%\begin{center}
+%\hrule\vspace{2mm} {\small{ \bf Titre}\\}
+%\vspace{1mm}\hrule
+%\end{center}~
+
 \newcommand{\sujet}{
 \exemplaire{1}{%
 
 \AMCsetFoot{\niveau{}°\classe{} -- \prenom{}~\nom{} -- \thepage}
+
+
 
 %%% debut de l'en-tête des copies :  
 \begin{center}
@@ -44,8 +59,9 @@ Durée : 30 minutes.
 \pagebreak
 %%% fin de l'en-tête
 
-\restituegroupe{general}
- 
+\restituegroupe{groupes}
+%\restituegroupe{securite}
+
 
 
 \AMCassociation{\id}
@@ -57,7 +73,6 @@ Durée : 30 minutes.
 %%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 \begin{document}
-
 %%%Options
 \AMCrandomseed{10}
 
@@ -66,47 +81,61 @@ Durée : 30 minutes.
 \setdefaultgroupmode{withoutreplacement}
 %%% Fin Options
 
-%%% groupes
-
-\element{general}{
-  \begin{question}{prez}
-  \input{"|/home/ypatois/unison/work/enseignement/college_nelson_mandela/evaluations/elec4/test-script.sh"}
-    Parmi les personnalités suivantes, laquelle a été présidente de la république française~?
-    \begin{reponses}
-      \bonne{René Coty}
-      \mauvaise{Alain Prost}
-      \mauvaise{Marcel Proust}
-      \mauvaise{Claude Monet}
-    \end{reponses}
-  \end{question}
-}
-
-\element{general}{
+\element{securite}{
   \begin{questionmult}{pref}    
-    Parmi les villes suivantes, lesquelles sont des préfectures~?
+    Pourquoi le courant électrique est dangereux pour les humains~?
     \begin{reponses}
-      \bonne{Poitiers}
-      \mauvaise{Sainte-Menehould}
-      \bonne{Avignon}
+      \bonne{Il peut paralyser les muscles du corps}
+      \mauvaise{Il peut effacer les contacts de mon téléphone}
+      \bonne{Il peut arrêter la respiration et le c{\oe}ur}
     \end{reponses}
   \end{questionmult}
 }
 
-\element{general}{
-  \begin{question}{nb-ue}
-    Combien d'états sont membres de l'Union Européenne en janvier 2009~?
-    \begin{reponseshoriz}[o]
-      \mauvaise{15}
-      \mauvaise{21}
-      \mauvaise{25}
-      \bonne{27}
-      \mauvaise{31}
-    \end{reponseshoriz}
-  \end{question}
+\element{securite}{
+  \begin{questionmult}{pref}    
+    Quelles sources de courants sont dangereuses pour les humains~?
+    \begin{reponses}
+      \bonne{Les prises du secteur}
+      \mauvaise{Les piles-boutons}
+      \bonne{Les fils haute-tension sur les poteaux électriques}
+      \bonne{Les éclairs}
+      \mauvaise{L'électricité statique sur un pull en laine}
+    \end{reponses}
+  \end{questionmult}
 }
 
-%%%% fin des groupes
+\element{generalites}{
+  \begin{questionmult}{pref}    
+    Ce montage est-il en série ou en dérivation~?
+    \begin{reponses}
+      \bonne{Le montage est branché en série}
+      \mauvaise{Le montage est branché en dérivation}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{generalites}{
+  \begin{questionmult}{pref}    
+    Ce montage est-il en série ou en dérivation~?
+    \begin{reponses}
+      \mauvaise{Le montage est branché en série}
+      \bonne{Le montage est branché en dérivation}
+    \end{reponses}
+  \end{questionmult}
+}
+
+
+\element{groupes}{
+\section{Sécurité}
+\restituegroupe{securite}
+
+\section{Généralités}
+\restituegroupe{generalites}
+}
+
 
 \csvreader[head to column names]{liste.csv}{}{\sujet}
 
 \end{document}
+
