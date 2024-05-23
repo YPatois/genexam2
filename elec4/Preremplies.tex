@@ -282,6 +282,90 @@ Durée : 30 minutes.
   \end{question}
 }
 
+\element{mesures}{
+  \begin{questionmult}{mes6}
+    Vous souhaitez mesurer le courant qui passe dans l'élément $L_1$, comment branchez vous l'ampèremètre~?
+    \begin{reponses}
+      \bonne{
+        \begin{circuitikz}[european]
+          \draw (0,0) to [ rmeter, t=A ] (4,0);
+          \draw (0,3) -- (4,3);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+        \end{circuitikz}
+      }
+      \bonne{
+        \begin{circuitikz}[european]
+          \draw (0,3) to [ rmeter, t=A ] (4,3);
+          \draw (0,0) -- (4,0);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+        \end{circuitikz}
+      }
+      \mauvaise{
+        \begin{circuitikz}[european]
+          \draw (0,0) -- (4,0);
+          \draw (0,3) -- (4,3);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (2,0) to [ rmeter, t=A ]  (2,3);
+          \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+        \end{circuitikz}
+      }
+      \mauvaise{
+        \begin{circuitikz}[european]
+          \draw (0,0) -- (4,0);
+          \draw (0,3) -- (4,3);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (4,0) to [ rmeter, t=A ]  (4,3);
+          \draw (2,0) to [ lamp=$L_1$, o-o]  (2,3);
+        \end{circuitikz}
+      }
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{mesures}{
+  \begin{questionmult}{mes7}
+    Vous souhaitez mesurer la tension aux bornes de l'élément $L_1$, comment branchez vous le voltmètre~?
+    \begin{reponses}
+      \mauvaise{
+        \begin{circuitikz}[european]
+          \draw (0,0) to [ rmeter, t=V ] (4,0);
+          \draw (0,3) -- (4,3);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+        \end{circuitikz}
+      }
+      \mauvaise{
+        \begin{circuitikz}[european]
+          \draw (0,3) to [ rmeter, t=V ] (4,3);
+          \draw (0,0) -- (4,0);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+        \end{circuitikz}
+      }
+      \bonne{
+        \begin{circuitikz}[european]
+          \draw (0,0) -- (4,0);
+          \draw (0,3) -- (4,3);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (2,0) to [ rmeter, t=V ]  (2,3);
+          \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+        \end{circuitikz}
+      }
+      \bonne{
+        \begin{circuitikz}[european]
+          \draw (0,0) -- (4,0);
+          \draw (0,3) -- (4,3);
+          \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
+          \draw (4,0) to [ rmeter, t=V ]  (4,3);
+          \draw (2,0) to [ lamp=$L_1$, o-o]  (2,3);
+        \end{circuitikz}
+      }
+    \end{reponses}
+  \end{questionmult}
+}
+
 
 \element{groupes}{
 \section{Sécurité}
