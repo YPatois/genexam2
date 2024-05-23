@@ -53,11 +53,14 @@ Durée : 30 minutes.
   L'usage de la calculatrice est interdit.
 
   Les questions faisant apparaitre le symbole \multiSymbole{} peuvent
-  présenter zéro, une ou plusieurs bonnes réponses. Les autres ont
+  présenter une ou plusieurs bonnes réponses. Les autres ont
   une unique bonne réponse.
 
   Des points négatifs pourront être affectés à de \emph{très
   mauvaises} réponses.
+
+  \textbf{IMPORTANT: Utilisez un crayon de papier pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.}
+
 \end{center}
 \vspace{1ex}
 \vfill
@@ -169,13 +172,13 @@ Durée : 30 minutes.
 
 \element{symboles}{
   \begin{question}{sym5}
-    Un interrupteur laisse passer le courant lorsqu'il est~?
+    Un interrupteur~:
 
     \begin{reponses}
-      \mauvaise{Ouvert}
-      \bonne{Fermé}
-      \mauvaise{Il laisse toujours passer le courant}
-      \mauvaise{Il ne laisse jamais passer le courant}
+      \mauvaise{Laisse passer le courant Lorsqu'il est ouvert}
+      \bonne{Laisse passer le courant Lorsqu'il est fermé}
+      \mauvaise{Ne laisse toujours passer le courant}
+      \mauvaise{Ne ne laisse jamais passer le courant}
     \end{reponses}
   \end{question}
 }
@@ -228,7 +231,8 @@ Durée : 30 minutes.
 \element{mesures}{
   \begin{question}{mes1}
     Comment appelle t'on cet appareil~?
-    \includegraphics[width=4cm]{multimetre.jpg}
+    \\
+    \includegraphics[width=3cm]{multimetre.jpg}
 
     \begin{reponses}
       \mauvaise{Un manomètre}
@@ -242,7 +246,7 @@ Durée : 30 minutes.
 
 \element{mesures}{
   \begin{question}{mes2}
-    Sur quelle zone faut-il régler l'appareil pour mesurer l'intensité d'un courant~?
+    Sur quelle zone faut-il régler l'appareil pour mesurer l'intensité d'un courant électrique~?
     \begin{reponses}
       \mauvaise{\includegraphics[width=2cm]{multimetreV.jpg}}
       \bonne{\includegraphics[width=2cm]{multimetreA.jpg}}
@@ -254,7 +258,7 @@ Durée : 30 minutes.
 
 \element{mesures}{
   \begin{question}{mes3}
-    Sur quelle zone faut-il régler l'appareil pour mesurer la tension entre deux points~?
+    Sur quelle zone faut-il régler l'appareil pour mesurer la tension électrique entre deux points~?
     \begin{reponses}
       \mauvaise{\includegraphics[width=2cm]{multimetreA.jpg}}
       \bonne{\includegraphics[width=2cm]{multimetreV.jpg}}
@@ -277,7 +281,9 @@ Durée : 30 minutes.
 
 \element{mesures}{
   \begin{question}{mes5}
-    Si l'appareil affiche cet écran lors d'une mesure en voltmètre ou en ampèremètre, alors~:
+    L'appareil affiche cet écran lors d'une mesure en voltmètre ou en ampèremètre, alors~:
+    \\
+    \includegraphics[width=4cm]{multimetreover.jpg}
     \begin{reponses}
       \bonne{La valeur est trop élevée, il faut passer au calibre supérieur}
       \mauvaise{La valeur est trop basse, il faut passer au calibre inférieur}
@@ -292,7 +298,7 @@ Durée : 30 minutes.
     Vous souhaitez mesurer le courant qui passe dans l'élément $L_1$, comment branchez vous l'ampèremètre~?
     \begin{reponses}
       \bonne{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) to [ rmeter, t=A ] (4,0);
           \draw (0,3) -- (4,3);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -300,7 +306,7 @@ Durée : 30 minutes.
         \end{circuitikz}
       }
       \bonne{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,3) to [ rmeter, t=A ] (4,3);
           \draw (0,0) -- (4,0);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -308,7 +314,7 @@ Durée : 30 minutes.
         \end{circuitikz}
       }
       \mauvaise{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) -- (4,0);
           \draw (0,3) -- (4,3);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -317,7 +323,7 @@ Durée : 30 minutes.
         \end{circuitikz}
       }
       \mauvaise{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) -- (4,0);
           \draw (0,3) -- (4,3);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -334,7 +340,7 @@ Durée : 30 minutes.
     Vous souhaitez mesurer la tension aux bornes de l'élément $L_1$, comment branchez vous le voltmètre~?
     \begin{reponses}
       \mauvaise{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) to [ rmeter, t=V ] (4,0);
           \draw (0,3) -- (4,3);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -342,7 +348,7 @@ Durée : 30 minutes.
         \end{circuitikz}
       }
       \mauvaise{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,3) to [ rmeter, t=V ] (4,3);
           \draw (0,0) -- (4,0);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -350,7 +356,7 @@ Durée : 30 minutes.
         \end{circuitikz}
       }
       \bonne{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) -- (4,0);
           \draw (0,3) -- (4,3);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -359,7 +365,7 @@ Durée : 30 minutes.
         \end{circuitikz}
       }
       \bonne{
-        \begin{circuitikz}[european]
+        \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) -- (4,0);
           \draw (0,3) -- (4,3);
           \draw (0,3) to [ rmeter, t=G,v=\empty, american voltages ] (0,0);
@@ -372,7 +378,7 @@ Durée : 30 minutes.
 }
 
 \element{calculs}{
-  \begin{question}{cal1}
+  \begin{questionmult}{cal1}
     Dans un circuit électrique monté en série~:
     \begin{reponses}
       \bonne{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
@@ -380,11 +386,11 @@ Durée : 30 minutes.
       \mauvaise{La loi d’additivité des intensités du courant électrique pmose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
       \mauvaise{La loi d'unicité des tensions électriques pose que la tension électrique est la même aux bornes de chaque ddipoles du circuit}
     \end{reponses}
-  \end{question}
+  \end{questionmult}
 }
 
 \element{calculs}{
-  \begin{question}{cal2}
+  \begin{questionmult}{cal2}
     Dans un circuit électrique monté en dérivation~:
     \begin{reponses}
       \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
@@ -392,20 +398,9 @@ Durée : 30 minutes.
       \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
       \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
     \end{reponses}
-  \end{question}
+  \end{questionmult}
 }
 
-\element{calculs}{
-  \begin{question}{cal3}
-    Dans un circuit électrique monté en dérivation~:
-    \begin{reponses}
-      \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
-      \bonne{La loi d’additivité es intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
-      \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
-      \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
-    \end{reponses}
-  \end{question}
-}
 
 
 
