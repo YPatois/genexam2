@@ -1,11 +1,12 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage{titlesec}
 \usepackage{circuitikz}
 \usepackage{siunitx}
-
 \usepackage{csvsimple}%
-
 \usepackage[francais,bloc]{automultiplechoice}
+
+\graphicspath{ {./images/} }
+
 
 \titleformat{\section}
   {\centering\hrule\vspace{2mm}}
@@ -36,10 +37,10 @@
 {\Large\bf Évaluation sur table - Électricité 27/05/2024}
 
 \vfill
-\noindent{}\fbox{\vspace*{3mm}
+\namefield{\noindent{}\fbox{\vspace*{3mm}
          \Huge\bf\prenom{}~\nom{}\normalsize{}% 
          \vspace*{3mm}
-      }
+      }}
 \end{center}
 \vfill
 
@@ -62,8 +63,6 @@ Durée : 30 minutes.
 %%% fin de l'en-tête
 
 \restituegroupe{groupes}
-%\restituegroupe{securite}
-
 
 
 \AMCassociation{\id}
@@ -84,7 +83,7 @@ Durée : 30 minutes.
 %%% Fin Options
 
 \element{securite}{
-  \begin{questionmult}{s1}
+  \begin{questionmult}{sec1}
     Pourquoi le courant électrique est dangereux pour les humains~?
     \begin{reponses}
       \bonne{Il peut paralyser les muscles du corps}
@@ -95,7 +94,7 @@ Durée : 30 minutes.
 }
 
 \element{securite}{
-  \begin{questionmult}{s2}   
+  \begin{questionmult}{sec2}
     Quelles sources de courants sont dangereuses pour les humains~?
     \begin{reponses}
       \bonne{Les prises du secteur}
@@ -107,8 +106,77 @@ Durée : 30 minutes.
   \end{questionmult}
 }
 
-\element{generalites}{
-  \begin{questionmult}{g1} 
+
+\element{symboles}{
+  \begin{question}{sym1}
+    Que représente le symbole dessiné ici~?
+    \includegraphics{lamp.png}
+
+    \begin{reponses}
+      \mauvaise{Un générateur de tension}
+      \bonne{Une ampoule électrique à filament}
+      \mauvaise{Une DEL (Diode Électroluminescente)}
+      \mauvaise{Un moteur électrique}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym1}
+    Que représente le symbole dessiné ici~?
+    \includegraphics{generator.png}
+
+    \begin{reponses}
+      \bonne{Un générateur de tension}
+      \mauvaise{Une ampoule électrique à filament}
+      \mauvaise{Une DEL (Diode Électroluminescente)}
+      \mauvaise{Un moteur électrique}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym2}
+    Que représente le symbole dessiné ici~?
+    \includegraphics{generator.png}
+
+    \begin{reponses}
+      \bonne{Un générateur de tension}
+      \mauvaise{Une ampoule électrique à filament}
+      \mauvaise{Une DEL (Diode Électroluminescente)}
+      \mauvaise{Un moteur électrique}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym3}
+    Quel interrupteur est fermé~?
+
+    \begin{reponses}
+      \mauvaise{\includegraphics{ouvert.png}}
+      \bonne{\includegraphics{ferme.png}}
+      \mauvaise{\includegraphics{lamp.png}}
+      \mauvaise{\includegraphics{generator.png}}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym3}
+    Un interrupteur laisse passer le courant lorsqu'il est~?
+
+    \begin{reponses}
+      \mauvaise{Ouvert}
+      \bonne{Fermé}
+      \mauvaise{Il laisse toujours passer le courant}
+      \mauvaise{Il ne laisse jamais passer le courant}
+    \end{reponses}
+  \end{question}
+}
+
+\element{seriederiv}{
+  \begin{question}{sdv1}
     Ce montage est-il en série ou en dérivation~?
 
      \begin{circuitikz}[european]
@@ -126,11 +194,11 @@ Durée : 30 minutes.
       \bonne{Le montage est branché en série}
       \mauvaise{Le montage est branché en dérivation}
     \end{reponses}
-  \end{questionmult}
+  \end{question}
 }
 
-\element{generalites}{
-  \begin{questionmult}{g2}  
+\element{seriederiv}{
+  \begin{question}{sdv2}
     Ce montage est-il en série ou en dérivation~?
 
 	\begin{circuitikz}[european]
@@ -149,7 +217,69 @@ Durée : 30 minutes.
       \mauvaise{Le montage est branché en série}
       \bonne{Le montage est branché en dérivation}
     \end{reponses}
-  \end{questionmult}
+  \end{question}
+}
+
+\element{mesures}{
+  \begin{question}{mes1}
+    Comment appelle t'on cet appareil~?
+    \includegraphics[width=4cm]{multimetre.jpg}
+
+    \begin{reponses}
+      \mauvaise{Un manomètre}
+      \bonne{Un multimètre}
+      \mauvaise{Ça dépend}
+      \mauvaise{Un électromètre}
+      \mauvaise{Un Grand Maitre}
+    \end{reponses}
+  \end{question}
+}
+
+\element{mesures}{
+  \begin{question}{mes2}
+    Sur quelle zone faut-il régler l'appareil pour mesurer l'intensité d'un courant~?
+    \begin{reponses}
+      \mauvaise{\includegraphics[width=2cm]{multimetreV.jpg}}
+      \bonne{\includegraphics[width=2cm]{multimetreA.jpg}}
+      \mauvaise{\includegraphics[width=2cm]{multimetreO.jpg}}
+      \mauvaise{\includegraphics[width=2cm]{multimetreZ.jpg}}
+    \end{reponses}
+  \end{question}
+}
+
+\element{mesures}{
+  \begin{question}{mes3}
+    Sur quelle zone faut-il régler l'appareil pour mesurer la tension entre deux points~?
+    \begin{reponses}
+      \mauvaise{\includegraphics[width=2cm]{multimetreA.jpg}}
+      \bonne{\includegraphics[width=2cm]{multimetreV.jpg}}
+      \mauvaise{\includegraphics[width=2cm]{multimetreO.jpg}}
+      \mauvaise{\includegraphics[width=2cm]{multimetreZ.jpg}}
+    \end{reponses}
+  \end{question}
+}
+
+\element{mesures}{
+  \begin{question}{mes4}
+    Lorsque l'on veut faire une mesure sur une tension ou intensité qu'on ne conait pas, sur quel calibre met-on l'appareil~?
+    \begin{reponses}
+      \bonne{On commence par le calibre le plus élevé}
+      \mauvaise{On commence par le calibre le plus petit}
+      \mauvaise{Peu importe}
+    \end{reponses}
+  \end{question}
+}
+
+\element{mesures}{
+  \begin{question}{mes5}
+    Si l'appareil affiche cet écran lors d'une mesure en voltmètre ou en ampèremètre, alors~:
+    \begin{reponses}
+      \bonne{La valeur est trop élevée, il faut passer au calibre supérieur}
+      \mauvaise{La valeur est trop basse, il faut passer au calibre inférieur}
+      \mauvaise{La valeur mesurée est de 1V exactement}
+      \mauvaise{L'appareil n'est pas branché}
+    \end{reponses}
+  \end{question}
 }
 
 
@@ -157,8 +287,14 @@ Durée : 30 minutes.
 \section{Sécurité}
 \restituegroupe{securite}
 
-\section{Généralités}
-\restituegroupe{generalites}
+\section{La représentation des circuits électriques}
+\restituegroupe{symboles}
+
+\section{Types de circuits}
+\restituegroupe{seriederiv}
+
+\section{Mesures}
+\restituegroupe{mesures}
 }
 
 
