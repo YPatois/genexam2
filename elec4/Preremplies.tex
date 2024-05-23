@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{titlesec}
+\usepackage{multicol}
 \usepackage{circuitikz}
 \usepackage{siunitx}
 \usepackage{csvsimple}%
@@ -7,6 +8,7 @@
 
 \graphicspath{ {./images/} }
 
+\setlength{\columnseprule}{1pt}
 
 \titleformat{\section}
   {\centering\hrule\vspace{2mm}}
@@ -110,7 +112,8 @@ Durée : 30 minutes.
 \element{symboles}{
   \begin{question}{sym1}
     Que représente le symbole dessiné ici~?
-    \includegraphics{lamp.png}
+    \\
+    \includegraphics[width=2cm]{lamp.png}
 
     \begin{reponses}
       \mauvaise{Un générateur de tension}
@@ -122,23 +125,10 @@ Durée : 30 minutes.
 }
 
 \element{symboles}{
-  \begin{question}{sym1}
-    Que représente le symbole dessiné ici~?
-    \includegraphics{generator.png}
-
-    \begin{reponses}
-      \bonne{Un générateur de tension}
-      \mauvaise{Une ampoule électrique à filament}
-      \mauvaise{Une DEL (Diode Électroluminescente)}
-      \mauvaise{Un moteur électrique}
-    \end{reponses}
-  \end{question}
-}
-
-\element{symboles}{
   \begin{question}{sym2}
     Que représente le symbole dessiné ici~?
-    \includegraphics{generator.png}
+    \\
+    \includegraphics[width=2cm]{generator.png}
 
     \begin{reponses}
       \bonne{Un générateur de tension}
@@ -151,19 +141,34 @@ Durée : 30 minutes.
 
 \element{symboles}{
   \begin{question}{sym3}
+    Que représente le symbole dessiné ici~?
+    \\
+    \includegraphics[width=2cm]{motor.png}
+
+    \begin{reponses}
+      \mauvaise{Un générateur de tension}
+      \mauvaise{Une ampoule électrique à filament}
+      \mauvaise{Une DEL (Diode Électroluminescente)}
+      \bonne{Un moteur électrique}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym4}
     Quel interrupteur est fermé~?
 
     \begin{reponses}
-      \mauvaise{\includegraphics{ouvert.png}}
-      \bonne{\includegraphics{ferme.png}}
-      \mauvaise{\includegraphics{lamp.png}}
-      \mauvaise{\includegraphics{generator.png}}
+      \mauvaise{\includegraphics[width=2cm]{ouvert.png}}
+      \bonne{\includegraphics[width=2cm]{ferme.png}}
+      \mauvaise{\includegraphics[width=2cm]{lamp.png}}
+      \mauvaise{\includegraphics[width=2cm]{generator.png}}
     \end{reponses}
   \end{question}
 }
 
 \element{symboles}{
-  \begin{question}{sym3}
+  \begin{question}{sym5}
     Un interrupteur laisse passer le courant lorsqu'il est~?
 
     \begin{reponses}
@@ -366,19 +371,68 @@ Durée : 30 minutes.
   \end{questionmult}
 }
 
+\element{calculs}{
+  \begin{question}{cal1}
+    Dans un circuit électrique monté en série~:
+    \begin{reponses}
+      \bonne{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
+      \bonne{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
+      \mauvaise{La loi d’additivité des intensités du courant électrique pmose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
+      \mauvaise{La loi d'unicité des tensions électriques pose que la tension électrique est la même aux bornes de chaque ddipoles du circuit}
+    \end{reponses}
+  \end{question}
+}
+
+\element{calculs}{
+  \begin{question}{cal2}
+    Dans un circuit électrique monté en dérivation~:
+    \begin{reponses}
+      \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
+      \bonne{La loi d’additivité es intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
+      \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
+      \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
+    \end{reponses}
+  \end{question}
+}
+
+\element{calculs}{
+  \begin{question}{cal3}
+    Dans un circuit électrique monté en dérivation~:
+    \begin{reponses}
+      \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
+      \bonne{La loi d’additivité es intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
+      \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
+      \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
+    \end{reponses}
+  \end{question}
+}
+
+
 
 \element{groupes}{
 \section{Sécurité}
+\begin{multicols}{2}
 \restituegroupe{securite}
+\end{multicols}
 
 \section{La représentation des circuits électriques}
+\begin{multicols}{2}
 \restituegroupe{symboles}
+\end{multicols}
 
-\section{Types de circuits}
+\section{Types de circuits électriques}
+\begin{multicols}{2}
 \restituegroupe{seriederiv}
+\end{multicols}
 
-\section{Mesures}
+\section{Mesures de courants et de tensions dans les circuits électriques}
+\begin{multicols}{2}
 \restituegroupe{mesures}
+\end{multicols}
+
+\section{Calculs d'intensités du courant électrique}
+\restituegroupe{calculs}
+
 }
 
 
