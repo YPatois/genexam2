@@ -140,7 +140,7 @@ class Circuit:
             sl.append(x)
             #sl.append(x2)
             if (c.ukn):
-                s=get_random_string(5)+str(c.I)+get_random_string(5)
+                s=str(c.I)
                 #s=str(c.I)
                 il=c.i_label
         return (sl[0],sl[1],sl[2],il,s)
@@ -155,6 +155,33 @@ class Circuit:
         for c in self.components:
             if (not c.no_negative()): return False
         return True
+
+Kcircuittemplate="""
+\begin{circuitikz}[european]
+ \draw (0,0) -- (4,0);
+ \draw (0,3) -- (4,3);
+
+ \draw (0,0)
+ to [ @A@, o-o] (0,3);
+ \draw (2,0)
+ to [ @B@, o-o]  (2,3);
+ \draw (4,0)
+ to [ @C@, o-o]  (4,3);
+\end{circuitikz}"""
+
+
+def print_circuit(mode,level):
+    c=Circuit(mode,level)
+    (a,b,c,il,sl)=c.circuitikz()
+
+    ct=Kcircuittemplate
+
+    ct=ct.replace("@A@",a)
+    ct=ct.replace("@B@",b)
+    ct=ct.replace("@C@",c)
+    ct=ct.replace("@IL@",il)
+
+    print (ct)
 
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
@@ -177,14 +204,13 @@ class TestCircuit(unittest.TestCase):
                     has_gen=True
             self.assertEqual(has_gen,True)
 
-
 # --------------------------------------------------------------------------
 # Welcome to Derry, Maine
 # --------------------------------------------------------------------------
 def main():
-    random.seed(10)
-    unittest.main()
-    return
+    #random.seed(10)
+    #unittest.main()
+    #return
     parser = argparse.ArgumentParser(description='Generates circuits questions')
     parser.add_argument('--seed' , help='Random seed')
     parser.add_argument('--mode',  help='A/V : either current (A) or voltage (V)')
@@ -195,7 +221,7 @@ def main():
     level=int(args.level)
     random.seed(seed)
 
-    c=Circuit(mode,level)
+    print_circuit(mode,level)
 
 
 # --------------------------------------------------------------------------
