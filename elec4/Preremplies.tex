@@ -4,8 +4,11 @@
 \usepackage{xcolor}
 \usepackage{circuitikz}
 \usepackage{siunitx}
+\usepackage{fp}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
+
+\FPseed=10
 
 \graphicspath{ {./images/} }
 
@@ -406,7 +409,8 @@ Durée : 30 minutes.
 
 \element{calculs}{
   \begin{questionmult}{cal2}
-    \input{"|./genexo.py --seed 10 --mode A --level 0"}
+    \FPeval\ySeed{trunc(1+random*100,0) }
+    \input{"|./genexo.py --seed \ySeed~ --mode A --level 0"}
     \begin{reponses}
       \bonne{titi}
       \bonne{tata}
