@@ -158,29 +158,33 @@ class Circuit:
 
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
-        for l in [10,12,14,16]:
-            c=Circuit(l)
+        for l in [0,1,2,3]:
+            c=Circuit('A',l)
             self.assertEqual(c.sum_I(),0)
 
     def test_circuit_zero_deeper(self):
         for i in range(100):
-            c=Circuit(16)
+            c=Circuit('A',4)
             self.assertEqual(c.no_negative(),True)
 
     def test_circuit_has_generator(self):
-        l=[10,12,14,16]
+        l=[0,1,2,3]
         for i in range(100):
             has_gen=False
-            c=Circuit(random.choice(l))
+            c=Circuit('A',random.choice(l))
             for c in c.components:
                 if (type(c)==Generator):
                     has_gen=True
             self.assertEqual(has_gen,True)
 
+
 # --------------------------------------------------------------------------
 # Welcome to Derry, Maine
 # --------------------------------------------------------------------------
 def main():
+    random.seed(10)
+    unittest.main()
+    return
     parser = argparse.ArgumentParser(description='Generates circuits questions')
     parser.add_argument('--seed' , help='Random seed')
     parser.add_argument('--mode',  help='A/V : either current (A) or voltage (V)')
