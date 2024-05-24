@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[nobottomtitles]{titlesec}
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{circuitikz}
@@ -32,7 +33,14 @@
 
 \AMCsetFoot{\niveau{}°\classe{} -- \prenom{}~\nom{} -- \thepage}
 
+\newenvironment{reponsesd}{
+    \begin{multicols}{2}
+    \begin{reponses} }{
+    \end{reponses}
+    \end{multicols}
+}
 
+%\renewenvironement{question}[1]{\begin{question}{#1}}{\end{question}}
 
 %%% debut de l'en-tête des copies :  
 \begin{center}
@@ -95,24 +103,24 @@ Durée : 30 minutes.
 \element{securite}{
   \begin{questionmult}{sec1}
     Pourquoi le courant électrique est dangereux pour les humains~?
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{Il peut paralyser les muscles du corps}
       \mauvaise{Il peut effacer les contacts de mon téléphone}
       \bonne{Il peut arrêter la respiration et le c{\oe}ur}
-    \end{reponses}
+    \end{reponsesd}
   \end{questionmult}
 }
 
 \element{securite}{
   \begin{questionmult}{sec2}
     Quelles sources de courants sont dangereuses pour les humains~?
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{Les prises du secteur}
       \mauvaise{Les piles-boutons}
       \bonne{Les fils haute-tension sur les poteaux électriques}
       \bonne{Les éclairs}
       \mauvaise{L'électricité statique sur un pull en laine}
-    \end{reponses}
+    \end{reponsesd}
   \end{questionmult}
 }
 
@@ -123,12 +131,12 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=2cm]{lamp.png}
 
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{Un générateur de tension}
       \bonne{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \mauvaise{Un moteur électrique}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
@@ -138,12 +146,12 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=2cm]{generator.png}
 
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{Un générateur de tension}
       \mauvaise{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \mauvaise{Un moteur électrique}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
@@ -153,12 +161,12 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=2cm]{motor.png}
 
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{Un générateur de tension}
       \mauvaise{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \bonne{Un moteur électrique}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
@@ -166,12 +174,12 @@ Durée : 30 minutes.
   \begin{question}{sym4}
     Quel interrupteur est fermé~?
 
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{\includegraphics[width=2cm]{ouvert.png}}
       \bonne{\includegraphics[width=2cm]{ferme.png}}
       \mauvaise{\includegraphics[width=2cm]{lamp.png}}
       \mauvaise{\includegraphics[width=2cm]{generator.png}}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
@@ -179,12 +187,12 @@ Durée : 30 minutes.
   \begin{question}{sym5}
     Un interrupteur~:
 
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{Laisse passer le courant lorsqu'il est ouvert}
       \bonne{Laisse passer le courant Lorsqu'il est fermé}
       \mauvaise{Laisse toujours passer le courant}
       \mauvaise{Ne laisse jamais passer le courant}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
@@ -212,6 +220,7 @@ Durée : 30 minutes.
 
 \element{seriederiv}{
   \begin{question}{sdv2}
+  \needspace{4cm}
     Ce montage est-il en série ou en dérivation~?
 
 	\begin{circuitikz}[european]
@@ -239,48 +248,48 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=3cm]{multimetre.jpg}
 
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{Un manomètre}
       \bonne{Un multimètre}
       \mauvaise{Ça dépend}
       \mauvaise{Un électromètre}
       \mauvaise{Un Grand Maitre}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
 \element{mesures}{
   \begin{question}{mes2}
     Sur quelle zone faut-il régler l'appareil pour mesurer l'intensité d'un courant électrique~?
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{\includegraphics[width=2cm]{multimetreV.jpg}}
       \bonne{\includegraphics[width=2cm]{multimetreA.jpg}}
       \mauvaise{\includegraphics[width=2cm]{multimetreO.jpg}}
       \mauvaise{\includegraphics[width=2cm]{multimetreZ.jpg}}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
 \element{mesures}{
   \begin{question}{mes3}
     Sur quelle zone faut-il régler l'appareil pour mesurer la tension électrique entre deux points~?
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{\includegraphics[width=2cm]{multimetreA.jpg}}
       \bonne{\includegraphics[width=2cm]{multimetreV.jpg}}
       \mauvaise{\includegraphics[width=2cm]{multimetreO.jpg}}
       \mauvaise{\includegraphics[width=2cm]{multimetreZ.jpg}}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
 \element{mesures}{
   \begin{question}{mes4}
     Lorsque l'on veut faire une mesure sur une tension ou intensité qu'on ne conait pas, sur quel calibre met-on l'appareil~?
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{On commence par le calibre le plus élevé}
       \mauvaise{On commence par le calibre le plus petit}
       \mauvaise{Peu importe}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
@@ -289,19 +298,19 @@ Durée : 30 minutes.
     L'appareil affiche cet écran lors d'une mesure en voltmètre, alors~:
     \\
     \includegraphics[width=4cm]{multimetreover.jpg}
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{La valeur est trop élevée, il faut passer au calibre supérieur}
       \mauvaise{La valeur est trop basse, il faut passer au calibre inférieur}
       \mauvaise{La valeur mesurée est de 1V exactement}
       \mauvaise{L'appareil n'est pas branché}
-    \end{reponses}
+    \end{reponsesd}
   \end{question}
 }
 
 \element{mesures}{
   \begin{questionmult}{mes6}
     Vous souhaitez mesurer le courant qui passe dans l'élément $L_1$, comment branchez vous l'ampèremètre~?
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{
         \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) to [ rmeter, t=A ] (4,0);
@@ -336,14 +345,14 @@ Durée : 30 minutes.
           \draw (2,0) to [ lamp=$L_1$, o-o]  (2,3);
         \end{circuitikz}
       }
-    \end{reponses}
+    \end{reponsesd}
   \end{questionmult}
 }
 
 \element{mesures}{
   \begin{questionmult}{mes7}
     Vous souhaitez mesurer la tension aux bornes de l'élément $L_1$, comment branchez vous le voltmètre~?
-    \begin{reponses}
+    \begin{reponsesd}
       \mauvaise{
         \begin{circuitikz}[european,scale = 0.7]
           \draw (0,0) to [ rmeter, t=V ] (4,0);
@@ -378,46 +387,79 @@ Durée : 30 minutes.
           \draw (2,0) to [ lamp=$L_1$, o-o]  (2,3);
         \end{circuitikz}
       }
-    \end{reponses}
+    \end{reponsesd}
   \end{questionmult}
 }
 
 \element{calculs}{
   \begin{questionmult}{cal1}
     Dans un circuit électrique monté en série, on peut appliquer ~:
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{La loi d'unicité de l'intensité du courant électrique qui pose que l'intensité du courant électrique est la même en tout point du circuit}
       \bonne{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
       \mauvaise{La loi d’additivité des intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
       \mauvaise{La loi d'unicité des tensions électriques pose que la tension électrique est la même aux bornes de chaque dipoles du circuit}
-    \end{reponses}
+    \end{reponsesd}
   \end{questionmult}
 }
 
 \element{calculs}{
   \begin{questionmult}{cal2}
     Dans un circuit électrique monté en dérivation, on peut appliquer~:
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
       \bonne{La loi d’additivité des intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
       \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
       \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
-    \end{reponses}
+    \end{reponsesd}
   \end{questionmult}
 }
 
 
 \element{calculs}{
-  \begin{questionmult}{cal2}
+  \begin{question}{cal3}
+    Cochez la case où l'égalité est respectée~:
+    \begin{reponsesd}
+      \bonne   {\qty{1}{\A}=\qty{1000}{\mA}}
+      \mauvaise{\qty{1}{\A}=\qty{100}{\mA}}
+      \mauvaise{\qty{1}{\A}=\qty{10}{\mA}}
+      \mauvaise{\qty{1}{\A}=\qty{1}{\mA}}
+    \end{reponsesd}
+  \end{question}
+}
+\element{calculs}{
+  \begin{question}{cal4}
+    Cochez la case où l'égalité est respectée~:
+    \begin{reponsesd}
+      \bonne   {\qty{1}{\V}=\qty{1000}{\mV}}
+      \mauvaise{\qty{1}{\V}=\qty{100}{\mV}}
+      \mauvaise{\qty{1}{\V}=\qty{10}{\mV}}
+      \mauvaise{\qty{1}{\V}=\qty{1}{\mV}}
+    \end{reponsesd}
+  \end{question}
+}
+
+\element{calculs}{
+  \begin{questionmult}{cal5}
+    Cochez les case où l'égalité est respectée~:
+    \FPeval\ySeed{trunc(random*1000,0) }
+    \begin{reponsesd}
+      \input{"|./genexo.py --seed \ySeed~ --mode C --level 0"}
+    \end{reponsesd}
+  \end{questionmult}
+}
+
+\element{calculs}{
+  \begin{question}{cal6}
     \FPeval\ySeed{trunc(1+random*100,0) }
     \input{"|./genexo.py --seed \ySeed~ --mode A --level 0"}
-    \begin{reponses}
+    \begin{reponsesd}
       \bonne{titi}
-      \bonne{tata}
+      \mauvaise{tata}
       \mauvaise{tutu}
       \mauvaise{toto}
-    \end{reponses}
-  \end{questionmult}
+    \end{reponsesd}
+  \end{question}
 }
 
 
@@ -425,14 +467,14 @@ Durée : 30 minutes.
 
 \element{groupes}{
 \section{Sécurité}
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \restituegroupe{securite}
-\end{multicols}
+%\end{multicols}
 
 \section{La représentation des circuits électriques}
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \restituegroupe{symboles}
-\end{multicols}
+%\end{multicols}
 
 \section{Types de circuits électriques}
 \begin{multicols}{2}
@@ -440,9 +482,9 @@ Durée : 30 minutes.
 \end{multicols}
 
 \section{Mesures de courants et de tensions dans les circuits électriques}
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \restituegroupe{mesures}
-\end{multicols}
+%\end{multicols}
 
 \section{Calculs d'intensités du courant électrique}
 \restituegroupe{calculs}

@@ -183,6 +183,44 @@ def print_circuit(mode,level):
 
     print (ct)
 
+def lx(s):
+    return('\\'+s)
+
+def lx1(s0,s1):
+    return(lx(s0)+'{'+s1+'}')
+
+def lx2(s0,s1,s2):
+    return(lx1(s0,s1)+'{'+s2+'}')
+
+def qty(v,u):
+    return(lx2('qty',v,lx(u)))
+
+
+def print_eq_tests():
+    u='A'
+    if (bool(random.getrandbits(1))):
+        u='V'
+    for i in range(6):
+        mi1=10*random.randint(2,300)
+        i1=mi1/1000
+        fake=bool(random.getrandbits(1))
+        if (fake):
+            mi2=10*random.randint(-mi1/10+1,2*mi1/10)
+            if (mi2==0): mi2=10
+            mi1=mi1+mi2
+        s1=qty(str(mi1),'m'+u)
+        s2=qty(str(i1),u)
+
+        if (bool(random.getrandbits(1))):
+             s=s1+'='+s2
+        else:
+            s=s2+'='+s1
+
+        if (fake):
+            print(lx1('mauvaise',s))
+        else:
+            print(lx1('bonne',s))
+
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
         for l in [0,1,2,3]:
@@ -215,7 +253,7 @@ def main():
     #return
     parser = argparse.ArgumentParser(description='Generates circuits questions')
     parser.add_argument('--seed' , help='Random seed')
-    parser.add_argument('--mode',  help='A/V : either current (A) or voltage (V)')
+    parser.add_argument('--mode',  help='C: A/V egality test. A/V: either current (A) or voltage (V) circuit')
     parser.add_argument('--level', help='Exercice difficulty')
     args = parser.parse_args()
     seed=int(args.seed.replace('~','')) # Fix some LaTeX oddity I have no time to check
@@ -223,7 +261,10 @@ def main():
     level=int(args.level)
     random.seed(seed)
 
-    print_circuit(mode,level)
+    if (mode=='C'):
+        print_eq_tests()
+    else:
+        print_circuit(mode,level)
 
 
 # --------------------------------------------------------------------------
