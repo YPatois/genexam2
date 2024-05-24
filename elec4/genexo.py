@@ -53,7 +53,7 @@ class Generator(Componant):
             istr=self.i_label+"=\SI{"+str(-self.I/1000)+"}{\A}"
         else:
             istr=self.i_label
-        s1="rmeter, t={\\textbf G},v=\empty, american voltages "
+        s1="american voltage source, invert, "
         s2=self.iblock(p)+"${"+istr+"}$"
         return (s1+s2)
 
@@ -156,19 +156,19 @@ class Circuit:
             if (not c.no_negative()): return False
         return True
 
+
 Kcircuittemplate="""
-\begin{circuitikz}[european]
- \draw (0,0) -- (4,0);
- \draw (0,3) -- (4,3);
+\\begin{circuitikz}[european,scale = 1.2]
+ \\draw (0,0) -- (4,0);
+ \\draw (0,3) -- (4,3);
 
- \draw (0,0)
+ \\draw (0,0)
  to [ @A@, o-o] (0,3);
- \draw (2,0)
+ \\draw (2,0)
  to [ @B@, o-o]  (2,3);
- \draw (4,0)
+ \\draw (4,0)
  to [ @C@, o-o]  (4,3);
-\end{circuitikz}"""
-
+\\end{circuitikz}"""
 
 def print_circuit(mode,level):
     c=Circuit(mode,level)
@@ -208,6 +208,8 @@ class TestCircuit(unittest.TestCase):
 # Welcome to Derry, Maine
 # --------------------------------------------------------------------------
 def main():
+    #print("Maybe now we see it")
+    #return
     #random.seed(10)
     #unittest.main()
     #return
