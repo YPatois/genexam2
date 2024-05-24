@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{titlesec}
 \usepackage{multicol}
+\usepackage{xcolor}
 \usepackage{circuitikz}
 \usepackage{siunitx}
 \usepackage{csvsimple}%
@@ -9,6 +10,7 @@
 \graphicspath{ {./images/} }
 
 \setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{lightgray}}%
 
 \titleformat{\section}
   {\centering\hrule\vspace{2mm}}
@@ -175,10 +177,10 @@ Durée : 30 minutes.
     Un interrupteur~:
 
     \begin{reponses}
-      \mauvaise{Laisse passer le courant Lorsqu'il est ouvert}
+      \mauvaise{Laisse passer le courant lorsqu'il est ouvert}
       \bonne{Laisse passer le courant Lorsqu'il est fermé}
-      \mauvaise{Ne laisse toujours passer le courant}
-      \mauvaise{Ne ne laisse jamais passer le courant}
+      \mauvaise{Laisse toujours passer le courant}
+      \mauvaise{Ne laisse jamais passer le courant}
     \end{reponses}
   \end{question}
 }
@@ -281,7 +283,7 @@ Durée : 30 minutes.
 
 \element{mesures}{
   \begin{question}{mes5}
-    L'appareil affiche cet écran lors d'une mesure en voltmètre ou en ampèremètre, alors~:
+    L'appareil affiche cet écran lors d'une mesure en voltmètre, alors~:
     \\
     \includegraphics[width=4cm]{multimetreover.jpg}
     \begin{reponses}
@@ -379,27 +381,29 @@ Durée : 30 minutes.
 
 \element{calculs}{
   \begin{questionmult}{cal1}
-    Dans un circuit électrique monté en série~:
+    Dans un circuit électrique monté en série, on peut appliquer ~:
     \begin{reponses}
-      \bonne{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
+      \bonne{La loi d'unicité de l'intensité du courant électrique qui pose que l'intensité du courant électrique est la même en tout point du circuit}
       \bonne{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
-      \mauvaise{La loi d’additivité des intensités du courant électrique pmose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
-      \mauvaise{La loi d'unicité des tensions électriques pose que la tension électrique est la même aux bornes de chaque ddipoles du circuit}
+      \mauvaise{La loi d’additivité des intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
+      \mauvaise{La loi d'unicité des tensions électriques pose que la tension électrique est la même aux bornes de chaque dipoles du circuit}
     \end{reponses}
   \end{questionmult}
 }
 
 \element{calculs}{
   \begin{questionmult}{cal2}
-    Dans un circuit électrique monté en dérivation~:
+    Dans un circuit électrique monté en dérivation, on peut appliquer~:
     \begin{reponses}
       \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
-      \bonne{La loi d’additivité es intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
+      \bonne{La loi d’additivité des intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
       \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
       \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
     \end{reponses}
   \end{questionmult}
 }
+
+
 
 
 
