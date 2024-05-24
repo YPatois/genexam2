@@ -1,11 +1,106 @@
 #!/usr/bin/env python3
 import argparse
 import unittest
+import random
 
+class Componant:
+    def __init__(self):
+        self.I=0
+        self.ukn=False
+
+    def compute_intensity(self,cpn):
+        s=0
+        for c in cpn:
+            s+=c.I
+        self.I=-s
+
+    def set_i_label(self,il):
+        self.i_label=il
+
+    def set_ukn(self):
+        self.ukn=True
+
+    def no_negative(self):
+        return (self.I>0)
+
+    def arrow(self):
+        return ("<")
+
+
+    def iblock(self,p):
+        if (p==0):
+            return "i_"+self.arrow()+"="
+        if (p==1):
+            return "i"+self.arrow()+"_="
+        return "i^"+self.arrow()+"="
+
+class Generator(Componant):
+    def __init__(self):
+        super().__init__()
+
+    def set_intensity(self):
+        clist=[ 1000+200*i for i in range(1,19)]
+        self.I=-random.choice(clist)
+
+    def no_negative(self):
+        return (self.I<0)
+
+    def arrow(self):
+        return (">")
+
+    def circuitikz(self,p):
+        if (not self.ukn):
+            istr=self.i_label+"=\SI{"+str(-self.I/1000)+"}{\A}"
+        else:
+            istr=self.i_label
+        s1="rmeter, t={\\textbf G},v=\empty, american voltages "
+        s2=self.iblock(p)+"${"+istr+"}$"
+        return (s1+s2)
+
+class Lamp(Componant):
+    lidx=0
+    def __init__(self):
+        self.idx=Lamp.lidx
+        Lamp.lidx+=1
+        super().__init__()
+
+    def set_intensity(self):
+        clist=[ 20*i for i in range(1,10)]
+        self.I=random.choice(clist)
+
+    def circuitikz(self,p):
+        if (not self.ukn):
+            istr=self.i_label+"=\SI{"+str(self.I)+"}{\mA}"
+        else:
+            istr=self.i_label
+        s1="lamp=$L_"+str(self.idx)+"$, "
+        s2=self.iblock(p)+"${"+istr+"}$"
+        return (s1+s2)
+
+
+class Motor(Componant):
+    def __init__(self):
+        super().__init__()
+
+    def set_intensity(self):
+        clist=[ 1000+200*i for i in range(1,19)]
+        self.I=random.choice(clist)
+
+    def circuitikz(self,p):
+        if (not self.ukn):
+            istr=self.i_label+"=\SI{"+str(self.I/1000)+"}{\A}"
+        else:
+            istr=self.i_label
+        s1="rmeter, t={\\textbf M}, "
+        s2=self.iblock(p)+"${"+istr+"}$"
+        return (s1+s2)
 
 
 class Circuit:
-    def __init__(self,level):
+    def __init__(self,mode,level):
+        if (mode != 'A'):
+            raise
+
         self.level=level
         if (level<1):
             self.components=[Generator(),Lamp(),Lamp()]
@@ -88,12 +183,15 @@ class TestCircuit(unittest.TestCase):
 def main():
     parser = argparse.ArgumentParser(description='Generates circuits questions')
     parser.add_argument('--seed' , help='Random seed')
-    parser.add_argument('--type',  help='A/V : either current (A) or voltage (V)')
+    parser.add_argument('--mode',  help='A/V : either current (A) or voltage (V)')
     parser.add_argument('--level', help='Exercice difficulty')
     args = parser.parse_args()
-    print(args.seed)
-    print(args.type)
-    print(args.level)
+    seed=int(args.seed)
+    mode=args.mode
+    level=int(args.level)
+    random.seed(seed)
+
+    c=Circuit(mode,level)
 
 
 # --------------------------------------------------------------------------
