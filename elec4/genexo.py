@@ -53,7 +53,7 @@ class Generator(Componant):
             istr=self.i_label+"=\SI{"+str(-self.I/1000)+"}{\A}"
         else:
             istr=self.i_label
-        s1="american voltage source, invert, "
+        s1="rmeter, t=G, "
         s2=self.iblock(p)+"${"+istr+"}$"
         return (s1+s2)
 
@@ -218,7 +218,7 @@ def main():
     parser.add_argument('--mode',  help='A/V : either current (A) or voltage (V)')
     parser.add_argument('--level', help='Exercice difficulty')
     args = parser.parse_args()
-    seed=int(args.seed)
+    seed=int(args.seed.replace('~','')) # Fix some LaTeX oddity I have no time to check
     mode=args.mode
     level=int(args.level)
     random.seed(seed)
