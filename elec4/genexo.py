@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os,sys
 import argparse
 import unittest
 import random
@@ -140,7 +141,7 @@ class Circuit:
             sl.append(x)
             #sl.append(x2)
             if (c.ukn):
-                s=str(c.I)
+                s=c.I
                 #s=str(c.I)
                 il=c.i_label
         return (sl[0],sl[1],sl[2],il,s)
@@ -157,31 +158,6 @@ class Circuit:
         return True
 
 
-Kcircuittemplate="""
-\\begin{circuitikz}[european,scale = 1.2]
- \\draw (0,0) -- (4,0);
- \\draw (0,3) -- (4,3);
-
- \\draw (0,0)
- to [ @A@, o-o] (0,3);
- \\draw (2,0)
- to [ @B@, o-o]  (2,3);
- \\draw (4,0)
- to [ @C@, o-o]  (4,3);
-\\end{circuitikz}"""
-
-def print_circuit(mode,level):
-    c=Circuit(mode,level)
-    (a,b,c,il,sl)=c.circuitikz()
-
-    ct=Kcircuittemplate
-
-    ct=ct.replace("@A@",a)
-    ct=ct.replace("@B@",b)
-    ct=ct.replace("@C@",c)
-    ct=ct.replace("@IL@",il)
-
-    print (ct)
 
 def lx(s):
     return('\\'+s)
@@ -195,15 +171,74 @@ def lx2(s0,s1,s2):
 def qty(v,u):
     return(lx2('qty',v,lx(u)))
 
+def build_response(v,mi,fake):
+    if (fake):
+        dmi=10*random.randint(-mi/10+1,2*mi/10)
+        if (dmi==0): dmi=10
+        mi=dmi+mi
+    s=v+'='+qty(str(mi),'mA')
+    if (fake):
+        return (lx1('mauvaise',s)+'\n')
+    else:
+        return(lx1('bonne',s)+'\n')
+
+def build_responses(n,v,mi):
+    s=""
+    for i in range(n-1):
+        s+=build_response(v,mi,True)
+    s+=build_response(v,mi,False) # False means TRue reponse: FIXME
+    return s
+
+
+Kcircuittemplate="""
+\\begin{question}{@QREF@}
+Sur le circuit présenté ici, quell est la valeur de @IL@~?
+
+\\begin{circuitikz}[european,scale = 1.2]
+ \\draw (0,0) -- (4,0);
+ \\draw (0,3) -- (4,3);
+
+ \\draw (0,0)
+ to [ @A@, o-o] (0,3);
+ \\draw (2,0)
+ to [ @B@, o-o]  (2,3);
+ \\draw (4,0)
+ to [ @C@, o-o]  (4,3);
+\\end{circuitikz}
+\\begin{reponsesd}
+@RESPONSES@
+\\end{reponsesd}
+\\end{question}
+"""
+
+def print_circuit(qref,mode,level):
+    cz=Circuit(mode,level)
+    (a,b,c,il,sl)=cz.circuitikz()
+    if (sl<0): sl=-sl
+    il='$'+str(il)+'$'
+
+    responses=build_responses(4,il,sl)
+
+    ct=Kcircuittemplate
+    ct=ct.replace("@QREF@",qref)
+    ct=ct.replace("@A@",a)
+    ct=ct.replace("@B@",b)
+    ct=ct.replace("@C@",c)
+    ct=ct.replace("@IL@",il)
+    ct=ct.replace("@RESPONSES@",responses)
+
+    print (ct)
+
+
 
 def print_eq_tests():
-    u='A'
-    if (bool(random.getrandbits(1))):
-        u='V'
-    for i in range(6):
+    sout=""
+    for fake in [True,True,True,False,False,False]:
+        u=random.choice(['A','V'])
+
         mi1=10*random.randint(2,300)
         i1=mi1/1000
-        fake=bool(random.getrandbits(1))
+        #fake=bool(random.getrandbits(1))
         if (fake):
             mi2=10*random.randint(-mi1/10+1,2*mi1/10)
             if (mi2==0): mi2=10
@@ -217,9 +252,11 @@ def print_eq_tests():
             s=s2+'='+s1
 
         if (fake):
-            print(lx1('mauvaise',s))
+            sout+=lx1('mauvaise',s)+'\n'
         else:
-            print(lx1('bonne',s))
+            sout+=lx1('bonne',s)+'\n'
+
+    print(sout)
 
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
@@ -255,18 +292,28 @@ def main():
     parser.add_argument('--seed' , help='Random seed')
     parser.add_argument('--mode',  help='C: A/V egality test. A/V: either current (A) or voltage (V) circuit')
     parser.add_argument('--level', help='Exercice difficulty')
+    parser.add_argument('--qref',  help='Question refernce')
     args = parser.parse_args()
     seed=int(args.seed.replace('~','')) # Fix some LaTeX oddity I have no time to check
     mode=args.mode
+    qref=args.qref
     level=int(args.level)
     random.seed(seed)
 
     if (mode=='C'):
         print_eq_tests()
     else:
-        print_circuit(mode,level)
+        print_circuit(qref,mode,level)
 
 
 # --------------------------------------------------------------------------
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+        sys.stdout.flush()
+    except BrokenPipeError:
+        devnull = os.open(os.devnull, os.O_WRONLY)
+        os.dup2(devnull, sys.stdout.fileno())
+        sys.exit(0)  # Python exits with error code 1 on EPIPE
+
+

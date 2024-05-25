@@ -107,7 +107,8 @@ Durée : 30 minutes.
       \bonne{Il peut paralyser les muscles du corps}
       \mauvaise{\clubpenalties 1 10000 Il peut effacer les contacts de mon téléphone}
       \bonne{Il peut arrêter la respiration et le c{\oe}ur}
-    \end{reponsesd}
+      \mauvaise{Il provoque des cancers}
+   \end{reponsesd}
   \end{questionmult}
 }
 
@@ -121,6 +122,20 @@ Durée : 30 minutes.
       \bonne{Les éclairs}
       \mauvaise{L'électricité statique sur un pull en laine}
     \end{reponsesd}
+  \end{questionmult}
+}
+
+\element{securite}{
+  \begin{questionmult}{sec3}
+    Cochez les situation ou l'électrocution est un risque avéré~?
+    \begin{reponsesd}
+      \bonne{Charger son téléphone pendant qu'on l'utilise dans son bain}
+      \mauvaise{Allumer sa lampe de bureau}
+      \bonne{Jeter de l'eau sur un appareil électrique branché sur le secteur}
+      \mauvaise{Consulter la messagerie sur ons ordinateur}
+      \bonne{Démonter un appareil electrique branché sur le secteur}
+      \bonne{Démonter un micro-onde débranché}
+   \end{reponsesd}
   \end{questionmult}
 }
 
@@ -444,26 +459,35 @@ Durée : 30 minutes.
     Cochez les case où l'égalité est respectée~:
     \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \input{"|./genexo.py --seed \ySeed~ --mode C --level 0"}
+      \input{"|./genexo.py --seed \ySeed~ --mode C --level 0 --qref toto"}
     \end{reponsesd}
   \end{questionmult}
 }
 
 \element{calculs}{
-  \begin{question}{cal6}
-    \FPeval\ySeed{trunc(1+random*100,0) }
-    \input{"|./genexo.py --seed \ySeed~ --mode A --level 0"}
-    \begin{reponsesd}
-      \bonne{titi}
-      \mauvaise{tata}
-      \mauvaise{tutu}
-      \mauvaise{toto}
-    \end{reponsesd}
-  \end{question}
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 0 --qref cal6"}
 }
 
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 1 --qref cal7"}
+}
 
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal8"}
+}
 
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal8"}
+}
+
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal8"}
+}
 
 \element{groupes}{
 \section{Sécurité}
