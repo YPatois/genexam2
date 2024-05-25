@@ -406,8 +406,8 @@ Durée : 30 minutes.
   \end{questionmult}
 }
 
-\element{calculs}{
-  \begin{questionmult}{cal1}
+\element{introcalculs}{
+  \begin{questionmult}{ical1}
     Dans un circuit électrique monté en série, on peut appliquer ~:
     \begin{reponsesd}
       \bonne{La loi d'unicité de l'intensité du courant électrique qui pose que l'intensité du courant électrique est la même en tout point du circuit}
@@ -418,8 +418,8 @@ Durée : 30 minutes.
   \end{questionmult}
 }
 
-\element{calculs}{
-  \begin{questionmult}{cal2}
+\element{introcalculs}{
+  \begin{questionmult}{ical2}
     Dans un circuit électrique monté en dérivation, on peut appliquer~:
     \begin{reponsesd}
       \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
@@ -431,8 +431,8 @@ Durée : 30 minutes.
 }
 
 
-\element{calculs}{
-  \begin{question}{cal3}
+\element{introcalculs}{
+  \begin{question}{ical3}
     Cochez la case où l'égalité est respectée~:
     \begin{reponsesd}
       \bonne   {\qty{1}{\A}=\qty{1000}{\mA}}
@@ -442,8 +442,8 @@ Durée : 30 minutes.
     \end{reponsesd}
   \end{question}
 }
-\element{calculs}{
-  \begin{question}{cal4}
+\element{introcalculs}{
+  \begin{question}{ical4}
     Cochez la case où l'égalité est respectée~:
     \begin{reponsesd}
       \bonne   {\qty{1}{\V}=\qty{1000}{\mV}}
@@ -454,8 +454,8 @@ Durée : 30 minutes.
   \end{question}
 }
 
-\element{calculs}{
-  \begin{questionmult}{cal5}
+\element{introcalculs}{
+  \begin{questionmult}{ical5}
     Cochez les case où l'égalité est respectée~:
     \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
@@ -466,27 +466,27 @@ Durée : 30 minutes.
 
 \element{calculs}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 0 --qref cal6"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 0 --qref cal1"}
 }
 
 \element{calculs}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 1 --qref cal7"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 1 --qref cal2"}
 }
 
 \element{calculs}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal8"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal3"}
 }
 
 \element{calculs}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal8"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal4"}
 }
 
 \element{calculs}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal8"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal5"}
 }
 
 \element{groupes}{
@@ -509,6 +509,9 @@ Durée : 30 minutes.
 %\begin{multicols}{2}
 \restituegroupe{mesures}
 %\end{multicols}
+
+\section{Notions d'intensité et de tension électrique}
+\restituegroupe{introcalculs}
 
 \section{Calculs d'intensités du courant électrique}
 \restituegroupe{calculs}
