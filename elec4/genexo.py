@@ -231,6 +231,67 @@ def print_circuit(qref,mode,level):
 
 
 
+def build_responseV(v,u,fake):
+    if (fake):
+        du=random.randint(-u+1,u)
+        if (du==0): du=1
+        u=du+u
+    s=v+'='+qty(str(u),'V')
+    if (fake):
+        return (lx1('mauvaise',s)+'\n')
+    else:
+        return(lx1('bonne',s)+'\n')
+
+def build_responsesV(n,v,u):
+    s=""
+    for i in range(n-1):
+        s+=build_responseV(v,u,True)
+    s+=build_responseV(v,u,False) # False means TRue reponse: FIXME
+    return s
+
+
+
+
+KcircuittemplateV0="""
+\\begin{question}{@QREF@}
+Sachant que la tension aux bornes du générateur est de @VG@ et que celle aux bornes de la lampe $L_0$ est de @VL0@, quel est la tension aux bornes de la lampe $L_1$~?
+
+\\begin{circuitikz}[european,scale = 1.2]
+      \\draw (0,0) to [ lamp=$L_0$, o-o] (4,0);
+      \\draw (0,3) -- (4,3);
+      \\draw (0,3) to [ rmeter, t=G,v=\\empty, american voltages ] (0,0);
+      \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+ \\end{circuitikz}
+\\begin{reponsesd}
+@RESPONSES@
+\\end{reponsesd}
+\\end{question}
+"""
+
+
+# Fast hack that ensure A is left untouch: FIXME: factorize
+def print_circuitV(qref,mode,level):
+    if (level ==0):
+        ct=KcircuittemplateV0
+        vg=random.randint(3,15)
+        vl0=random.randint(2,vg-2)
+
+        vl1=vg-vl0
+
+        responses=build_responsesV(4,'$V_{L_1}$',vl1)
+
+        vgs=qty(str(vg),'V')
+        vl0s=qty(str(vl0),'V')
+
+        ct=ct.replace("@VG@",vgs)
+        ct=ct.replace("@VL0@",vl0s)
+
+    ct=ct.replace("@QREF@",qref)
+    ct=ct.replace("@RESPONSES@",responses)
+
+    print (ct)
+
+
 def print_eq_tests():
     sout=""
     for fake in [True,True,True,False,False,False]:
@@ -302,8 +363,10 @@ def main():
 
     if (mode=='C'):
         print_eq_tests()
-    else:
+    elif (mode=='A'):
         print_circuit(qref,mode,level)
+    else:
+        print_circuitV(qref,mode,level)
 
 
 # --------------------------------------------------------------------------

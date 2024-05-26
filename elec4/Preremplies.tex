@@ -215,15 +215,15 @@ Durée : 30 minutes.
   \begin{question}{sdv1}
     Ce montage est-il en série ou en dérivation~?
 
-     \begin{circuitikz}[european]
-	 \draw (0,0)
-	 to [ american voltage source, invert, o-o] (0,3);
-	 \draw (0,0)
-	 to [ lamp, o-o]  (4,0);
-	 \draw (4,0)
-	 to [ lamp, o-o]  (4,3);
-	 \draw (4,3)
-	 to [ lamp, o-o]  (0,3);
+    \begin{circuitikz}[european]
+      \draw (0,0)
+      to [ american voltage source, invert, o-o] (0,3);
+      \draw (0,0)
+      to [ lamp, o-o]  (4,0);
+      \draw (4,0)
+      to [ lamp, o-o]  (4,3);
+      \draw (4,3)
+      to [ lamp, o-o]  (0,3);
 	\end{circuitikz}    
     
     \begin{reponses}
@@ -488,6 +488,13 @@ Durée : 30 minutes.
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal5"}
 }
+
+
+\element{calculs}{
+   \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode V --level 0 --qref calv1"}
+}
+
 
 \element{groupes}{
 \section{Sécurité}
