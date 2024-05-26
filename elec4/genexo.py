@@ -260,8 +260,26 @@ Sachant que la tension aux bornes du générateur est de @VG@ et que celle aux b
       \\draw (0,0) to [ lamp=$L_0$, o-o] (4,0);
       \\draw (0,3) -- (4,3);
       \\draw (0,3) to [ rmeter, t=G,v=\\empty, american voltages ] (0,0);
-      \draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
- \\end{circuitikz}
+      \\draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
+\\end{circuitikz}
+\\begin{reponsesd}
+@RESPONSES@
+\\end{reponsesd}
+\\end{question}
+"""
+
+KcircuittemplateV1="""
+\\begin{question}{@QREF@}
+Sachant que la tension aux bornes de la lampe $@LA@$ est de @VA@ et que la tension aux bornes de la lampe $@LB@$ est de @VB@, quelle est la tension aux bornes du générateur~?
+
+\\begin{circuitikz}[european,scale = 1.2]
+      \\draw (0,3) to [ rmeter, t=G,v=\\empty, american voltages ] (0,0);
+      \\draw (0,3) to [ lamp=$@LA@$, o-o]  (3,3);
+      \\draw (3,0) to [ lamp=$@LB@$, o-o]  (3,3);
+      \\draw (5,0) to [ lamp=$@LC@$, o-o]  (5,3);
+      \\draw (0,0) -- (5,0);
+      \\draw (3,3) -- (5,3);
+\\end{circuitikz}
 \\begin{reponsesd}
 @RESPONSES@
 \\end{reponsesd}
@@ -285,6 +303,24 @@ def print_circuitV(qref,mode,level):
 
         ct=ct.replace("@VG@",vgs)
         ct=ct.replace("@VL0@",vl0s)
+    elif (level ==1):
+        ct=KcircuittemplateV1
+        vla=vg=random.randint(1,15)
+        vlb=vg=random.randint(1,15)
+        vg=vla+vlb
+
+        llbls=["L_0","L_1","L_2"]
+        random.shuffle(llbls)
+
+        ct=ct.replace("@LA@",llbls[0])
+        ct=ct.replace("@VA@",qty(str(vla),'V'))
+
+        ct=ct.replace("@LB@",llbls[1])
+        ct=ct.replace("@VB@",qty(str(vlb),'V'))
+
+        ct=ct.replace("@LC@",llbls[2])
+
+        responses=build_responsesV(4,'$V_{L_1}$',vg)
 
     ct=ct.replace("@QREF@",qref)
     ct=ct.replace("@RESPONSES@",responses)

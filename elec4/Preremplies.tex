@@ -491,8 +491,23 @@ Durée : 30 minutes.
 
 
 \element{calculs}{
-   \FPeval\ySeed{trunc(random*1000,0) }
+  \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode V --level 0 --qref calv1"}
+}
+
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode V --level 1 --qref calv2"}
+}
+
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode V --level 0 --qref calv3"}
+}
+
+\element{calculs}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode V --level 1 --qref calv4"}
 }
 
 
