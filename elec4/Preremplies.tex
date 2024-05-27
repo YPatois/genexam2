@@ -6,6 +6,8 @@
 \usepackage{circuitikz}
 \usepackage{siunitx}
 \usepackage{fp}
+\usepackage{xfp}
+\usepackage{WriteOnGrid}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
 
@@ -23,7 +25,14 @@
   {}
   [\vspace{1mm}\hrule]
 
-%\begin{center}
+\titleformat{\subsection}
+  {\em}
+  {\thesubsection}
+  {1em}
+  {}
+
+
+  %\begin{center}
 %\hrule\vspace{2mm} {\small{ \bf Titre}\\}
 %\vspace{1mm}\hrule
 %\end{center}~
@@ -59,8 +68,9 @@
 \end{center}
 \vfill
 
-\begin{center}\em
-Durée : 30 minutes.
+\begin{center}
+\textbf{Durée : 30 minutes.}
+\vspace*{5mm}
 
   Aucun document n'est autorisé.
   L'usage de la calculatrice est interdit.
@@ -69,8 +79,8 @@ Durée : 30 minutes.
   présenter une ou plusieurs bonnes réponses. Les autres ont
   une unique bonne réponse.
 
-  Des points négatifs pourront être affectés à de \emph{très
-  mauvaises} réponses.
+  Des points négatifs seront affectés aux mauvaises réponses.
+  \vspace*{5mm}
 
   \textbf{IMPORTANT: Utilisez un crayon de papier pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.}
 
@@ -127,12 +137,12 @@ Durée : 30 minutes.
 
 \element{securite}{
   \begin{questionmult}{sec3}
-    Cochez les situation ou l'électrocution est un risque avéré~?
+    Cochez les situation ou l'électrocution est un risque avéré~:
     \begin{reponsesd}
       \bonne{Charger son téléphone pendant qu'on l'utilise dans son bain}
       \mauvaise{Allumer sa lampe de bureau}
       \bonne{Jeter de l'eau sur un appareil électrique branché sur le secteur}
-      \mauvaise{Consulter la messagerie sur ons ordinateur}
+      \mauvaise{Consulter la messagerie sur son ordinateur}
       \bonne{Démonter un appareil electrique branché sur le secteur}
       \bonne{Démonter un micro-onde débranché}
    \end{reponsesd}
@@ -146,12 +156,12 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=2cm]{lamp.png}
 
-    \begin{reponsesd}
+    \begin{reponses}
       \mauvaise{Un générateur de tension}
       \bonne{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \mauvaise{Un moteur électrique}
-    \end{reponsesd}
+    \end{reponses}
   \end{question}
 }
 
@@ -161,12 +171,12 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=2cm]{generator.png}
 
-    \begin{reponsesd}
+    \begin{reponses}
       \bonne{Un générateur de tension}
       \mauvaise{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \mauvaise{Un moteur électrique}
-    \end{reponsesd}
+    \end{reponses}
   \end{question}
 }
 
@@ -176,12 +186,12 @@ Durée : 30 minutes.
     \\
     \includegraphics[width=2cm]{motor.png}
 
-    \begin{reponsesd}
+    \begin{reponses}
       \mauvaise{Un générateur de tension}
       \mauvaise{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \bonne{Un moteur électrique}
-    \end{reponsesd}
+    \end{reponses}
   \end{question}
 }
 
@@ -189,12 +199,12 @@ Durée : 30 minutes.
   \begin{question}{sym4}
     Quel interrupteur est fermé~?
 
-    \begin{reponsesd}
+    \begin{reponses}
       \mauvaise{\includegraphics[width=2cm]{ouvert.png}}
       \bonne{\includegraphics[width=2cm]{ferme.png}}
       \mauvaise{\includegraphics[width=2cm]{lamp.png}}
       \mauvaise{\includegraphics[width=2cm]{generator.png}}
-    \end{reponsesd}
+    \end{reponses}
   \end{question}
 }
 
@@ -202,12 +212,12 @@ Durée : 30 minutes.
   \begin{question}{sym5}
     Un interrupteur~:
 
-    \begin{reponsesd}
+    \begin{reponses}
       \mauvaise{Laisse passer le courant lorsqu'il est ouvert}
       \bonne{Laisse passer le courant Lorsqu'il est fermé}
       \mauvaise{Laisse toujours passer le courant}
       \mauvaise{Ne laisse jamais passer le courant}
-    \end{reponsesd}
+    \end{reponses}
   \end{question}
 }
 
@@ -266,7 +276,6 @@ Durée : 30 minutes.
     \begin{reponsesd}
       \mauvaise{Un manomètre}
       \bonne{Un multimètre}
-      \mauvaise{Ça dépend}
       \mauvaise{Un électromètre}
       \mauvaise{Un Grand Maitre}
     \end{reponsesd}
@@ -299,12 +308,13 @@ Durée : 30 minutes.
 
 \element{mesures}{
   \begin{question}{mes4}
-    Lorsque l'on veut faire une mesure sur une tension ou intensité qu'on ne conait pas, sur quel calibre met-on l'appareil~?
+    Lorsque l'on veut faire une mesure sur une tension ou intensité que l'on ne connait pas, sur quel calibre met-on l'appareil~?
     \begin{reponsesd}
       \bonne{On commence par le calibre le plus élevé}
       \mauvaise{On commence par le calibre le plus petit}
       \mauvaise{Peu importe}
-    \end{reponsesd}
+      \mauvaise{On place la fiche sur le calibre \qty{10}{\A}}
+   \end{reponsesd}
   \end{question}
 }
 
@@ -315,7 +325,7 @@ Durée : 30 minutes.
     \includegraphics[width=4cm]{multimetreover.jpg}
     \begin{reponsesd}
       \bonne{La valeur est trop élevée, il faut passer au calibre supérieur}
-      \mauvaise{La valeur est trop basse, il faut passer au calibre inférieur}
+      \mauvaise{\clubpenalties 1 10000 La valeur est trop basse, il faut passer au calibre inférieur}
       \mauvaise{La valeur mesurée est de 1V exactement}
       \mauvaise{L'appareil n'est pas branché}
     \end{reponsesd}
@@ -518,9 +528,9 @@ Durée : 30 minutes.
 %\end{multicols}
 
 \section{La représentation des circuits électriques}
-%\begin{multicols}{2}
+\begin{multicols}{2}
 \restituegroupe{symboles}
-%\end{multicols}
+\end{multicols}
 
 \section{Types de circuits électriques}
 \begin{multicols}{2}
@@ -536,12 +546,65 @@ Durée : 30 minutes.
 \restituegroupe{introcalculs}
 
 \section{Calculs d'intensités du courant électrique}
+\begin{multicols}{2}
 \restituegroupe{calculs}
+\end{multicols}
+
+\section{Petit problème}
+
+\emph{Ce problème est plus difficile et raporte moins de points, ne le faire que lorsque le reste est terminé, c'est un bonus!}
+
+Soit le circuit suivant. Toutes les lampes du circuit sont identiques. L’ampèremètre affiche $I=\qty{0,90}{\A}$ et le générateur a une tension de $U=\qty{9} {\V}$.
+
+ \begin{circuitikz}[european,scale = 0.7]
+          \draw ( 0,0) to [ lamp=$L_5$, o-o ] (0,4);
+          \draw ( 3,0) to [ lamp=$L_6$, o-o ] (3,4);
+          \draw ( 3,0) to [ lamp=$L_4$, o-o ] (9,0);
+          \draw ( 3,4) to [ rmeter, t=A ]  (6,4);
+          \draw ( 6,4) to [ rmeter, t=G,v=$\qty{9}{\V}$, american voltages ] (9,4);
+          \draw ( 9,0) to [ lamp=$L_1$, o-o ] ( 9,4);
+          \draw (12,0) to [ lamp=$L_2$, o-o ] (12,4);
+          \draw (15,0) to [ lamp=$L_3$, o-o ] (15,4);
+          \draw (0,0) -- ( 3,0);
+          \draw (0,4) -- ( 3,4);
+          \draw (9,0) -- (15,0);
+          \draw (9,4) -- (15,4);
+       \end{circuitikz}
+\subsection{Redessine le schéma électrique pour qu’il soit plus compréhensible}
+
+\begin{EnvQuadrillage}[NbCarreaux=30x12,Grille=5x5]
+\end{EnvQuadrillage}
+
+\subsection{Quelle est l’intensité qui traverse chacune des lampes~? (Justifiez)}
+
+\begin{EnvQuadrillage}[NbCarreaux=21x10,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+\subsection{Quelle est la tension aux bornes de chacune des lampes~? (Justifiez)}
+
+\begin{EnvQuadrillage}[NbCarreaux=21x10,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+\subsection{Quelles lampes ont le même éclairement~?}
+
+\begin{EnvQuadrillage}[NbCarreaux=21x2,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+\subsection{Quelle lampe brille le plus~?}
+
+\begin{EnvQuadrillage}[NbCarreaux=21x2,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+
+\subsection{Indiquez sur le schéma que vous avez redessiné, par des flèches, le sens du courant dans chaque lampe.}
+
 
 }
 
 
 \csvreader[head to column names]{liste.csv}{}{\sujet}
 
+
 \end{document}
+
 

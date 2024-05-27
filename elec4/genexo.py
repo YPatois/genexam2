@@ -192,7 +192,7 @@ def build_responses(n,v,mi):
 
 Kcircuittemplate="""
 \\begin{question}{@QREF@}
-Sur le circuit présenté ici, quell est la valeur de @IL@~?
+Sur le circuit présenté ici, quelle est la valeur de @IL@~?
 
 \\begin{circuitikz}[european,scale = 1.2]
  \\draw (0,0) -- (4,0);
@@ -254,7 +254,7 @@ def build_responsesV(n,v,u):
 
 KcircuittemplateV0="""
 \\begin{question}{@QREF@}
-Sachant que la tension aux bornes du générateur est de @VG@ et que celle aux bornes de la lampe $L_0$ est de @VL0@, quel est la tension aux bornes de la lampe $L_1$~?
+Sachant que la tension aux bornes du générateur est de @VG@ et que celle aux bornes de la lampe $L_0$ est de @VL0@, quelle est la tension aux bornes de la lampe $L_1$~?
 
 \\begin{circuitikz}[european,scale = 1.2]
       \\draw (0,0) to [ lamp=$L_0$, o-o] (4,0);
@@ -337,9 +337,12 @@ def print_eq_tests():
         i1=mi1/1000
         #fake=bool(random.getrandbits(1))
         if (fake):
-            mi2=10*random.randint(-mi1/10+1,2*mi1/10)
-            if (mi2==0): mi2=10
-            mi1=mi1+mi2
+            mult=random.randint(1,3)
+            sign=random.choice([-1,1])
+            if sign>0:
+                mi1=mi1*pow(10,mult)
+            else:
+                mi1=mi1/pow(10,mult)
         s1=qty(str(mi1),'m'+u)
         s2=qty(str(i1),u)
 
