@@ -358,6 +358,48 @@ def print_eq_tests():
 
     print(sout)
 
+def print_securite(lb,lm):
+    random.shuffle(lb)
+    random.shuffle(lm)
+    s=""
+    for b in lb[:2]:
+        bi="\clubpenalties 1 10000 "+b
+        s+=lx1('bonne',bi)+'\n'
+    for m in lm[:2]:
+        mi="\clubpenalties 1 10000 "+m
+        s+=lx1('mauvaise',mi)+'\n'
+
+    print(s)
+
+ksec1b=[
+    "Les prises du secteur",
+    "Les fils haute-tension sur les poteaux électriques, ou tombés au sol",
+    "Les éclairs de foudre",
+    ]
+
+ksec1m=[
+    "Les piles-boutons",
+    "L'électricité statique sur un pull en laine",
+    "L'ambiance électrique d'un concert de rock"]
+
+
+def print_securite1():
+    print_securite(ksec1b,ksec1m)
+
+ksec2b=[
+    "Charger son téléphone pendant qu'on l'utilise dans son bainL",
+    "Jeter de l'eau sur un appareil électrique branché sur le secteur",
+    "Démonter un appareil electrique branché sur le secteur",
+    ]
+
+ksec2m=[
+    "Consulter la messagerie sur son ordinateur",
+    "Allumer sa lampe de bureau",
+    "L'ambiance électrique d'un concert de rap"]
+
+def print_securite2():
+    print_securite(ksec2b,ksec2m)
+
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
         for l in [0,1,2,3]:
@@ -404,8 +446,13 @@ def main():
         print_eq_tests()
     elif (mode=='A'):
         print_circuit(qref,mode,level)
-    else:
+    elif (mode=='V'):
         print_circuitV(qref,mode,level)
+    elif (mode=='S1'):
+        print_securite1()
+    elif (mode=='S2'):
+        print_securite2()
+
 
 
 # --------------------------------------------------------------------------

@@ -13,6 +13,9 @@
 
 \FPseed=10
 
+\baremeDefautS{e=0,v=0,b=1,m=-1}
+\baremeDefautM{e=0,v=0,b=.5,m=-.5}
+
 \graphicspath{ {./images/} }
 
 \setlength{\columnseprule}{1pt}
@@ -125,12 +128,9 @@
 \element{securite}{
   \begin{questionmult}{sec2}
     Quelles sources de courants sont dangereuses pour les humains~?
+    \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \bonne{Les prises du secteur}
-      \mauvaise{Les piles-boutons}
-      \bonne{Les fils haute-tension sur les poteaux électriques}
-      \bonne{Les éclairs}
-      \mauvaise{L'électricité statique sur un pull en laine}
+      \input{"|./genexo.py --seed \ySeed~ --mode S1 --level 0 --qref toto"}
     \end{reponsesd}
   \end{questionmult}
 }
@@ -138,13 +138,10 @@
 \element{securite}{
   \begin{questionmult}{sec3}
     Cochez les situation ou l'électrocution est un risque avéré~:
+    \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \bonne{Charger son téléphone pendant qu'on l'utilise dans son bain}
-      \mauvaise{Allumer sa lampe de bureau}
-      \bonne{Jeter de l'eau sur un appareil électrique branché sur le secteur}
-      \mauvaise{Consulter la messagerie sur son ordinateur}
-      \bonne{Démonter un appareil electrique branché sur le secteur}
-      \bonne{Démonter un micro-onde débranché}
+      \input{"|./genexo.py --seed \ySeed~ --mode S2 --level 0 --qref toto"}
+      \bonne{Démonter un micro-onde débranché}\bareme{m=0}
    \end{reponsesd}
   \end{questionmult}
 }
@@ -191,6 +188,36 @@
       \mauvaise{Une ampoule électrique à filament}
       \mauvaise{Une DEL (Diode Électroluminescente)}
       \bonne{Un moteur électrique}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym6}
+    Que représente le symbole dessiné ici~?
+    \\
+    \includegraphics[width=2cm]{amperemetre.png}
+
+    \begin{reponses}
+      \mauvaise{Un générateur de tension}
+      \mauvaise{Une ampoule électrique à filament}
+      \mauvaise{Un voltmètre}
+      \bonne{Un ampèremètree}
+    \end{reponses}
+  \end{question}
+}
+
+\element{symboles}{
+  \begin{question}{sym7}
+    Que représente le symbole dessiné ici~?
+    \\
+    \includegraphics[width=2cm]{voltmetre.png}
+
+    \begin{reponses}
+      \mauvaise{Un générateur de tension}
+      \mauvaise{Une ampoule électrique à filament}
+      \bonne{Un voltmètre}
+      \mauvaise{Un ampèremètree}
     \end{reponses}
   \end{question}
 }
@@ -282,7 +309,7 @@
   \end{question}
 }
 
-\element{mesures}{
+\element{mesures2}{
   \begin{question}{mes2}
     Sur quelle zone faut-il régler l'appareil pour mesurer l'intensité d'un courant électrique~?
     \begin{reponsesd}
@@ -294,7 +321,7 @@
   \end{question}
 }
 
-\element{mesures}{
+\element{mesures2}{
   \begin{question}{mes3}
     Sur quelle zone faut-il régler l'appareil pour mesurer la tension électrique entre deux points~?
     \begin{reponsesd}
@@ -332,7 +359,7 @@
   \end{question}
 }
 
-\element{mesures}{
+\element{mesures3}{
   \begin{questionmult}{mes6}
     Vous souhaitez mesurer le courant qui passe dans l'élément $L_1$, comment branchez vous l'ampèremètre~?
     \begin{reponsesd}
@@ -374,7 +401,7 @@
   \end{questionmult}
 }
 
-\element{mesures}{
+\element{mesures3}{
   \begin{questionmult}{mes7}
     Vous souhaitez mesurer la tension aux bornes de l'élément $L_1$, comment branchez vous le voltmètre~?
     \begin{reponsesd}
@@ -416,7 +443,7 @@
   \end{questionmult}
 }
 
-\element{introcalculs}{
+\element{introcalculs1}{
   \begin{questionmult}{ical1}
     Dans un circuit électrique monté en série, on peut appliquer ~:
     \begin{reponsesd}
@@ -428,7 +455,7 @@
   \end{questionmult}
 }
 
-\element{introcalculs}{
+\element{introcalculs1}{
   \begin{questionmult}{ical2}
     Dans un circuit électrique monté en dérivation, on peut appliquer~:
     \begin{reponsesd}
@@ -441,7 +468,7 @@
 }
 
 
-\element{introcalculs}{
+\element{introcalculs2}{
   \begin{question}{ical3}
     Cochez la case où l'égalité est respectée~:
     \begin{reponsesd}
@@ -452,7 +479,7 @@
     \end{reponsesd}
   \end{question}
 }
-\element{introcalculs}{
+\element{introcalculs2}{
   \begin{question}{ical4}
     Cochez la case où l'égalité est respectée~:
     \begin{reponsesd}
@@ -474,48 +501,48 @@
   \end{questionmult}
 }
 
-\element{calculs}{
+\element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode A --level 0 --qref cal1"}
 }
 
-\element{calculs}{
+\element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode A --level 1 --qref cal2"}
 }
 
-\element{calculs}{
+\element{calculs2}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal3"}
 }
 
-\element{calculs}{
+\element{calculs3}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal4"}
 }
 
-\element{calculs}{
+\element{calculs3}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal5"}
 }
 
 
-\element{calculs}{
+\element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode V --level 0 --qref calv1"}
 }
 
-\element{calculs}{
+\element{calculs2}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode V --level 1 --qref calv2"}
 }
 
-\element{calculs}{
+\element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode V --level 0 --qref calv3"}
 }
 
-\element{calculs}{
+\element{calculs2}{
   \FPeval\ySeed{trunc(random*1000,0) }
   \input{"|./genexo.py --seed \ySeed~ --mode V --level 1 --qref calv4"}
 }
@@ -524,12 +551,12 @@
 \element{groupes}{
 \section{Sécurité}
 %\begin{multicols}{2}
-\restituegroupe{securite}
+\restituegroupe[2]{securite}
 %\end{multicols}
 
 \section{La représentation des circuits électriques}
 \begin{multicols}{2}
-\restituegroupe{symboles}
+\restituegroupe[4]{symboles}
 \end{multicols}
 
 \section{Types de circuits électriques}
@@ -540,14 +567,20 @@
 \section{Mesures de courants et de tensions dans les circuits électriques}
 %\begin{multicols}{2}
 \restituegroupe{mesures}
+\restituegroupe[1]{mesures2}
+\restituegroupe[1]{mesures3}
 %\end{multicols}
 
 \section{Notions d'intensité et de tension électrique}
+\restituegroupe[1]{introcalculs1}
+\restituegroupe[1]{introcalculs2}
 \restituegroupe{introcalculs}
 
 \section{Calculs d'intensités du courant électrique}
 \begin{multicols}{2}
-\restituegroupe{calculs}
+\restituegroupe[2]{calculs1}
+\restituegroupe[2]{calculs2}
+\restituegroupe[2]{calculs3}
 \end{multicols}
 
 \section{Petit problème}
@@ -577,12 +610,12 @@ Soit le circuit suivant. Toutes les lampes du circuit sont identiques. L’ampè
 
 \subsection{Quelle est l’intensité qui traverse chacune des lampes~? (Justifiez)}
 
-\begin{EnvQuadrillage}[NbCarreaux=21x10,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=21x8,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
 
 \subsection{Quelle est la tension aux bornes de chacune des lampes~? (Justifiez)}
 
-\begin{EnvQuadrillage}[NbCarreaux=21x10,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=21x8,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
 
 \subsection{Quelles lampes ont le même éclairement~?}
