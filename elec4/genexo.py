@@ -194,7 +194,7 @@ Kcircuittemplate="""
 \\begin{question}{@QREF@}
 Sur le circuit présenté ici, quelle est la valeur de @IL@~?
 
-\\begin{circuitikz}[european,scale = 1.2]
+\\begin{circuitikz}[european,scale = 1.1]
  \\draw (0,0) -- (4,0);
  \\draw (0,3) -- (4,3);
 
@@ -254,10 +254,10 @@ def build_responsesV(n,v,u):
 
 KcircuittemplateV0="""
 \\begin{question}{@QREF@}
-Sachant que la tension aux bornes du générateur est de @VG@ et que celle aux bornes de la lampe $L_0$ est de @VL0@, quelle est la tension aux bornes de la lampe $L_1$~?
+{\\small On mesure @VG@ aux bornes du générateur et @VL0@ aux bornes de la lampe $L_0$. Quelle est la tension aux bornes de la lampe $L_1$~?}
 
-\\begin{circuitikz}[european,scale = 1.2]
-      \\draw (0,0) to [ lamp=$L_0$, o-o] (4,0);
+\\begin{circuitikz}[european,scale = 1.0]
+\\draw (0,0) to [ lamp=$L_0$, o-o] (4,0);
       \\draw (0,3) -- (4,3);
       \\draw (0,3) to [ rmeter, t=G,v=\\empty, american voltages ] (0,0);
       \\draw (4,0) to [ lamp=$L_1$, o-o]  (4,3);
@@ -270,10 +270,10 @@ Sachant que la tension aux bornes du générateur est de @VG@ et que celle aux b
 
 KcircuittemplateV1="""
 \\begin{question}{@QREF@}
-Sachant que la tension aux bornes de la lampe $@LA@$ est de @VA@ et que la tension aux bornes de la lampe $@LB@$ est de @VB@, quelle est la tension aux bornes du générateur~?
+{\\small On mesure @VA@ aux bornes de la lampe $@LA@$ et @VB@ aux bornes de la lampe $@LB@$. Quelle est la tension aux bornes du générateur~?}
 
-\\begin{circuitikz}[european,scale = 1.2]
-      \\draw (0,3) to [ rmeter, t=G,v=\\empty, american voltages ] (0,0);
+\\begin{circuitikz}[european,scale = 1.0]
+\\draw (0,3) to [ rmeter, t=G,v=\\empty, american voltages ] (0,0);
       \\draw (0,3) to [ lamp=$@LA@$, o-o]  (3,3);
       \\draw (3,0) to [ lamp=$@LB@$, o-o]  (3,3);
       \\draw (5,0) to [ lamp=$@LC@$, o-o]  (5,3);

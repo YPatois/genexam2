@@ -3,6 +3,7 @@
 \usepackage[nobottomtitles]{titlesec}
 \usepackage{multicol}
 \usepackage{xcolor}
+\usepackage{tikz}
 \usepackage{circuitikz}
 \usepackage{siunitx}
 \usepackage{fp}
@@ -250,8 +251,8 @@
 
 \element{seriederiv}{
   \begin{question}{sdv1}
+  \needspace{6cm}
     Ce montage est-il en série ou en dérivation~?
-
     \begin{circuitikz}[european]
       \draw (0,0)
       to [ american voltage source, invert, o-o] (0,3);
@@ -262,7 +263,6 @@
       \draw (4,3)
       to [ lamp, o-o]  (0,3);
 	\end{circuitikz}    
-    
     \begin{reponses}
       \bonne{Le montage est branché en série}
       \mauvaise{Le montage est branché en dérivation}
@@ -272,7 +272,7 @@
 
 \element{seriederiv}{
   \begin{question}{sdv2}
-  \needspace{4cm}
+  \needspace{6cm}
     Ce montage est-il en série ou en dérivation~?
 
 	\begin{circuitikz}[european]
@@ -298,8 +298,8 @@
   \begin{question}{mes1}
     Comment appelle t'on cet appareil~?
     \\
-    \includegraphics[width=3cm]{multimetre.jpg}
-
+    \includegraphics[angle=90,origin=c,height=3cm]{multimetre.jpg}
+    \vspace*{-1cm}
     \begin{reponsesd}
       \mauvaise{Un manomètre}
       \bonne{Un multimètre}
@@ -313,10 +313,10 @@
   \begin{question}{mes2}
     Sur quelle zone faut-il régler l'appareil pour mesurer l'intensité d'un courant électrique~?
     \begin{reponsesd}
-      \mauvaise{\includegraphics[width=2cm]{multimetreV.jpg}}
-      \bonne{\includegraphics[width=2cm]{multimetreA.jpg}}
-      \mauvaise{\includegraphics[width=2cm]{multimetreO.jpg}}
-      \mauvaise{\includegraphics[width=2cm]{multimetreZ.jpg}}
+      \mauvaise{\includegraphics[height=2cm]{multimetreV.jpg}}
+      \bonne{\includegraphics[height=2cm]{multimetreA.jpg}}
+      \mauvaise{\includegraphics[height=2cm]{multimetreO.jpg}}
+      \mauvaise{\includegraphics[height=2cm]{multimetreZ.jpg}}
     \end{reponsesd}
   \end{question}
 }
@@ -325,10 +325,10 @@
   \begin{question}{mes3}
     Sur quelle zone faut-il régler l'appareil pour mesurer la tension électrique entre deux points~?
     \begin{reponsesd}
-      \mauvaise{\includegraphics[width=2cm]{multimetreA.jpg}}
-      \bonne{\includegraphics[width=2cm]{multimetreV.jpg}}
-      \mauvaise{\includegraphics[width=2cm]{multimetreO.jpg}}
-      \mauvaise{\includegraphics[width=2cm]{multimetreZ.jpg}}
+      \mauvaise{\includegraphics[height=2cm]{multimetreA.jpg}}
+      \bonne{\includegraphics[height=2cm]{multimetreV.jpg}}
+      \mauvaise{\includegraphics[height=2cm]{multimetreO.jpg}}
+      \mauvaise{\includegraphics[height=2cm]{multimetreZ.jpg}}
     \end{reponsesd}
   \end{question}
 }
@@ -559,10 +559,7 @@
 \restituegroupe[4]{symboles}
 \end{multicols}
 
-\section{Types de circuits électriques}
-\begin{multicols}{2}
-\restituegroupe{seriederiv}
-\end{multicols}
+\newpage
 
 \section{Mesures de courants et de tensions dans les circuits électriques}
 %\begin{multicols}{2}
@@ -570,6 +567,13 @@
 \restituegroupe[1]{mesures2}
 \restituegroupe[1]{mesures3}
 %\end{multicols}
+
+\newpage
+
+\section{Types de circuits électriques}
+\begin{multicols}{2}
+\restituegroupe{seriederiv}
+\end{multicols}
 
 \section{Notions d'intensité et de tension électrique}
 \restituegroupe[1]{introcalculs1}
@@ -582,6 +586,8 @@
 \restituegroupe[2]{calculs2}
 \restituegroupe[2]{calculs3}
 \end{multicols}
+
+\newpage
 
 \section{Petit problème}
 
@@ -615,7 +621,7 @@ Soit le circuit suivant. Toutes les lampes du circuit sont identiques. L’ampè
 
 \subsection{Quelle est la tension aux bornes de chacune des lampes~? (Justifiez)}
 
-\begin{EnvQuadrillage}[NbCarreaux=21x8,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=21x7,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
 
 \subsection{Quelles lampes ont le même éclairement~?}
@@ -631,7 +637,8 @@ Soit le circuit suivant. Toutes les lampes du circuit sont identiques. L’ampè
 
 \subsection{Indiquez sur le schéma que vous avez redessiné, par des flèches, le sens du courant dans chaque lampe.}
 
-
+%\newpage
+%\noindent\rule{8cm}{0.4pt}
 }
 
 
