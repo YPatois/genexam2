@@ -15,7 +15,7 @@
 \FPseed=10
 
 \baremeDefautS{e=0,v=0,b=1,m=-1}
-\baremeDefautM{e=0,v=0,b=.5,m=-.5}
+\baremeDefautM{e=0,v=0,b=.25,m=-.25}
 
 \graphicspath{ {./images/} }
 
@@ -342,6 +342,7 @@
       \mauvaise{Peu importe}
       \mauvaise{On place la fiche sur le calibre \qty{10}{\A}}
    \end{reponsesd}
+   \explain{On commence toujours par le calibre le plus grand pour éviter d'endomager l'appareil de mesure. Toutefois, le calibre 10A n'étant pas protégé par un fusible, nous ne l'utilisons pas.}
   \end{question}
 }
 
@@ -356,6 +357,7 @@
       \mauvaise{La valeur mesurée est de 1V exactement}
       \mauvaise{L'appareil n'est pas branché}
     \end{reponsesd}
+    \explain{Le multimètre indique ici que la valeur est trop élevée pour être affichée. Il faut donc passer sur un calibre plus élevé àfin de faire la mesure.}
   \end{question}
 }
 
@@ -398,6 +400,7 @@
         \end{circuitikz}
       }
     \end{reponsesd}
+    \explain{Un ampèremètre se place toujours en série sur le circuit, il mesure l'intensité qui le traverse. Branché en dérivation, il provoque un cours-circuit.}
   \end{questionmult}
 }
 
@@ -440,6 +443,7 @@
         \end{circuitikz}
       }
     \end{reponsesd}
+    \explain{Un voltmètre se place toujours en dérivation sur le dipole à mesurer, car il prend la différence de potentiel entre ses bornes. Placé en série, il se comporte comme un interrupteur oiuvert et bloque le courant.}
   \end{questionmult}
 }
 
