@@ -22,6 +22,10 @@
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{lightgray}}%
 
+\let\oexplain\explain
+\renewcommand{\explain}[1]{\oexplain{\textcolor{red}{#1}}}
+
+
 \titleformat{\section}
   {\centering\hrule\vspace{2mm}}
   {\thesection}
@@ -131,7 +135,7 @@
     Quelles sources de courants sont dangereuses pour les humains~?
     \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \input{"|./genexo.py --seed \ySeed~ --mode S1 --level 0 --qref toto"}
+      \input{"|./genexo.py --seed \ySeed~ --mode S1 --level 0 --qref toto --all"}
     \end{reponsesd}
   \end{questionmult}
 }
@@ -141,9 +145,10 @@
     Cochez les situation ou l'électrocution est un risque avéré~:
     \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \input{"|./genexo.py --seed \ySeed~ --mode S2 --level 0 --qref toto"}
+      \input{"|./genexo.py --seed \ySeed~ --mode S2 --level 0 --qref toto --all"}
       \bonne{Démonter un micro-onde débranché}\bareme{m=0}
    \end{reponsesd}
+   \explain{Certains appareils électriques, comme les micro-ondes commportent des condensateurs haute-tension qui peuvent rester chragés après débranchement de l'appareil.}
   \end{questionmult}
 }
 
@@ -233,6 +238,7 @@
       \mauvaise{\includegraphics[width=2cm]{lamp.png}}
       \mauvaise{\includegraphics[width=2cm]{generator.png}}
     \end{reponses}
+    \explain{Un interrupteur fermé laisse passer le courant: c'est donc celui qui connecte ses deux bornes.}
   \end{question}
 }
 
@@ -306,6 +312,7 @@
       \mauvaise{Un électromètre}
       \mauvaise{Un Grand Maitre}
     \end{reponsesd}
+    \explain{Il est appelé multimètre parce qu'il comporte plusieurs (multi fonctions) ampèremètre, voltmètre, ohmmètre, etc.}
   \end{question}
 }
 
@@ -342,7 +349,7 @@
       \mauvaise{Peu importe}
       \mauvaise{On place la fiche sur le calibre \qty{10}{\A}}
    \end{reponsesd}
-   \explain{On commence toujours par le calibre le plus grand pour éviter d'endomager l'appareil de mesure. Toutefois, le calibre 10A n'étant pas protégé par un fusible, nous ne l'utilisons pas.}
+   \explain{On commence toujours par le calibre le plus grand pour éviter d'endomager l'appareil de mesure. Toutefois, le calibre \qty{10}{\A} n'étant pas protégé par un fusible, nous ne l'utilisons pas.}
   \end{question}
 }
 
@@ -481,6 +488,7 @@
       \mauvaise{\qty{1}{\A}=\qty{10}{\mA}}
       \mauvaise{\qty{1}{\A}=\qty{1}{\mA}}
     \end{reponsesd}
+   \explain{En unité SI, le préfixe 'm' signifie 'mili' et veut dire $1/1000$ ou $0.001$, aussi $\qty{1}{\A}=\qty{1000}{\mA}$ }
   \end{question}
 }
 \element{introcalculs2}{
@@ -492,6 +500,7 @@
       \mauvaise{\qty{1}{\V}=\qty{10}{\mV}}
       \mauvaise{\qty{1}{\V}=\qty{1}{\mV}}
     \end{reponsesd}
+    \explain{En unité SI, le préfixe 'm' signifie 'mili' et veut dire $1/1000$ ou $0.001$, aussi $\qty{1}{\V}=\qty{1000}{\mV}$ }
   \end{question}
 }
 
@@ -499,9 +508,7 @@
   \begin{questionmult}{ical5}
     Cochez les case où l'égalité est respectée~:
     \FPeval\ySeed{trunc(random*1000,0) }
-    \begin{reponsesd}
-      \input{"|./genexo.py --seed \ySeed~ --mode C --level 0 --qref toto"}
-    \end{reponsesd}
+    \input{"|./genexo.py --seed \ySeed~ --mode C --level 0 --qref toto"}
   \end{questionmult}
 }
 
@@ -555,12 +562,12 @@
 \element{groupes}{
 \section{Sécurité}
 %\begin{multicols}{2}
-\restituegroupe[2]{securite}
+\restituegroupe{securite}
 %\end{multicols}
 
 \section{La représentation des circuits électriques}
 \begin{multicols}{2}
-\restituegroupe[4]{symboles}
+\restituegroupe{symboles}
 \end{multicols}
 
 \newpage
@@ -568,8 +575,8 @@
 \section{Mesures de courants et de tensions dans les circuits électriques}
 %\begin{multicols}{2}
 \restituegroupe{mesures}
-\restituegroupe[1]{mesures2}
-\restituegroupe[1]{mesures3}
+\restituegroupe{mesures2}
+\restituegroupe{mesures3}
 %\end{multicols}
 
 \newpage
@@ -580,15 +587,15 @@
 \end{multicols}
 
 \section{Notions d'intensité et de tension électrique}
-\restituegroupe[1]{introcalculs1}
-\restituegroupe[1]{introcalculs2}
-\restituegroupe{introcalculs}
+\restituegroupe{introcalculs1}
+\restituegroupe{introcalculs2}
+%\restituegroupe{introcalculs}
 
 \section{Calculs d'intensités du courant électrique}
 \begin{multicols}{2}
-\restituegroupe[2]{calculs1}
-\restituegroupe[2]{calculs2}
-\restituegroupe[2]{calculs3}
+\restituegroupe{calculs1}
+\restituegroupe{calculs2}
+\restituegroupe{calculs3}
 \end{multicols}
 
 \newpage

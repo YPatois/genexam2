@@ -144,7 +144,18 @@ class Circuit:
                 s=c.I
                 #s=str(c.I)
                 il=c.i_label
-        return (sl[0],sl[1],sl[2],il,s)
+        explain=""
+        for c in self.components:
+            if (type(c)==Generator):
+                explain=c.i_label+'='+explain
+            else:
+                if (len(explain) and not (explain[-1] == '=')):
+                    explain=explain+'+'+c.i_label
+                else:
+                    explain=explain+c.i_label
+
+        explain="Le courant en sortie du générateur est égal à celui circulant dans les branches, donc: $"+explain+'$'
+        return (sl[0],sl[1],sl[2],il,s,explain)
 
     def sum_I(self):
         s=0
@@ -186,7 +197,7 @@ def build_responses(n,v,mi):
     s=""
     for i in range(n-1):
         s+=build_response(v,mi,True)
-    s+=build_response(v,mi,False) # False means TRue reponse: FIXME
+    s+=build_response(v,mi,False) # False means True reponse: FIXME
     return s
 
 
@@ -208,12 +219,13 @@ Sur le circuit présenté ici, quelle est la valeur de @IL@~?
 \\begin{reponsesd}
 @RESPONSES@
 \\end{reponsesd}
+\\explain{@EXPLAIN@}
 \\end{question}
 """
 
 def print_circuit(qref,mode,level):
     cz=Circuit(mode,level)
-    (a,b,c,il,sl)=cz.circuitikz()
+    (a,b,c,il,sl,explain)=cz.circuitikz()
     if (sl<0): sl=-sl
     il='$'+str(il)+'$'
 
@@ -226,6 +238,7 @@ def print_circuit(qref,mode,level):
     ct=ct.replace("@C@",c)
     ct=ct.replace("@IL@",il)
     ct=ct.replace("@RESPONSES@",responses)
+    ct=ct.replace("@EXPLAIN@",explain)
 
     print (ct)
 
@@ -291,7 +304,7 @@ KcircuittemplateV1="""
 def print_circuitV(qref,mode,level):
     if (level ==0):
         ct=KcircuittemplateV0
-        vg=random.randint(3,15)
+        vg=random.randint(4,15)
         vl0=random.randint(2,vg-2)
 
         vl1=vg-vl0
@@ -329,7 +342,8 @@ def print_circuitV(qref,mode,level):
 
 
 def print_eq_tests():
-    sout=""
+    sout="\\begin{reponsesd}"
+    explain=""
     for fake in [True,True,True,False,False,False]:
         u=random.choice(['A','V'])
 
@@ -347,25 +361,30 @@ def print_eq_tests():
         s2=qty(str(i1),u)
 
         if (bool(random.getrandbits(1))):
-             s=s1+'='+s2
+            s=s1+'='+s2
         else:
             s=s2+'='+s1
 
         if (fake):
             sout+=lx1('mauvaise',s)+'\n'
+            explain+='$'+qty(str(i1),u)+'='+qty(str(i1*1000),'m'+u)+lx('neq')+qty(str(mi1),'m'+u)+'$'+lx('\\')+'\n'
         else:
             sout+=lx1('bonne',s)+'\n'
-
+            explain+='$'+qty(str(i1),u)+'='+qty(str(i1*1000),'m'+u)+'='+qty(str(mi1),'m'+u)+'$'+lx('\\')+'\n'
+    sout+="\\end{reponsesd}\n"
+    sout+=lx1('explain',explain)
     print(sout)
 
-def print_securite(lb,lm):
+def print_securite(allq,lb,lm):
+    nq=2
+    if (allq): nq=6 # FIXME
     random.shuffle(lb)
     random.shuffle(lm)
     s=""
-    for b in lb[:2]:
+    for b in lb[:nq]:
         bi="\clubpenalties 1 10000 "+b
         s+=lx1('bonne',bi)+'\n'
-    for m in lm[:2]:
+    for m in lm[:nq]:
         mi="\clubpenalties 1 10000 "+m
         s+=lx1('mauvaise',mi)+'\n'
 
@@ -383,8 +402,8 @@ ksec1m=[
     "L'ambiance électrique d'un concert de rock"]
 
 
-def print_securite1():
-    print_securite(ksec1b,ksec1m)
+def print_securite1(allq):
+    print_securite(allq,ksec1b,ksec1m)
 
 ksec2b=[
     "Charger son téléphone pendant qu'on l'utilise dans son bainL",
@@ -397,8 +416,8 @@ ksec2m=[
     "Allumer sa lampe de bureau",
     "L'ambiance électrique d'un concert de rap"]
 
-def print_securite2():
-    print_securite(ksec2b,ksec2m)
+def print_securite2(allq):
+    print_securite(allq,ksec2b,ksec2m)
 
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
@@ -432,14 +451,16 @@ def main():
     #return
     parser = argparse.ArgumentParser(description='Generates circuits questions')
     parser.add_argument('--seed' , help='Random seed')
-    parser.add_argument('--mode',  help='C: A/V egality test. A/V: either current (A) or voltage (V) circuit')
+    parser.add_argument('--mode' , help='C: A/V egality test. A/V: either current (A) or voltage (V) circuit')
     parser.add_argument('--level', help='Exercice difficulty')
-    parser.add_argument('--qref',  help='Question refernce')
+    parser.add_argument('--qref' , help='Question reference')
+    parser.add_argument('--all'  , help='Print all questions', action="store_true")
     args = parser.parse_args()
     seed=int(args.seed.replace('~','')) # Fix some LaTeX oddity I have no time to check
     mode=args.mode
     qref=args.qref
     level=int(args.level)
+    allq=args.all
     random.seed(seed)
 
     if (mode=='C'):
@@ -449,9 +470,9 @@ def main():
     elif (mode=='V'):
         print_circuitV(qref,mode,level)
     elif (mode=='S1'):
-        print_securite1()
+        print_securite1(allq)
     elif (mode=='S2'):
-        print_securite2()
+        print_securite2(allq)
 
 
 
