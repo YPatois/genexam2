@@ -438,29 +438,43 @@
 
 \element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 0 --qref cal1"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 0 --qref cal11"}
 }
 
 \element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 1 --qref cal2"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 1 --qref cal12"}
 }
 
 \element{calculs2}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal3"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal21"}
+}
+
+\element{calculs2}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 2 --qref cal22"}
 }
 
 \element{calculs3}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal4"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal31"}
 }
 
 \element{calculs3}{
   \FPeval\ySeed{trunc(random*1000,0) }
-  \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal5"}
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 3 --qref cal32"}
 }
 
+\element{calculs4}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal41"}
+}
+
+\element{calculs4}{
+  \FPeval\ySeed{trunc(random*1000,0) }
+  \input{"|./genexo.py --seed \ySeed~ --mode A --level 4 --qref cal42"}
+}
 
 \element{calculs1}{
   \FPeval\ySeed{trunc(random*1000,0) }
@@ -517,7 +531,8 @@
 \begin{multicols}{2}
 \restituegroupe[2]{calculs1}
 \restituegroupe[2]{calculs2}
-\restituegroupe[4]{calculs3}
+\restituegroupe[2]{calculs3}
+\restituegroupe[2]{calculs4}
 \end{multicols}
 
 \section{Petit problème}
@@ -548,11 +563,6 @@ Soit le circuit suivant. Toutes les lampes du circuit sont identiques. L’ampè
 \subsection{Quelle est l’intensité qui traverse chacune des lampes~? (Justifiez)}
 
 \begin{EnvQuadrillage}[NbCarreaux=21x8,Grille=Seyes,Marge=1]
-\end{EnvQuadrillage}
-
-\subsection{Quelle est la tension aux bornes de chacune des lampes~? (Justifiez)}
-
-\begin{EnvQuadrillage}[NbCarreaux=21x7,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
 
 \subsection{Quelles lampes ont le même éclairement~?}
