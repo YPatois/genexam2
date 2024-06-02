@@ -4,6 +4,10 @@ import argparse
 import unittest
 import random
 
+from mytex import lx,lx1,lx2,qty
+from secq import print_securite
+from symbq import print_symboles_questions
+
 class Componant:
     def __init__(self):
         self.I=0
@@ -168,19 +172,6 @@ class Circuit:
             if (not c.no_negative()): return False
         return True
 
-
-
-def lx(s):
-    return('\\'+s)
-
-def lx1(s0,s1):
-    return(lx(s0)+'{'+s1+'}')
-
-def lx2(s0,s1,s2):
-    return(lx1(s0,s1)+'{'+s2+'}')
-
-def qty(v,u):
-    return(lx2('qty',v,lx(u)))
 
 def build_response(v,mi,fake):
     if (fake):
@@ -375,49 +366,6 @@ def print_eq_tests():
     sout+=lx1('explain',explain)
     print(sout)
 
-def print_securite(allq,lb,lm):
-    nq=2
-    if (allq): nq=6 # FIXME
-    random.shuffle(lb)
-    random.shuffle(lm)
-    s=""
-    for b in lb[:nq]:
-        bi="\clubpenalties 1 10000 "+b
-        s+=lx1('bonne',bi)+'\n'
-    for m in lm[:nq]:
-        mi="\clubpenalties 1 10000 "+m
-        s+=lx1('mauvaise',mi)+'\n'
-
-    print(s)
-
-ksec1b=[
-    "Les prises du secteur",
-    "Les fils haute-tension sur les poteaux électriques, ou tombés au sol",
-    "Les éclairs de foudre",
-    ]
-
-ksec1m=[
-    "Les piles-boutons",
-    "L'électricité statique sur un pull en laine",
-    "L'ambiance électrique d'un concert de rock"]
-
-
-def print_securite1(allq):
-    print_securite(allq,ksec1b,ksec1m)
-
-ksec2b=[
-    "Charger son téléphone pendant qu'on l'utilise dans son bainL",
-    "Jeter de l'eau sur un appareil électrique branché sur le secteur",
-    "Démonter un appareil electrique branché sur le secteur",
-    ]
-
-ksec2m=[
-    "Consulter la messagerie sur son ordinateur",
-    "Allumer sa lampe de bureau",
-    "L'ambiance électrique d'un concert de rap"]
-
-def print_securite2(allq):
-    print_securite(allq,ksec2b,ksec2m)
 
 class TestCircuit(unittest.TestCase):
     def test_circuit_zero(self):
@@ -469,10 +417,11 @@ def main():
         print_circuit(qref,mode,level)
     elif (mode=='V'):
         print_circuitV(qref,mode,level)
-    elif (mode=='S1'):
-        print_securite1(allq)
-    elif (mode=='S2'):
-        print_securite2(allq)
+    elif (mode=='S'):
+        print_securite(allq,level)
+    elif (mode=='SYM'):
+        print_symboles_questions()
+
 
 
 
