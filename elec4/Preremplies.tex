@@ -1,3 +1,5 @@
+%%AMC:latex_engine=pdflatex --shell-escape
+
 \documentclass[10pt,a4paper]{article}
 \usepackage{needspace}
 \usepackage[nobottomtitles]{titlesec}
@@ -12,12 +14,20 @@
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
 
-\FPseed=10
+\FPseed=11
 
 \baremeDefautS{e=0,v=0,b=1,m=-1}
 \baremeDefautM{e=0,v=0,b=.25,m=-.25}
 
 \graphicspath{ {./images/} }
+
+
+\newenvironment{reponsesd}{
+    \begin{multicols}{2}
+    \begin{reponses} }{
+    \end{reponses}
+    \end{multicols}
+}
 
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{lightgray}}%
@@ -39,25 +49,10 @@
   {1em}
   {}
 
-
-  %\begin{center}
-%\hrule\vspace{2mm} {\small{ \bf Titre}\\}
-%\vspace{1mm}\hrule
-%\end{center}~
-
 \newcommand{\sujet}{
 \exemplaire{1}{%
 
 \AMCsetFoot{\niveau{}°\classe{} -- \prenom{}~\nom{} -- \thepage}
-
-\newenvironment{reponsesd}{
-    \begin{multicols}{2}
-    \begin{reponses} }{
-    \end{reponses}
-    \end{multicols}
-}
-
-%\renewenvironement{question}[1]{\begin{question}{#1}}{\end{question}}
 
 %%% debut de l'en-tête des copies :  
 \begin{center}
@@ -103,15 +98,17 @@
 
 \AMCassociation{\id}
 
-%\AMCaddpagesto{3}
-	  }
-}
+	  } % End \exemplaire{1}{%
+} % End \newcommand{\sujet}{
 
 %%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
+
+\newcommand{\allq}{}
+
 \begin{document}
 %%%Options
-\AMCrandomseed{10}
+\AMCrandomseed{11}
 
 \def\AMCformQuestion#1{{\sc Question #1 :}}
 
@@ -119,114 +116,41 @@
 %%% Fin Options
 
 \element{securite}{
-  \begin{questionmult}{sec1}
+  \begin{questionmult}{sec0}
     Pourquoi le courant électrique est dangereux pour les humains~?
-    \begin{reponsesd}
-      \bonne{Il peut paralyser les muscles du corps}
-      \mauvaise{\clubpenalties 1 10000 Il peut effacer les contacts de mon téléphone}
-      \bonne{Il peut arrêter la respiration et le c{\oe}ur}
-      \mauvaise{Il provoque des cancers}
-   \end{reponsesd}
-  \end{questionmult}
-}
-
-\element{securite}{
-  \begin{questionmult}{sec2}
-    Quelles sources de courants sont dangereuses pour les humains~?
     \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \input{"|./genexo.py --seed \ySeed~ --mode S1 --level 0 --qref toto --all"}
+      \input{"|./genexo.py --seed \ySeed~ --mode S --level 0 --qref toto \allq"}
     \end{reponsesd}
   \end{questionmult}
 }
 
 \element{securite}{
-  \begin{questionmult}{sec3}
-    Cochez les situation ou l'électrocution est un risque avéré~:
+  \begin{questionmult}{sec1}
+    Quelles sources de courants sont dangereuses pour les humains~?
     \FPeval\ySeed{trunc(random*1000,0) }
     \begin{reponsesd}
-      \input{"|./genexo.py --seed \ySeed~ --mode S2 --level 0 --qref toto --all"}
-      \bonne{Démonter un micro-onde débranché}\bareme{m=0}
-   \end{reponsesd}
-   \explain{Certains appareils électriques, comme les micro-ondes commportent des condensateurs haute-tension qui peuvent rester chragés après débranchement de l'appareil.}
+      \input{"|./genexo.py --seed \ySeed~ --mode S --level 1 --qref toto \allq"}
+    \end{reponsesd}
   \end{questionmult}
 }
 
-
-\element{symboles}{
-  \begin{question}{sym1}
-    Que représente le symbole dessiné ici~?
-    \\
-    \includegraphics[width=2cm]{lamp.png}
-
-    \begin{reponses}
-      \mauvaise{Un générateur de tension}
-      \bonne{Une ampoule électrique à filament}
-      \mauvaise{Une DEL (Diode Électroluminescente)}
-      \mauvaise{Un moteur électrique}
-    \end{reponses}
-  \end{question}
+\element{securite}{
+  \begin{questionmult}{sec2}
+    Cochez les situation ou l'électrocution est un risque avéré~:
+    \FPeval\ySeed{trunc(random*1000,0) }
+    \begin{reponsesd}
+      \input{"|./genexo.py --seed \ySeed~ --mode S --level 2 --qref toto \allq"}
+      \bonne{Démonter un micro-onde débranché}\bareme{m=0}
+    \end{reponsesd}
+    \explain{Certains appareils électriques, comme les micro-ondes comportent des condensateurs haute-tension qui peuvent rester chargés après débranchement de l'appareil.}
+   \end{questionmult}
 }
 
-\element{symboles}{
-  \begin{question}{sym2}
-    Que représente le symbole dessiné ici~?
-    \\
-    \includegraphics[width=2cm]{generator.png}
 
-    \begin{reponses}
-      \bonne{Un générateur de tension}
-      \mauvaise{Une ampoule électrique à filament}
-      \mauvaise{Une DEL (Diode Électroluminescente)}
-      \mauvaise{Un moteur électrique}
-    \end{reponses}
-  \end{question}
-}
+\FPeval\ySeed{trunc(random*1000,0)}
+\input{"|./genexo.py --seed \ySeed~ --mode SYM --level 0 --qref toto \allq"}
 
-\element{symboles}{
-  \begin{question}{sym3}
-    Que représente le symbole dessiné ici~?
-    \\
-    \includegraphics[width=2cm]{motor.png}
-
-    \begin{reponses}
-      \mauvaise{Un générateur de tension}
-      \mauvaise{Une ampoule électrique à filament}
-      \mauvaise{Une DEL (Diode Électroluminescente)}
-      \bonne{Un moteur électrique}
-    \end{reponses}
-  \end{question}
-}
-
-\element{symboles}{
-  \begin{question}{sym6}
-    Que représente le symbole dessiné ici~?
-    \\
-    \includegraphics[width=2cm]{amperemetre.png}
-
-    \begin{reponses}
-      \mauvaise{Un générateur de tension}
-      \mauvaise{Une ampoule électrique à filament}
-      \mauvaise{Un voltmètre}
-      \bonne{Un ampèremètree}
-    \end{reponses}
-  \end{question}
-}
-
-\element{symboles}{
-  \begin{question}{sym7}
-    Que représente le symbole dessiné ici~?
-    \\
-    \includegraphics[width=2cm]{voltmetre.png}
-
-    \begin{reponses}
-      \mauvaise{Un générateur de tension}
-      \mauvaise{Une ampoule électrique à filament}
-      \bonne{Un voltmètre}
-      \mauvaise{Un ampèremètree}
-    \end{reponses}
-  \end{question}
-}
 
 \element{symboles}{
   \begin{question}{sym4}
@@ -458,10 +382,10 @@
   \begin{questionmult}{ical1}
     Dans un circuit électrique monté en série, on peut appliquer ~:
     \begin{reponsesd}
-      \bonne{La loi d'unicité de l'intensité du courant électrique qui pose que l'intensité du courant électrique est la même en tout point du circuit}
-      \bonne{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
-      \mauvaise{La loi d’additivité des intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
-      \mauvaise{La loi d'unicité des tensions électriques pose que la tension électrique est la même aux bornes de chaque dipoles du circuit}
+      \bonne{La loi d'unicité de l'intensité du courant électrique}
+      \bonne{La loi d’additivité des tensions électrique}
+      \mauvaise{La loi d’additivité des intensités du courant électrique}
+      \mauvaise{La loi d'unicité des tensions électriques}
     \end{reponsesd}
   \end{questionmult}
 }
@@ -470,10 +394,10 @@
   \begin{questionmult}{ical2}
     Dans un circuit électrique monté en dérivation, on peut appliquer~:
     \begin{reponsesd}
-      \bonne{La loi d'unicité des tensions électriques pose que la tension électrique aux bornes de chaque dipoles du circuit est la même qu'aux bornes du générateur}
-      \bonne{La loi d’additivité des intensités du courant électrique pose que l’intensité du courant électrique dans le générateur est égal à la somme des intensités des courants dans chaque dipole}
-      \mauvaise{La loi d’additivité des tensions électrique pose que la tension aux bornes du générateur est égale à la somme des tensions aux bornes de chaque dipole}
-      \mauvaise{La loi d'unicité de l'intensité du courant électrique pose que l'intensité du courant électrique est la même en tout point du circuit}
+      \bonne{La loi d'unicité des tensions électriques}
+      \bonne{La loi d’additivité des intensités du courant électrique}
+      \mauvaise{La loi d’additivité des tensions électrique }
+      \mauvaise{La loi d'unicité de l'intensité du courant électrique}
     \end{reponsesd}
   \end{questionmult}
 }
@@ -562,24 +486,21 @@
 \element{groupes}{
 \section{Sécurité}
 %\begin{multicols}{2}
-\restituegroupe{securite}
+\restituegroupe[2]{securite}
 %\end{multicols}
 
 \section{La représentation des circuits électriques}
 \begin{multicols}{2}
-\restituegroupe{symboles}
+\restituegroupe[3]{autosymboles}
+\restituegroupe[1]{symboles}
 \end{multicols}
-
-\newpage
 
 \section{Mesures de courants et de tensions dans les circuits électriques}
 %\begin{multicols}{2}
 \restituegroupe{mesures}
-\restituegroupe{mesures2}
-\restituegroupe{mesures3}
+\restituegroupe[1]{mesures2}
+\restituegroupe[1]{mesures3}
 %\end{multicols}
-
-\newpage
 
 \section{Types de circuits électriques}
 \begin{multicols}{2}
@@ -587,18 +508,17 @@
 \end{multicols}
 
 \section{Notions d'intensité et de tension électrique}
-\restituegroupe{introcalculs1}
-\restituegroupe{introcalculs2}
-%\restituegroupe{introcalculs}
+\restituegroupe[1]{introcalculs1}
+\restituegroupe[1]{introcalculs2}
+\restituegroupe{introcalculs}
 
+\needspace{8cm}
 \section{Calculs d'intensités du courant électrique}
 \begin{multicols}{2}
-\restituegroupe{calculs1}
-\restituegroupe{calculs2}
-\restituegroupe{calculs3}
+\restituegroupe[2]{calculs1}
+\restituegroupe[2]{calculs2}
+\restituegroupe[4]{calculs3}
 \end{multicols}
-
-\newpage
 
 \section{Petit problème}
 
@@ -645,16 +565,13 @@ Soit le circuit suivant. Toutes les lampes du circuit sont identiques. L’ampè
 \begin{EnvQuadrillage}[NbCarreaux=21x2,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
 
-
 \subsection{Indiquez sur le schéma que vous avez redessiné, par des flèches, le sens du courant dans chaque lampe.}
 
-%\newpage
-%\noindent\rule{8cm}{0.4pt}
+\AMCcleardoublepage
 }
 
 
 \csvreader[head to column names]{liste.csv}{}{\sujet}
-
 
 \end{document}
 
