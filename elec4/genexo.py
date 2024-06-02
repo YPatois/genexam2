@@ -333,7 +333,7 @@ def print_circuitV(qref,mode,level):
 
         ct=ct.replace("@LC@",llbls[2])
 
-        responses=build_responsesV(4,'$V_{L_1}$',vg)
+        responses=build_responsesV(4,'$V_{G}$',vg)
 
     ct=ct.replace("@QREF@",qref)
     ct=ct.replace("@RESPONSES@",responses)
