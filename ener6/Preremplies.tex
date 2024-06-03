@@ -1,0 +1,157 @@
+%%AMC:latex_engine=pdflatex --shell-escape
+\documentclass[12pt,a4paper]{article}
+\usepackage{needspace}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{fp}
+\usepackage{xfp}
+\usepackage{WriteOnGrid}
+\usepackage{csvsimple}%
+\usepackage[francais,bloc]{automultiplechoice}
+
+\FPseed=11
+
+\baremeDefautS{e=0,v=0,b=1,m=-.25}
+\baremeDefautM{e=0,v=0,b=.25,m=-.25}
+
+\graphicspath{ {./images/} }
+
+\newenvironment{reponsesd}{
+    \begin{multicols}{2}
+    \begin{reponses} }{
+    \end{reponses}
+    \end{multicols}
+}
+
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{lightgray}}%
+
+\let\oexplain\explain
+\renewcommand{\explain}[1]{\oexplain{\textcolor{red}{#1}}}
+
+\titleformat{\section}
+  {\centering\hrule\vspace{2mm}}
+  {\thesection}
+  {1em}
+  {}
+  [\vspace{1mm}\hrule]
+
+\titleformat{\subsection}
+  {\em}
+  {\thesubsection}
+  {1em}
+  {}
+
+\newcommand{\sujet}{
+\exemplaire{1}{%
+
+\AMCsetFoot{\niveau{}°\classe{} -- \prenom{}~\nom{} -- \thepage}
+
+%%% debut de l'en-tête des copies :
+\begin{center}
+\vfill
+\noindent{\large \bf Classe de \niveau{}°\classe{}}
+
+\vspace*{3mm}
+
+{\Large\bf Évaluation sur table - Énergie 03/06/05/2024}
+
+\vfill
+\namefield{\noindent{}\fbox{\vspace*{3mm}
+         \Huge\bf\prenom{}~\nom{}\normalsize{}%
+         \vspace*{3mm}
+      }}
+\end{center}
+\vfill
+
+\begin{center}
+\textbf{Durée : 30 minutes.}
+\vspace*{5mm}
+
+  Aucun document n'est autorisé.
+  L'usage de la calculatrice est interdit.
+
+  Les questions faisant apparaitre le symbole \multiSymbole{} peuvent
+  présenter une ou plusieurs bonnes réponses. Les autres ont
+  une unique bonne réponse.
+
+  Des points négatifs seront affectés aux mauvaises réponses.
+  \vspace*{5mm}
+
+  \textbf{IMPORTANT: Utilisez un crayon de papier pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.}
+
+\end{center}
+\vspace{1ex}
+\vfill
+\pagebreak
+%%% fin de l'en-tête
+
+\restituegroupe{groupes}
+
+
+\AMCassociation{\id}
+
+	  } % End \exemplaire{1}{%
+} % End \newcommand{\sujet}{
+
+
+%%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\newcommand{\allq}{}
+
+\begin{document}
+%%%Options
+\AMCrandomseed{10}
+
+\def\AMCformQuestion#1{{\sc Question #1 :}}
+
+\setdefaultgroupmode{withoutreplacement}
+%%% Fin Options
+
+%%% elements
+
+\element{enerhumain}{
+  \begin{questionmult}{enh1}
+    Les humains ont besoin d'énergie pour~?
+    \begin{reponses}
+      \bonne{Se chauffer}
+      \bonne{Se déplacer}
+      \bonne{S'éclairer}
+      \mauvaise{Les humains n'ont pas beosin d'énergie}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\FPeval\ySeed{trunc(random*1000,0)}
+\input{"|./genexo.py --seed \ySeed~ --mode FNR --level 0 --qref toto \allq"}
+
+\FPeval\ySeed{trunc(random*1000,0)}
+\input{"|./genexo.py --seed \ySeed~ --mode FSNR --level 0 --qref toto \allq"}
+
+
+\element{enrn}{
+  \begin{questionmult}{nrrn}
+    Coche les sources d'énergie renouvelables dans la liste~:
+    \begin{reponses}
+      \FPeval\ySeed{trunc(random*1000,0)}
+      \input{"|./genexo.py --seed \ySeed~ --mode FRNR --level 0 --qref toto \allq"}
+    \end{reponses}
+  \end{questionmult}
+}
+
+
+%%%% fin des elements
+
+\element{groupes}{
+\begin{multicols}{2}
+\restituegroupe{enerhumain}
+\restituegroupe{autofnr}
+\restituegroupe{autofsnr}
+\restituegroupe{enrn}
+\end{multicols}
+\AMCcleardoublepage
+}
+
+\csvreader[head to column names]{liste.csv}{}{\sujet}
+
+\end{document}
