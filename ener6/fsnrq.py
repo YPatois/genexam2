@@ -3,7 +3,11 @@ import random
 from myamcqcm import build_response
 
 fnr=["L'énergie thermique",
-"l'énergie électrique" "L'énergie de mouvement (cinétique)", "L'énergie lumineuse", "La chaleur","L'énergie chimique"]
+"l'énergie électrique",
+"L'énergie de mouvement (cinétique)",
+"L'énergie lumineuse",
+"La chaleur",
+"L'énergie chimique"]
 
 snr=["Des aliments", "Du pétrole", "Le Soleil", "Une chute d’eau", "La biomasse",
 "La géothermie"]
@@ -16,7 +20,7 @@ kelementblock="""
   \\begin{question}{@QREF@}
     @ITEM@, est-ce~:
 
-    \\begin{reponses}
+    \\begin{reponses}[o]
       @REPONSES@
     \\end{reponses}
   \\end{question}
@@ -24,7 +28,7 @@ kelementblock="""
 """
 
 def print_one_stuff(n,item,response):
-    qref="autofnr"+str(n)
+    qref="autofsnr"+str(n)
 
     block=kelementblock
     block=block.replace("@QREF@",qref)

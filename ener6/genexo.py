@@ -8,6 +8,8 @@ from mytex import lx,lx1,lx2,qty
 from fnrq import print_fnr_questions
 from fsnrq import print_fsnrq_questions
 from frnrnr import print_frnrnr_questions
+from carbone1 import print_carbone1_questions
+from carbone2 import print_carbone2_questions
 
 # --------------------------------------------------------------------------
 # Welcome to Derry, Maine
@@ -36,6 +38,11 @@ def main():
     if (mode=='FRNR'):
         print_frnrnr_questions(allq)
 
+    if (mode=='CARB1'):
+        print_carbone1_questions(allq)
+
+    if (mode=='CARB2'):
+        print_carbone2_questions(allq)
 
 # --------------------------------------------------------------------------
 if __name__ == '__main__':

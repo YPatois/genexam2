@@ -110,14 +110,70 @@
 
 %%% elements
 
-\element{enerhumain}{
-  \begin{questionmult}{enh1}
-    Les humains ont besoin d'énergie pour~?
+\element{generalites}{
+  \begin{questionmult}{gen1}
+    Les humains ont besoin d'énergie pour~:
     \begin{reponses}
-      \bonne{Se chauffer}
+      \bonne{Cuisiner}
       \bonne{Se déplacer}
       \bonne{S'éclairer}
-      \mauvaise{Les humains n'ont pas beosin d'énergie}
+      \mauvaise{Les humains n'ont pas besoin d'énergie}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{generalites}{
+  \begin{questionmult}{gen2}
+    Les humains ont besoin d'énergie pour~:
+    \begin{reponses}
+      \bonne{Se nourrir}
+      \bonne{Se chauffer}
+      \bonne{Voyager}
+      \mauvaise{Les humains n'ont pas besoin d'énergie}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{sources}{
+  \begin{questionmult}{source1}
+    Les énergies exploités par l'humanité~:
+    \begin{reponses}
+      \bonne{Se trouvent dans des sources d'énergies}
+      \bonne{Se chauffer}
+      \bonne{Voyager}
+      \mauvaise{Surgissent spontanément}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{sources}{
+  \begin{questionmult}{source2}
+    Une source d'énergie, c'est~:
+    \begin{reponses}
+      \bonne{Un phénomène naturel}
+      \bonne{Exploitée par les humains pour en tirer de l'énergie}
+      \mauvaise{Une passion qui anime l'humanité}
+      \mauvaise{Une eau vivifiante qui jaillit d'une montagne}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{carbone}{
+  \begin{questionmult}{carb1}
+    Coche les sources d'énergie carbonées~:
+    \begin{reponses}
+      \FPeval\ySeed{trunc(random*1000,0)}
+      \input{"|./genexo.py --seed \ySeed~ --mode CARB1 --level 0 --qref toto \allq"}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{carbone}{
+  \begin{questionmult}{carb2}
+    Les sources d'énergie carbonées~:
+    \begin{reponses}
+      \FPeval\ySeed{trunc(random*1000,0)}
+      \input{"|./genexo.py --seed \ySeed~ --mode CARB2 --level 0 --qref toto \allq"}
     \end{reponses}
   \end{questionmult}
 }
@@ -143,12 +199,37 @@
 %%%% fin des elements
 
 \element{groupes}{
+\section{Généralités}
+\restituegroupe[1]{generalites}
+
+\section{Énergies carbonées}
 \begin{multicols}{2}
-\restituegroupe{enerhumain}
-\restituegroupe{autofnr}
-\restituegroupe{autofsnr}
+\restituegroupe{carbone}
+\end{multicols}
+
+\section{Sources et formes d'énergies}
+\begin{multicols}{2}
+\restituegroupe[8]{autofnr}
+\restituegroupe[8]{autofsnr}
 \restituegroupe{enrn}
 \end{multicols}
+
+\section{Pour aller plus loin}
+\emph{Ce problème est plus difficile et raporte moins de points, ne le faire que lorsque le reste est terminé, c'est un bonus!}
+
+\subsection{En quoi les énergies carbonnées sont-elles un problème pour l'avenir de l'humanité~?}
+\begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+\subsection{Quels problèmes résout l'énergie nucléaire parmi ceux soulevés plus haut~? Lesquels ne résout-elle pas~?}
+\begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+\subsection{En quoi les énergies renouvelables résolvent-t'elles ces problèmes~? Quels en sont cepedant les inconvéniants~?}
+\begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
+\end{EnvQuadrillage}
+
+
 \AMCcleardoublepage
 }
 
