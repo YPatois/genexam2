@@ -13,7 +13,7 @@ eqr=[
     "Quel est la forme d'énergie que produit une éolienne~?"],"Énergie électrique"),
   (["Quel est la forme d'énergie que possède une balle de tennis en mouvement~?",
     "Quel est la forme d'énergie qu'exploite une éolienne~?",
-    "Quel est la forme d'énergie que possède une automobile en mouvement~?",],"Énergie cinétique"),
+    "Quel est la forme d'énergie que possède une automobile en mouvement~?",],"Énergie cinétique (de mouvement)"),
   (["Quel est la forme d'énergie que possède une lourde charge placée en hauteur~?"],"Énergie de pesanteur"),
   (["Quel est la forme d'énergie que possède un noyaux d'uranium radioactif~?"],"Énergie nucléaire"),
 ]
