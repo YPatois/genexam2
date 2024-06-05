@@ -106,7 +106,7 @@
 
 
 %%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-\newcommand{\allq}{}
+\newcommand{\allq}{--all}
 
 \begin{document}
 %%%Options
@@ -128,6 +128,7 @@
       \bonne{S'éclairer}
       \mauvaise{Les humains n'ont pas besoin d'énergie}
     \end{reponses}
+    \explain{Toute action demande de l'énergie.}
   \end{questionmult}
 }
 
@@ -140,6 +141,7 @@
       \bonne{Voyager}
       \mauvaise{Les humains n'ont pas besoin d'énergie}
     \end{reponses}
+    \explain{Toute action demande de l'énergie.}
   \end{questionmult}
 }
 
@@ -148,10 +150,11 @@
     Les énergies exploités par l'humanité~:
     \begin{reponses}
       \bonne{Se trouvent dans des sources d'énergies}
-      \bonne{Se chauffer}
-      \bonne{Voyager}
+      \bonne{Se chauffer}\bareme{d=.25,b=0}
+      \bonne{Voyager}\bareme{d=.25,b=0}
       \mauvaise{Surgissent spontanément}
     \end{reponses}
+    \explain{erreur d'énoncé ici, les deux réponses \emph{Se chauffer} et \emph{Voyager} n'ont pas de sens ici. On trouve de l'énergie exploitable par l'humanité dans des sources d'énergie.}
   \end{questionmult}
 }
 
@@ -174,6 +177,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB1 --level 0 --qref toto \allq"}
     \end{reponses}
+    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonnées \bf{fossiles}}} 
   \end{questionmult}
 }
 
@@ -184,6 +188,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB2 --level 0 --qref toto \allq"}
     \end{reponses}
+    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonnées \bf{fossiles}}}
   \end{questionmult}
 }
 
@@ -201,6 +206,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode FRNR --level 0 --qref toto \allq"}
     \end{reponses}
+    \explain{Les énergies renouvelables sont celles qui soit ne s'épuiseront pas à l'échelle de l'humanité (comme le Soleil) soit se renouvellent à notre échelle (comme le bois). Le charbon ou le pétrole, par exemple mettent des dizaines de millions d'années à se former, ce n'est pas renouvelable.}
   \end{questionmult}
 }
 
@@ -228,14 +234,17 @@
 
 \subsection{En quoi les énergies carbonées sont-elles un problème pour l'avenir de l'humanité~?}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
+\EcrireLigne{L'utilisation des énergies carbonées produit du $CO_2$, un gaz à effet de serre qui modifie gravement le climat de la Terre. Ce sont de plus des produits polluants pour l'environnement et les humains, à l'extraction, à l'utilisation, et en rebut. Étant en quantité limitée sur Terre, elles ne sont pas renouvelables.}
 \end{EnvQuadrillage}
 
 \subsection{Quels problèmes résout l'énergie nucléaire parmi ceux soulevés plus haut~? Lesquels ne résout-elle pas~?}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
+\EcrireLigne{L'énergie nucléaire ne produit que très peu de gaz à effet de serre. Elle peut cependant causer des pollutions lors de l'extraction minière et la gestion de ses déchets est complexe. L'uranium utilisé dans les centrales n'est de plus pas renouvelable.}
 \end{EnvQuadrillage}
 
 \subsection{En quoi les énergies renouvelables résolvent'elles ces problèmes~? Quels en sont cependant les inconvénients~?}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
+\EcrireLigne{Les énergies renouvelables ne s'épuiseront pas (si correctement tgérées); elles peuvent toutefois avoir des effets négatifs sur l'environnement (les machines électriques consomment des matériaux rares, les barrages hydroélectriques bioulversent les écosystèmes, etc.), et surtout ne sont aujourd'hui pas en mesure de fournir la quantité d'énergie dont l'humanité a besoin actuellement.}
 \end{EnvQuadrillage}
 
 
