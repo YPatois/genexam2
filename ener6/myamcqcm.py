@@ -9,12 +9,20 @@ def choose2from(allq,items):
     random.shuffle(items)
     return items[:2]
 
-def build_response(gb,q):
+def build_response(gb,qb):
+    if (len(qb)==2):
+        q=qb[0]
+        b=qb[1]
+    else:
+        q=qb
+        b=None
     q="\clubpenalties 1 10000 "+q
     if (gb):
         s=lx1('bonne',q)
     else:
         s=lx1('mauvaise',q)
+    if (b):
+        s+=lx1('bareme',b)
     return s
 
 def print_two_good_bad(allq,good,bad):
