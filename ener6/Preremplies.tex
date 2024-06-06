@@ -6,7 +6,9 @@
 \usepackage{xcolor}
 \usepackage{fp}
 \usepackage{xfp}
+\usepackage{enumitem}
 \usepackage{WriteOnGrid}
+\usepackage{frcursive}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
 
@@ -177,7 +179,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB1 --level 0 --qref toto \allq"}
     \end{reponses}
-    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonnées \bf{fossiles}}} 
+    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonées \bf{fossiles}}}
   \end{questionmult}
 }
 
@@ -188,7 +190,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB2 --level 0 --qref toto \allq"}
     \end{reponses}
-    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonnées \bf{fossiles}}}
+    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonées \bf{fossiles}}}
   \end{questionmult}
 }
 
@@ -197,7 +199,6 @@
 
 \FPeval\ySeed{trunc(random*1000,0)}
 \input{"|./genexo.py --seed \ySeed~ --mode FSNR --level 0 --qref toto \allq"}
-
 
 \element{enrn}{
   \begin{questionmult}{nrrn}
@@ -226,25 +227,44 @@
 \begin{multicols}{2}
 \restituegroupe[8]{autofnr}
 \restituegroupe[8]{autofsnr}
-\restituegroupe{enrn}
 \end{multicols}
+
+\myexplain{{\par\color{red}Une \emph{source d'énergie} est un phénomène naturel concret (le Soleil,  du pétrole, etc.) dont l'exploitation fourni de l'énergie aux humains.
+Une \emph{forme d'énergie} est la manière dont l'énergie est disponible. Nous en avons vu six:
+\begin{itemize}[topsep=3pt,itemsep=1pt,partopsep=2pt, parsep=2pt]
+\item \emph{énergie thermique} (ou chaleur), liée à la température d'un objet.
+\item \emph{énergie électrique}, liée à la circulation d'un courant électrique.
+\item \emph{énergie lumineuse}, liée à la lumière (rayonnement).
+\item \emph{énergie chimique}, liée à la matière (molécules).
+\item \emph{énergie cinétique}, liée à la vitesse d'un objet.
+\item \emph{énergie de pesanteur}, liée à la hauteur d'un objet.
+\item \emph{énergie nucléaire}, liée au noyau de l'atome.
+\end{itemize}
+}
+\par
+}
+
+\restituegroupe{enrn}
 
 \section{Pour aller plus loin}
 \emph{Ce problème est plus difficile et rapporte moins de points, ne le faire que lorsque le reste est terminé, c'est un bonus!}
 
 \subsection{En quoi les énergies carbonées sont-elles un problème pour l'avenir de l'humanité~?}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
-\EcrireLigne{L'utilisation des énergies carbonées produit du $CO_2$, un gaz à effet de serre qui modifie gravement le climat de la Terre. Ce sont de plus des produits polluants pour l'environnement et les humains, à l'extraction, à l'utilisation, et en rebut. Étant en quantité limitée sur Terre, elles ne sont pas renouvelables.}
+\setstretch{1.57}
+\myexplain{\EcrireLigne{\textcolor{red} {\cursive L'utilisation des énergies carbonées produit du $CO_2$, un gaz à effet de serre qui modifie gravement le climat de la Terre. Ce sont de plus des produits polluants pour l'environnement et les humains, à l'extraction, à l'utilisation, et en rebut. Étant en quantité limitée sur Terre, elles ne sont pas renouvelables.}}}
 \end{EnvQuadrillage}
 
 \subsection{Quels problèmes résout l'énergie nucléaire parmi ceux soulevés plus haut~? Lesquels ne résout-elle pas~?}
+\setstretch{1.57}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
-\EcrireLigne{L'énergie nucléaire ne produit que très peu de gaz à effet de serre. Elle peut cependant causer des pollutions lors de l'extraction minière et la gestion de ses déchets est complexe. L'uranium utilisé dans les centrales n'est de plus pas renouvelable.}
+\myexplain{\EcrireLigne{\textcolor{red} {\cursive L'énergie nucléaire ne produit que très peu de gaz à effet de serre. Elle peut cependant causer des pollutions lors de l'extraction minière et la gestion de ses déchets est complexe. L'uranium utilisé dans les centrales n'est de plus pas renouvelable.}}}
 \end{EnvQuadrillage}
 
 \subsection{En quoi les énergies renouvelables résolvent'elles ces problèmes~? Quels en sont cependant les inconvénients~?}
+\setstretch{1.57}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
-\EcrireLigne{Les énergies renouvelables ne s'épuiseront pas (si correctement tgérées); elles peuvent toutefois avoir des effets négatifs sur l'environnement (les machines électriques consomment des matériaux rares, les barrages hydroélectriques bioulversent les écosystèmes, etc.), et surtout ne sont aujourd'hui pas en mesure de fournir la quantité d'énergie dont l'humanité a besoin actuellement.}
+\myexplain{\EcrireLigne{\textcolor{red} {\cursive Les énergies renouvelables ne s'épuiseront pas (si correctement gérées); elles peuvent toutefois avoir des effets négatifs sur l'environnement (les machines électriques sont fabriquées à partir de matériaux rares, les barrages hydroélectriques boulversent les écosystèmes, etc.), et surtout ne sont actuellemnt pas en mesure de fournir la quantité d'énergie dont l'humanité a besoin.}}}
 \end{EnvQuadrillage}
 
 
