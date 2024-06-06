@@ -1,5 +1,5 @@
 %%AMC:latex_engine=pdflatex --shell-escape
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage{needspace}
 \usepackage[nobottomtitles]{titlesec}
 \usepackage{multicol}
@@ -15,7 +15,7 @@
 \FPseed=11
 
 \baremeDefautS{e=0,v=0,b=1,m=-.25}
-\baremeDefautM{e=0,v=0,b=.25,m=-.25}
+\baremeDefautM{e=0,v=0,b=.5,m=-.25}
 
 \graphicspath{ {./images/} }
 
@@ -91,6 +91,8 @@
   Mais comme cela (bien centré, bien foncé):\\
   \includegraphics[width=2cm]{checkbox_good.png}
 
+  Si vous faites une erreur et que vous ne pouvez effacer, raturez la case.
+
 
 \end{center}
 \vspace{1ex}
@@ -108,7 +110,7 @@
 
 
 %%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-\newcommand{\allq}{--all}
+\newcommand{\allq}{}
 
 \begin{document}
 %%%Options
@@ -152,8 +154,8 @@
     Les énergies exploités par l'humanité~:
     \begin{reponses}
       \bonne{Se trouvent dans des sources d'énergies}
-      \bonne{Se chauffer}\bareme{d=.25,b=0}
-      \bonne{Voyager}\bareme{d=.25,b=0}
+      \bonne{Sont des phénomènes naturels}
+      \mauvauise{N'existent pas}
       \mauvaise{Surgissent spontanément}
     \end{reponses}
     \explain{erreur d'énoncé ici, les deux réponses \emph{Se chauffer} et \emph{Voyager} n'ont pas de sens ici. On trouve de l'énergie exploitable par l'humanité dans des sources d'énergie.}
@@ -174,7 +176,7 @@
 
 \element{carbone}{
   \begin{questionmult}{carb1}
-    Coche les sources d'énergie carbonées~:
+    Coche les sources d'énergie carbonées fossiles~:
     \begin{reponses}
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB1 --level 0 --qref toto \allq"}
@@ -185,7 +187,7 @@
 
 \element{carbone}{
   \begin{questionmult}{carb2}
-    Les sources d'énergie carbonées~:
+    Les sources d'énergie carbonées fossiles~:
     \begin{reponses}
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB2 --level 0 --qref toto \allq"}
@@ -216,7 +218,10 @@
 
 \element{groupes}{
 \section{Généralités}
+\begin{multicols}{2}
 \restituegroupe[1]{generalites}
+\restituegroupe[1]{sources}
+\end{multicols}
 
 \section{Énergies carbonées}
 \begin{multicols}{2}
@@ -226,7 +231,8 @@
 \section{Sources et formes d'énergies}
 \begin{multicols}{2}
 \restituegroupe[8]{autofnr}
-\restituegroupe[8]{autofsnr}
+\restituegroupe[7]{autofsnr}
+\restituegroupe{enrn}
 \end{multicols}
 
 \myexplain{{\par\color{red}Une \emph{source d'énergie} est un phénomène naturel concret (le Soleil,  du pétrole, etc.) dont l'exploitation fourni de l'énergie aux humains.
@@ -243,8 +249,6 @@ Une \emph{forme d'énergie} est la manière dont l'énergie est disponible. Nous
 }
 \par
 }
-
-\restituegroupe{enrn}
 
 \section{Pour aller plus loin}
 \emph{Ce problème est plus difficile et rapporte moins de points, ne le faire que lorsque le reste est terminé, c'est un bonus!}

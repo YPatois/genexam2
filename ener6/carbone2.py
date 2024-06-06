@@ -3,12 +3,16 @@ import random
 from myamcqcm import print_two_good_bad
 
 sg=["Produisent du $CO_2$ lors de leur utilisation, un gaz à effet de serre",
-     "Proviennent de la décomposition de matières organiques fossiles",
+     "Proviennent de la décomposition de matières organiques",
      "Ont été produites il y a des millions d'années",
      "Altèrent le climat lors de leur utilisation",
-     "Polluent l'environnement lors de leur utilisation","Ne sont pas renouvelables","Sont en quantité limitée"]
+     "Polluent l'environnement lors de leur utilisation",
+     "Ne sont pas renouvelables",
+     "Sont en quantité limitée"]
 
-sb=["Sont renouvelables","Sont sans dangers pour l'environement", "Sont inépuisables"]
+sb=["Sont renouvelables",
+    "Sont sans dangers pour l'environnement",
+    "Sont inépuisables"]
 
 
 def print_carbone2_questions(allq):

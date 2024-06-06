@@ -2,7 +2,7 @@
 import random
 from myamcqcm import print_two_good_bad
 
-sb=["Soleil", "Chute d’eau", "Géothermie","Vent", ("Bois","d=.25,m=0")]
+sb=["Soleil", "Chute d’eau", "Géothermie", "Vent", "Bois"]
 
 sg=["Pétrole", "Charbon", "Gaz naturel"]
 
