@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{fp}
 \usepackage{xfp}
+\usepackage{enumitem}
 \usepackage{WriteOnGrid}
 \usepackage{frcursive}
 \usepackage{csvsimple}%
@@ -199,7 +200,6 @@
 \FPeval\ySeed{trunc(random*1000,0)}
 \input{"|./genexo.py --seed \ySeed~ --mode FSNR --level 0 --qref toto \allq"}
 
-
 \element{enrn}{
   \begin{questionmult}{nrrn}
     Coche les sources d'énergie renouvelables dans la liste~:
@@ -227,8 +227,24 @@
 \begin{multicols}{2}
 \restituegroupe[8]{autofnr}
 \restituegroupe[8]{autofsnr}
-\restituegroupe{enrn}
 \end{multicols}
+
+\myexplain{{\par\color{red}Une \emph{source d'énergie} est un phénomène naturel concret (le Soleil,  du pétrole, etc.) dont l'exploitation fourni de l'énergie aux humains.
+Une \emph{forme d'énergie} est la manière dont l'énergie est disponible. Nous en avons vu six:
+\begin{itemize}[topsep=3pt,itemsep=1pt,partopsep=2pt, parsep=2pt]
+\item \emph{énergie thermique} (ou chaleur), liée à la température d'un objet.
+\item \emph{énergie électrique}, liée à la circulation d'un courant électrique.
+\item \emph{énergie lumineuse}, liée à la lumière (rayonnement).
+\item \emph{énergie chimique}, liée à la matière (molécules).
+\item \emph{énergie cinétique}, liée à la vitesse d'un objet.
+\item \emph{énergie de pesanteur}, liée à la hauteur d'un objet.
+\item \emph{énergie nucléaire}, liée au noyau de l'atome.
+\end{itemize}
+}
+\par
+}
+
+\restituegroupe{enrn}
 
 \section{Pour aller plus loin}
 \emph{Ce problème est plus difficile et rapporte moins de points, ne le faire que lorsque le reste est terminé, c'est un bonus!}
