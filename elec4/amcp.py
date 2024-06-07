@@ -28,9 +28,6 @@ def build_question(gb,q):
     return s
 
 def print_two_good_bad(): #good,bad):
-    return"titi"
-    return("\\mauvaise{titi}")
-    return
     gl=choose2from(good)
     bl=choose2from(bad)
     for g in gl:

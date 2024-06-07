@@ -81,7 +81,7 @@
   Des points négatifs seront affectés aux mauvaises réponses.
   \vspace*{5mm}
 
-  \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.}
+  \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases. Si vous effacez le pourtour de la case, ne le redessinez pas!}
 
   \vspace*{5mm}
 
@@ -124,26 +124,26 @@
 %%% elements
 
 \element{generalites}{
-  \begin{questionmult}{gen1}
+  \begin{questionmult}{gen1}\bareme{b=.25,m=0}
     Les humains ont besoin d'énergie pour~:
     \begin{reponses}
       \bonne{Cuisiner}
       \bonne{Se déplacer}
       \bonne{S'éclairer}
-      \mauvaise{Les humains n'ont pas besoin d'énergie}
+      \mauvaise{Les humains n'ont pas besoin d'énergie}\bareme{m=-1}
     \end{reponses}
     \explain{Toute action demande de l'énergie.}
   \end{questionmult}
 }
 
 \element{generalites}{
-  \begin{questionmult}{gen2}
+  \begin{questionmult}{gen2}\bareme{b=.25,m=0}
     Les humains ont besoin d'énergie pour~:
     \begin{reponses}
       \bonne{Se nourrir}
       \bonne{Se chauffer}
       \bonne{Voyager}
-      \mauvaise{Les humains n'ont pas besoin d'énergie}
+      \mauvaise{Les humains n'ont pas besoin d'énergie}\bareme{m=-1}
     \end{reponses}
     \explain{Toute action demande de l'énergie.}
   \end{questionmult}
