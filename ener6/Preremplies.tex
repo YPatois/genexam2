@@ -12,8 +12,8 @@
 
 \FPseed=11
 
-\baremeDefautS{e=0,v=0,b=1,m=-.25}
-\baremeDefautM{e=0,v=0,b=.25,m=-.25}
+\baremeDefautS{e=0,v=0,b=1,m=-.1}
+\baremeDefautM{e=0,v=0,b=.25,m=-.1}
 
 \graphicspath{ {./images/} }
 
@@ -79,7 +79,7 @@
   Des points négatifs seront affectés aux mauvaises réponses.
   \vspace*{5mm}
 
-  \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.}
+  \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme pour effacer délicatement en cas d'erreur. Ne raturez pas les cases. Si vous effacez le pourtour de la case, ne le redessinez pas!}
 
   \vspace*{5mm}
 
@@ -120,36 +120,38 @@
 %%% elements
 
 \element{generalites}{
-  \begin{questionmult}{gen1}
+  \begin{questionmult}{gen1}\bareme{b=.25,m=0}
     Les humains ont besoin d'énergie pour~:
     \begin{reponses}
       \bonne{Cuisiner}
       \bonne{Se déplacer}
       \bonne{S'éclairer}
-      \mauvaise{Les humains n'ont pas besoin d'énergie}
+      \mauvaise{Les humains n'ont pas besoin d'énergie}\bareme{m=-1}
     \end{reponses}
   \end{questionmult}
 }
 
 \element{generalites}{
-  \begin{questionmult}{gen2}
+  \begin{questionmult}{gen2}\bareme{b=.25,m=0}
     Les humains ont besoin d'énergie pour~:
     \begin{reponses}
       \bonne{Se nourrir}
       \bonne{Se chauffer}
       \bonne{Voyager}
-      \mauvaise{Les humains n'ont pas besoin d'énergie}
+      \mauvaise{Les humains n'ont pas besoin d'énergie}\bareme{m=-1}
     \end{reponses}
   \end{questionmult}
 }
 
+% Ces deux questions n'ont par erreur jamais été données.
+% Le barème est incorrect, mais c'est sans importance ici.
 \element{sources}{
   \begin{questionmult}{source1}
     Les énergies exploités par l'humanité~:
     \begin{reponses}
       \bonne{Se trouvent dans des sources d'énergies}
-      \bonne{Se chauffer}\bareme{d=.25,b=0}
-      \bonne{Voyager}\bareme{d=.25,b=0}
+      \bonne{Se chauffer}
+      \bonne{Voyager}
       \mauvaise{Surgissent spontanément}
     \end{reponses}
   \end{questionmult}
@@ -168,8 +170,9 @@
 }
 
 \element{carbone}{
-  \begin{questionmult}{carb1}
+  \begin{questionmult}{carb1}\baremeDefautM{e=0,v=0,b=.25,m=0}
     Coche les sources d'énergie carbonées~:
+    % Pour ne pas régérer le layout (toujours dangereux), vu l'imprécision de l'énoncé, on a juste modifié le barème global.
     \begin{reponses}
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB1 --level 0 --qref toto \allq"}
