@@ -14,8 +14,8 @@
 
 \FPseed=11
 
-\baremeDefautS{e=0,v=0,b=1,m=-.25}
-\baremeDefautM{e=0,v=0,b=.5,m=-.25}
+\baremeDefautS{e=0,v=0,b=1,m=-.1}
+\baremeDefautM{e=0,v=0,b=.5,m=-.1}
 
 \graphicspath{ {./images/} }
 
@@ -57,7 +57,7 @@
 
 \vspace*{3mm}
 
-{\Large\bf Évaluation sur table - Énergie 03/06/05/2024}
+{\Large\bf Évaluation sur table - Énergie 10/06/2024}
 
 \vfill
 \namefield{\noindent{}\fbox{\vspace*{3mm}
@@ -91,7 +91,7 @@
   Mais comme cela (bien centré, bien foncé):\\
   \includegraphics[width=2cm]{checkbox_good.png}
 
-  Si vous faites une erreur et que vous ne pouvez effacer, raturez la case.
+  Si vous faites une erreur et que vous ne pouvez effacer, raturez la case bien ostensiblement.
 
 
 \end{center}
@@ -110,7 +110,8 @@
 
 
 %%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-\newcommand{\allq}{}
+\newcommand{\allq}{--all}
+\newcommand{\nball}[1]{#1}
 
 \begin{document}
 %%%Options
@@ -158,7 +159,7 @@
       \mauvaise{N'existent pas}
       \mauvaise{Surgissent spontanément}
     \end{reponses}
-    \explain{erreur d'énoncé ici, les deux réponses \emph{Se chauffer} et \emph{Voyager} n'ont pas de sens ici. On trouve de l'énergie exploitable par l'humanité dans des sources d'énergie.}
+    \explain{}
   \end{questionmult}
 }
 
@@ -181,7 +182,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB1 --level 0 --qref toto \allq"}
     \end{reponses}
-    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonées \bf{fossiles}}}
+    \explain{}
   \end{questionmult}
 }
 
@@ -192,7 +193,7 @@
       \FPeval\ySeed{trunc(random*1000,0)}
       \input{"|./genexo.py --seed \ySeed~ --mode CARB2 --level 0 --qref toto \allq"}
     \end{reponses}
-    \explain{Ici l'énoncé était imprécis: on aurait dû lire \emph{Les sources d'énergie carbonées \bf{fossiles}}}
+    \explain{}
   \end{questionmult}
 }
 
@@ -253,20 +254,20 @@ Une \emph{forme d'énergie} est la manière dont l'énergie est disponible. Nous
 \section{Pour aller plus loin}
 \emph{Ce problème est plus difficile et rapporte moins de points, ne le faire que lorsque le reste est terminé, c'est un bonus!}
 
-\subsection{En quoi les énergies carbonées sont-elles un problème pour l'avenir de l'humanité~?}
+\subsection{En quoi les énergies fossiles carbonées sont-elles un problème pour l'avenir de l'humanité~?}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
-\setstretch{1.57}
+\setstretch{1.895}
 \myexplain{\EcrireLigne{\textcolor{red} {\cursive L'utilisation des énergies carbonées produit du $CO_2$, un gaz à effet de serre qui modifie gravement le climat de la Terre. Ce sont de plus des produits polluants pour l'environnement et les humains, à l'extraction, à l'utilisation, et en rebut. Étant en quantité limitée sur Terre, elles ne sont pas renouvelables.}}}
 \end{EnvQuadrillage}
 
 \subsection{Quels problèmes résout l'énergie nucléaire parmi ceux soulevés plus haut~? Lesquels ne résout-elle pas~?}
-\setstretch{1.57}
+\setstretch{1.895}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
 \myexplain{\EcrireLigne{\textcolor{red} {\cursive L'énergie nucléaire ne produit que très peu de gaz à effet de serre. Elle peut cependant causer des pollutions lors de l'extraction minière et la gestion de ses déchets est complexe. L'uranium utilisé dans les centrales n'est de plus pas renouvelable.}}}
 \end{EnvQuadrillage}
 
-\subsection{En quoi les énergies renouvelables résolvent'elles ces problèmes~? Quels en sont cependant les inconvénients~?}
-\setstretch{1.57}
+\subsection{En quoi les énergies renouvelables résolvent-elles en partie ces problèmes~? Quels en sont cependant les inconvénients~?}
+\setstretch{1.895}
 \begin{EnvQuadrillage}[NbCarreaux=21x6,Grille=Seyes,Marge=1]
 \myexplain{\EcrireLigne{\textcolor{red} {\cursive Les énergies renouvelables ne s'épuiseront pas (si correctement gérées); elles peuvent toutefois avoir des effets négatifs sur l'environnement (les machines électriques sont fabriquées à partir de matériaux rares, les barrages hydroélectriques boulversent les écosystèmes, etc.), et surtout ne sont actuellemnt pas en mesure de fournir la quantité d'énergie dont l'humanité a besoin.}}}
 \end{EnvQuadrillage}
