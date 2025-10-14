@@ -130,13 +130,17 @@
 \input{q_tpco.tex}
 \input{q_redox.tex}
 \input{q_cichi.tex}
+\input{q_radio.tex}
+\input{q_motion.tex}
+\input{q_energ.tex}
+\input{q_elect.tex}
 %\setgroupmode{strspc}{withoutreplacement}
 %%%% fin des elements
 
 \element{groupes}{
 \section{Méta}
 \begin{multicols}{2}
-\restituegroupe[1]{meta}
+\restituegroupe{meta}
 \end{multicols}
 
 \section{Structures spatiales des espèces chimiques}
@@ -159,6 +163,22 @@
 \section{Cinétique chimique}
 \begin{multicols}{2}
 \insertgroup[2]{cichi}
+\end{multicols}
+
+\section{Radioactivité}
+\begin{multicols}{2}
+\insertgroup[2]{radio}
+\end{multicols}
+
+\section{Mouvements et interactions}
+\begin{multicols}{2}
+\insertgroup[4]{motion}
+\end{multicols}
+
+\section{Énergie~: conversion et transfers}
+\begin{multicols}{2}
+\insertgroup[2]{energ}
+\insertgroup[2]{elect}
 \end{multicols}
 
 \AMCcleardoublepage
