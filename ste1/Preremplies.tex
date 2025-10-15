@@ -1,4 +1,5 @@
 \documentclass[10pt,a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
 \usepackage{needspace}
 \usepackage[nobottomtitles]{titlesec}
 \usepackage{multicol}
@@ -112,6 +113,23 @@
 \newcommand{\allq}{}
 \newcommand{\nball}[1]{#1}
 
+\newcommand{\metaq}[2]{
+\element{#1}{%
+\begin{question}{#1 a}\QuestionIndicative
+  \needspace{2cm}
+  Vous sentez-vous à l'aise en #2~?
+  \begin{reponseshoriz}[o]
+    \bonne{Non}
+    \bonne{Pas trop}
+    \bonne{Moyen}
+    \bonne{Plutôt bien}
+    \bonne{Oui}
+  \end{reponseshoriz}
+  \explain{C'est votre choix.}
+\end{question}
+}}
+
+
 \begin{document}
 %%%Options
 \AMCrandomseed{10}
@@ -137,6 +155,20 @@
 \input{q_echi.tex}
 \input{q_elect.tex}
 \input{q_elum.tex}
+
+
+\metaq{mstr}{stéréochimie}
+\metaq{macid}{réactions acides-basiques}
+\metaq{mredox}{réactions d'oxydoréduction}
+\metaq{mcichi}{cinétique chimique}
+\metaq{mradio}{radioactivité}
+\metaq{mmotion}{mécanique du point}
+\metaq{menerg}{énergie}
+\metaq{mmeca}{énergie mécanique}
+\metaq{mechi}{énergie chimique}
+\metaq{melect}{énergie electrique}
+\metaq{melum}{énergie lumineuse}
+
 %\setgroupmode{strspc}{withoutreplacement}
 %%%% fin des elements
 
@@ -147,43 +179,87 @@
 \end{multicols}
 
 \section{Structures spatiales des espèces chimiques}
+\restituegroupe{mstr}
+
 \begin{multicols}{2}
 \insertgroup[2]{strspc}
 \insertgroup[2]{nec}
 \end{multicols}
 
 \section{Réactions acides-basiques}
+\restituegroupe{macid}
+
 \begin{multicols}{2}
 \insertgroup[2]{acide}
 \insertgroup[2]{tpco}
 \end{multicols}
 
 \section{Réactions d'oxydoréduction}
+\restituegroupe{mredox}
+
 \begin{multicols}{2}
-\insertgroup[4]{redox}
+\insertgroup[2]{redox}
 \end{multicols}
 
 \section{Cinétique chimique}
+\restituegroupe{mcichi}
+
 \begin{multicols}{2}
 \insertgroup[2]{cichi}
 \end{multicols}
 
+%\pagebreak
+\clearpage
 \section{Radioactivité}
+\restituegroupe{mradio}
+
 \begin{multicols}{2}
-\insertgroup[4]{radio}
+\insertgroup[2]{radio}
 \end{multicols}
 
-\section{Mouvements et interactions}
+\section{Mécanique du point}
+\restituegroupe{mmotion}
+
 \begin{multicols}{2}
-\insertgroup[4]{motion}
+\insertgroup[2]{motion}
 \end{multicols}
 
+%\pagebreak
+\clearpage
 \section{Énergie~: conversion et transfers}
+\restituegroupe{menerg}
 \begin{multicols}{2}
 \insertgroup[2]{energ}
+\end{multicols}
+
+\section{Énergie mécanique}
+\restituegroupe{mmeca}
+
+\begin{multicols}{2}
 \insertgroup[2]{meca}
+\end{multicols}
+
+\section{Énergie chimique}
+\restituegroupe{mechi}
+
+\begin{multicols}{2}
 \insertgroup[2]{echi}
+\end{multicols}
+
+\section{Énergie electrique}
+\restituegroupe{melect}
+
+\begin{multicols}{2}
 \insertgroup[2]{elect}
+\end{multicols}
+
+%\pagebreak
+
+\clearpage
+\section{Énergie et ondes}
+\restituegroupe{melum}
+
+\begin{multicols}{2}
 \insertgroup[2]{elum}
 \end{multicols}
 
