@@ -6,12 +6,16 @@
 \usepackage{xcolor}
 \usepackage{fp}
 \usepackage{xfp}
+\usepackage{numprint}
+\usepackage{siunitx}
 \usepackage{enumitem}
 \usepackage[version=4]{mhchem}
 \usepackage{WriteOnGrid}
 \usepackage{frcursive}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
+
+\DeclareSIUnit{\nothing}{\relax}
 
 \FPseed=10
 
@@ -126,11 +130,26 @@
 
 %%% elements
 \input{q_penti.tex}
+\input{q_p10.tex}
+\input{q_psi.tex}
+\input{q_atcomp.tex}
+
 %%% fin des elements
 \element{groupes}{
 \section{Notion de puissances}
 \begin{multicols}{2}
 \insertgroup[2]{penti}
+\insertgroup[2]{p10}
+\end{multicols}
+
+\section{Préfixes SI (Système International des Unités)}
+\begin{multicols}{2}
+\insertgroup[2]{psi}
+\end{multicols}
+
+\section{Atomes}
+\begin{multicols}{2}
+\insertgroup[2]{atcomp}
 \end{multicols}
 
 \AMCcleardoublepage
