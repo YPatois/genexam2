@@ -10,6 +10,7 @@
 \usepackage{siunitx}
 \usepackage{enumitem}
 \usepackage[version=4]{mhchem}
+\usepackage{chemfig}
 \usepackage{WriteOnGrid}
 \usepackage{frcursive}
 \usepackage{csvsimple}%
@@ -17,7 +18,7 @@
 
 \DeclareSIUnit{\nothing}{\relax}
 
-\FPseed=10
+\FPseed=11
 
 \baremeDefautS{e=0,v=0,b=1,m=-.1}
 \baremeDefautM{e=0,v=0,b=.5,m=-.1}
@@ -137,6 +138,9 @@
 \input{nomb.tex}
 \input{nombb.tex}
 \input{fonchi.tex}
+\input{nomc.tex}
+\input{nomd.tex}
+\input{q_brut.tex}
 
 %%% fin des elements
 \element{groupes}{
@@ -150,19 +154,27 @@
 \insertgroup[1]{iso}
 \end{multicols}
 
-\section{Nomenclature des alcanes}
+\section{Nomenclature des alcanes linéaires (simple)}
 \begin{multicols}{2}
 \insertgroup[3]{nomb}
 \insertgroup[3]{nombb}
 \end{multicols}
 
-\section{Fonctions chimique}
+\section{Fonctions chimiques}
 \begin{multicols}{2}
 \insertgroup[4]{fonchi}
 \end{multicols}
 
+\section{Nomenclatures (moins simple)}
+\begin{multicols}{2}
+\insertgroup[4]{nomc}
+\insertgroup[8]{nomd}
+\end{multicols}
 
-
+\section{Compter les hydrogènes}
+\begin{multicols}{2}
+\insertgroup[2]{brut}
+\end{multicols}
 \AMCcleardoublepage
 }
 
