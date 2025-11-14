@@ -102,16 +102,16 @@
 }
 
 \element{nomd}{ % Ici pas de numérotation
-  \begin{question}{nomd8}
+  \begin{questionmult}{nomd8}
     Quelle est la formule topologique du Butan-2-amine~?
     \begin{reponses}
       \mauvaise{{\tiny \chemfig{-[:30]-[:90](-[:30]-[:330]-[:30])-[:150]-[:210]-[:150]}}}
       \mauvaise{{\tiny \chemfig{-[:90](-[:150]-[:210])-[:30](-[:90])-[:330]-[:30]}}}
-      \mauvaise{{\tiny \chemfig{H_2N-[:330,,2](-[:270])-[:30]-[:330]}}}
+      \bonne{{\tiny \chemfig{H_2N-[:330,,2](-[:270])-[:30]-[:330]}}}
       \bonne{{\tiny \chemfig{H_2N-[:330,,2](-[:270])-[:30]-[:330]}}}
     \end{reponses}
     \explain{La structure montre une chaîne de quatre carbones avec un groupe amino en position 2.}
-  \end{question}
+  \end{questionmult}
 }
 
 % 2-Méthylbutan-1-ol \chemfig{OH-[:150,,1]-[:210](-[:270])-[:150]-[:210]}
@@ -218,16 +218,16 @@
 }
 
 \element{nomd}{ % Ici pas de numération
-  \begin{question}{nomd16}
+  \begin{questionmult}{nomd16}
     Quel est la formule topologique du 3-éthyl-4-méthylhexan-2-one~?
     \begin{reponses}
-      \mauvaise{{\tiny \chemfig{O=[:270](-[:210])-[:330](-[:270]-[:210])-[:30](-[:90])-[:330]-[:30]}}} % Déplacement du groupe fonctionnel
+      \bonne{{\tiny \chemfig{O=[:270](-[:210])-[:330](-[:270]-[:210])-[:30](-[:90])-[:330]-[:30]}}} % Déplacement du groupe fonctionnel
       \mauvaise{{\tiny \chemfig{OH-[:270](-[:210])-[:330](-[:270]-[:210])-[:30](-[:90])-[:330]-[:30]}}} % Inversion des substituents
       \mauvaise{{\tiny \chemfig{O=[:270](-[:210])-[:330](-[:270]-[:210])-[:30](-[:90])}}} % Erreur de longueur de chaîne
       \bonne{{\tiny \chemfig{O=[:270](-[:210])-[:330](-[:270]-[:210])-[:30](-[:90])-[:330]-[:30]}}}
     \end{reponses}
     \explain{La molécule est un hexan-2-one (\ce{=O}: cétone)avec des groupes éthyle et méthyle en positions 3 et 4 respectivement.}
-  \end{question}
+  \end{questionmult}
 }
 
 % Acide 2-méthylpropanoïque \chemfig{OH-[:150,,1](=[:90]O)-[:210](-[:150])-[:270]}
