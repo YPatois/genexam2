@@ -1,0 +1,151 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{needspace}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{fp}
+\usepackage{xfp}
+\usepackage{numprint}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+%\usepackage{WriteOnGrid}
+\usepackage{frcursive}
+\usepackage{csvsimple}%
+\usepackage[francais,bloc]{automultiplechoice}
+
+\def\multiSymbole{}
+
+\DeclareSIUnit{\nothing}{\relax}
+
+\FPseed=12
+
+\baremeDefautS{e=0,v=0,b=1,m=-.25}
+%\baremeDefautM{formula=(NBC>0 ? (NMC==0 ? 1:0):0)}
+
+\graphicspath{ {./images/} }
+
+\newenvironment{reponsesd}{
+    \begin{multicols}{2}
+    \begin{reponses} }{
+    \end{reponses}
+    \end{multicols}
+}
+
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{lightgray}}%
+
+\let\oexplain\explain
+\renewcommand{\explain}[1]{\oexplain{\textcolor{red}{#1}}}
+
+\titleformat{\section}
+  {\centering\hrule\vspace{2mm}}
+  {\thesection}
+  {1em}
+  {}
+  [\vspace{1mm}\hrule]
+
+\titleformat{\subsection}
+  {\em}
+  {\thesubsection}
+  {1em}
+  {}
+
+\newcommand{\sujet}{
+\exemplaire{1}{%
+
+\AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
+
+%%% debut de l'en-tête des copies :
+\begin{center}
+\vfill
+\noindent{\large \bf Classe de \niveau{}°\classe{}}
+
+\vspace*{3mm}
+
+{\Large\bf Évaluation sur table STL - Physique-Chime 12/11/2025}
+
+\vfill
+\namefield{\noindent{}\fbox{\vspace*{3mm}
+         \Huge\bf\prenom{}~\nom{}\normalsize{}%
+         \vspace*{3mm}
+      }}
+\end{center}
+\vfill
+
+\begin{center}
+\textbf{Durée : 30 minutes.}
+\vspace*{5mm}
+
+  Aucun document n'est autorisé.
+  L'usage de la calculatrice est interdit.
+
+  Les questions faisant apparaitre le symbole \multiSymbole{} peuvent
+  présenter une ou plusieurs bonnes réponses. Les autres ont
+  une unique bonne réponse.
+
+  Des points négatifs seront affectés aux mauvaises réponses.
+  \vspace*{5mm}
+
+  \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme
+  pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.
+  Si vous effacez le pourtour de la case, ne le redessinez pas!}
+
+  \vspace*{5mm}
+
+  Ne pas faire comme ceci (raturé, pas centré, trop pâle, ...):\\
+  \includegraphics[width=4cm]{checkbox_bad.png}
+
+  Mais comme cela (bien centré, bien foncé):\\
+  \includegraphics[width=2cm]{checkbox_good.png}
+
+  Si vous faites une erreur et que vous ne pouvez effacer, raturez la case bien ostensiblement.
+
+\end{center}
+\vspace{1ex}
+\vfill
+\pagebreak
+%%% fin de l'en-tête
+
+\restituegroupe{groupes}
+
+
+\AMCassociation{\id}
+
+	  } % End \exemplaire{1}{%
+} % End \newcommand{\sujet}{
+
+
+%%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\newcommand{\allq}{}
+\newcommand{\nball}[1]{#1}
+
+\begin{document}
+%%%Options
+\AMCrandomseed{10}
+
+\def\AMCformQuestion#1{{\sc Question #1 :}}
+
+\setdefaultgroupmode{withoutreplacement}
+%%% Fin Options
+
+%%% elements
+\input{q_alcanes.tex}
+
+%%% fin des elements
+\element{groupes}{
+\section{Nomenclature des alcanes linéaires (simple)}
+\begin{multicols}{2}
+\insertgroup[2]{falcn}
+\insertgroup[2]{alcn}
+\end{multicols}
+
+\AMCcleardoublepage
+}
+
+\csvreader[head to column names]{liste.csv}{}{\sujet}
+
+\end{document}
