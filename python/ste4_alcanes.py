@@ -68,7 +68,7 @@ def build_all_questions():
         else:
             elementbase="alcn"
         q+=build_one_question(elementbase,elementbase+str(i),qlist,i)
-        q+=build_one_question(elementbase,elementbase+str(i),qlist,i,reverse=True)
+        q+=build_one_question(elementbase,elementbase+'r'+str(i),qlist,i,reverse=True)
     return(q)
 
 # --------------------------------------------------------------------------
