@@ -53,15 +53,20 @@ def build_one_question(elementname,qref,qlist,nb,reverse=False):
         rssl.append(bonne[1])
     else:
         qs=bonne[1]
-        qss="Quelle est la forumle de l'hydrocarbone "+qs+"~?\n"
+        qss="Quelle est la formule de l'hydrocarbone "+qs+"~?\n"
         for i in range(len(mauvais)):
             rssl.append(lx1('ce',mauvais[i][0]))
         rssl.append(lx1('ce',bonne[0]))   
     return(build_question(elementname,qref,qss,rssl))
 
-def build_all_questions(elementbase,qlist):
+def build_all_questions():
+    qlist=brut_alcanetable
     q=""
     for i in range(len(qlist)):
+        if (i<4):
+            elementbase="falcn"
+        else:
+            elementbase="alcn"
         q+=build_one_question(elementbase,elementbase+str(i),qlist,i)
         q+=build_one_question(elementbase,elementbase+str(i),qlist,i,reverse=True)
     return(q)
@@ -70,9 +75,11 @@ def build_all_questions(elementbase,qlist):
 # Welcome to Derry, Maine
 # --------------------------------------------------------------------------
 def main():
-    #q=build_one_question("test","test1",brut_alcanetable,0)
-    q=build_all_questions("test",brut_alcanetable)
-    print(q)
+    q=build_all_questions()
+    f=open("q_alcanes.tex","w")
+    f.write(q)
+    f.close()
+
 # --------------------------------------------------------------------------
 if __name__ == '__main__':
     main()
