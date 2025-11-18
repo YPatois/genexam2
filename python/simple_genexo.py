@@ -44,19 +44,26 @@ def build_one_question(elementname,qref,qlist,nb,reverse=False):
     # Remove the bonne from the list
     locallist.remove(bonne)
     mauvais=choose3fromlist(locallist)
-    qs=bonne[0]
-    qss="Quel est le nom de l'hydrocarbone "+lx1('ce',qs)+"~?\n"
     rssl=[]
-    for i in range(len(mauvais)):
-        rs=mauvais[i][1]
-        rssl.append(rs)
-    rssl.append(bonne[1])
+    if not reverse:
+        qs=bonne[0]
+        qss="Quel est le nom de l'hydrocarbone "+lx1('ce',qs)+"~?\n"
+        for i in range(len(mauvais)):
+            rssl.append(mauvais[i][1])
+        rssl.append(bonne[1])
+    else:
+        qs=bonne[1]
+        qss="Quelle est la forumle de l'hydrocarbone "+qs+"~?\n"
+        for i in range(len(mauvais)):
+            rssl.append(lx1('ce',mauvais[i][0]))
+        rssl.append(lx1('ce',bonne[0]))   
     return(build_question(elementname,qref,qss,rssl))
 
 def build_all_questions(elementbase,qlist):
     q=""
     for i in range(len(qlist)):
         q+=build_one_question(elementbase,elementbase+str(i),qlist,i)
+        q+=build_one_question(elementbase,elementbase+str(i),qlist,i,reverse=True)
     return(q)
 
 # --------------------------------------------------------------------------
