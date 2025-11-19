@@ -1,0 +1,23 @@
+#!/bin/bash
+#set -e
+
+source ../vault/vault.sh
+
+function latex_run() {
+    latexfile=$1
+    pdflatex -interaction=nonstopmode $latexfile >& ${latexfile}.ylog
+    if [ $? -ne 0 ]; then
+        cat ${latexfile}.ylog
+    fi
+    return 0
+}
+
+inotifywait --recursive --monitor --event modify,create,move ./ | while read path action file; do
+    echo `date`" - File $file has been $action in $path"
+    pushd $TEXDIR
+    #latex_run testeur.tex &
+    latex_run Preremplies.tex
+    #wait
+    popd
+    echo "build done"
+done
