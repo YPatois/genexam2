@@ -2,6 +2,8 @@
 import random
 from mytex import lx,lx1,lx1l,lx2,lx2l,qty,begend,begend2
 
+random.seed(10)
+
 def choose3fromlist(l):
     random.shuffle(l)
     return(l[:3])
