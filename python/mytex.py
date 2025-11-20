@@ -6,7 +6,6 @@ def sindent(s,indent=0):
         sout+=" "*indent+line+"\n"
     return(sout)
 
-
 def lx(s):
     return('\\'+s)
 
