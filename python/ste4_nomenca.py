@@ -20,12 +20,6 @@ molecule_table = [
     ['acide 2-méthylpropanoïque', '2-méthylpropan-1-ol', 'acide 2,4-diméthylpentanoïque', '2-méthylpropanal', 'acide 2-méthylbutanoïque', 'acide 2,3-diéthylhexanoïque']
 ]
 
-#    ['2-méthylbutan-1-ol'         , 'OH-[:150,,1]-[:210](-[:270])-[:150]-[:210]'],
-#    ['3-méthylheptane'            , '-[:90](-[:150]-[:210])-[:30]-[:330]-[:30]-[:330]'],
-#    ['2,3-diméthylpentanal'       , 'O=[:210]-[:150](-[:90])-[:210](-[:270])-[:150]-[:210]'],
-#    ['3-éthyl-4-méthylhexan-2-one', 'O=[:270](-[:210])-[:330](-[:270]-[:210])-[:30](-[:90])-[:330]-[:30]'],
-#    ['Acide 2-méthylpropanoïque'  , 'OH-[:150,,1](=[:90]O)-[:210](-[:270])-[:150]']
-
 def massage_item(item):
     return('{'+lx('small')+lx1('chemfig',item)+'}')
 
