@@ -13,7 +13,7 @@ from mychemcache import ChemCache
 global_cache=ChemCache()
 
 def mol2chemfig(chemid):
-    cmd = "mol2chemfig -w -z -y delete -i pubchem %s" % (chemid)
+    cmd = "mol2chemfig -z -y delete -i pubchem %s" % (chemid)
     chemfig=global_cache.get(cmd)
     if (chemfig is not None):
         print ("Cache hit! - %s" % (cmd))
