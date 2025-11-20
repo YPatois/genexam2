@@ -12,7 +12,7 @@ from mychemcache import ChemCache
 
 global_cache=ChemCache()
 
-def mol2chemfig(chemid):
+def mol2chemfig0(chemid):
     cmd = "mol2chemfig -z -y delete -i pubchem %s" % (chemid)
     chemfig=global_cache.get(cmd)
     if (chemfig is not None):
@@ -20,6 +20,10 @@ def mol2chemfig(chemid):
         return chemfig
     global_cache.set(cmd, os.popen(cmd).read())
     return os.popen(cmd).read()
+
+# FIXME: fast hack for stripping
+def mol2chemfig(chemid):
+    return mol2chemfig0(chemid).strip()
 
 def find_substance_id_from_name(name):
     cnl=global_cache.get(name)
