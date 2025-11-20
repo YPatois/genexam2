@@ -47,7 +47,12 @@ def french_to_english(name):
     chardict={'è':'e','é':'e'}
     for k,v in chardict.items():
         name=name.replace(k,v)
+    if (name.startswith('acide ')):
+        print("Ho: %s %s" % (name, name[0:5]))
+        name=name[6:]+ ' acid'
+        name=name.replace('oïque','oic')
     return name
+
 
 def mol2chemfig_from_frenchname(name):
     return mol2chemfig(find_substance_id_from_name(french_to_english(name)))
