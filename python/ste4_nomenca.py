@@ -15,8 +15,9 @@ molecule_table = [
     ['butan-2-amine', 'butan-1-amine','3-méthylbutan-2-amine','*2-amino-3-éthylbutane', 'pentan-2-amine','2,3-diaminobutane'],
     ['2-méthylbutan-1-ol', '3-méthylbutan-1-ol', '*2-méthylpentan-1-ol', '2-méthylpropan-1-ol', '*3-éthylbutan-1-ol', '*3-pentylbutan-1-ol'],
     ['3-méthylheptane', '4-méthylheptane', '*5-méthylheptane', '3-éthylheptane', '3-méthylhexane', '3-méthyloctane'],
-    ['2,3-diméthylpentanal', '2,4-diméthylpentanal', '3,4-diméthylpentanal', '*2,3-trimethylpentanal', '2-methyl-3-ethylpentanal'],
-
+    ['2,3-diméthylpentanal', '2,4-diméthylpentanal', '2,4-diméthylhexanal','3,4-diméthylpentanal', '*2,3-trimethylpentanal', '*2-methyl-3-ethylpentanal'],
+    ['3-éthyl-4-méthylhexan-2-one', '4-éthyl-3-méthylhexan-2-one', '*3-propyl-4-methylhexan-2-one', '*2,3-diméthyl-4-éthylhexan-5-one', '3-éthyl-4-méthylpentan-2-one', '*2-éthyl-5-methylheptan-2-one'],
+    ['acide 2-méthylpropanoïque', '*acide 3-méthylpropanoïque', 'acide 2,4-diméthylpentanoïque', '*acide 2-éthylpropanoïque', 'acide 2-méthylbutanoïque', 'acide 2,3-diéthylhexanoïque']
 ]
 
 #    ['2-méthylbutan-1-ol'         , 'OH-[:150,,1]-[:210](-[:270])-[:150]-[:210]'],
