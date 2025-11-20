@@ -15,6 +15,8 @@ molecule_table = [
     ['butan-2-amine', 'butan-1-amine','3-méthylbutan-2-amine','*2-amino-3-éthylbutane', 'pentan-2-amine','2,3-diaminobutane'],
     ['2-méthylbutan-1-ol', '3-méthylbutan-1-ol', '*2-méthylpentan-1-ol', '2-méthylpropan-1-ol', '*3-éthylbutan-1-ol', '*3-pentylbutan-1-ol'],
     ['3-méthylheptane', '4-méthylheptane', '*5-méthylheptane', '3-éthylheptane', '3-méthylhexane', '3-méthyloctane'],
+    ['2,3-diméthylpentanal', '2,4-diméthylpentanal', '3,4-diméthylpentanal', '*2,3-trimethylpentanal', '2-methyl-3-ethylpentanal'],
+
 ]
 
 #    ['2-méthylbutan-1-ol'         , 'OH-[:150,,1]-[:210](-[:270])-[:150]-[:210]'],
@@ -34,11 +36,12 @@ def massage_list(qlist):
 
 def build_one_group_question(elementname,qref,qlist,nb,reverse=False):
     print("Building question "+str(nb))
+    #print(qlist)
     if not reverse:
         qformat="Quel est la formule topologique de: {q}~?\n"
         aformat="{a}"
     else:
-        qformat="Quel est le nom de cette molécule: ~?\n \\\\ {q}"
+        qformat="Quel est le nom de cette molécule: ~? \n \\smallskip\n \\\\ \n {q}"
         aformat="{a}"
     return build_acm_question_from_list(elementname,qref,qlist,nb,
         qformat,aformat,reverse)
@@ -76,52 +79,38 @@ def build_lists_from_one_list(qlist,id):
     return(directqlist,reverseqlist)
 
 
-def build_questions_dr_from_one_list(elementbase,qlist,id):
+def build_questions_dr_from_one_list(elementbase,qlist,id,idx):
     q=""
     (directqlist,reverseqlist)=build_lists_from_one_list(qlist,id)
     if directqlist == None:
         return(q)
-    q+=build_one_group_question(elementbase,elementbase+str(id),directqlist,0)
-    q+=build_one_group_question(elementbase,elementbase+'r'+str(id),reverseqlist,0,reverse=True)
+    q+=build_one_group_question(elementbase,elementbase+str(idx),directqlist,0)
+    q+=build_one_group_question(elementbase,elementbase+'r'+str(idx),reverseqlist,0,reverse=True)
     return(q)
 
-def build_questions_list(elementbase,qlist):
+def build_questions_list(elementbase,qlist,idx):
     q=""
     for i in range(len(qlist)):
-        q+=bbuild_questions_dr_from_one_list(elementbase,qlist,i)
+        q+=build_questions_dr_from_one_list(elementbase,qlist,i,idx)
+        idx+=1
     return(q)
 
 
-def build_all_groups_questions(qlist,all=False):
+def build_all_groups_questions(elementbase,qlist,all=False):
     #list=massage_table(molecule_table)
-    elementbase="nomenca"
+    idx=0
     q=""
     for qr in qlist:
-        for i in range(len(qlist)):
-            qn=qlist[i][0]
-        q+=build_one_group_question(elementbase,elementbase+str(i),qlist,i)
-        q+=build_one_group_question(elementbase,elementbase+'r'+str(i),qlist,i,reverse=True)
+        #print(qr)
+        q+=build_questions_list(elementbase,qr,idx)
+        idx+=len(qlist)
     return(q)
 
 # --------------------------------------------------------------------------
 # Welcome to Derry, Maine
 # --------------------------------------------------------------------------
 def main():
-    q=build_questions_list('nomenca',molecule_table[0])
-    print(q)
-    return
-
-    for mollist in molecule_table:
-        for mol in mollist:
-            #print(mol)
-            # If first char is '*', skip: it's an invalid name
-            if mol[0] == '*':
-                print (f"Skipping {mol}")
-                continue
-            print(f"{mol}: {mol2chemfig_from_frenchname(mol)}")
-    return
-
-    q=build_all_groups_questions(molecule_table,True)
+    q=build_all_groups_questions('nomenca',molecule_table)
     f=open("q_nomenca.tex","w")
     f.write(q)
     f.close()
