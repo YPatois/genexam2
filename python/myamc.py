@@ -17,6 +17,7 @@ def build_acm_question(elementname,qref,question, reponses):
 
     q=lx2l('element',elementname,
         begend2("question",qref,
+            lx1("needspace",'6cm')+
             question+
             begend("reponses",rs,4),4
         ),4
