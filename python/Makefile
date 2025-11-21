@@ -5,7 +5,7 @@ TEXFILES = q_isoze.tex q_isors.tex q_nomenca.tex
 all: $(addprefix ../ste4/,$(TEXFILES))
 	@echo "All targets built successfully."
 
-../ste4/q_%.tex: ste4_%.py myamc.py
+../ste4/q_%.tex: ste4_%.py myamc.py myacmhelper.py
 	python $<
 
 clean:
