@@ -12,7 +12,7 @@ molecule_table = [
     '*acide (3R)-3-amino-2-methylpropanoïque', '*acide (2S,4R)-2-amino-4-ethylpentanoïque'],
     ['(2S,3R)-2,3,4-trihydroxybutanal', '(2R,3S)-2,3,4-trihydroxybutanal', '(2S,3S)-2,3,4-trihydroxybutanal',
     '(2R,3R)-2,3,4-trihydroxybutanal', '*(2S,3R)-2,3,5-trihydroxypentanal', '*(2S,4R)-2,4-dihydroxy-3-oxobutanal'],
-    ['(R)-butan-2-ol', '(S)-butan-2-ol'],
+    ['(R)-butan-2-ol', '(S)-butan-2-ol','(R)-butan-2-amine', '(S)-butan-2-amine'],
     ['(R)-bromochlorofluoromethane', '(S)-bromochlorofluoromethane'],
 ]
 
