@@ -106,7 +106,7 @@ def build_all_groups_questions(elementbase,qlist,all=False):
 # --------------------------------------------------------------------------
 def main():
     q=build_all_groups_questions('nomenca',molecule_table)
-    f=open("q_nomenca.tex","w")
+    f=open("../ste4/q_nomenca.tex","w")
     f.write(q)
     f.close()
 

@@ -20,8 +20,8 @@ molecule_table = [
 # Welcome to Derry, Maine
 # --------------------------------------------------------------------------
 def main():
-    q=build_all_groups_questions('nomencrs',molecule_table)
-    f=open("q_nomencrs.tex","w")
+    q=build_all_groups_questions('isors',molecule_table)
+    f=open("../ste4/q_isors.tex","w")
     f.write(q)
     f.close()
 
