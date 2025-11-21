@@ -32,6 +32,10 @@ def find_substance_id_from_name(name):
         return cnl
     cnl=pcp.get_compounds(name, "name")
     if (len(cnl) == 0):
+        if (name == '(E)-1,2-dichlorobut-1-ene'):
+            return '21572592'
+        cnl = pcp.get_substances(name, "name")
+        print (cnl)
         raise ValueError("No match for %s" % (name))
     if (len(cnl) == 1):
         global_cache.set(name, cnl[0].cid)
@@ -51,6 +55,7 @@ def french_to_english(name):
         print("Ho: %s %s" % (name, name[0:5]))
         name=name[6:]+ ' acid'
         name=name.replace('oïque','oic')
+    #name=name.replace('Z','cis')
     return name
 
 
