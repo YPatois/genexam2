@@ -64,13 +64,17 @@ def build_lists_from_one_list(qlist,id):
 
 
 def build_questions_dr_from_one_list(elementbase,qlist,id,idx):
+    build_questions_dr_from_one_list.idx += 1
+    idxn=build_questions_dr_from_one_list.idx
     q=""
     (directqlist,reverseqlist)=build_lists_from_one_list(qlist,id)
     if directqlist == None:
         return(q)
-    q+=build_one_group_question(elementbase,elementbase+str(idx),directqlist,0)
-    q+=build_one_group_question(elementbase,elementbase+'r'+str(idx),reverseqlist,0,reverse=True)
+    q+=build_one_group_question(elementbase,elementbase+str(idxn),directqlist,0)
+    q+=build_one_group_question(elementbase,elementbase+'r'+str(idxn),reverseqlist,0,reverse=True)
     return(q)
+
+build_questions_dr_from_one_list.idx=0
 
 def build_questions_list(elementbase,qlist,idx):
     q=""
@@ -87,7 +91,6 @@ def build_all_groups_questions(elementbase,qlist,all=False):
     for qr in qlist:
         #print(qr)
         q+=build_questions_list(elementbase,qr,idx)
-        idx+=len(qlist)
     return(q)
 
 # --------------------------------------------------------------------------
