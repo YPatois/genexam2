@@ -5,7 +5,7 @@ import unittest
 import random
 
 from mytex import lx,lx1,lx2,qty
-from myamc import build_question
+from myamc import build_acm_question
 
 semialcanetable=[
     ['CH4','méthane'],
@@ -57,7 +57,7 @@ def build_one_question(elementname,qref,qlist,nb,reverse=False):
         for i in range(len(mauvais)):
             rssl.append(lx1('ce',mauvais[i][0]))
         rssl.append(lx1('ce',bonne[0]))   
-    return(build_question(elementname,qref,qss,rssl))
+    return(build_acm_question(elementname,qref,qss,rssl))
 
 def build_all_questions():
     qlist=brut_alcanetable
