@@ -1,5 +1,5 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[a4paper, margin=1.5cm]{geometry}
 \usepackage{needspace}
 \usepackage[nobottomtitles]{titlesec}
 \usepackage{multicol}
@@ -32,6 +32,20 @@
     \end{reponses}
     \end{multicols}
 }
+
+% Sauvegarde l'ancienne définition de reponseshoriz
+%\let\oldreponseshoriz\reponseshoriz
+%\let\endoldreponseshoriz\endreponseshoriz
+
+% Redéfinit reponseshoriz avec une taille de police réduite
+%\renewenvironment{reponseshoriz}
+%{
+%    \scriptsize % ou \small, \scriptsize, etc.
+%    \oldreponseshoriz
+%}
+%{
+%    \endoldreponseshoriz
+%}
 
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{lightgray}}%
@@ -132,12 +146,20 @@
 
 %%% elements
 \input{q_01_simplenum.tex}
+\input{q_02_power10.tex}
+\input{q_03_psi.tex}
+\input{q_04_atoms.tex}
+\input{q_05_symchim.tex}
 
 %%% fin des elements
 \element{groupes}{
 \section{Rappels simples sur des notions mathématiques et physiques}
 \begin{multicols}{2}
-\insertgroup[6]{simplenum}
+\insertgroup[2]{simplenum}
+\insertgroup[2]{power10}
+\insertgroup[2]{psi}
+\insertgroup[2]{atoms}
+\insertgroup[2]{symchim}
 \end{multicols}
 
 \AMCcleardoublepage

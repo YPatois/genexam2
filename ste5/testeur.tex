@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{needspace}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{fp}
+\usepackage{xfp}
+\usepackage{numprint}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+\usepackage{WriteOnGrid}
+\usepackage{frcursive}
+\usepackage{csvsimple}%
+
+\DeclareSIUnit{\nothing}{\relax}
+
+\newcommand{\element}[1]{oooooooooooooooooooo \\ \medskip}
+\newcommand{\mauvaise}[1]{Mauvais: #1\\}
+\newcommand{\bonne}[1]{Bonne: #1\\}
+\newcommand{\explain}[1]{#1}
+
+\newenvironment{question}[1]{
+    \smallskip
+}{\newline}
+
+\smallskip
+
+\newenvironment{reponses}{
+    \smallskip
+}\\
+
+\begin{document}
+
+\input{q_05_symchim.tex}
+
+\end{document}
