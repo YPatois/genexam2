@@ -64,9 +64,9 @@ def build_all_questions():
     q=""
     for i in range(len(qlist)):
         if (i<4):
-            elementbase="falcn"
+            elementbase="falcans"
         else:
-            elementbase="alcn"
+            elementbase="alcans"
         q+=build_one_question(elementbase,elementbase+str(i),qlist,i)
         q+=build_one_question(elementbase,elementbase+'r'+str(i),qlist,i,reverse=True)
     return(q)
@@ -76,7 +76,7 @@ def build_all_questions():
 # --------------------------------------------------------------------------
 def main():
     q=build_all_questions()
-    f=open("q_alcanes.tex","w")
+    f=open("q_alcans.tex","w")
     f.write(q)
     f.close()
 
