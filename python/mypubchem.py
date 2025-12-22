@@ -25,6 +25,10 @@ def mol2chemfig0(chemid):
 def mol2chemfig(chemid):
     return mol2chemfig0(chemid).strip()
 
+# FIXME: cnl should be stored in full in cache
+# indexed by chemid
+# Name index should return cid only
+
 def find_substance_id_from_name(name):
     cnl=global_cache.get(name)
     if (cnl is not None):
@@ -44,6 +48,23 @@ def find_substance_id_from_name(name):
         print (cid, mol2chemfig(cid))
     raise ValueError("No unique match for %s" % (name))
 
+def find_substance_name_from_id(chemid):
+    cnl=global_cache.get(chemid)
+    if (cnl is not None):
+        print ("Cache hit! - %s" % (chemid))
+        return cnl
+    cnl=pcp.get_compounds(chemid, "cid")
+    if (len(cnl) == 0):
+        cnl = pcp.get_substances(chemid, "cid")
+        print (cnl)
+        raise ValueError("No match for %s" % (chemid))
+    if (len(cnl) == 1):
+        global_cache.set(chemid, cnl[0].name)
+        return cnl[0].name
+    for cid in cnl:
+        print (cid, mol2chemfig(cid))
+    raise ValueError("No unique match for %s" % (chemid))
+
 def mol2chemfig_from_name(name):
     return mol2chemfig(find_substance_id_from_name(name))
 
@@ -61,6 +82,11 @@ def french_to_english(name):
 
 def mol2chemfig_from_frenchname(name):
     return mol2chemfig(find_substance_id_from_name(french_to_english(name)))
+
+
+def full_latex_from_id(chemid):
+    pass
+
 
 # --------------------------------------------------------------------------
 # Welcome to Derry, Maine
