@@ -1,7 +1,11 @@
 #!/bin/bash
 #set -e
+SCRIPTBASEDIR=$(dirname $(readlink -f $0))
+export SCRIPTBASEDIR
 
-source ../vault/vault.sh
+source $SCRIPTBASEDIR/../vault/vault.sh
+
+WATCHDIR=$SCRIPTBASEDIR/../ste5
 
 function latex_run() {
     latexfile=$1
@@ -12,12 +16,12 @@ function latex_run() {
     return 0
 }
 
-inotifywait --recursive --monitor --event modify,create,move ./ | while read path action file; do
+inotifywait --recursive --monitor --event modify,create,move $WATCHDIR | while read path action file; do
     echo `date`" - File $file has been $action in $path"
     pushd $TEXDIR
-    #latex_run testeur.tex &
+    latex_run testeur.tex&
     latex_run Preremplies.tex
-    #wait
+    wait
     popd
     echo "build done"
 done
