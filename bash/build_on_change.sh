@@ -16,8 +16,11 @@ function latex_run() {
     return 0
 }
 
-inotifywait --recursive --monitor --event modify,create,move $WATCHDIR | while read path action file; do
+inotifywait --recursive --monitor --event modify,create,move --fromfile $SCRIPTBASEDIR/watchfiles.txt | while read path action file; do
     echo `date`" - File $file has been $action in $path"
+    pushd $WATCHDIR
+    make
+    popd
     pushd $TEXDIR
     latex_run testeur.tex&
     latex_run Preremplies.tex
