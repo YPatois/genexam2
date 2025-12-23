@@ -1,3 +1,48 @@
+\section {Caractéristique de l'acide benzoïque}
+\subsection{Introduction}
+L'acide benzoïque, de formule \ce{C6H5COOH}, et le benzoate de sodium sont des conservateurs antimicrobiens 
+respectivement identifiés par les codes E210 et E211. Ils sont présents dans de nombreux produits alimentaires 
+et notamment dans certaines boissons gazeuses sucrées. À température ambiante, l’acide benzoïque est un solide blanc.
+
+\textbf{Source du sujet :} Baccalauréat de mars 2023 – exercice 4 du sujet de Métropole.
+
+\begin{figure}[h]
+    \centering
+    \chemfig{OH-[:120,,1](=[:60]O)-[:180]=_[:240]-[:180]=_[:120]-[:60]=_(-[:300])}
+    \caption{Formule topologique de l’acide benzoïque}
+\end{figure}
+
+\textbf{Données :}
+\begin{itemize}
+    \item Masse molaire de l'acide benzoïque : $M = \SI{122}{\gram\per\mole}$.
+    \item Température de fusion de l'acide benzoïque : $\theta_f = \SI{122,4}{\degreeCelsius}$.
+    \item pKa du couple acide benzoïque/ion benzoate : $pKa = 4,2$.
+    \item Le benzoate de sodium est soluble dans l’eau.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Densité & Eau & Éthanol & Éther éthylique \\
+\hline
+Acide benzoïque & - & Peu soluble & Très soluble & Très soluble \\
+\hline
+Eau & 1,0 & - & Miscible & Non miscible \\
+\hline
+Éthanol & 0,76 & Miscible & - & - \\
+\hline
+Éther éthylique & 0,71 & Non miscible & - & - \\
+\hline
+\end{tabular}
+\caption{Tableau de solubilité des substances}
+\end{table}
+
+L’objectif de cet exercice est de vérifier l’indication d’une étiquette de boisson gazeuse concernant la
+présence d’un conservateur.
+
+\subsection{Questions}
+
 \begin{questionmult}{acidbenzo1}
     Entourer et nommer le groupe caractéristique présents dans la formule topologique de l'acide benzoïque ci-dessous.\\
         \centering\chemfig{OH-[:120,,1](=[:60]O)-[:180]=_[:240]-[:180]=_[:120]-[:60]=_(-[:300])}\\
@@ -17,13 +62,13 @@
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
         \mauvaise[X]{Faux}\scoring{b=-1}
-        \mauvaise[B]{\approx}\scoring{b=.5}
+        \mauvaise[B]{$\approx$}\scoring{b=.5}
         \bonne[A]{OK}\scoring{b=1}
     }
     \explain{
     La formule topologique de l’ion benzoate est :
-    mcfright{O}{^{\mcfminus}}-[:210](=[:150]O)-[:270]=^[:210]-[:270]=^[:330]%
--[:30]=^[:90](-[:150])}
+    \chemfig{\mcfright{O}{^{\mcfminus}}-[:120](=[:60]O)-[:180]=^[:120]-[:180]=^[:240]%
+-[:300]=^(-[:60])}}
 \end{question}
 
 \begin{question}{acidbenzo3}
@@ -33,7 +78,7 @@
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
         \mauvaise[X]{Faux}\scoring{b=-1}
-        \mauvaise[B]{\approx}\scoring{b=1}
+        \mauvaise[B]{$\approx$}\scoring{b=1}
         \bonne[A]{OK}\scoring{b=2}
     }
     \explain{
@@ -113,7 +158,7 @@ On suit le protocole expérimental suivant :
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
         \mauvaise[X]{Faux}\scoring{b=-1}
-        \mauvaise[C]{\approx}\scoring{b=.5}
+        \mauvaise[C]{$\approx$}\scoring{b=.5}
         \bonne[C]{OK}\scoring{b=1}
     }
     \explain{
@@ -159,7 +204,7 @@ On suit le protocole expérimental suivant :
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
         \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[B]{\approx}\scoring{b=.5}
+        \mauvaise[B]{$\approx$}\scoring{b=.5}
         \bonne[A]{OK}\scoring{b=1}
    }
     \explain{
@@ -188,7 +233,7 @@ On suit le protocole expérimental suivant :
     \explain{
     La masse théorique d'acide benzoïque est calculée comme suit :
     \[
-    m = C \times V \times M = \SI{4.0e-4}{\mol\per\litre} \times \SI{0.5}{\litre} \times \SI{122}{\gram\per\mol} = \SI{24}{\milligram}
+    m = C \times V \times M = \SI{4.0e-4}{\mol\per\litre} \times \SI{0.5}{\litre} \times \SI{122}{\gram\per\mol} = \SI{24}{\mg}
     \]
     }
 \end{questionmult}
