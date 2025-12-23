@@ -12,7 +12,7 @@
 \usepackage[version=4]{mhchem}
 \usepackage{chemfig}
 \usepackage{mol2chemfig}
-%\usepackage{WriteOnGrid}
+\usepackage{WriteOnGrid}
 \usepackage{frcursive}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
@@ -70,6 +70,8 @@
 \exemplaire{1}{%
 
 \AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
+\AMCopenOpts{boxframerule=0pt,lineheight=0pt,width=0pt,boxframerulecol=white,
+    dots=false,framerule=0pt,framerulecol=white}
 
 %%% debut de l'en-tête des copies :
 \begin{center}
@@ -105,6 +107,10 @@
   \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme
   pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.
   Si vous effacez le pourtour de la case, ne le redessinez pas!}
+
+  \vspace*{5mm}
+
+  \textbf{IMPORTANT: Ne pas écrire dans les cases grisées!}
 
   \vspace*{5mm}
 
@@ -156,7 +162,7 @@
 \input{q_nomencla.tex}
 \input{q_isors.tex}
 \input{q_isoze.tex}
-
+%\input{q_acide_benzoique.tex}
 %%% fin des elements
 \element{groupes}{
 \section{Rappels simples sur des notions mathématiques et physiques}
@@ -179,8 +185,13 @@
 \insertgroup[2]{isoze}
 \end{multicols}
 
+\input{acide_benzoique_section.tex}
+\input{q_acide_benzoique.tex}
+
 \AMCcleardoublepage
 }
+
+%\input{acide_benzoique.tex}
 
 \csvreader[head to column names]{liste.csv}{}{\sujet}
 

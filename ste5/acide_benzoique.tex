@@ -1,33 +1,15 @@
-\documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{amsmath}
-\usepackage{WriteOnGrid}
-\usepackage{siunitx}
-\usepackage[version=4]{mhchem}
-\usepackage{chemfig}
-\usepackage[francais,bloc]{automultiplechoice}
-
-\title{Exercice : Extraction de l'acide benzoïque}
-\author{}
-\date{}
-
-\begin{document}
-
-\maketitle
 
 \section*{Introduction}
-L'acide benzoïque, de formule \ce{C6H5COOH}, et le benzoate de sodium sont des conservateurs antimicrobiens respectivement identifiés par les codes E210 et E211. Ils sont présents dans de nombreux produits alimentaires et notamment dans certaines boissons gazeuses sucrées. À température ambiante, l’acide benzoïque est un solide blanc.
+L'acide benzoïque, de formule \ce{C6H5COOH}, et le benzoate de sodium sont des conservateurs antimicrobiens 
+respectivement identifiés par les codes E210 et E211. Ils sont présents dans de nombreux produits alimentaires 
+et notamment dans certaines boissons gazeuses sucrées. À température ambiante, l’acide benzoïque est un solide blanc.
 
 \textbf{Source du sujet :} Baccalauréat de mars 2023 – exercice 4 du sujet de Métropole.
 
 \begin{figure}[h]
-\centering
-\chemfig{
-OH-[:120,,1](=[:60]O)-[:180]=_[:240]-[:180]=_[:120]-[:60]=_(-[:300])
-}
-\caption{Formule topologique de l’acide benzoïque}
+    \centering
+    \chemfig{OH-[:120,,1](=[:60]O)-[:180]=_[:240]-[:180]=_[:120]-[:60]=_(-[:300])}
+    \caption{Formule topologique de l’acide benzoïque}
 \end{figure}
 
 \textbf{Données :}
@@ -56,27 +38,28 @@ Eau & 1,0 & - & Miscible & Non miscible \\
 \caption{Tableau de solubilité des substances}
 \end{table}
 
-L’objectif de cet exercice est de vérifier l’indication d’une étiquette de boisson gazeuse concernant la présence d’un conservateur.
+L’objectif de cet exercice est de vérifier l’indication d’une étiquette de boisson gazeuse concernant la
+présence d’un conservateur.
 
 \section*{Questions}
 
-\begin{question}{ouverte1}
-Entourer et nommer les groupes caractéristiques présents dans la formule topologique de l'acide benzoïque ci-dessus.
-\begin{EnvQuadrillage}[NbCarreaux=20x3,Grille=Seyes,Marge=1]
-\end{EnvQuadrillage}
-\AMCOpen{non-reponse}{0}\AMCOpen{groupe-identifie}{1}\AMCOpen{groupe-nomme}{1}
-\explain{
-Les groupes caractéristiques sont :
-- Un groupe carboxyle (–COOH)
-- Un noyau benzénique (cycle aromatique)
-}
+\begin{question}{acidbenzo1}
+    Entourer et nommer le groupe caractéristique présents dans la formule topologique de l'acide benzoïque ci-dessous.\\
+        \centering\chemfig{OH-[:120,,1](=[:60]O)-[:180]=_[:240]-[:180]=_[:120]-[:60]=_(-[:300])}
+    \AMCOpen{lines=3}{
+        \mauvaise[F]{Faux}\scoring{b=-1}
+        \mauvaise[X]{Non réponse}\scoring{b=0}
+        \bonne[I]{Groupe identifié}\scoring{b=.5}
+        \bonne[N]{Groupe nommé}\scoring{b=.5}
+    }
+    \explain{Le groupes caractéristique est le groupe carboxyle (–COOH)}
 \end{question}
 
-\begin{question}{ouverte2}
+\begin{question}{acidbenzo2}
 Quels sont les groupes caractéristiques présents dans la formule de l'acide benzoïque ?
-\begin{EnvQuadrillage}[NbCarreaux=21x4,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
-\AMCOpen{non-reponse}{0}\AMCOpen{groupes-identifies}{2}
+\AMCOpen{lines=4}{\wrongchoice[F]{Faux}\scoring{0}\correctchoice[J]{Juste}\scoring{2}}
 \explain{
 Les groupes caractéristiques de l'acide benzoïque sont :
 - Un groupe carboxyle (–COOH)
@@ -86,19 +69,21 @@ Les groupes caractéristiques de l'acide benzoïque sont :
 
 \begin{question}{ouverte3}
 Expliquer pourquoi l'acide benzoïque est peu soluble dans l'eau mais très soluble dans l'éther éthylique.
-\begin{EnvQuadrillage}[NbCarreaux=21x2,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=20x2,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
-\AMCOpen{non-reponse}{0}\AMCOpen{explication-correcte}{2}
+\AMCOpen{lines=2}{\wrongchoice[F]{Faux}\scoring{0}\correctchoice[J]{Juste}\scoring{2}}
 \explain{
-L'acide benzoïque est peu soluble dans l'eau en raison de son caractère hydrophobe (cycle benzénique) et de la formation de liaisons hydrogène intramoléculaires. En revanche, il est très soluble dans l'éther éthylique, un solvant organique apolaire, en raison de sa structure aromatique.
+L'acide benzoïque est peu soluble dans l'eau en raison de son caractère hydrophobe (cycle benzénique) et de 
+la formation de liaisons hydrogène intramoléculaires. En revanche, il est très soluble dans l'éther éthylique, 
+un solvant organique apolaire, en raison de sa structure aromatique.
 }
 \end{question}
 
 \begin{question}{ouverte4}
 Écrire l'équation de la réaction de l'acide benzoïque avec l'eau.
-\begin{EnvQuadrillage}[NbCarreaux=21x2,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=20x2,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
-\AMCOpen{non-reponse}{0}\AMCOpen{reaction-correcte}{2}
+\AMCOpen{lines=2}{\wrongchoice[F]{Faux}\scoring{0}\correctchoice[J]{Juste}\scoring{2}}
 \explain{
 L'équation de la réaction est :
 \ce{C6H5COOH + H2O <=> C6H5COO- + H3O+}
@@ -107,12 +92,11 @@ L'équation de la réaction est :
 
 \begin{question}{ouverte5}
 Quelle est l'espèce prédominante du couple acide benzoïque/ion benzoate à un pH de 3 ?
-\begin{EnvQuadrillage}[NbCarreaux=21x2,Grille=Seyes,Marge=1]
+\begin{EnvQuadrillage}[NbCarreaux=20x2,Grille=Seyes,Marge=1]
 \end{EnvQuadrillage}
-\AMCOpen{non-reponse}{0}\AMCOpen{espece-correcte}{2}
+\AMCOpen{lines=2}{\wrongchoice[F]{Faux}\scoring{0}\correctchoice[J]{Juste}\scoring{2}}
 \explain{
-À un pH de 3, l'espèce prédominante est l'acide benzoïque (\ce{C6H5COOH}), car le pH est inférieur au pKa du couple.
+À un pH de 3, l'espèce prédominante est l'acide benzoïque (\ce{C6H5COOH}), car le pH est inférieur 
+au pKa du couple.
 }
 \end{question}
-
-\end{document}
