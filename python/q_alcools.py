@@ -38,7 +38,7 @@ def build_one_alcool_question(elementname,qref,qlist,nb,reverse=False):
 
 def build_all_alcool_questions():
     qlist=massage_table(alcool_table)
-    elementbase="alcl"
+    elementbase="alcools"
     q=""
     for i in range(len(qlist)):
         q+=build_one_alcool_question(elementbase,elementbase+str(i),qlist,i)
@@ -50,7 +50,7 @@ def build_all_alcool_questions():
 # --------------------------------------------------------------------------
 def main():
     q=build_all_alcool_questions()
-    f=open("q_alc_fun.tex","w")
+    f=open("q_alcools.tex","w")
     f.write(q)
     f.close()
 

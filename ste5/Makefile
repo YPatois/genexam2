@@ -1,5 +1,5 @@
 # Makefile
-TEXFILES = q_alcans.tex
+TEXFILES = q_alcans.tex q_alcools.tex
 .PHONY: all clean
 
 all: $(TEXFILES)
