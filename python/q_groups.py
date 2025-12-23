@@ -42,7 +42,7 @@ def build_one_group_question(elementname,qref,qlist,nb,reverse=False):
     
 def build_all_groups_questions():
     qlist=massage_table(groupes_fonctionnels_table)
-    elementbase="grft"
+    elementbase="groups"
     q=""
     for i in range(len(qlist)):
         q+=build_one_group_question(elementbase,elementbase+str(i),qlist,i)
@@ -54,7 +54,7 @@ def build_all_groups_questions():
 # --------------------------------------------------------------------------
 def main():
     q=build_all_groups_questions()
-    f=open("q_groupes.tex","w")
+    f=open("q_groups.tex","w")
     f.write(q)
     f.close()
 
