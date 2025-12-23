@@ -5,7 +5,10 @@ export SCRIPTBASEDIR
 
 source $SCRIPTBASEDIR/../vault/vault.sh
 
-WATCHDIR=$SCRIPTBASEDIR/../ste5
+TEXDIR=$SCRIPTBASEDIR/../ste5
+
+# Global variable to store the PID of the last action
+PREV_PID=""
 
 function latex_run() {
     latexfile=$1
@@ -16,15 +19,28 @@ function latex_run() {
     return 0
 }
 
+function handle_change() {
+    # Kill the previous action if it's still running
+    if [ -n "$PREV_PID" ]; then
+        echo "killing $PREV_PID"
+        kill "$PREV_PID" 2>/dev/null
+    fi
+
+    # Start new action in the background
+    (   
+        cd $TEXDIR
+        make
+        cd $WORKDIR
+        latex_run Preremplies.tex &
+        latex_run acide_benzoique_test.tex
+        wait
+        echo "build done"
+    ) &
+    PREV_PID=$!
+}
+
+# Start monitoring with inotifywait
 inotifywait --recursive --monitor --event modify,create,move --fromfile $SCRIPTBASEDIR/watchfiles.txt | while read path action file; do
     echo `date`" - File $file has been $action in $path"
-    pushd $WATCHDIR
-    make
-    popd
-    pushd $TEXDIR
-    latex_run testeur.tex&
-    latex_run Preremplies.tex
-    wait
-    popd
-    echo "build done"
+    handle_change
 done
