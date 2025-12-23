@@ -90,7 +90,6 @@ def build_questions_list(elementbase,qlist,idx):
         idx+=1
     return(q)
 
-
 def build_all_groups_questions(elementbase,qlist,all=False):
     #list=massage_table(molecule_table)
     idx=0
