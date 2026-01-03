@@ -27,38 +27,53 @@ d'une molécule ayant un seul carbone asymétrique, le mélange est qualifié de
     \item pKa du couple acide/base de l'ibuprofène : $pKa = 4,5$ à $\SI{20}{\degreeCelsius}$.
 \end{itemize}
 
-\chemfig{
-OH-[:210,,1](=[:270]O)-[:150](\mcfatomno{*}-[:90]CH3)-[:210]=_[:270]-[:210]=_[:150](-[:90]%
-=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]
-}
+\begin{figure}[h]
+    \centering
+    \chemfig{
+    OH-[:210,,1](=[:270]O)-[:150](\mcfatomno{*}-[:90]CH3)-[:210]=_[:270]-[:210]=_[:150](-[:90]%
+    =_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]
+    }
+    \caption{Structure de l'ibuprofène}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \chemfig{
+    -[:210]=_[:270]-[:210]=_[:150](-[:90]%
+    =_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]
+    }
+    \caption{Le groupe ci-dessus, pourra être noté MPP pour méthyl
+phénylpropane, il peut simplifier vos représentations}
+\end{figure}
 
 \subsection{Questions}
 
-\begin{questionmult}{ibuprofene1}
+\begin{question}{ibuprofene1}
     Représenter la formule topologique de l'ibuprofène.
     \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[C]{Formule correcte}\scoring{b=2}
+        \mauvaise[X]{somewhat correct}\scoring{b=.5}
+        \bonne[C]{Formule correcte}\scoring{b=1}
     }
     \explain{
-    La formule topologique de l'ibuprofène doit montrer la chaîne carbonée avec le groupe carboxyle 
-    et le carbone asymétrique.
+        \chemfig{
+            CH_3>[:100](<:[:-30]H)(-[90]COOH)-[:210]=_[:270]-[:210]%
+            =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]}
+        ou \chemfig{ CH_3>[:100](<:[:-30]H)(-[90]COOH)-[:210]MPP } \\
     }
 \end{questionmult}
 
 \begin{questionmult}{ibuprofene2}
     Entourer, sur la formule topologique, le groupe caractéristique présent dans la molécule 
-    d'ibuprofène et nommer la famille fonctionnelle associée.
-    \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
+    d'ibuprofène et nommer la famille fonctionnelle associée (répondre sur le schéma que vous avez dessiné au dessus).
+    \begin{EnvQuadrillage}[NbCarreaux=20x2,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[C]{Groupe identifié}\scoring{b=1}
-        \bonne[C]{Famille nommée}\scoring{b=1}
+        \bonne[A1]{Groupe identifié}\scoring{b=.5}
+        \bonne[A2]{Famille nommée}\scoring{b=.5}
     }
     \explain{
     Le groupe caractéristique est le groupe carboxyle (–COOH), et la famille fonctionnelle associée 
@@ -69,12 +84,12 @@ OH-[:210,,1](=[:270]O)-[:150](\mcfatomno{*}-[:90]CH3)-[:210]=_[:270]-[:210]=_[:1
 \begin{questionmult}{ibuprofene3}
     Justifier que l'atome de carbone noté C* dans la représentation de la molécule d'ibuprofène 
     est asymétrique.
-    \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
+    \begin{EnvQuadrillage}[NbCarreaux=20x2,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[C]{Justification correcte}\scoring{b=2}
+        \bonne[A1]{Bases}\scoring{b=.5}
+        \bonne[A2]{Justification correcte}\scoring{b=.5}
     }
     \explain{
     Le carbone C* est asymétrique car il est lié à quatre groupes d'atomes différents.
@@ -82,17 +97,23 @@ OH-[:210,,1](=[:270]O)-[:150](\mcfatomno{*}-[:90]CH3)-[:210]=_[:270]-[:210]=_[:1
 \end{questionmult}
 
 \begin{questionmult}{ibuprofene4}
-    La représentation d'un des énantiomères A de l'ibuprofène est donnée ci-contre. Représenter, 
+    La représentation d'un des énantiomères A de l'ibuprofène est donnée ci-dessus. Représenter, 
     en perspective de Cram, l'autre énantiomère B de l'ibuprofène.
-    \begin{EnvQuadrillage}[NbCarreaux=20x6,Grille=Seyes,Marge=1]
+    
+    \centering
+    \chemfig{ CH_3>[:100](<:[:-30]H)(-[90]COOH)-[:210]MPP }
+    \par\noindent\small\textit{Énantiomère A}
+    
+    \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[C]{Représentation correcte}\scoring{b=2}
+        \bonne[A1]{Cram perspective}\scoring{b=.5}
+        \bonne[A2]{Représentation correcte}\scoring{b=.5}
     }
     \explain{
-    L'énantiomère B est l'image miroir de l'énantiomère A en perspective de Cram.
+        \chemfig{ H>[:100](<:[:-30]CH_3)(-[90]COOH)-[:210]MPP }
+        L'énantiomère B est l'image miroir de l'énantiomère A en perspective de Cram.
     }
 \end{questionmult}
 
@@ -102,26 +123,34 @@ OH-[:210,,1](=[:270]O)-[:150](\mcfatomno{*}-[:90]CH3)-[:210]=_[:270]-[:210]=_[:1
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[C]{Configuration correcte}\scoring{b=2}
+        \bonne[A1]{Raisonnement}\scoring{b=.5}
+        \bonne[A2]{Résultat}\scoring{b=.5}
     }
     \explain{
-    La configuration absolue est déterminée en utilisant les règles Cahn-Ingold-Prelog.
+    La configuration absolue est déterminée en utilisant les règles Cahn-Ingold-Prelog.\\
+    mol2chemfig -w -a -60 -z -y delete -i pubchem 114864 : R \\
+    \chemfig{OH-[:210,,1](=[:270]O)-[:150](<[:90])-[:210]=_[:270]-[:210]%
+    =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]}\\
+    mol2chemfig -w -a -60 -z -y delete -i pubchem 6919043 : s \\
+    \chemfig{\mcfright{O}{^{\mcfminus}}-[:210](=[:270]O)-[:150](<:[:90])-[:210]%
+    =^[:150]-[:210]=^[:270](-[:330]=^[:30]-[:90])-[:210]-[:150](-[:210])-[:90]}
     }
 \end{questionmult}
 
 \begin{questionmult}{ibuprofene6}
     Expliquer en quoi un mélange racémique dans le cas de l'ibuprofène :
     \begin{itemize}
-        \item n'est pas dangereux pour l'Homme ;
+        \item n'est pas dangereux pour les humains ;
         \item retarde son action par rapport à l'énantiomère S seul.
     \end{itemize}
-    \begin{EnvQuadrillage}[NbCarreaux=20x8,Grille=Seyes,Marge=1]
+    \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[X]{Faux}\scoring{b=-1}
-        \bonne[C]{Explication correcte}\scoring{b=2}
+        \bonne[A1]{Racémique}\scoring{b=.25}
+        \bonne[A2]{Dangereux}\scoring{b=.25}
+        \bonne[A3]{Retarde}\scoring{b=.25}
+        \bonne[A4]{Overal}\scoring{b=.25}
     }
     \explain{
     Le mélange racémique n'est pas dangereux car l'énantiomère R est inactif mais inoffensif. 
