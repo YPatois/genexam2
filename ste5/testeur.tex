@@ -18,27 +18,52 @@
 
 \DeclareSIUnit{\nothing}{\relax}
 
-\newcommand{\element}[1]{oooooooooooooooooooo \\ \medskip}
-\newcommand{\mauvaise}[1]{Mauvais: #1\\}
-\newcommand{\bonne}[1]{Bonne: #1\\}
-\newcommand{\explain}[1]{#1}
+\newcommand{\element}[1]{%
+    \par\noindent%
+    \rule{\textwidth}{0.4pt}\par%
+    \smallskip%
+    
+    \par\noindent%
+    \rule{\textwidth}{0.4pt}\par%
+    \medskip%
+}
+
+\newcommand{\scoring}[1]{{\tiny (#1)}}
+
+% Commandes pour les réponses avec gestion des arguments optionnels
+\newcommand{\mauvaise}[2][]{
+    \item{Mauvais: [#1] #2}
+}
+\newcommand{\bonne}[2][]{
+    \item{Bonne: [#1] #2}
+}
 
 \newenvironment{question}[1]{
-    \smallskip
+    \par\noindent
+    \textbf{Question #1:} \\ \smallskip
 }{\newline}
 
-\smallskip
+\newenvironment{questionmult}[1]{
+    \par\noindent
+    \textbf{Question #1:} \\ \smallskip
+}{\newline}
 
 \newenvironment{reponses}{
+    \\
     \smallskip
-}\\
+    \begin{itemize}
+}{\end{itemize}\smallskip}
 
 \newenvironment{reponseshoriz}{
+    \\
     \smallskip
-}\\
+    \begin{tabular}{l}
+}{\end{tabular}\smallskip}
+
+\newcommand{\explain}[1]{\\ \textcolor{red}{#1}}
 
 \begin{document}
 
-\input{q_05_symchim.tex}
+\input{q_ibuprofene.tex}
 
 \end{document}
