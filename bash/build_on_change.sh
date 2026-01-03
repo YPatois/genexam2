@@ -32,7 +32,8 @@ function handle_change() {
         make
         cd $WORKDIR
         latex_run Preremplies.tex &
-        latex_run acide_benzoique_test.tex
+        #latex_run acide_benzoique_test.tex
+        latex_run testeur.tex
         wait
         echo "build done"
     ) &
