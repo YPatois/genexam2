@@ -17,9 +17,15 @@
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
 
+%\sisetup{locale = FR,detect-all,quotient-mode=fraction,
+%input-product=*, list-final-separator = { \translate{et} },
+%list-pair-separator = { \translate{et} },range-phrase = { \translate{à} },
+%separate-uncertainty = true,group-minimum-digits=3}
+
 \DeclareSIUnit{\nothing}{\relax}
 
-\FPseed=16
+\def\yseed{10}
+\FPseed\yseed
 
 \baremeDefautS{e=0,v=0,b=1,m=-.25}
 %\baremeDefautM{formula=(NBC>0 ? (NMC==0 ? 1:0):0)}
@@ -97,13 +103,13 @@
   Aucun document n'est autorisé.
   L'usage de la calculatrice est interdit.
 
-  Les questions faisant apparaitre le symbole \multiSymbole{} peuvent
+  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
   présenter une ou plusieurs bonnes réponses. Les autres ont
   une unique bonne réponse.
 
-  Des points négatifs seront affectés aux mauvaises réponses, \texbf{uniquement pour les QCM}. Pour les
+  Des points négatifs seront affectés aux mauvaises réponses, \textbf{uniquement pour les QCM}. Pour les
   questions ouvertes (où vous écrivez la réponses dans les quadrillages), aucun point négatif ne sera appliqué.
-  
+
   \vspace*{5mm}
 
   \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme
@@ -145,9 +151,9 @@
 
 \begin{document}
 %%%Options
-\AMCrandomseed{10}
+\AMCrandomseed{\yseed}
 
-\def\AMCformQuestion#1{{\sc Question #1 :}}
+%%\def\AMCformQuestion#1{{\sc Q #1 :}}
 
 \setdefaultgroupmode{withoutreplacement}
 %%% Fin Options
@@ -187,8 +193,16 @@
 \insertgroup[2]{isoze}
 \end{multicols}
 
-\input{q_acide_benzoique.tex}
-\input{q_ibuprofene.tex}
+%% Chose one of the tests
+\FPrandom{\yran}
+\FPeval{\yran2}{2 * \yran}
+\FPclip{\fileChoice}{\yran2}
+
+\ifcase\fileChoice
+    \input{q_acide_benzoique.tex}
+\or
+    \input{q_ibuprofene.tex}
+\fi
 
 \AMCcleardoublepage
 }
