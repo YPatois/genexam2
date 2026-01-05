@@ -1,10 +1,10 @@
 \section {Caractéristique de l'acide benzoïque}
+\textbf{Source du sujet :} Baccalauréat de mars 2023 – exercice 4 du sujet de Métropole.
+
 \subsection{Introduction}
 L'acide benzoïque, de formule \ce{C6H5COOH}, et le benzoate de sodium sont des conservateurs antimicrobiens 
 respectivement identifiés par les codes E210 et E211. Ils sont présents dans de nombreux produits alimentaires 
 et notamment dans certaines boissons gazeuses sucrées. À température ambiante, l’acide benzoïque est un solide blanc.
-
-\textbf{Source du sujet :} Baccalauréat de mars 2023 – exercice 4 du sujet de Métropole.
 
 \begin{figure}[h]
     \centering
@@ -47,9 +47,9 @@ présence d’un conservateur.
     Entourer et nommer le groupe caractéristique présents dans la formule topologique de l'acide benzoïque ci-dessous.\\
         \centering\chemfig{OH-[:120,,1](=[:60]O)-[:180]=_[:240]-[:180]=_[:120]-[:60]=_(-[:300])}\\
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[I]{Groupe identifié}\scoring{b=.5}
-        \bonne[N]{Groupe nommé}\scoring{b=.5}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{Groupe identifié}\scoring{b=.5}
+        \bonne{Groupe nommé}\scoring{b=.5}
     }
     \explain{Le groupes caractéristique est le groupe carboxyle (–COOH)}
 \end{questionmult}
@@ -59,9 +59,9 @@ présence d’un conservateur.
     \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[B]{$\approx$}\scoring{b=.5}
-        \bonne[A]{OK}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \mauvaise{$\approx$}\scoring{b=.5}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     La formule topologique de l’ion benzoate est :
@@ -71,17 +71,26 @@ présence d’un conservateur.
 
 \begin{question}{acidbenzo3}
     Représenter le diagramme de prédominance du couple acide benzoïque/ion benzoate.\\
-    \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
+    \begin{EnvQuadrillage}[NbCarreaux=20x3,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \mauvaise[B]{$\approx$}\scoring{b=1}
-        \bonne[A]{OK}\scoring{b=2}
+        \mauvaise{NA}\scoring{b=0}
+        \mauvaise{$\approx$}\scoring{b=.5}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     Le diagramme de prédominance du couple acide benzoïque/ion benzoate doit montrer que :
     - À un pH inférieur au pKa (4,2), l'acide benzoïque (\ce{C6H5COOH}) est prédominant.
     - À un pH supérieur au pKa (4,2), l'ion benzoate (\ce{C6H5COO-}) est prédominant.
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            \draw[->, thick] (0,0) -- (10,0) node[right] {pH};
+            \draw[thick] (0,1.5) -- (10,1.5);
+            \draw[thick, dashed] (4.2,0) node[below] {pKa = 4,2} -- (4.2,1.5);
+            \node at (2.25,1.8) {Prédominance de l'acide};
+            \node at (7.25,1.8) {Prédominance de la base};
+        \end{tikzpicture}
+    \end{center}
     }
 \end{question}
 
@@ -104,9 +113,9 @@ benzoïque solide. On observe que le solide introduit disparaît.
     \begin{EnvQuadrillage}[NbCarreaux=20x6,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[P]{Expérience identifiée}\scoring{b=0.5}
-        \bonne[C]{Justification correcte}\scoring{b=0.5}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{Expérience identifiée}\scoring{b=0.5}
+        \bonne{Justification correcte}\scoring{b=0.5}
     }
     \explain{
     Il s'agit de l'expérience (1). Les réactifs sont l'ion benzoate et l'ion oxonium, qui correspondent aux réactifs de 
@@ -129,14 +138,14 @@ On suit le protocole expérimental suivant :
 \end{enumerate}
 
 
-\begin{questionmult}{acidbenzo5}
+\begin{question}{acidbenzo5}
     Préciser ce qu'il se passe lors de l'étape 2 du protocole.
     \begin{EnvQuadrillage}[NbCarreaux=20x5,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A]{Eq}\scoring{b=.5}
-        \bonne[B]{Prd}\scoring{b=.5}
+        \mauvaise{NA}\scoring{b=0}
+        \mauvaise{$\approx$}\scoring{b=.5}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     Lors de l'étape 2 du protocole, l'ion benzoate se transforme en acide benzoïque suite à l'ajout d'acide chlorhydrique. 
@@ -166,12 +175,12 @@ On suit le protocole expérimental suivant :
     et la position des différentes phases dans l'ampoule à décanter à l'issue de l'étape 6 du protocole.
 
     \begin{center}
-        \begin{minipage}[t]{0.4\textwidth}
+        \begin{minipage}[t]{0.3\textwidth}
             \centering
             \includegraphics[height=5cm, keepaspectratio]{images/ste5_ampoule.png}
         \end{minipage}%
-        \begin{minipage}[t]{0.6\textwidth}
-            \begin{EnvQuadrillage}[NbCarreaux=12x6, Grille=Seyes,Marge=1]
+        \begin{minipage}[t]{0.7\textwidth}
+            \begin{EnvQuadrillage}[NbCarreaux=14x6, Grille=Seyes,Marge=1]
             \end{EnvQuadrillage}
         \end{minipage}
     \end{center}
@@ -184,13 +193,15 @@ On suit le protocole expérimental suivant :
         \bonne[C]{Ovl}\scoring{b=.5}
    }
     \explain{
-    L'éther éthylique (densité = 0,71) est moins dense que l'eau (densité = 1,0). La phase organique (éther) 
-    constitue donc la phase supérieure et la phase aqueuse, la phase inférieure.
+        L'éther éthylique (densité = 0,71) est moins dense que l'eau (densité = 1,0). La phase organique (éther) 
+        constitue donc la phase supérieure et la phase aqueuse, la phase inférieure.
+        \centering
+        \includegraphics[height=5cm, keepaspectratio]{images/ste5_ampoule_corr.png}
     }
 \end{questionmult}
 
 \begin{question}{acidbenzo8}
-    Après évaporation du solvant extracteur, il reste une masse \( m = 10,0 \) mg de solide blanc. Proposer 
+    Après évaporation du solvant extracteur, il reste une masse \qty{10.0}{\milli\gram} de solide blanc. Proposer 
     une méthode expérimentale permettant de vérifier que ce solide blanc est bien de l'acide benzoïque.
     \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
@@ -200,7 +211,7 @@ On suit le protocole expérimental suivant :
         \bonne[A]{OK}\scoring{b=1}
    }
     \explain{
-    On peut mesurer son point de fusion au banc Kofler et vérifier qu'il est bien de \(122,4^\circ C\). Une 
+    On peut mesurer son point de fusion au banc Kofler et vérifier qu'il est bien de \qty{122.4}{\degreeCelsius}. Une 
     chromatographie sur couche mince ou un spectre infra-rouge/RMN peuvent aussi être réalisés pour confirmation.
     }
 \end{question}
@@ -214,11 +225,11 @@ On suit le protocole expérimental suivant :
     \end{EnvQuadrillage}
 
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[C]{Idée}\scoring{b=.5}
-        \bonne[B]{Forml}\scoring{b=.5}
-        \bonne[A]{Nb}\scoring{b=.5}
-        \bonne[A]{Ovl}\scoring{b=.5}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{Idée}\scoring{b=.5}
+        \bonne{Forml}\scoring{b=.5}
+        \bonne{Nb}\scoring{b=.5}
+        \bonne{Ovl}\scoring{b=.5}
     }
 
     \explain{
