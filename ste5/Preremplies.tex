@@ -194,9 +194,12 @@
 \end{multicols}
 
 %% Chose one of the tests
+\newsavebox{\tempbox}
+\begin{lrbox}{\tempbox}
 \FPrandom{\yran}
 \FPeval{\yran2}{2 * \yran}
 \FPclip{\fileChoice}{\yran2}
+\end{lrbox}
 
 \ifcase\fileChoice
     \input{q_acide_benzoique.tex}
