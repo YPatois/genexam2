@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{fp}
 \usepackage{xfp}
+\usepackage{pgfmath}
 \usepackage{numprint}
 \usepackage{siunitx}
 \usepackage{enumitem}
@@ -26,6 +27,7 @@
 
 \def\yseed{10}
 \FPseed\yseed
+\pgfmathsetseed{\yseed}
 
 \baremeDefautS{e=0,v=0,b=1,m=-.25}
 %\baremeDefautM{formula=(NBC>0 ? (NMC==0 ? 1:0):0)}
@@ -211,19 +213,17 @@
 \insertgroup[2]{logs}
 \end{multicols}
 
-%% Chose one of the tests
-\newsavebox{\tempbox}
-\begin{lrbox}{\tempbox}
-\FPrandom{\yran}
-\FPeval{\yran2}{2 * \yran}
-\FPclip{\fileChoice}{\yran2}
-\end{lrbox}
+\pgfmathrandom{}
+\let\yran\pgfmathresult
+\pgfmathparse{\yran > 0.5 ? 1 : 0}
+\let\fileChoice\pgfmathresult
 
 \ifcase\fileChoice
     \input{q_acide_benzoique.tex}
 \or
     \input{q_ibuprofene.tex}
 \fi
+
 
 \AMCcleardoublepage
 }
