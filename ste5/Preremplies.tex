@@ -86,7 +86,7 @@
 
 \vspace*{3mm}
 
-{\Large\bf Évaluation sur table STL - Physique-Chime 05/01/2025}
+{\Large\bf Évaluation sur table STL - Physique-Chime 07/01/2025}
 
 \vfill
 \namefield{\noindent{}\fbox{\vspace*{3mm}
@@ -170,7 +170,12 @@
 \input{q_nomencla.tex}
 \input{q_isors.tex}
 \input{q_isoze.tex}
-%\input{q_acide_benzoique.tex}
+\input{q_defacidebase.tex}
+\input{q_phconcentration.tex}
+\input{q_pkaforce.tex}
+\input{q_tampons.tex}
+\input{q_logs.tex}
+
 %%% fin des elements
 \element{groupes}{
 \section{Rappels simples sur des notions mathématiques et physiques}
@@ -193,6 +198,18 @@
 \insertgroup[2]{isoze}
 \end{multicols}
 
+\section{Couples acides/bases}
+\begin{multicols}{2}
+\insertgroup[2]{defacidebase}
+\insertgroup[2]{phconcentration}
+\insertgroup[2]{pkaforce}
+\insertgroup[2]{tampons}
+\textbf{Logarithme: dans cette partie, la fonction $\log$ représente le logarithme décimal ($\Log[10]$).}
+\insertgroup[2]{logs}
+\end{multicols}
+
+\section{Rappels sur les tampons}
+
 %% Chose one of the tests
 \newsavebox{\tempbox}
 \begin{lrbox}{\tempbox}
@@ -209,8 +226,6 @@
 
 \AMCcleardoublepage
 }
-
-%\input{acide_benzoique.tex}
 
 \csvreader[head to column names]{liste.csv}{}{\sujet}
 

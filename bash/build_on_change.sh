@@ -29,10 +29,11 @@ function handle_change() {
     # Start new action in the background
     (   
         cd $TEXDIR
+        echo "In $TEXDIR making tex files"
         make
         cd $WORKDIR
+        echo "In $WORKDIR making pdfs"
         latex_run Preremplies.tex &
-        #latex_run acide_benzoique_test.tex
         latex_run testeur.tex
         wait
         echo "build done"
