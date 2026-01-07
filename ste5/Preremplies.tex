@@ -153,7 +153,7 @@
 %%%Options
 \AMCrandomseed{\yseed}
 
-%%\def\AMCformQuestion#1{{\sc Q #1 :}}
+%%\def\AMCformQuestion#1{\textbf{Questioon #1 :}}
 
 \setdefaultgroupmode{withoutreplacement}
 %%% Fin Options
@@ -204,11 +204,12 @@
 \insertgroup[2]{phconcentration}
 \insertgroup[2]{pkaforce}
 \insertgroup[2]{tampons}
-\textbf{Logarithme: dans cette partie, la fonction $\log$ représente le logarithme décimal ($\Log[10]$).}
-\insertgroup[2]{logs}
 \end{multicols}
 
-\section{Rappels sur les tampons}
+\textbf{Logarithme: la fonction $\log$ représente le logarithme décimal ($\log_{10}$).}
+\begin{multicols}{2}
+\insertgroup[2]{logs}
+\end{multicols}
 
 %% Chose one of the tests
 \newsavebox{\tempbox}
