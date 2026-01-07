@@ -41,6 +41,18 @@
     \end{multicols}
 }
 
+% Sauvegarde l'environnement original
+\let\oldEnvQuadrillage\EnvQuadrillage
+\let\endoldEnvQuadrillage\endEnvQuadrillage
+
+% Redéfinit l'environnement pour ajouter un espace après
+\renewenvironment{EnvQuadrillage}[1][]{%
+    \oldEnvQuadrillage[#1]%
+}{%
+    \endoldEnvQuadrillage%
+    \vspace{0.5cm}% Ajoute un espace de 0,5 cm après chaque quadrillage
+}
+
 % Sauvegarde l'ancienne définition de reponseshoriz
 %\let\oldreponseshoriz\reponseshoriz
 %\let\endoldreponseshoriz\endreponseshoriz
