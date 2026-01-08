@@ -2,8 +2,8 @@
 \textbf{Source du sujet :} Baccalauréat de mars 2023 – exercice 4 du sujet de Métropole.
 
 \subsection{Introduction}
-L'acide benzoïque, de formule \ce{C6H5COOH}, et le benzoate de sodium sont des conservateurs antimicrobiens 
-respectivement identifiés par les codes E210 et E211. Ils sont présents dans de nombreux produits alimentaires 
+L'acide benzoïque, de formule \ce{C6H5COOH}, et le benzoate de sodium sont des conservateurs antimicrobiens
+respectivement identifiés par les codes E210 et E211. Ils sont présents dans de nombreux produits alimentaires
 et notamment dans certaines boissons gazeuses sucrées. À température ambiante, l’acide benzoïque est un solide blanc.
 
 \begin{figure}[h]
@@ -51,7 +51,8 @@ présence d’un conservateur.
         \bonne{Groupe identifié}\scoring{b=.5}
         \bonne{Groupe nommé}\scoring{b=.5}
     }
-    \explain{Le groupes caractéristique est le groupe carboxyle (–COOH)}
+    \explain{Le groupe caractéristique est le groupe carboxyle (--COOH). Dans la formule topologique, il est
+    identifiable par le carbone lié à un oxygène par une double liaison et à un groupe hydroxyle (--OH).}
 \end{questionmult}
 
 \begin{question}{acidbenzo2}
@@ -63,10 +64,9 @@ présence d’un conservateur.
         \mauvaise{$\approx$}\scoring{b=.5}
         \bonne{OK}\scoring{b=1}
     }
-    \explain{
-    La formule topologique de l’ion benzoate est :
+    \explain{La formule topologique de l’ion benzoate est :
     \chemfig{\mcfright{O}{^{\mcfminus}}-[:120](=[:60]O)-[:180]=^[:120]-[:180]=^[:240]%
--[:300]=^(-[:60])}}
+-[:300]=^(-[:60])}. La charge négative est portée par l’oxygène du groupe carboxylate.}
 \end{question}
 
 \begin{question}{acidbenzo3}
@@ -78,20 +78,18 @@ présence d’un conservateur.
         \mauvaise{$\approx$}\scoring{b=.5}
         \bonne{OK}\scoring{b=1}
     }
-    \explain{
-    Le diagramme de prédominance du couple acide benzoïque/ion benzoate doit montrer que :
-    - À un pH inférieur au pKa (4,2), l'acide benzoïque (\ce{C6H5COOH}) est prédominant.
-    - À un pH supérieur au pKa (4,2), l'ion benzoate (\ce{C6H5COO-}) est prédominant.
+    \explain{Le diagramme de prédominance doit montrer :
+    - À un pH inférieur à 4,2, l’acide benzoïque (\ce{C6H5COOH}) est prédominant.
+    - À un pH supérieur à 4,2, l’ion benzoate (\ce{C6H5COO-}) est prédominant.
     \begin{center}
         \begin{tikzpicture}[scale=0.8]
             \draw[->, thick] (0,0) -- (10,0) node[right] {pH};
             \draw[thick] (0,1.5) -- (10,1.5);
             \draw[thick, dashed] (4.2,0) node[below] {pKa = 4,2} -- (4.2,1.5);
-            \node at (2.25,1.8) {Prédominance de l'acide};
+            \node at (2.25,1.8) {Prédominance de l’acide};
             \node at (7.25,1.8) {Prédominance de la base};
         \end{tikzpicture}
-    \end{center}
-    }
+    \end{center}}
 \end{question}
 
 \subsection{Expériences}
@@ -108,7 +106,7 @@ benzoïque solide. On observe que le solide introduit disparaît.
 \begin{questionmult}{acidbenzo4}
     On donne l'équation chimique suivante :\\
     \ce{C6H5COO^-_{(aq)} + H3O^+_{(aq)} -> C6H5COOH_{(aq)} + H2O_{(l)}}\\
-    La réaction qui correspond à l'équation ci-dessus modélise une transformation chimique ayant lieu lors de l'une 
+    La réaction qui correspond à l'équation ci-dessus modélise une transformation chimique ayant lieu lors de l’une
     des expériences précédentes. Indiquer, en justifiant la réponse, s'il s'agit de l'expérience (1) ou de l'expérience (2).
     \begin{EnvQuadrillage}[NbCarreaux=20x6,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
@@ -117,10 +115,8 @@ benzoïque solide. On observe que le solide introduit disparaît.
         \bonne{Expérience identifiée}\scoring{b=0.5}
         \bonne{Justification correcte}\scoring{b=0.5}
     }
-    \explain{
-    Il s'agit de l'expérience (1). Les réactifs sont l'ion benzoate et l'ion oxonium, qui correspondent aux réactifs de 
-    l'expérience 1, les ions oxonium étant apportés par la solution d'acide chlorhydrique.
-    }
+    \explain{Il s’agit de l’expérience (1). Les réactifs sont l’ion benzoate (\ce{C6H5COO-}) et l’ion oxonium (\ce{H3O+}).
+    Ces ions sont présents dans l’expérience 1, où l’acide chlorhydrique apporte les ions \ce{H3O+}.}
 \end{questionmult}
 
 L’étiquette d’une boisson gazeuse indique qu’elle contient du benzoate de sodium comme conservateur alimentaire,
@@ -137,7 +133,6 @@ On suit le protocole expérimental suivant :
     \item Récupérer la phase aqueuse S dans un bécher et la phase organique dans un erlenmeyer.
 \end{enumerate}
 
-
 \begin{question}{acidbenzo5}
     Préciser ce qu'il se passe lors de l'étape 2 du protocole.
     \begin{EnvQuadrillage}[NbCarreaux=20x5,Grille=Seyes,Marge=1]
@@ -147,15 +142,13 @@ On suit le protocole expérimental suivant :
         \mauvaise{$\approx$}\scoring{b=.5}
         \bonne{OK}\scoring{b=1}
     }
-    \explain{
-    Lors de l'étape 2 du protocole, l'ion benzoate se transforme en acide benzoïque suite à l'ajout d'acide chlorhydrique. 
-    En effet, on ajoute l'acide chlorhydrique jusqu'à pH = 2, c'est-à-dire un pH inférieur au pKa du couple. 
-    Il s'agit donc de la zone de prédominance de l'acide benzoïque.
-    }
+    \explain{Lors de l’étape 2, l’ion benzoate (\ce{C6H5COO-}) se transforme en acide benzoïque (\ce{C6H5COOH})
+    sous l’effet de l’ajout d’acide chlorhydrique. Le pH est abaissé à 2, ce qui est inférieur au pKa du couple
+    (4,2), favorisant la forme acide.}
 \end{question}
 
 \begin{question}{acidbenzo6}
-    À l'aide des données, expliquer pourquoi l'éther éthylique constitue un solvant extracteur plus adapté que 
+    À l'aide des données, expliquer pourquoi l'éther éthylique constitue un solvant extracteur plus adapté que
     l'éthanol lors de la réalisation de l'étape 3 du protocole.
     \begin{EnvQuadrillage}[NbCarreaux=20x6,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
@@ -164,14 +157,13 @@ On suit le protocole expérimental suivant :
         \mauvaise[C]{$\approx$}\scoring{b=.5}
         \bonne[C]{OK}\scoring{b=1}
     }
-    \explain{
-    L'éther éthylique est non miscible à l'eau et l'acide benzoïque y est très soluble, contrairement à l'éthanol qui 
-    est miscible à l'eau. Cela en fait un solvant extracteur plus adapté.
-    }
+    \explain{L’éther éthylique est non miscible à l’eau et l’acide benzoïque y est très soluble. À l’inverse, l’éthanol
+    est miscible à l’eau, ce qui rendrait l’extraction inefficace. L’éther éthylique permet donc une séparation
+    nette des phases organique et aqueuse.}
 \end{question}
 
 \begin{questionmult}{acidbenzo7}
-    Compléter le schéma ci-dessous, en justifiant, à l'aide des données, la nature 
+    Compléter le schéma ci-dessous, en justifiant, à l'aide des données, la nature
     et la position des différentes phases dans l'ampoule à décanter à l'issue de l'étape 6 du protocole.
 
     \begin{center}
@@ -192,16 +184,14 @@ On suit le protocole expérimental suivant :
         \bonne[C]{XpBuoy}\scoring{b=.5}
         \bonne[C]{Ovl}\scoring{b=.5}
    }
-    \explain{
-        L'éther éthylique (densité = 0,71) est moins dense que l'eau (densité = 1,0). La phase organique (éther) 
-        constitue donc la phase supérieure et la phase aqueuse, la phase inférieure.
-        \centering
-        \includegraphics[height=5cm, keepaspectratio]{images/ste5_ampoule_corr.png}
-    }
+    \explain{L’éther éthylique (densité = 0,71) est moins dense que l’eau (densité = 1,0). La phase organique (éther)
+    constitue donc la phase supérieure, tandis que la phase aqueuse, plus dense, est la phase inférieure.
+    \centering
+    \includegraphics[height=5cm, keepaspectratio]{images/ste5_ampoule_corr.png}}
 \end{questionmult}
 
 \begin{question}{acidbenzo8}
-    Après évaporation du solvant extracteur, il reste une masse \qty{10.0}{\milli\gram} de solide blanc. Proposer 
+    Après évaporation du solvant extracteur, il reste une masse \qty{10.0}{\milli\gram} de solide blanc. Proposer
     une méthode expérimentale permettant de vérifier que ce solide blanc est bien de l'acide benzoïque.
     \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
@@ -210,15 +200,14 @@ On suit le protocole expérimental suivant :
         \mauvaise[B]{$\approx$}\scoring{b=.5}
         \bonne[A]{OK}\scoring{b=1}
    }
-    \explain{
-    On peut mesurer son point de fusion au banc Kofler et vérifier qu'il est bien de \qty{122.4}{\degreeCelsius}. Une 
-    chromatographie sur couche mince ou un spectre infra-rouge/RMN peuvent aussi être réalisés pour confirmation.
-    }
+    \explain{On peut mesurer son point de fusion au banc Kofler. La température de fusion de l’acide benzoïque
+    est donnée dans l’énoncé : \qty{122.4}{\degreeCelsius}. Si le solide fond à cette température, il s’agit bien
+    d’acide benzoïque.}
 \end{question}
 
 \begin{questionmult}{acidbenzo9}
-    Sachant que la concentration $C$ en quantité de matière totale théorique d'ions benzoate dans cette 
-    boisson est égale à \qty{4.0e-4}{\mol\per\litre}, montrer que la masse théorique d'acide 
+    Sachant que la concentration $C$ en quantité de matière totale théorique d'ions benzoate dans cette
+    boisson est égale à \qty{4.0e-4}{\mol\per\litre}, montrer que la masse théorique d'acide
     benzoïque que l'on devrait obtenir à l'issue de l'extraction est égale à \qty{24}{\mg}.
 
     \begin{EnvQuadrillage}[NbCarreaux=20x8,Grille=Seyes,Marge=1]
@@ -232,17 +221,17 @@ On suit le protocole expérimental suivant :
         \bonne{Ovl}\scoring{b=.5}
     }
 
-    \explain{
-    La masse théorique d'acide benzoïque est calculée comme suit :
+    \explain{La masse théorique d’acide benzoïque est calculée comme suit :
     \[
-    m = C \times V \times M = \SI{4.0e-4}{\mol\per\litre} \times \SI{0.5}{\litre} \times \SI{122}{\gram\per\mol} = \SI{24}{\mg}
+    m = C \times V \times M = \SI{4.0e-4}{\mol\per\litre} \times \SI{0.5}{\litre} \times \SI{122}{\gram\per\mol} = \SI{24}{\mg}.
     \]
-    }
+    La concentration $C$ est donnée, le volume $V$ est de 500 mL (0,5 L), et la masse molaire $M$ est de
+    \SI{122}{\gram\per\mol}.}
 \end{questionmult}
 
 \begin{questionmult}{acidbenzo10}
-    Le rendement d'une extraction étant défini comme le rapport de la masse de substance réellement extraite sur la 
-    masse théorique de substance que l'on aurait pu extraire, calculer le rendement de cette extraction et 
+    Le rendement d'une extraction étant défini comme le rapport de la masse de substance réellement extraite sur la
+    masse théorique de substance que l'on aurait pu extraire, calculer le rendement de cette extraction et
     l'exprimer en pourcentage. Commenter ce résultat.
     \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
@@ -253,13 +242,10 @@ On suit le protocole expérimental suivant :
         \bonne[A]{Nb}\scoring{b=.5}
         \bonne[A]{Ovl}\scoring{b=.5}
     }
-    \explain{
-    Le rendement est calculé comme suit :
+    \explain{Le rendement est calculé comme suit :
     \[
-    \eta = \frac{10,0}{24} \times 100 = 41,7\%
+    \eta = \frac{10,0}{24} \times 100 = 41,7\%.
     \]
-    Ce rendement est relativement faible. Pour l'améliorer, il faudrait extraire une deuxième fois la phase aqueuse avec
-     40 mL d'éther éthylique puis rassembler les phases organiques.
-    }
+    Ce rendement est relativement faible. Pour l’améliorer, il faudrait extraire une deuxième fois la phase
+    aqueuse avec 40 mL d’éther éthylique, puis rassembler les phases organiques.}
 \end{questionmult}
-
