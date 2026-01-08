@@ -26,7 +26,7 @@ d'une molécule ayant un seul carbone asymétrique, le mélange est qualifié de
 
 \subsection{Données}
 \begin{itemize}
-    \item Numéros atomiques : $Z(H) = 1$ ; $Z(C) = 6$ ; $Z(O) = 8$.
+    \item Numéros atomiques : $Z(H) = 1$~; $Z(C) = 6$~; $Z(O) = 8$.
     \item pKa du couple acide/base de l'ibuprofène : $pKa = 4,5$ à $\SI{20}{\degreeCelsius}$.
 \end{itemize}
 
@@ -59,6 +59,12 @@ il peut simplifier vos représentations}
         \bonne[C]{Formule correcte}\scoring{b=1}
     }
     \explain{
+        La formule topologique de l'ibuprofène doit montrer~:
+        \begin{itemize}
+            \item Un groupe carboxyle ($-COOH$).
+            \item Un carbone asymétrique (noté $C^*$).
+            \item Un groupe méthyle ($-CH_3$) et un groupe phényle (représenté par $MPP$).
+        \end{itemize}
         \chemfig{
             CH_3>[:100](<:[:-30]H)(-[90]COOH)-[:210]=_[:270]-[:210]%
             =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]}
@@ -77,8 +83,11 @@ il peut simplifier vos représentations}
         \bonne[A2]{Famille nommée}\scoring{b=.5}
     }
     \explain{
-    Le groupe caractéristique est le groupe carboxyle (–COOH), et la famille fonctionnelle associée
-    est celle des acides carboxyliques.
+    Le groupe caractéristique est le groupe carboxyle ($-COOH$), situé à l'extrémité de la chaîne carbonée.
+    Ce groupe définit la famille fonctionnelle~:
+    \begin{itemize}
+        \item des acides carboxyliques.
+    \end{itemize}
     }
 \end{questionmult}
 
@@ -92,7 +101,13 @@ il peut simplifier vos représentations}
         \bonne[A2]{Justification correcte}\scoring{b=.5}
     }
     \explain{
-    Le carbone C* est asymétrique car il est lié à quatre groupes d'atomes différents.
+    Le carbone $C^*$ est asymétrique car il est lié à quatre groupes d'atomes différents~:
+    \begin{itemize}
+        \item Un groupe carboxyle ($-COOH$).
+        \item Un atome d'hydrogène ($-H$).
+        \item Un groupe méthyle ($-CH_3$).
+        \item Un groupe phényle (représenté par $MPP$).
+    \end{itemize}
     }
 \end{questionmult}
 
@@ -111,8 +126,12 @@ il peut simplifier vos représentations}
         \bonne[A2]{Représentation correcte}\scoring{b=.5}
     }
     \explain{
-        \chemfig{ H>[:100](<:[:-30]CH_3)(-[90]COOH)-[:210]MPP }
-        L'énantiomère B est l'image miroir de l'énantiomère A en perspective de Cram.
+    Pour représenter l'énantiomère B en perspective de Cram~:
+    \begin{itemize}
+        \item Inverser la position des groupes autour du carbone asymétrique.
+        \item Le groupe $CH_3$ et l'atome d'hydrogène $H$ échangent leurs positions par rapport à l'énantiomère A.
+    \end{itemize}
+    \chemfig{ H>[:100](<:[:-30]CH_3)(-[90]COOH)-[:210]MPP }
     }
 \end{questionmult}
 
@@ -126,20 +145,27 @@ il peut simplifier vos représentations}
         \bonne[A2]{Résultat}\scoring{b=.5}
     }
     \explain{
-    La configuration absolue est déterminée en utilisant les règles Cahn-Ingold-Prelog.\\
-    %% mol2chemfig -w -a -60 -z -y delete -i pubchem 114864 : R
+    La configuration absolue est déterminée en utilisant les règles Cahn-Ingold-Prelog~:
+    \begin{itemize}
+        \item Classer les groupes liés au carbone asymétrique par ordre de priorité (numéro atomique décroissant).
+        \item Orienter la molécule de sorte que le groupe de plus faible priorité soit dirigé vers l'arrière.
+        \item Si les trois groupes restants sont classés dans le sens horaire, la configuration est $R$. Sinon, elle est $S$.
+    \end{itemize}
+    \begin{center}
     \chemfig{OH-[:210,,1](=[:270]O)-[:150](<[:90])-[:210]=_[:270]-[:210]%
-    =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]} : R \\
-    %% mol2chemfig -w -a -60 -z -y delete -i pubchem 6919043 : S
+    =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]} : R
+    \end{center}
+    \begin{center}
     \chemfig{\mcfright{O}{^{\mcfminus}}-[:210](=[:270]O)-[:150](<:[:90])-[:210]%
     =^[:150]-[:210]=^[:270](-[:330]=^[:30]-[:90])-[:210]-[:150](-[:210])-[:90]} : S
+    \end{center}
     }
 \end{questionmult}
 
 \begin{questionmult}{ibuprofene6}
-    Expliquer en quoi un mélange racémique dans le cas de l'ibuprofène :
+    Expliquer en quoi un mélange racémique dans le cas de l'ibuprofène~:
     \begin{itemize}
-        \item n'est pas dangereux pour les humains ;
+        \item n'est pas dangereux pour les humains~;
         \item retarde son action par rapport à l'énantiomère S seul.
     \end{itemize}
     \begin{EnvQuadrillage}[NbCarreaux=20x4,Grille=Seyes,Marge=1]
@@ -152,8 +178,10 @@ il peut simplifier vos représentations}
         \bonne[A4]{Overall}\scoring{b=.25}
     }
     \explain{
-    Le mélange racémique n'est pas dangereux car l'énantiomère R est inactif mais inoffensif.
-    L'action est retardée car le corps doit convertir l'énantiomère R en S.
+    \begin{itemize}
+        \item Le mélange racémique n'est pas dangereux car l'énantiomère $R$ est inactif mais inoffensif.
+        \item L'action est retardée car le corps doit convertir l'énantiomère $R$ en $S$ par une réaction enzymatique, ce qui prend du temps.
+    \end{itemize}
     }
 \end{questionmult}
 
@@ -176,10 +204,10 @@ il peut simplifier vos représentations}
         \bonne[B2]{Propriétés stéréochimiques}\scoring{b=.25}
    }
     \explain{
-        Formule semi-développée de la base conjuguée de l'ibuprofène : 
-        \ce{MPP-CH3-COOH}.\\
-    La base conjuguée de l'ibuprofène conserve le carbone asymétrique, donc elle possède les
-    mêmes propriétés stéréochimiques.
+    \begin{itemize}
+        \item Formule semi-développée de la base conjuguée de l'ibuprofène~: \ce{MPP-CH2-COO-}.
+        \item La base conjuguée de l'ibuprofène conserve le carbone asymétrique, donc elle possède les mêmes propriétés stéréochimiques que la forme acide.
+    \end{itemize}
     }
 \end{questionmult}
 
@@ -194,7 +222,13 @@ il peut simplifier vos représentations}
         \bonne[A2]{Équation correcte}\scoring{b=.5}
     }
     \explain{
-    L'équation de la réaction acide-base est : \ce{MPP-CH2-COOH + H2O <=> MPP-CH2-COO- + H3O+}.
+    L'équation de la réaction acide-base est~:
+    \begin{itemize}
+        \item \ce{MPP-CH2-COOH + H2O <=> MPP-CH2-COO- + H3O+}.
+        \item \ce{MPP-CH2-COOH} est l'acide.
+        \item \ce{MPP-CH2-COO-} est la base conjuguée.
+        \item \ce{H2O} et \ce{H3O+} forment le couple acide/base de l'eau.
+    \end{itemize}
     }
 \end{questionmult}
 
@@ -210,15 +244,15 @@ il peut simplifier vos représentations}
         \bonne[A2]{Résultat correct}\scoring{b=1}
     }
     \explain{
-    Dans l'estomac (pH = 2), l'ibuprofène est principalement sous sa forme acide. Dans le sang (pH = 7,4),
-    il est principalement sous sa forme basique.
- \begin{center}
+    \begin{itemize}
+        \item Dans l'estomac (pH = 2), l'ibuprofène est principalement sous sa forme acide car le pH est inférieur au pKa (4,5).
+        \item Dans le sang (pH = 7,4), il est principalement sous sa forme basique car le pH est supérieur au pKa.
+    \end{itemize}
+    \begin{center}
     \begin{tikzpicture}[scale=0.8]
         \draw[->, thick] (0,0) -- (10,0) node[right] {pH};
         \draw[thick] (0,1.5) -- (10,1.5);
         \draw[thick, dashed] (4.5,0) node[below] {pKa = 4,5} -- (4.5,1.5);
-        %%\fill[pattern=north east lines, pattern color=blue!30] (0,0) rectangle (4.5,1.5) node[midway] {Forme acide};
-        %%\fill[pattern=north west lines, pattern color=red!30] (4.5,0) rectangle (10,1.5) node[midway] {Forme basique};
         \node at (2.25,1.8) {Prédominance de l'acide};
         \node at (7.25,1.8) {Prédominance de la base};
     \end{tikzpicture}
@@ -237,8 +271,12 @@ il peut simplifier vos représentations}
         \bonne[A2]{Résultat}\scoring{b=.5}
     }
     \explain{
-    Le rapport des concentrations est donné par la relation de Henderson-Hasselbalch : 
-    $\frac{[\text{acide}]}{[\text{base}]} = 10^{pKa - pH}$. Dans le sang (pH = 7,4), ce rapport est de
-    $10^{4,5 - 7,4} \approx 0,0032$, ce qui signifie que la forme basique est largement prédominante.
+    \begin{itemize}
+        \item Le rapport des concentrations est donné par la relation de Henderson-Hasselbalch~:
+        $$
+        \frac{[\text{acide}]}{[\text{base}]} = 10^{pKa - pH}.
+        $$
+        \item Dans le sang (pH = 7,4), ce rapport est de $10^{4,5 - 7,4} \approx 0,0032$, ce qui signifie que la forme basique est largement prédominante.
+    \end{itemize}
     }
 \end{questionmult}
