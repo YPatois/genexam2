@@ -152,12 +152,19 @@ il peut simplifier vos représentations}
         \item Si les trois groupes restants sont classés dans le sens horaire, la configuration est $R$. Sinon, elle est $S$.
     \end{itemize}
     \begin{center}
-    \chemfig{OH-[:210,,1](=[:270]O)-[:150](<[:90])-[:210]=_[:270]-[:210]%
-    =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]} : R
-    \end{center}
-    \begin{center}
-    \chemfig{\mcfright{O}{^{\mcfminus}}-[:210](=[:270]O)-[:150](<:[:90])-[:210]%
-    =^[:150]-[:210]=^[:270](-[:330]=^[:30]-[:90])-[:210]-[:150](-[:210])-[:90]} : S
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \chemfig{ ^{\color{blue}3}CH_3>[:100]^{\color{blue}*}(<:[:-30]^{\color{blue}4}H)(-[90]_{\color{blue}1}COOH)-[:210]MPP^{\color{blue}2} } \\
+        \noindent\small\textit{A: Énantiomère S}
+%        \par\noindent\small\textit{A: Énantiomère S}
+    \end{minipage}%
+    \hspace{0.05\textwidth}% Espace entre les deux molécules
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \chemfig{ ^{\color{blue}4}H>[:100]^{\color{blue}*}(<:[:-30]^{\color{blue}3}CH_3)(-[90]_{\color{blue}1}COOH)-[:210]MPP^{\color{blue}2} } \\
+        \noindent\small\textit{B: Énantiomère R}
+%        \par\noindent\small\textit{B: Énantiomère R}
+    \end{minipage}
     \end{center}
     }
 \end{questionmult}
