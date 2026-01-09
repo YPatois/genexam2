@@ -59,16 +59,12 @@ il peut simplifier vos représentations}
         \bonne[C]{Formule correcte}\scoring{b=1}
     }
     \explain{
-        La formule topologique de l'ibuprofène doit montrer~:
-        \begin{itemize}
-            \item Un groupe carboxyle ($-COOH$).
-            \item Un carbone asymétrique (noté $C^*$).
-            \item Un groupe méthyle ($-CH_3$) et un groupe phényle (représenté par $MPP$).
-        \end{itemize}
+        La formule topologique de l'ibuprofène était donnée dans le sujet.
+        Il est possible de simplifier son écriture en utilisant le groupe MPP~:
         \chemfig{
-            CH_3>[:100](<:[:-30]H)(-[90]COOH)-[:210]=_[:270]-[:210]%
-            =_[:150](-[:90]=_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]}
-        ou \chemfig{ CH_3>[:100](<:[:-30]H)(-[90]COOH)-[:210]MPP }
+        -[:210]=_[:270]-[:210]=_[:150](-[:90]%
+        =_[:30]-[:330])-[:210]-[:150](-[:210])-[:90]
+        }  ou \chemfig{OH-[:210,,1](=[:270]O)-[:150](\mcfatomno{*}-[:90]CH3)-[:210]MPP}
     }
 \end{questionmult}
 
@@ -83,11 +79,8 @@ il peut simplifier vos représentations}
         \bonne[A2]{Famille nommée}\scoring{b=.5}
     }
     \explain{
-    Le groupe caractéristique est le groupe carboxyle ($-COOH$), situé à l'extrémité de la chaîne carbonée.
-    Ce groupe définit la famille fonctionnelle~:
-    \begin{itemize}
-        \item des acides carboxyliques.
-    \end{itemize}
+        Le groupe caractéristique est le groupe carboxyle ($-COOH$), situé à l'extrémité de la chaîne carbonée.
+        Ce groupe définit la famille fonctionnelle des acides carboxyliques.
     }
 \end{questionmult}
 
@@ -104,7 +97,7 @@ il peut simplifier vos représentations}
     Le carbone $C^*$ est asymétrique car il est lié à quatre groupes d'atomes différents~:
     \begin{itemize}
         \item Un groupe carboxyle ($-COOH$).
-        \item Un atome d'hydrogène ($-H$).
+        \item Un atome d'hydrogène ($-H$) (omit dans la représentation topologique).
         \item Un groupe méthyle ($-CH_3$).
         \item Un groupe phényle (représenté par $MPP$).
     \end{itemize}
@@ -131,6 +124,8 @@ il peut simplifier vos représentations}
         \item Inverser la position des groupes autour du carbone asymétrique.
         \item Le groupe $CH_3$ et l'atome d'hydrogène $H$ échangent leurs positions par rapport à l'énantiomère A.
     \end{itemize}
+    Note: n'importe quelle inversion de groupes autour du carbone asymétrique donne l'autre énantiomère.
+
     \chemfig{ H>[:100](<:[:-30]CH_3)(-[90]COOH)-[:210]MPP }
     }
 \end{questionmult}
@@ -149,8 +144,10 @@ il peut simplifier vos représentations}
     \begin{itemize}
         \item Classer les groupes liés au carbone asymétrique par ordre de priorité (numéro atomique décroissant).
         \item Orienter la molécule de sorte que le groupe de plus faible priorité soit dirigé vers l'arrière.
-        \item Si les trois groupes restants sont classés dans le sens horaire, la configuration est $R$. Sinon, elle est $S$.
+        \item Si les trois groupes restants sont ordonnés dans le sens horaire, la configuration est $R$. Sinon, elle est $S$.
     \end{itemize}
+    Note: le \ce{C} lié à un \ce{O} (dans \ce{COOH}) est prioritaire sur le \ce{C} lié à un autre \ce{C} (dans \ce{MPP})
+(   car \ce{_{8}O} est plus grand que \ce{_{6}C}), qui est prioritaire sur le \ce{C} lié à un \ce{H} (dans \ce{CH3}).
     \begin{center}
     \begin{minipage}[t]{0.45\textwidth}
         \centering
@@ -186,8 +183,8 @@ il peut simplifier vos représentations}
     }
     \explain{
     \begin{itemize}
-        \item Le mélange racémique n'est pas dangereux car l'énantiomère $R$ est inactif mais inoffensif.
-        \item L'action est retardée car le corps doit convertir l'énantiomère $R$ en $S$ par une réaction enzymatique, ce qui prend du temps.
+        \item Le mélange racémique n'est pas dangereux car l'énantiomère $R$ est inactif, mais sans danger pour le corps humain.
+        \item L'action est retardée car le corps doit convertir l'énantiomère $R$ en $S$ par une réaction enzymatique, ce qui prend environ 38 minutes.
     \end{itemize}
     }
 \end{questionmult}
@@ -213,7 +210,9 @@ il peut simplifier vos représentations}
     \explain{
     \begin{itemize}
         \item Formule semi-développée de la base conjuguée de l'ibuprofène~: \ce{MPP-CH2-COO-}.
-        \item La base conjuguée de l'ibuprofène conserve le carbone asymétrique, donc elle possède les mêmes propriétés stéréochimiques que la forme acide.
+        \item La base conjuguée de l'ibuprofène conserve le carbone asymétrique dans la
+         même chiralisme, donc elle possède les mêmes propriétés stéréochimiques que
+         la forme acide.
     \end{itemize}
     }
 \end{questionmult}

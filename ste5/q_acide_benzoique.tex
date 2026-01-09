@@ -51,8 +51,8 @@ présence d’un conservateur.
         \bonne{Groupe identifié}\scoring{b=.5}
         \bonne{Groupe nommé}\scoring{b=.5}
     }
-    \explain{Le groupe caractéristique est le groupe carboxyle (--COOH). Dans la formule topologique, il est
-    identifiable par le carbone lié à un oxygène par une double liaison et à un groupe hydroxyle (--OH).}
+    \explain{Le groupe caractéristique est le groupe carboxyle (\ce{--COOH}). Dans la formule topologique, il est
+    identifiable par le carbone lié à un oxygène par une double liaison et à un groupe hydroxyle (\ce{--OH}).}
 \end{questionmult}
 
 \begin{question}{acidbenzo2}
@@ -65,8 +65,9 @@ présence d’un conservateur.
         \bonne{OK}\scoring{b=1}
     }
     \explain{La formule topologique de l’ion benzoate est :
-    \chemfig{\mcfright{O}{^{\mcfminus}}-[:120](=[:60]O)-[:180]=^[:120]-[:180]=^[:240]%
--[:300]=^(-[:60])}. La charge négative est portée par l’oxygène du groupe carboxylate.}
+    \chemfig{
+        \mcfright{O}{^{\mcfminus}}-[:120](=[:60]O)-[:180]=^[:120]-[:180]=^[:240]-[:300]=^(-[:60])}\\
+    La charge négative est portée par l’oxygène du groupe carboxylate.}
 \end{question}
 
 \begin{question}{acidbenzo3}
@@ -79,8 +80,10 @@ présence d’un conservateur.
         \bonne{OK}\scoring{b=1}
     }
     \explain{Le diagramme de prédominance doit montrer :
-    - À un pH inférieur à 4,2, l’acide benzoïque (\ce{C6H5COOH}) est prédominant.
-    - À un pH supérieur à 4,2, l’ion benzoate (\ce{C6H5COO-}) est prédominant.
+    \begin{itemize}
+        \item À un pH inférieur à 4,2, l’acide benzoïque (\ce{C6H5COOH}) est prédominant.
+        \item À un pH supérieur à 4,2, l’ion benzoate (\ce{C6H5COO-}) est prédominant.
+    \end{itemize}
     \begin{center}
         \begin{tikzpicture}[scale=0.8]
             \draw[->, thick] (0,0) -- (10,0) node[right] {pH};
@@ -115,8 +118,24 @@ benzoïque solide. On observe que le solide introduit disparaît.
         \bonne{Expérience identifiée}\scoring{b=0.5}
         \bonne{Justification correcte}\scoring{b=0.5}
     }
-    \explain{Il s’agit de l’expérience (1). Les réactifs sont l’ion benzoate (\ce{C6H5COO-}) et l’ion oxonium (\ce{H3O+}).
-    Ces ions sont présents dans l’expérience 1, où l’acide chlorhydrique apporte les ions \ce{H3O+}.}
+    \explain{
+        Il s'agit de l'expérience (1)~:
+        \begin{itemize}
+            \item Dans l'expérience (1), l'acide chlorhydrique (\ce{HCl}) fort apporte des ions \ce{H3O+} en solution.
+            \item Ces ions \ce{H3O+} réagissent avec l'ion benzoate (\ce{C6H5COO-}) selon l'équation donnée~:
+            \ce{C6H5COO^-_{(aq)} + H3O^+_{(aq)} -> C6H5COOH_{(aq)} + H2O_{(l)}}.
+            \item Cette réaction conduit à la formation d'acide benzoïque (\ce{C6H5COOH}), qui est peu soluble dans l'eau 
+            et apparaît sous forme de solide blanc.
+        \end{itemize}
+
+        À l'inverse, dans l'expérience (2)~:
+        \begin{itemize}
+            \item La soude (\ce{NaOH}) apporte des ions \ce{OH-} en solution.
+            \item Ces ions \ce{OH-} réagissent avec l'acide benzoïque (\ce{C6H5COOH}) pour former l'ion 
+                benzoate (\ce{C6H5COO-}), qui est soluble dans l'eau.
+            \item Le solide d'acide benzoïque disparaît donc en se dissolvant sous forme d'ion benzoate.
+        \end{itemize}
+    }
 \end{questionmult}
 
 L’étiquette d’une boisson gazeuse indique qu’elle contient du benzoate de sodium comme conservateur alimentaire,
@@ -158,8 +177,8 @@ On suit le protocole expérimental suivant :
         \bonne[C]{OK}\scoring{b=1}
     }
     \explain{L’éther éthylique est non miscible à l’eau et l’acide benzoïque y est très soluble. À l’inverse, l’éthanol
-    est miscible à l’eau, ce qui rendrait l’extraction inefficace. L’éther éthylique permet donc une séparation
-    nette des phases organique et aqueuse.}
+    est miscible à l’eau, ce qui rendrait l’extraction liquide-liquide difficile. L’éther éthylique permet donc une séparation
+    nette des phases organique et aqueuse ainsi qu'une différence de solubilité permettant une extraction plus facile.}
 \end{question}
 
 \begin{questionmult}{acidbenzo7}
@@ -201,7 +220,7 @@ On suit le protocole expérimental suivant :
         \bonne[A]{OK}\scoring{b=1}
    }
     \explain{On peut mesurer son point de fusion au banc Kofler. La température de fusion de l’acide benzoïque
-    est donnée dans l’énoncé : \qty{122.4}{\degreeCelsius}. Si le solide fond à cette température, il s’agit bien
+    est donnée dans l’énoncé : \qty{122.4}{\degreeCelsius}. Si le solide fond à cette température, il s’agit probablement
     d’acide benzoïque.}
 \end{question}
 
@@ -242,10 +261,21 @@ On suit le protocole expérimental suivant :
         \bonne[A]{Nb}\scoring{b=.5}
         \bonne[A]{Ovl}\scoring{b=.5}
     }
-    \explain{Le rendement est calculé comme suit :
-    \[
-    \eta = \frac{10,0}{24} \times 100 = 41,7\%.
-    \]
-    Ce rendement est relativement faible. Pour l’améliorer, il faudrait extraire une deuxième fois la phase
-    aqueuse avec 40 mL d’éther éthylique, puis rassembler les phases organiques.}
+    \explain{
+        Le rendement est calculé comme suit~:
+        \[
+        \eta = \frac{\SI{10,0}{\milli\gram}}{\SI{24}{\milli\gram}} \times 100 = \SI{41,7}{\percent}.
+        \]
+
+        Ce rendement de \SI{41,7}{\percent} est relativement faible. Pour l'améliorer, il est possible de procéder à
+        une deuxième extraction~:
+        \begin{itemize}
+            \item Reprendre la phase aqueuse de l'ampoule après la première extraction.
+            \item Recommencer le processus d'extraction avec \SI{40}{\milli\litre} d'éther éthylique.
+            \item Rassembler les phases organiques obtenues.
+        \end{itemize}
+
+        Le rendement de cette seconde extraction serait probablement similaire au premier (\SI{40}{\percent} des
+        \SI{60}{\percent} restants), portant le rendement total à environ \SI{64}{\percent}.
+    }
 \end{questionmult}
