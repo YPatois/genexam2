@@ -1,0 +1,245 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper, margin=1.5cm]{geometry}
+\usepackage{needspace}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{fp}
+\usepackage{xfp}
+\usepackage{pgfmath}
+\usepackage{numprint}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+\usepackage{WriteOnGrid}
+\usepackage{frcursive}
+\usepackage{csvsimple}%
+\usepackage[francais,bloc]{automultiplechoice}
+
+%\sisetup{locale = FR,detect-all,quotient-mode=fraction,
+%input-product=*, list-final-separator = { \translate{et} },
+%list-pair-separator = { \translate{et} },range-phrase = { \translate{à} },
+%separate-uncertainty = true,group-minimum-digits=3}
+
+\DeclareSIUnit{\nothing}{\relax}
+
+\def\yseed{11}
+\FPseed\yseed
+\pgfmathsetseed{\yseed}
+
+%\baremeDefautS{e=0,v=0,b=1,m=-.25}
+\baremeDefautS{e=0,v=0,b=1,m=-.1}
+%\baremeDefautM{formula=(NBC>0 ? (NMC==0 ? 1:0):0)}
+
+\graphicspath{ {./images/} }
+
+\newenvironment{reponsesd}{
+    \begin{multicols}{2}
+    \begin{reponses} }{
+    \end{reponses}
+    \end{multicols}
+}
+
+% Sauvegarde l'environnement original
+\let\oldEnvQuadrillage\EnvQuadrillage
+\let\endoldEnvQuadrillage\endEnvQuadrillage
+
+% Redéfinit l'environnement pour ajouter un espace après
+\renewenvironment{EnvQuadrillage}[1][]{%
+    \oldEnvQuadrillage[#1]%
+}{%
+    \endoldEnvQuadrillage%
+    \vspace{0.5cm}% Ajoute un espace de 0,5 cm après chaque quadrillage
+}
+
+% Sauvegarde l'ancienne définition de reponseshoriz
+%\let\oldreponseshoriz\reponseshoriz
+%\let\endoldreponseshoriz\endreponseshoriz
+
+% Redéfinit reponseshoriz avec une taille de police réduite
+%\renewenvironment{reponseshoriz}
+%{
+%    \scriptsize % ou \small, \scriptsize, etc.
+%    \oldreponseshoriz
+%}
+%{
+%    \endoldreponseshoriz
+%}
+
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{lightgray}}%
+
+\let\oexplain\explain
+\renewcommand{\explain}[1]{\oexplain{\textcolor{red}{#1}}}
+
+\titleformat{\section}
+  {\centering\hrule\vspace{2mm}}
+  {\thesection}
+  {1em}
+  {}
+  [\vspace{1mm}\hrule]
+
+\titleformat{\subsection}
+  {\em}
+  {\thesubsection}
+  {1em}
+  {}
+
+\newcommand{\sujet}{
+\exemplaire{1}{%
+
+\AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
+\AMCopenOpts{boxframerule=0pt,lineheight=0pt,width=0pt,boxframerulecol=white,
+    dots=false,framerule=0pt,framerulecol=white}
+
+%%% debut de l'en-tête des copies :
+\begin{center}
+\vfill
+\noindent{\large \bf Classe de \niveau{}°\classe{}}
+
+\vspace*{3mm}
+
+{\Large\bf Évaluation sur table STL - Physique-Chime 07/01/2025}
+
+\vfill
+\namefield{\noindent{}\fbox{\vspace*{3mm}
+         \Huge\bf\prenom{}~\nom{}\normalsize{}%
+         \vspace*{3mm}
+      }}
+\end{center}
+\vfill
+
+\begin{center}
+\textbf{Durée : une heure.}
+\vspace*{5mm}
+
+  Aucun document n'est autorisé.
+  L'usage de la calculatrice est interdit.
+
+  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
+  présenter une ou plusieurs bonnes réponses. Les autres ont
+  une unique bonne réponse.
+
+  Des points négatifs seront affectés aux mauvaises réponses, \textbf{uniquement pour les QCM}. Pour les
+  questions ouvertes (où vous écrivez la réponses dans les quadrillages), aucun point négatif ne sera appliqué.
+
+  \vspace*{5mm}
+
+  \textbf{IMPORTANT: Utilisez un crayon de papier bien noir pour cocher les cases, et une gomme
+  pour effacer délicatement en cas d'erreur. Ne raturez pas les cases.
+  Si vous effacez le pourtour de la case, ne le redessinez pas!}
+
+  \vspace*{5mm}
+
+  \textbf{IMPORTANT: Ne pas écrire dans les cases grisées!}
+
+  \vspace*{5mm}
+
+  Ne pas faire comme ceci (raturé, pas centré, trop pâle, ...):\\
+  \includegraphics[width=4cm]{checkbox_bad.png}
+
+  Mais comme cela (bien centré, bien foncé):\\
+  \includegraphics[width=2cm]{checkbox_good.png}
+
+  Si vous faites une erreur et que vous ne pouvez effacer, raturez la case bien ostensiblement.
+
+\end{center}
+\vspace{1ex}
+\vfill
+\pagebreak
+%%% fin de l'en-tête
+
+\restituegroupe{groupes}
+
+
+\AMCassociation{\id}
+
+	  } % End \exemplaire{1}{%
+} % End \newcommand{\sujet}{
+
+
+%%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\newcommand{\allq}{}
+\newcommand{\nball}[1]{#1}
+
+\begin{document}
+%%%Options
+\AMCrandomseed{\yseed}
+
+%%\def\AMCformQuestion#1{\textbf{Questioon #1 :}}
+
+\setdefaultgroupmode{withoutreplacement}
+%%% Fin Options
+
+%%% elements
+\input{q_01_simplenum.tex}
+\input{q_02_power10.tex}
+\input{q_03_psi.tex}
+\input{q_04_atoms.tex}
+\input{q_05_symchim.tex}
+\input{q_alcans.tex}
+\input{q_alcools.tex}
+\input{q_groups.tex}
+\input{q_nomencla.tex}
+\input{q_isors.tex}
+\input{q_isoze.tex}
+\input{q_defacidebase.tex}
+\input{q_phconcentration.tex}
+\input{q_pkaforce.tex}
+\input{q_tampons.tex}
+\input{q_logs.tex}
+
+%%% fin des elements
+\element{groupes}{
+\section{Rappels simples sur des notions mathématiques et physiques}
+\begin{multicols}{2}
+\insertgroup[4]{simplenum}
+\insertgroup[4]{power10}
+\insertgroup[4]{psi}
+\insertgroup[2]{atoms}
+\insertgroup[2]{symchim}
+\end{multicols}
+
+\section{Nomenclature des alcanes}
+\begin{multicols}{2}
+\insertgroup[4]{falcans}
+\insertgroup[4]{alcans}
+\insertgroup[8]{alcools}
+\insertgroup[4]{groups}
+\insertgroup[4]{nomencla}
+\insertgroup[4]{isors}
+\insertgroup[4]{isoze}
+\end{multicols}
+
+\section{Couples acides/bases}
+\begin{multicols}{2}
+\insertgroup[4]{defacidebase}
+\insertgroup[4]{phconcentration}
+\insertgroup[4]{pkaforce}
+\insertgroup[2]{tampons}
+\end{multicols}
+
+\textbf{Logarithme: la fonction $\log$ représente le logarithme décimal ($\log_{10}$).}
+\begin{multicols}{2}
+\insertgroup[4]{logs}
+\end{multicols}
+
+\pgfmathrandom{}
+\let\yran\pgfmathresult
+\pgfmathparse{\yran > 0.5 ? 1 : 0}
+\let\fileChoice\pgfmathresult
+
+\ifnum\io=1
+        \input{q_acide_benzoique.tex}
+    \else
+        \input{q_ibuprofene.tex}
+    \fi
+
+\AMCcleardoublepage
+}
+
+\csvreader[head to column names]{liste.csv}{}{\sujet}
+
+\end{document}

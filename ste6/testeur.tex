@@ -1,0 +1,72 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{needspace}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{fp}
+\usepackage{xfp}
+\usepackage{numprint}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+\usepackage{WriteOnGrid}
+\usepackage{frcursive}
+\usepackage{csvsimple}%
+
+\DeclareSIUnit{\nothing}{\relax}
+
+\newcommand{\element}[1]{%
+    \par\noindent%
+    \rule{\textwidth}{0.4pt}\par%
+    \smallskip%
+    
+    \par\noindent%
+    \rule{\textwidth}{0.4pt}\par%
+    \medskip%
+}
+
+\newcommand{\scoring}[1]{{\tiny (#1)}}
+
+% Commandes pour les réponses avec gestion des arguments optionnels
+\newcommand{\mauvaise}[2][]{
+    \item{Mauvais: [#1] #2}
+}
+\newcommand{\bonne}[2][]{
+    \item{Bonne: [#1] #2}
+}
+
+\newcommand{\AMCOpen}[2]{}
+
+\newenvironment{question}[1]{
+    \par\noindent
+    \textbf{Question #1:} \smallskip
+}
+
+\newenvironment{questionmult}[1]{
+    \par\noindent
+    \textbf{Question #1:} \smallskip
+}
+
+\newenvironment{reponses}{
+    \\
+    \smallskip
+    \begin{itemize}
+}{\end{itemize}\smallskip}
+
+\newenvironment{reponseshoriz}{
+    \\
+    \smallskip
+    \begin{tabular}{l}
+}{\end{tabular}\smallskip}
+
+\newcommand{\explain}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+
+\input{q_ibuprofene.tex}
+\input{q_acide_benzoique.tex}
+
+\end{document}
