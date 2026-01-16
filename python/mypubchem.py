@@ -13,8 +13,11 @@ from mychemcache import ChemCache
 
 global_cache=ChemCache()
 
+global args
+args=None
+
 def mol2chemfig0(chemid,m2copts="-z -y delete"):
-    if (args.m2c_opt is not None):
+    if (args and (args.m2c_opt is not None)):
         m2copts=args.m2c_opt
     cmd = "mol2chemfig %s -i pubchem %s" % (m2copts,chemid)
     print(cmd)
@@ -97,9 +100,8 @@ def full_latex_from_id(chemid):
 # --------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser(description="Convertir un nom français en chemfig.")
-    parser.add_argument("--from-fr-name", type=str, required=True, help="Nom français à traiter.")
+    parser.add_argument("--from-fr-name", type=str, default=None, required=False, help="Nom français à traiter.")
     parser.add_argument("--m2c-opt", type=str, default=None, required=False, help="Options pour mol2chemfig.")
-    global args
     args = parser.parse_args()
 
     print(mol2chemfig_from_frenchname(args.from_fr_name))
@@ -107,7 +109,7 @@ def main():
     #print (mol2chemfig(142755607))
     #print (find_substance_id_from_name("2-acetoxy benzoic acid"))
     #print (mol2chemfig_from_name("2-acetoxy benzoic acid"))
-#mol2chemfig -w -z -y delete -i pubchem 142755607
+    #mol2chemfig -w -z -y delete -i pubchem 142755607
 
 # --------------------------------------------------------------------------
 if __name__ == '__main__':
