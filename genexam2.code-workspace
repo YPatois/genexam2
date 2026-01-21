@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../cours_stl"
+		},
+		{
+			"path": "../zimbra_api"
 		}
 	],
 	"settings": {}
