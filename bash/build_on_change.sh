@@ -5,7 +5,7 @@ export SCRIPTBASEDIR
 
 source $SCRIPTBASEDIR/../vault/vault.sh
 
-TEXDIR=$SCRIPTBASEDIR/../ste6
+TEXDIR=$SCRIPTBASEDIR/../ste7
 
 # Global variable to store the PID of the last action
 PREV_PID=""
@@ -18,6 +18,12 @@ function latex_run() {
     fi
     return 0
 }
+
+function amc_build() {
+    make
+    auto-multiple-choice prepare --mode s --prefix ./ ./Preremplies.tex --out-sujet  DOC-sujet.pdf --data ./data
+}
+
 
 function handle_change() {
     # Kill the previous action if it's still running
@@ -33,7 +39,7 @@ function handle_change() {
         make
         cd $WORKDIR
         echo "In $WORKDIR making pdfs"
-        latex_run Preremplies.tex &
+        amc_build &
         latex_run testeur.tex
         wait
         echo "build done"
