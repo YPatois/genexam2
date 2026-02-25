@@ -8,17 +8,37 @@ from mytex import lx,lx1,lx2,qty
 from myamc import build_acm_question
 
 def generate_equation():
+    # Start with an integer solution
+    solution = random.randint(-5, 5)
+
+    # Generate random coefficients a, b, and c such that the solution is correct
     a = random.randint(-5, 5)
     while a == 0:
         a = random.randint(-5, 5)
+
+    # Calculate b and c based on the solution and a
     b = random.randint(-10, 10)
-    c = random.randint(-10, 10)
-    equation = f"${a}x + {b} = {c}$"
-    solution = (c - b) / a
+    while b == 0:
+        b = random.randint(-10, 10)
+    c = a * solution + b
+
+    # Format the equation string to handle the sign of b
+    if b > 0:
+        equation = f"${a}x + {b} = {c}$"
+    else:
+        equation = f"${a}x - {-b} = {c}$"
+
+    # Generate fool answers
     solutions = []
+    used_fools = set()  # Track used fool answers
     for i in range(3):
-        s = solution + random.choice([-1, 1]) * random.randint(1, 3)
-        solutions.append(f"$x = {s}$")
+        while True:
+            s = solution + random.choice([-1, 1]) * random.randint(1, 3)
+            if s not in used_fools and s != solution:
+                used_fools.add(s)
+                solutions.append(f"$x = {s}$")
+                break
+
     solutions.append(f"$x = {solution}$")
     return equation, solutions
 
