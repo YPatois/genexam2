@@ -24,6 +24,10 @@ function amc_build() {
     auto-multiple-choice prepare --mode s --prefix ./ ./Preremplies.tex --out-sujet  DOC-sujet.pdf --data ./data
 }
 
+function makechem() {
+    # makechem -f $TEXDIR/Makefile
+    make -f $TEXDIR/Makefile
+}
 
 function handle_change() {
     # Kill the previous action if it's still running
