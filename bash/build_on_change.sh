@@ -20,8 +20,8 @@ function latex_run() {
 }
 
 function amc_build() {
-    make
-    auto-multiple-choice prepare --mode s --prefix ./ ./Preremplies.tex --out-sujet  DOC-sujet.pdf --data ./data
+    #make
+    #auto-multiple-choice prepare --mode s --prefix ./ ./Preremplies.tex --out-sujet  DOC-sujet.pdf --data ./data
 }
 
 function makechem() {
@@ -38,13 +38,12 @@ function handle_change() {
 
     # Start new action in the background
     (   
-        cd $TEXDIR
-        echo "In $TEXDIR making tex files"
-        make
         cd $WORKDIR
+        make
         echo "In $WORKDIR making pdfs"
-        amc_build &
-        latex_run testeur.tex
+        #amc_build
+        latex_run testeur.tex &
+        latex_run Preremplies.tex
         wait
         echo "build done"
     ) &
