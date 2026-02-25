@@ -30,5 +30,5 @@ chemcache:
 	python3 $<
 
 clean:
-	$(RM) $(TEXFILES)
+	$(RM) $(TEXFILES) images chemcache *.aux *.log *.out *.pdf
 	@echo "Cleaned up generated TeX files."
