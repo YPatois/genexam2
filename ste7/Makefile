@@ -6,7 +6,7 @@ LINK_DIR := .
 LINKTEX_FILES := $(wildcard $(TARGET_DIR)/*.tex)
 
 
-TEXFILES = q_alcans.tex q_alcools.tex q_groups.tex q_nomencla.tex q_isors.tex q_isoze.tex
+TEXFILES = q_alcans.tex q_alcools.tex q_groups.tex q_nomencla.tex q_isors.tex q_isoze.tex q_premdeg.tex
 .PHONY: all clean
 
 all: links images chemcache $(TEXFILES)
