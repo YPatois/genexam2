@@ -20,6 +20,7 @@ function latex_run() {
 }
 
 function amc_build() {
+    echo "Don't do that"
     #make
     #auto-multiple-choice prepare --mode s --prefix ./ ./Preremplies.tex --out-sujet  DOC-sujet.pdf --data ./data
 }
