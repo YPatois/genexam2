@@ -1,0 +1,99 @@
+\section{Saponification de l'éthanoate d'éthyle}
+\textbf{Source du sujet :} Exercice commun à tous les candidats (4 points)
+
+\subsection{Introduction}
+On souhaite déterminer le temps de demi-réaction de la saponification de l'éthanoate d'éthyle par deux méthodes : un suivi cinétique pH-métrique (partie A) puis l'exploitation mathématique de la loi de vitesse (partie B). L'équation de la réaction modélisant cette transformation chimique est :
+
+\[
+\ce{CH3COOCH2CH3 + HO^- -> CH3COO^- + CH3CH2OH}
+\]
+
+\subsection{Données}
+\begin{itemize}
+    \item Masse volumique de l'éthanoate d'éthyle : \(\rho_{\text{é.é.}} = 0,925~\mathrm{g/mL}\).
+    \item Masse molaire de l'éthanoate d'éthyle : \(M_{\text{é.é.}} = 88,0~\mathrm{g/mol}\).
+    \item Constante d'équilibre de l'autoprotolyse de l'eau : \(K_{\mathrm{e}} = 10^{-14}\).
+\end{itemize}
+
+\subsection{Partie A : Suivi pH-métrique de la saponification (2 points)}
+
+Le suivi est réalisé en mettant en œuvre le protocole suivant :
+\begin{itemize}
+    \item Dans un bécher, verser :
+    \begin{itemize}
+        \item 10,0 mL de soude à 0,10 mol/L ;
+        \item environ 35 mL d'eau ;
+        \item environ 15 mL d'éthanol ;
+        \item 2,0 mL d'éthanoate d'éthyle.
+    \end{itemize}
+    \item Déclencher l'acquisition informatique de la mesure du pH toutes les secondes. Le déclenchement définit l'instant initial \(t = 0~\mathrm{s}\).
+\end{itemize}
+
+\begin{questionmult}{saponif1}
+    Déterminer les valeurs des quantités de matière initiales d'éthanoate d'éthyle et de soude.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Calculs corrects}\scoring{b=1}
+        \bonne[A2]{Résultats corrects}\scoring{b=1}
+    }
+    \explain{
+    \begin{itemize}
+        \item Pour la soude : \(n_{\text{HO}^-} = C \times V = 0,10~\mathrm{mol/L} \times 0,010~\mathrm{L} = 1,0 \times 10^{-3}~\mathrm{mol}\).
+        \item Pour l'éthanoate d'éthyle : \(m = \rho \times V = 0,925~\mathrm{g/mL} \times 2,0~\mathrm{mL} = 1,85~\mathrm{g}\).
+        \item Quantité de matière : \(n = \frac{m}{M} = \frac{1,85~\mathrm{g}}{88,0~\mathrm{g/mol}} = 2,10 \times 10^{-2}~\mathrm{mol}\).
+    \end{itemize}
+    }
+\end{questionmult}
+
+\begin{questionmult}{saponif2}
+    Écrire l'équation de la réaction d'autoprotolyse de l'eau.
+    \begin{EnvQuadrillage}[NbCarreaux=10x2,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Équation correcte}\scoring{b=1}
+    }
+    \explain{
+    L'équation de l'autoprotolyse de l'eau est :
+    \[
+    \ce{2 H2O <=> H3O^+ + HO^-}
+    \]
+    }
+\end{questionmult}
+
+\begin{questionmult}{saponif3}
+    Donner l'expression de la constante d'équilibre \(K_{\mathrm{e}}\) de la réaction d'autoprotolyse de l'eau en fonction des concentrations à l'équilibre.
+    \begin{EnvQuadrillage}[NbCarreaux=10x2,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Expression correcte}\scoring{b=1}
+    }
+    \explain{
+    La constante d'équilibre \(K_{\mathrm{e}}\) est donnée par :
+    \[
+    K_{\mathrm{e}} = [\ce{H3O^+}] \times [\ce{HO^-}]
+    \]
+    }
+\end{questionmult}
+
+\subsection{Partie B : Exploitation mathématique de la loi de vitesse (2 points)}
+
+On considère que la concentration en éthanoate d'éthyle reste constante et égale à sa valeur initiale tout au long de la transformation chimique. La loi de vitesse de réaction peut alors s'écrire comme celle d'une loi d'ordre 1 : \(v = k_1 \times [\ce{HO^-}]\), où \(k_1\) est la constante de vitesse apparente.
+
+\begin{questionmult}{saponif4}
+    Montrer que la réaction est d'ordre 1 par rapport aux ions hydroxyde.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Raisonnement correct}\scoring{b=1}
+        \bonne[A2]{Conclusion correcte}\scoring{b=1}
+    }
+    \explain{
+    La loi de vitesse \(v = k_1 \times [\ce{HO^-}]\) montre que la vitesse de réaction est directement proportionnelle à la concentration en ions hydroxyde. Cela indique que la réaction est d'ordre 1 par rapport aux ions hydroxyde.
+    }
+\end{questionmult}
+
