@@ -4,6 +4,7 @@
 \usepackage[nobottomtitles]{titlesec}
 \usepackage{multicol}
 \usepackage{xcolor}
+\usepackage{wrapfig}
 \usepackage{fp}
 \usepackage{xfp}
 \usepackage{pgfmath}
@@ -22,6 +23,18 @@
 %input-product=*, list-final-separator = { \translate{et} },
 %list-pair-separator = { \translate{et} },range-phrase = { \translate{à} },
 %separate-uncertainty = true,group-minimum-digits=3}
+
+%%% Force show explain during dev
+\newif\ifshowexplain
+\showexplaintrue  % Active l'affichage des explications
+
+\let\oldexplain\explain
+\renewcommand{\explain}[1]{%
+    \oldexplain{#1}% Conserve la définition originale pour AMC
+    \ifshowexplain
+        \par\noindent\textit{Explication : }#1\par
+    \fi
+}
 
 \DeclareSIUnit{\nothing}{\relax}
 

@@ -30,9 +30,16 @@ $$
     \item Constante d'équilibre de l'autoprotolyse de l'eau : \(K_{\mathrm{e}} = 10^{-14}\).
 \end{itemize}
 
-\subsection{Partie A : Suivi pH-métrique de la saponification (2 points)}
+\subsection{Partie A : Suivi pH-métrique de la saponification}
 
-Le suivi est réalisé en mettant en œuvre le protocole suivant :
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ste7_ethanoate_ph.png}
+%    \caption{Suivi pH-métrique de la saponification de l'éthanoate d'éthyle}
+    \label{fig:ethanoate_ph}
+\end{wrapfigure}
+
+Le suivi est réalisé en mettant en œuvre le protocole suivant~:
 \begin{itemize}
     \item Dans un bécher, verser :
     \begin{itemize}
@@ -44,14 +51,19 @@ Le suivi est réalisé en mettant en œuvre le protocole suivant :
     \item Déclencher l'acquisition informatique de la mesure du pH toutes les secondes. Le déclenchement définit l'instant initial \(t = 0~\mathrm{s}\).
 \end{itemize}
 
-\begin{questionmult}{saponif1}
+\WFclear
+\vskip 0.5cm
+\begin{questionmult}{saponifA1}
     Déterminer les valeurs des quantités de matière initiales d'éthanoate d'éthyle et de soude.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Calculs corrects}\scoring{b=1}
-        \bonne[A2]{Résultats corrects}\scoring{b=1}
+        \bonne{Idée}\scoring{b=1}
+        \bonne{Éthanoate id}\scoring{b=1}
+        \bonne{Éthanoate}\scoring{b=1}
+        \bonne{Soude id}\scoring{b=1}
+        \bonne{Soude}\scoring{b=1}
     }
     \explain{
     \begin{itemize}
@@ -62,53 +74,145 @@ Le suivi est réalisé en mettant en œuvre le protocole suivant :
     }
 \end{questionmult}
 
-\begin{questionmult}{saponif2}
-    Écrire l'équation de la réaction d'autoprotolyse de l'eau.
-    \begin{EnvQuadrillage}[NbCarreaux=10x2,Grille=Seyes,Marge=1]
+Dans ces conditions, on considère que la concentration en éthanoate d’éthyle reste
+constante et égale à sa valeur initiale tout au long de la transformation chimique. La loi de vitesse de réaction peut alors s’écrire comme celle d’une loi d’ordre~1~: $v = k_1 \times [HO^{‒}]$ dans laquelle k1 est appelée constante de vitesse apparente.
+
+On souhaite établir la relation entre le pH mesuré et la concentration en quantité de matière $C$ en ions hydroxyde dans le mélange réactionnel au même instant.
+
+\vskip 0.5cm
+\begin{questionmult}{saponifA2}
+    Écrire l'équation de la réaction d'autoprotolyse de l'eau.\\
+    \begin{EnvQuadrillage}[NbCarreaux=10x1,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Équation correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     L'équation de l'autoprotolyse de l'eau est :
-    \[
     \ce{2 H2O <=> H3O^+ + HO^-}
-    \]
     }
 \end{questionmult}
 
-\begin{questionmult}{saponif3}
-    Donner l'expression de la constante d'équilibre \(K_{\mathrm{e}}\) de la réaction d'autoprotolyse de l'eau en fonction des concentrations à l'équilibre.
-    \begin{EnvQuadrillage}[NbCarreaux=10x2,Grille=Seyes,Marge=1]
+\vskip 0.5cm
+\begin{questionmult}{saponifA3}
+    Donner l'expression de la constante d'équilibre \(K_{\mathrm{e}}\) de la réaction d'autoprotolyse de l'eau en fonction des concentrations à l'équilibre.\\
+    \begin{EnvQuadrillage}[NbCarreaux=10x1,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Expression correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     La constante d'équilibre \(K_{\mathrm{e}}\) est donnée par :
-    \[
+    $$
     K_{\mathrm{e}} = [\ce{H3O^+}] \times [\ce{HO^-}]
-    \]
+    $$
     }
 \end{questionmult}
 
-\subsection{Partie B : Exploitation mathématique de la loi de vitesse (2 points)}
-
-On considère que la concentration en éthanoate d'éthyle reste constante et égale à sa valeur initiale tout au long de la transformation chimique. La loi de vitesse de réaction peut alors s'écrire comme celle d'une loi d'ordre 1 : \(v = k_1 \times [\ce{HO^-}]\), où \(k_1\) est la constante de vitesse apparente.
-
-\begin{questionmult}{saponif4}
-    Montrer que la réaction est d'ordre 1 par rapport aux ions hydroxyde.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+\begin{questionmult}{saponifA4}
+    En déduire la relation entre la concentration \(C\) en ions hydroxyde et le pH mesuré à tout instant.\\
+    \begin{EnvQuadrillage}[NbCarreaux=14x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Raisonnement correct}\scoring{b=1}
-        \bonne[A2]{Conclusion correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
-    La loi de vitesse \(v = k_1 \times [\ce{HO^-}]\) montre que la vitesse de réaction est directement proportionnelle à la concentration en ions hydroxyde. Cela indique que la réaction est d'ordre 1 par rapport aux ions hydroxyde.
+    À partir de la constante d'équilibre de l'eau $K_e = [\ce{H3O^+}] \times [\ce{HO^-}]$, et en utilisant la définition du pH ()$(\text{pH} = -\log [\ce{H3O^+}]$), on peut exprimer la concentration en ions hydroxyde comme suit :
+    $$
+    [\ce{HO^-}] = \frac{K_e}{[\ce{H3O^+}]}
+    $$
+    En utilisant la relation \(\text{pH} = -\log [\ce{H3O^+}]\), on obtient :
+    $$
+    [\ce{HO^-}] = 10^{\text{pH} - 14}
+    $$
     }
 \end{questionmult}
 
+À partir des valeurs du pH mesuré à chaque seconde et en utilisant la relation entre C et le
+pH, on obtient le graphique figure~\ref{fig:ethanoate_graph}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth, keepaspectratio]{ste7_ethanoate_graph.png}
+    \caption{Graphique de la concentration en ions hydroxyde en fonction du temps}
+    \label{fig:ethanoate_graph}
+\end{figure}
+
+\vskip 0.5cm
+\begin{questionmult}{saponifA5}
+     Déterminer, à partir de la figure~\ref{fig:ethanoate_graph}, le temps de demi-réaction t1⁄2 , exprimé en seconde, de la saponification. Une justification graphique est attendue.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
+    }
+    \explain{
+    Pour déterminer le temps de demi-réaction \(t_{1/2}\) graphiquement :
+    \begin{itemize}
+        \item Tracer la courbe $C(t) = 10^{\text{pH}(t) - 14}$ en fonction du temps $t$ à partir des données expérimentales.
+        \item Repérer le point où $C(t) = \frac{C_0}{2}$.
+        \item Lire la valeur de \(t\) correspondant à ce point sur l'axe des abscisses : c'est $t_{1/2}$.
+    \end{itemize}    
+    }
+\end{questionmult}
+
+\subsection{Partie B : Mathématiques}
+
+On note $C(t)$ la concentration en ions hydroxyde, exprimée en mol/L, à l’instant $t$, exprimé en seconde, et $C_0$ la concentration en ions hydroxyde à l’instant $t = 0$.\\
+Dans les conditions décrites dans la partie A, $C_0 = 0,016$ mol/L et $k_1 = 0,017$ s$^{-1}$.\\
+La fonction $C$ est donc solution de l’équation différentielle (E) suivante :
+$$ y' = -k_1 y \quad \text{(E)} $$
+
+\begin{questionmult}{saponifB1}
+    Vérifier que la fonction $C$ définie sur $[0 ; +\infty[$ par $C(t) = C_0 e^{-k_1 t}$ est une solution de (E).\\
+    Montrer que $C(0) = C_0$. On admet que $C$ est la seule solution de (E) qui vérifie $C(0) = C_0$.
+    \begin{EnvQuadrillage}[NbCarreaux=18x6,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{verifID}\scoring{b=1}
+        \bonne{verifOK}\scoring{b=1}
+        \bonne{c0ID}\scoring{b=1}
+        \bonne{c0OK}\scoring{b=1}
+    }
+    \explain{
+    Pour vérifier que $C(t) = C_0 e^{-k_1 t}$ est une solution de (E), dérivons $C(t)$ :
+    $$
+    C'(t) = -k_1 C_0 e^{-k_1 t} = -k_1 C(t)
+    $$
+    Donc, $C(t)$ satisfait bien l'équation différentielle (E). De plus, à $t=0$ :
+    $$
+    C(0) = C_0 e^{-k_1 \times 0} = C_0
+    $$
+    }
+\end{questionmult}
+
+\begin{questionmult}{saponifB2}
+    Déterminer par le calcul le temps de demi-réaction $t_{1/2}$. On donnera la valeur exacte, puis l’arrondi à la seconde. Interpréter ce résultat dans le contexte de l’exercice.
+    \begin{EnvQuadrillage}[NbCarreaux=18x6,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{CalcT12}\scoring{b=1}
+        \bonne{Interpr}\scoring{b=1}
+    }
+    \explain{
+    Le temps de demi-réaction $t_{1/2}$ est défini comme le temps nécessaire pour que la concentration en ions hydroxyde soit divisée par deux. On a donc :
+    $$
+    C(t_{1/2}) = \frac{C_0}{2} = C_0 e^{-k_1 t_{1/2}}
+    $$
+    En prenant le logarithme, on obtient :
+    $$
+    t_{1/2} = \frac{\ln(2)}{k_1} = \frac{\ln(2)}{0,017} \approx 40,8 \text{ secondes}
+    $$
+    Ce résultat signifie qu'il faut environ 41 secondes pour que la concentration en ions hydroxyde soit réduite de moitié.
+    }
+\end{questionmult}
