@@ -15,6 +15,8 @@ servit pendant longtemps de pile étalon en laboratoire.
 On appelle pile alcaline un type de pile électrique dont l'électrolyte est alcalin, c’est-à-dire basique. L’un des modèles les plus courants est la pile alcaline zinc-dioxyde de manganèse (Zn-MnO2) que l’on utilise pour alimenter des jouets par exemple (\emph{Source
 Wikipédia}).
 
+\vspace{0.5cm}
+
 L’objectif de cet exercice est d’étudier une pile Daniell réalisée au laboratoire puis d’étudier les performances d’une voiture télécommandée, alimentée à l’aide de piles alcalines.
 
 \subsection{Données}
@@ -25,36 +27,47 @@ L’objectif de cet exercice est d’étudier une pile Daniell réalisée au lab
     \item Couples oxydant/réducteur de la pile Daniell : $\mathrm{Zn^{2+}(aq) / Zn(s)}$ et $\mathrm{Cu^{2+}(aq) / Cu(s)}$ ;
     \item Couples oxydant/réducteur de la pile alcaline : $\mathrm{ZnO(s) / Zn(s)}$ et $\mathrm{MnO_2(s) / MnO(OH)(s)}$ ;
     \item Capacité d'une pile alcaline : de 2 000 mAh à 3 000 mAh, soit respectivement de 7 200 C à 10 800 C ;
-    \item Masse de la voiture radiocommandée : $m = \SI{741}{\gram}$.
+    %%\item Masse de la voiture radiocommandée : $m = \SI{741}{\gram}$.
 \end{itemize}
 
 \subsection{Étude d'une pile Daniell}
 Une pile Daniell est constituée d'une lame de zinc plongée dans une solution contenant un volume $V_{0} = \SI{20}{\milli\liter}$ d'une solution de sulfate de zinc ($\mathrm{Zn^{2+}(aq) + SO_4^{2-}(aq)}$) de concentration $C_0 = \SI{1.0e-2}{\mole\per\liter}$ et d'une lame de cuivre plongée dans une solution contenant un volume $V_{0} = \SI{20}{\milli\liter}$ de solution de sulfate de cuivre ($\mathrm{Cu^{2+}(aq) + SO_4^{2-}(aq)}$) de concentration $C_0 = \SI{1.0e-2}{\mole\per\liter}$. Les deux solutions sont reliées par un pont salin contenant une solution de nitrate d'ammonium ($\mathrm{NH_4^+(aq) + NO_3^-(aq)}$).
 
-Un voltmètre est branché aux bornes de la pile pour mesurer la valeur de la tension à vide $U_{0}$ lorsque la pile ne débite pas de courant électrique. Le voltmètre mesure une tension à vide positive~: $U_{0} = \SI{1.102}{\volt}$.
+Un voltmètre est branché aux bornes de la pile (schéma \ref{fig:pile_daniell}) pour mesurer la valeur de la tension à vide $U_{0}$ lorsque la pile ne débite pas de courant électrique. Le voltmètre mesure une tension à vide positive~: $U_{0} = \SI{1.102}{\volt}$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{ste7_pile_voiture_radio_pile.png}
+    \caption{Schéma de la pile Daniell.}
+    \label{fig:pile_daniell}
+\end{figure}
 
 \begin{questionmult}{pileD1}
-    Préciser, en justifiant la réponse, la polarité de chaque électrode.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    Préciser, en justifiant la réponse, la polarité de chaque électrode.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x3,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Polarité correcte}\scoring{b=1}
-        \bonne[A2]{Justification correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     La tension mesurée est positive, ce qui indique que l'électrode de cuivre est la borne positive et l'électrode de zinc la borne négative.
     }
 \end{questionmult}
 
+Par la suite, on remplace le voltmètre par un ampèremètre en série avec une résistance électrique.
+
 \begin{questionmult}{pileD2}
-    Écrire les équations de demi-réaction électroniques se produisant à l'anode et à la cathode. En déduire la réaction d'oxydoréduction modélisant la transformation chimique au sein de la pile.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    Écrire les équations de demi-réaction électroniques se produisant à l'anode et à la cathode. En déduire la réaction d'oxydoréduction modélisant la transformation chimique au sein de la pile.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Équations correctes}\scoring{b=1}
-        \bonne[A2]{Réaction correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{idDemi}\scoring{b=1}
+        \bonne{okDemi}\scoring{b=1}
+        \bonne{idRea}\scoring{b=1}
+        \bonne{okRea}\scoring{b=1}
     }
     \explain{
     Les demi-équations sont :
@@ -72,26 +85,32 @@ Un voltmètre est branché aux bornes de la pile pour mesurer la valeur de la te
 \end{questionmult}
 
 \begin{questionmult}{pileD3}
-    Donner le sens de déplacement des ions ammonium $\mathrm{NH_4^+}$ (aq) et des ions nitrate $\mathrm{NO_3^-}$ (aq) dans le pont salin.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    Donner le sens de déplacement des ions ammonium $\mathrm{NH_4^+}$ (aq) et des ions nitrate $\mathrm{NO_3^-}$ (aq) dans le pont salin.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Sens correct}\scoring{b=1}
-    }
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
+   }
     \explain{
     Les ions ammonium $\mathrm{NH_4^+}$ se déplacent vers la solution de sulfate de cuivre, et les ions nitrate $\mathrm{NO_3^-}$ se déplacent vers la solution de sulfate de zinc.
     }
 \end{questionmult}
 
-\begin{questionmult}{pileD4}
-    Déterminer le réactif limitant de la réaction.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+La masse de la lame de cuivre est m(Cu) = 62,8 g et celle de la lame de zinc est
+m(Zn) = 50,2 g.
+
+\begin{questionmult}{pileD4}        
+    Déterminer le réactif limitant de la réaction.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x6,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Réactif correct}\scoring{b=1}
-        \bonne[A2]{Calcul correct}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{idEq}\scoring{b=1}
+        \bonne{okEq}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     La quantité de matière initiale de zinc est $n_{\mathrm{Zn}} = \frac{m_{\mathrm{Zn}}}{M(\mathrm{Zn})} = \frac{50.2}{65.4} = \SI{0.767}{\mole}$.
@@ -101,13 +120,14 @@ Un voltmètre est branché aux bornes de la pile pour mesurer la valeur de la te
 \end{questionmult}
 
 \begin{questionmult}{pileD5}
-    En déduire la capacité $Q_D$ de la pile Daniell. Commenter la valeur obtenue.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    En déduire la capacité $Q_D$ de la pile Daniell. Commenter la valeur obtenue.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Calcul correct}\scoring{b=1}
-        \bonne[A2]{Valeur correcte}\scoring{b=1}
+        \bonne{idEq}\scoring{b=1}
+        \bonne{okEq}\scoring{b=1}
+        \bonne{Cmt}\scoring{b=1}
     }
     \explain{
     La quantité d'électricité est donnée par $Q_D = n_{\mathrm{e^{-}}} \times F = 2 \times n_{\mathrm{Zn}} \times F = 2 \times 0.767 \times 96500 = \SI{1.48e5}{\coulomb}$.
@@ -115,35 +135,83 @@ Un voltmètre est branché aux bornes de la pile pour mesurer la valeur de la te
 \end{questionmult}
 
 \subsection{Étude d'une pile alcaline Power+}
-Les piles alcalines sont fabriquées sous forme de cylindres et de boutons. Une pile cylindrique est contenue dans un tube d'acier, qui sert de collecteur du courant de la cathode.
+
+\begin{wrapfigure}{r}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{ste7_pile_voiture_radio_pile2.png}
+    \caption{\small Schéma simplifié d’une pile alcaline\\
+            \emph{Source : d’après https://www.corepile.fr}}
+    \label{fig:pile_alcaline}
+\end{wrapfigure}
+
+Les piles alcalines sont fabriquées sous forme de cylindres et de boutons. Une pile cylindrique est contenue dans un tube d'acier, qui sert de collecteur du courant de la cathode.  Le trou central de la cathode est revêtu d'un séparateur qui empêche le mélange des produits de l'anode et de la cathode et le court-circuit de l'élément de pile. Il faut que le séparateur puisse laisser passer les ions et rester stable dans une solution électrolytique fortement basique. Pour éviter la polarisation de la pile en fin de vie, on utilise plus de dioxyde de manganèse qu'il n'est nécessaire
+pour réagir avec la totalité du zinc.\\
+\emph{D’après https://fr.wikipedia.org/wiki/Pile\_alcaline}
+
+\WFclear
 
 \begin{questionmult}{pileA1}
-    Identifier en justifiant la réponse, le réactif limitant de la pile alcaline.
-    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    Identifier en justifiant la réponse, le réactif limitant de la pile alcaline.\\
+    \begin{EnvQuadrillage}[NbCarreaux=14x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Réactif correct}\scoring{b=1}
-        \bonne[A2]{Justification correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
     Le réactif limitant est le zinc, car il est entièrement consommé avant le dioxyde de manganèse.
     }
 \end{questionmult}
 
-\subsection{Alimentation d'une voiture radiocommandée et étude des performances}
-Une voiture télécommandée est alimentée par un bloc de 6 piles alcalines AA Power+ étudiées précédemment.
-
-\begin{questionmult}{voiture1}
-    Déterminer la valeur de la durée d'utilisation maximale attendue de la voiture télécommandée. Commenter le résultat.
+\begin{questionmult}{pileA6}
+    Identifier l'oxydant et le réducteur dans ce type de pile.\\
     \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
     \end{EnvQuadrillage}
     \AMCOpen{}{
-        \mauvaise[F]{NA}\scoring{b=0}
-        \bonne[A1]{Calcul correct}\scoring{b=1}
-        \bonne[A2]{Valeur correcte}\scoring{b=1}
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
     }
     \explain{
-    La durée d'utilisation maximale est donnée par $t = \frac{Q_B}{I} = \frac{10000}{0.6} = \SI{1.67e4}{\second} = \SI{4.64}{\hour}$.
+    Dans une pile alcaline, l'oxydant est le dioxyde de manganèse $\ce{MnO2(s)}$ et le réducteur est le zinc $\ce{Zn(s)}$.
+    }
+\end{questionmult}
+
+Une pile alcaline AA du commerce de type Power+ est reliée à une résistance de \SI{10}{\ohm}. L’intensité est mesurée à l’aide d’un ampèremètre. La courbe de l’évolution de l’intensité $I$ débitée au cours du temps est donnée Figure~\ref{fig:pile_alcaline_graph}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{ste7_pile_voiture_radio_graph.png}
+    \caption{Débit de la pile alcaline en fonction du temps.}
+    \label{fig:pile_alcaline_graph}
+\end{figure}
+
+\begin{questionmult}{pileA7}
+    On considère qu'une chute brutale de l'intensité correspond à une pile déchargée. Déduire des mesures effectuées la valeur de la durée de fonctionnement de la pile dans ces conditions d'utilisation.\\
+    \begin{EnvQuadrillage}[NbCarreaux=14x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{OK}\scoring{b=1}
+    }
+    \explain{
+    D'après le graphique, la chute brutale de l'intensité se produit après environ $\SI{28}{\hour}$. La durée de fonctionnement de la pile est donc de $\SI{28}{\hour}$.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA8}
+    En s'appuyant sur le graphique, proposer une valeur de l'intensité moyenne délivrée par la pile Power+, puis estimer la valeur de sa capacité, notée $Q_{P+}$. Commenter le résultat.\\
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+         \mauvaise{NA}\scoring{b=0}
+        \bonne{id}\scoring{b=1}
+        \bonne{Eq}\scoring{b=1}
+        \bonne{Val}\scoring{b=1}
+    }
+    \explain{
+    L'intensité moyenne délivrée par la pile Power+ est d'environ $\SI{100}{\milli\ampere}$. La capacité $Q_{P+}$ est donnée par $Q = I \times t = \SI{100e-3}{\ampere} \times \SI{28 \times 3600}{\second} = \SI{10080}{\coulomb}$.
     }
 \end{questionmult}
