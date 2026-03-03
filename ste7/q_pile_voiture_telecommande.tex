@@ -1,0 +1,149 @@
+\section{Piles électrochimiques et alimentation d'une voiture télécommandée}
+\textbf{Source du sujet~:} Baccalauréat STL Physique-Chimie, Polynésie – 2023.
+
+\subsection{Introduction}
+Une pile Daniell est un dispositif électrochimique réalisant la conversion d'énergie chimique
+en énergie électrique par le biais d'une réaction d'oxydoréduction. Le principe de
+fonctionnement de cette pile a été démontré par Edmond Becquerel et a été perfectionné
+par le chimiste britannique John Daniell en 1836, au moment où le développement du
+télégraphe faisait apparaître un besoin urgent de sources de tension sûres et constantes.
+
+La pile Daniell vient corriger certains défauts de la pile Volta : elle est simple de
+construction, commode d'usage et de tension stable durant son utilisation, si bien qu'elle
+servit pendant longtemps de pile étalon en laboratoire.
+
+On appelle pile alcaline un type de pile électrique dont l'électrolyte est alcalin, c’est-à-dire basique. L’un des modèles les plus courants est la pile alcaline zinc-dioxyde de manganèse (Zn-MnO2) que l’on utilise pour alimenter des jouets par exemple (\emph{Source
+Wikipédia}).
+
+L’objectif de cet exercice est d’étudier une pile Daniell réalisée au laboratoire puis d’étudier les performances d’une voiture télécommandée, alimentée à l’aide de piles alcalines.
+
+\subsection{Données}
+\begin{itemize}
+    \item Masses molaires atomiques : $M(\mathrm{Cu}) = \SI{63.5}{\gram\per\mole}$ ; $M(\mathrm{Zn}) = \SI{65.4}{\gram\per\mole}$ ;
+    \item Charge élémentaire : $e = 1,60 \times 10^{-19}\ \mathrm{C}$ ;
+    \item Constante d'Avogadro : $N_{\mathrm{A}} = 6,02 \times 10^{23}\ \mathrm{mol}^{-1}$ ;
+    \item Couples oxydant/réducteur de la pile Daniell : $\mathrm{Zn^{2+}(aq) / Zn(s)}$ et $\mathrm{Cu^{2+}(aq) / Cu(s)}$ ;
+    \item Couples oxydant/réducteur de la pile alcaline : $\mathrm{ZnO(s) / Zn(s)}$ et $\mathrm{MnO_2(s) / MnO(OH)(s)}$ ;
+    \item Capacité d'une pile alcaline : de 2 000 mAh à 3 000 mAh, soit respectivement de 7 200 C à 10 800 C ;
+    \item Masse de la voiture radiocommandée : $m = \SI{741}{\gram}$.
+\end{itemize}
+
+\subsection{Étude d'une pile Daniell}
+Une pile Daniell est constituée d'une lame de zinc plongée dans une solution contenant un volume $V_{0} = \SI{20}{\milli\liter}$ d'une solution de sulfate de zinc ($\mathrm{Zn^{2+}(aq) + SO_4^{2-}(aq)}$) de concentration $C_0 = \SI{1.0e-2}{\mole\per\liter}$ et d'une lame de cuivre plongée dans une solution contenant un volume $V_{0} = \SI{20}{\milli\liter}$ de solution de sulfate de cuivre ($\mathrm{Cu^{2+}(aq) + SO_4^{2-}(aq)}$) de concentration $C_0 = \SI{1.0e-2}{\mole\per\liter}$. Les deux solutions sont reliées par un pont salin contenant une solution de nitrate d'ammonium ($\mathrm{NH_4^+(aq) + NO_3^-(aq)}$).
+
+Un voltmètre est branché aux bornes de la pile pour mesurer la valeur de la tension à vide $U_{0}$ lorsque la pile ne débite pas de courant électrique. Le voltmètre mesure une tension à vide positive~: $U_{0} = \SI{1.102}{\volt}$.
+
+\begin{questionmult}{pileD1}
+    Préciser, en justifiant la réponse, la polarité de chaque électrode.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Polarité correcte}\scoring{b=1}
+        \bonne[A2]{Justification correcte}\scoring{b=1}
+    }
+    \explain{
+    La tension mesurée est positive, ce qui indique que l'électrode de cuivre est la borne positive et l'électrode de zinc la borne négative.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileD2}
+    Écrire les équations de demi-réaction électroniques se produisant à l'anode et à la cathode. En déduire la réaction d'oxydoréduction modélisant la transformation chimique au sein de la pile.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Équations correctes}\scoring{b=1}
+        \bonne[A2]{Réaction correcte}\scoring{b=1}
+    }
+    \explain{
+    Les demi-équations sont :
+    $$
+    \ce{Zn(s) -> Zn^{2+}(aq) + 2 e^{-}}
+    $$
+    $$
+    \ce{Cu^{2+}(aq) + 2 e^{-} -> Cu(s)}
+    $$
+    La réaction globale est :
+    $$
+    \ce{Zn(s) + Cu^{2+}(aq) -> Zn^{2+}(aq) + Cu(s)}
+    $$
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileD3}
+    Donner le sens de déplacement des ions ammonium $\mathrm{NH_4^+}$ (aq) et des ions nitrate $\mathrm{NO_3^-}$ (aq) dans le pont salin.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Sens correct}\scoring{b=1}
+    }
+    \explain{
+    Les ions ammonium $\mathrm{NH_4^+}$ se déplacent vers la solution de sulfate de cuivre, et les ions nitrate $\mathrm{NO_3^-}$ se déplacent vers la solution de sulfate de zinc.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileD4}
+    Déterminer le réactif limitant de la réaction.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Réactif correct}\scoring{b=1}
+        \bonne[A2]{Calcul correct}\scoring{b=1}
+    }
+    \explain{
+    La quantité de matière initiale de zinc est $n_{\mathrm{Zn}} = \frac{m_{\mathrm{Zn}}}{M(\mathrm{Zn})} = \frac{50.2}{65.4} = \SI{0.767}{\mole}$.
+    La quantité de matière initiale de cuivre est $n_{\mathrm{Cu}} = \frac{m_{\mathrm{Cu}}}{M(\mathrm{Cu})} = \frac{62.8}{63.5} = \SI{0.989}{\mole}$.
+    Le réactif limitant est le zinc.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileD5}
+    En déduire la capacité $Q_D$ de la pile Daniell. Commenter la valeur obtenue.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Calcul correct}\scoring{b=1}
+        \bonne[A2]{Valeur correcte}\scoring{b=1}
+    }
+    \explain{
+    La quantité d'électricité est donnée par $Q_D = n_{\mathrm{e^{-}}} \times F = 2 \times n_{\mathrm{Zn}} \times F = 2 \times 0.767 \times 96500 = \SI{1.48e5}{\coulomb}$.
+    }
+\end{questionmult}
+
+\subsection{Étude d'une pile alcaline Power+}
+Les piles alcalines sont fabriquées sous forme de cylindres et de boutons. Une pile cylindrique est contenue dans un tube d'acier, qui sert de collecteur du courant de la cathode.
+
+\begin{questionmult}{pileA1}
+    Identifier en justifiant la réponse, le réactif limitant de la pile alcaline.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Réactif correct}\scoring{b=1}
+        \bonne[A2]{Justification correcte}\scoring{b=1}
+    }
+    \explain{
+    Le réactif limitant est le zinc, car il est entièrement consommé avant le dioxyde de manganèse.
+    }
+\end{questionmult}
+
+\subsection{Alimentation d'une voiture radiocommandée et étude des performances}
+Une voiture télécommandée est alimentée par un bloc de 6 piles alcalines AA Power+ étudiées précédemment.
+
+\begin{questionmult}{voiture1}
+    Déterminer la valeur de la durée d'utilisation maximale attendue de la voiture télécommandée. Commenter le résultat.
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Calcul correct}\scoring{b=1}
+        \bonne[A2]{Valeur correcte}\scoring{b=1}
+    }
+    \explain{
+    La durée d'utilisation maximale est donnée par $t = \frac{Q_B}{I} = \frac{10000}{0.6} = \SI{1.67e4}{\second} = \SI{4.64}{\hour}$.
+    }
+\end{questionmult}
