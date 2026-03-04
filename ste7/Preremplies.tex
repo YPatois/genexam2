@@ -25,16 +25,15 @@
 %separate-uncertainty = true,group-minimum-digits=3}
 
 %%% Force show explain during dev
-\newif\ifshowexplain
-\showexplaintrue  % Active l'affichage des explications
-
-\let\oldexplain\explain
-\renewcommand{\explain}[1]{%
-    \oldexplain{#1}% Conserve la définition originale pour AMC
-    \ifshowexplain
-        \par\noindent\textit{Explication : }#1\par
-    \fi
-}
+%\newif\ifshowexplain
+%\showexplaintrue  % Active l'affichage des explications
+%\let\oldexplain\explain
+%\renewcommand{\explain}[1]{%
+%    \oldexplain{#1}% Conserve la définition originale pour AMC
+%    \ifshowexplain
+%        \par\noindent\textit{Explication : }#1\par
+%    \fi
+%}
 
 \DeclareSIUnit{\nothing}{\relax}
 
