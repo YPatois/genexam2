@@ -21,7 +21,7 @@ links:
 
 images:
 	@echo "Création des liens symboliques pour les images..."
-	ln -sf $(TARGET_DIR)/images $(LINK_DIR)/images
+	ln -sf $(GENEXAM)/data/images $(LINK_DIR)/images
 
 chemcache:
 	ln -sf $(GENEXAM)/python/chemcache chemcache
