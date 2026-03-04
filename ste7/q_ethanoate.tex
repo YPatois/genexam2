@@ -60,11 +60,11 @@ Le suivi est réalisé en mettant en œuvre le protocole suivant~:
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
-        \bonne{Idée}\scoring{b=1}
-        \bonne{Éthanoate id}\scoring{b=1}
-        \bonne{Éthanoate}\scoring{b=1}
-        \bonne{Soude id}\scoring{b=1}
-        \bonne{Soude}\scoring{b=1}
+        \bonne{Idée}
+        \bonne{Éthanoate id}
+        \bonne{Éthanoate}
+        \bonne{Soude id}
+        \bonne{Soude}
     }
     \explain{
     \begin{itemize}
@@ -87,8 +87,8 @@ On souhaite établir la relation entre le pH mesuré et la concentration en quan
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise{NA}\scoring{b=0}
-        \bonne{ID}\scoring{b=1}
-        \bonne{OK}\scoring{b=1}
+        \bonne{ID}
+        \bonne{OK}
     }
     \explain{
     L'équation de l'autoprotolyse de l'eau est~:
@@ -104,8 +104,8 @@ On souhaite établir la relation entre le pH mesuré et la concentration en quan
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise{NA}\scoring{b=0}
-        \bonne{ID}\scoring{b=1}
-        \bonne{OK}\scoring{b=1}
+        \bonne{ID}
+        \bonne{OK}
     }
     \explain{
     La constante d'équilibre \(K_{\mathrm{e}}\) est donnée par~:
@@ -121,8 +121,8 @@ On souhaite établir la relation entre le pH mesuré et la concentration en quan
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise{NA}\scoring{b=0}
-        \bonne{ID}\scoring{b=1}
-        \bonne{OK}\scoring{b=1}
+        \bonne{ID}
+        \bonne{OK}
     }
     \explain{
     À partir de la constante d'équilibre de l'eau $K_e = [\ce{H3O^+}] \times [\ce{HO^-}]$, et en utilisant la définition du pH ($(\text{pH} = -\log [\ce{H3O^+}]$), on peut exprimer la concentration en ions hydroxyde comme suit~:
@@ -153,15 +153,15 @@ pH, on obtient le graphique figure~\AMCref{fig:ethanoate_graph}.
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise{NA}\scoring{b=0}
-        \bonne{ID}\scoring{b=1}
-        \bonne{OK}\scoring{b=1}
+        \bonne{ID}
+        \bonne{OK}
     }
     \explain{
     Pour déterminer le temps de demi-réaction \(t_{1/2}\) graphiquement~:
     \begin{itemize}
-        \item Tracer la courbe $C(t) = 10^{\text{pH}(t) - 14}$ en fonction du temps $t$ à partir des données expérimentales.
-        \item Repérer le point où $C(t) = \frac{C_0}{2}$.
-        \item Lire la valeur de \(t\) correspondant à ce point sur l'axe des abscisses~: c'est $t_{1/2}$.
+        \item Repèrer la concentration $C_0$ sur le graphique. Ici, $C_0 = 0,016$ mol/L.
+        \item Repérer le point où $C(t) = \frac{C_0}{2} = \SI{0,008}{\mol\per\liter}$.
+        \item Lire la valeur de \(t\) correspondant à ce point sur l'axe des abscisses~: ici $t_{1/2} = \SI{40}{\second}$.
     \end{itemize}    
     }
 \end{questionmult}
@@ -180,10 +180,10 @@ $$ y' = -k_1 y \quad \text{(E)} $$
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise{NA}\scoring{b=0}
-        \bonne{verifID}\scoring{b=1}
-        \bonne{verifOK}\scoring{b=1}
-        \bonne{c0ID}\scoring{b=1}
-        \bonne{c0OK}\scoring{b=1}
+        \bonne{verifID}
+        \bonne{verifOK}
+        \bonne{c0ID}
+        \bonne{c0OK}
     }
     \explain{
     Pour vérifier que $C(t) = C_0 e^{-k_1 t}$ est une solution de (E), dérivons $C(t)$~:
@@ -203,8 +203,9 @@ $$ y' = -k_1 y \quad \text{(E)} $$
     \end{EnvQuadrillage}
     \AMCOpen{}{
         \mauvaise{NA}\scoring{b=0}
-        \bonne{CalcT12}\scoring{b=1}
-        \bonne{Interpr}\scoring{b=1}
+        \bonne{ID}
+        \bonne{Interpr}
+        \bonne{Interpr}
     }
     \explain{
     Le temps de demi-réaction $t_{1/2}$ est défini comme le temps nécessaire pour que la concentration en ions hydroxyde soit divisée par deux. On a donc~:
@@ -215,6 +216,6 @@ $$ y' = -k_1 y \quad \text{(E)} $$
     $$
     t_{1/2} = \frac{\ln(2)}{k_1} = \frac{\ln(2)}{0,017} \approx 40,8 \text{ secondes}
     $$
-    Ce résultat signifie qu'il faut environ 41 secondes pour que la concentration en ions hydroxyde soit réduite de moitié.
+    Ce résultat signifie qu'il faut environ 41 secondes pour que la concentration en ions hydroxyde soit réduite de moitié. Ce qui correspond à la valeur trouvée sur le graphique figure~\AMCref{fig:ethanoate_graph}.
     }
 \end{questionmult}

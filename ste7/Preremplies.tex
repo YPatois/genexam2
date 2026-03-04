@@ -38,13 +38,16 @@
 
 \DeclareSIUnit{\nothing}{\relax}
 
-\def\yseed{11}
-\FPseed\yseed
-\pgfmathsetseed{\yseed}
+\def\yseeda{12}
+\def\yseedb{10}
+\FPseed\yseeda
+\pgfmathsetseed{\yseedb}
 
 %\baremeDefautS{e=0,v=0,b=1,m=-.25}
 \baremeDefautS{e=0,v=0,b=1,m=-.25}
+\baremeDefautM{formula=(NBC>0 ? 1/NB : 0)}
 %\baremeDefautM{formula=(NBC>0 ? (NMC==0 ? 1:0):0)}
+%\AMCformula{questionmult}{scoring=v=1}
 
 \graphicspath{ {./images/} }
 
@@ -180,7 +183,7 @@
 
 \begin{document}
 %%%Options
-\AMCrandomseed{\yseed}
+\AMCrandomseed{\yseeda}
 
 %%\def\AMCformQuestion#1{\textbf{Questioon #1 :}}
 
@@ -217,32 +220,32 @@
 \emph{Remarque: Le logarithme décimal est noté $\log_{10}$. Le logarithme naturel est noté $\ln$.}
 
 \begin{multicols}{2}
-%\insertgroup[2]{simplenum}
-%\insertgroup[2]{power10}
-%\insertgroup[2]{logs}
-%\insertgroup[2]{premdeg}
-%\insertgroup[2]{psi}
-%\insertgroup[1]{atoms}
-%\insertgroup[1]{symchim}
+\insertgroup[2]{simplenum}
+\insertgroup[2]{power10}
+\insertgroup[2]{logs}
+\insertgroup[2]{premdeg}
+\insertgroup[2]{psi}
+\insertgroup[1]{atoms}
+\insertgroup[1]{symchim}
 \end{multicols}
 
 \section{Nomenclature des alcanes}
 \begin{multicols}{2}
-%\insertgroup[1]{falcans}
-%\insertgroup[1]{alcans}
-%\insertgroup[2]{alcools}
-%\insertgroup[1]{groups}
-%\insertgroup[1]{nomencla}
-%\insertgroup[1]{isors}
-%\insertgroup[1]{isoze}
+\insertgroup[1]{falcans}
+\insertgroup[1]{alcans}
+\insertgroup[2]{alcools}
+\insertgroup[1]{groups}
+\insertgroup[1]{nomencla}
+\insertgroup[1]{isors}
+\insertgroup[1]{isoze}
 \end{multicols}
 
 \section{Couples acides/bases}
 \begin{multicols}{2}
-%\insertgroup[1]{defacidebase}
-%\insertgroup[1]{phconcentration}
-%\insertgroup[1]{pkaforce}
-%\insertgroup[1]{tampons}
+\insertgroup[1]{defacidebase}
+\insertgroup[1]{phconcentration}
+\insertgroup[1]{pkaforce}
+\insertgroup[1]{tampons}
 \end{multicols}
 
 \section{Oxydo-réduction}
@@ -250,23 +253,32 @@
 \emph{Rappel: Le nombre d'oxydation de l'hydrogène est $I$, celui de l'oxygène est $-II$.}
 
 \begin{multicols}{2}
-%\insertgroup[4]{nox}
+\insertgroup[4]{nox}
 \end{multicols}
-%\pgfmathrandom{}
-%\let\yran\pgfmathresult
-%\pgfmathparse{\yran > 0.5 ? 1 : 0}
-%\let\fileChoice\pgfmathresult
 
-%\ifnum\io=1
-%        \input{q_acide_benzoique.tex}
-%    \else
-%        \input{q_ibuprofene.tex}
-%    \fi
+% Premier tirage (cinétique)
+\pgfmathrandom{}
+\let\yranOne\pgfmathresult
+\pgfmathparse{\yranOne > 0.5 ? 1 : 0}
+\let\fileChoiceOne\pgfmathresult
 
-\input{q_ethanoate.tex}
-\input{q_carbure_silicium.tex}
-\input{q_pile_auditif.tex}
-\input{q_pile_voiture_telecommande.tex}
+\ifnum\fileChoiceOne=1
+    \input{q_ethanoate.tex}
+\else
+    \input{q_carbure_silicium.tex}
+\fi
+
+% Deuxième tirage (redox)
+\pgfmathrandom{}
+\let\yranTwo\pgfmathresult
+\pgfmathparse{\yranTwo > 0.5 ? 1 : 0}
+\let\fileChoiceTwo\pgfmathresult
+
+\ifnum\fileChoiceTwo=1
+    \input{q_pile_auditif.tex}
+\else
+    \input{q_pile_voiture_telecommande.tex}
+\fi
 
 \AMCcleardoublepage
 }
