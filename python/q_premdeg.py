@@ -47,7 +47,7 @@ def build_all_questions():
     for i in range(10):
         equation, solutions = generate_equation()
         q += build_acm_question("premdeg", f"premdeg{i}",
-            f"Résolvez l'équation suivante : {equation}\n", solutions)
+            f"Résolvez l'équation suivante~: {equation}\n", solutions)
     return q
 
 # --------------------------------------------------------------------------
