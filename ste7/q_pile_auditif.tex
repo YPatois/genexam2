@@ -53,7 +53,7 @@ de \SI{-1.5}{\volt}.\\
 \begin{questionmult}{pileA2}
     Indiquer la polarité des bornes de la pile, le sens de déplacement des électrons ainsi que le sens du courant sur la figure.
 
-    \includegraphics[width=0.6\linewidth]{ste7_pile_auditif_pile.png}
+    \includegraphics[width=0.6\linewidth]{ste7_pile_auditif_pile_corr.png}
 
     \AMCOpen{}{
         \mauvaise[F]{NA}\scoring{b=0}
@@ -61,7 +61,9 @@ de \SI{-1.5}{\volt}.\\
         \bonne[A2]{SensOK}
     }
     \explain{
-    Les électrons se déplacent de l'électrode de zinc vers l'électrode de carbone, et le courant circule dans le sens opposé.
+        Par convention, le sens du courant électrique est défini comme le sens de déplacement des charges positives. Ainsi, le courant circule de la borne positive vers la borne négative de la pile.\\
+        Les électrons, chargés négativement, sont attirés par la borne positive. Ils se déplacent donc de l'électrode de zinc (borne négative) vers l'électrode de carbone (borne positive). Le courant électrique, lui, circule dans le sens opposé au déplacement des électrons, c'est-à-dire de l'électrode de carbone vers l'électrode de zinc.\\
+        \textbf{Note utile :} Dans la plupart des piles, la borne négative est de plus grande taille que la borne positive. Cela permet de les distinguer facilement.
     }
 \end{questionmult}
 
@@ -144,7 +146,10 @@ $$
         \bonne[A2]{valOK}
     }
     \explain{
-    La quantité de matière initiale de zinc est donnée par $n_{\mathrm{Zn}} = \frac{m_{\mathrm{Zn}}}{M(\mathrm{Zn})} = \frac{55 \times 10^{-3}}{65} = 8,46 \times 10^{-4}\ \mathrm{mol}$.
+        La quantité de matière $n$ est définie comme le rapport de la masse $m$ d'une espèce chimique à sa masse molaire $M$, selon la relation : $n = \frac{m}{M}$.\\
+        Pour le zinc, la masse initiale est $m_{\mathrm{Zn}} = 55~\mathrm{mg} = 55 \times 10^{-3}~\mathrm{g}$, et la masse molaire du zinc est $M(\mathrm{Zn}) = 65~\mathrm{g/mol}$.\\
+        En substituant ces valeurs dans la formule, on obtient la quantité de matière initiale de zinc :\\
+        $n_{\mathrm{Zn}} = \frac{m_{\mathrm{Zn}}}{M(\mathrm{Zn})} = \frac{55 \times 10^{-3}~\mathrm{g}}{65~\mathrm{g/mol}} = 8,46 \times 10^{-4}~\mathrm{mol}$.
     }
 \end{questionmult}
 
@@ -209,7 +214,7 @@ Un des deux couples redox mis en jeu est le couple $\ce{O2(g) / H2O(l)}$.
         \bonne[A2]{Justification correcte}
     }
     \explain{
-     \textbf{En milieu alcalin}
+     \textbf{En milieu alcalin}\\
         Normalement, pour une pile alcaline, nous sommes en milieu basique (alcalin, d'où le nom), la réaction s'écrit donc comme ceci:\\
         \begin{itemize}
         \item Base de la demi-réaction~: \(\ce{O2(g) -> H2O(l)}\).
@@ -219,7 +224,7 @@ Un des deux couples redox mis en jeu est le couple $\ce{O2(g) / H2O(l)}$.
         \end{itemize}
         Demi-réaction finale~: \(\ce{O2(g) + 2 H2O(l) + 4 e- -> 4 HO^{-}(aq)}\).\\
         \vspace{0.5cm}
-        \textbf{En milieu acide}
+        \textbf{En milieu acide}\\
         Cependant, en cours, nous n'avons vu que l'équilibrage en milieux acide par des ions \ce{H+}, vous pouvez-donc aussi le faire ainsi:\\
         \begin{itemize}
         \item Base de la demi-réaction~: \(\ce{O2(g) -> H2O(l)}\).
@@ -229,7 +234,7 @@ Un des deux couples redox mis en jeu est le couple $\ce{O2(g) / H2O(l)}$.
         \end{itemize}
         Demi-réaction finale~: \(\ce{O2(g) + 4 H^{+}(aq) + 4 e- -> 2 H2O(l)}\).\\
         \vspace{0.5cm}
-        \textbf{Justification du caractère oxydant du dioxygène}
+        \textbf{Justification du caractère oxydant du dioxygène}\\
         Le dioxygène \(\ce{O2(g)}\) est un \textbf{oxydant} car il gagne des électrons lors de la réaction. Dans les deux demi-réactions, \(\ce{O2(g)}\) est réduit en \(\ce{H2O(l)}\) (en milieu acide) ou en \(\ce{HO^{-}(aq)}\) (en milieu alcalin), ce qui montre qu'il capte des électrons. Un oxydant est une espèce chimique qui gagne des électrons lors d'une réaction d'oxydoréduction.
     }
 \end{questionmult}

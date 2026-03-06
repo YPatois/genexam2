@@ -21,7 +21,7 @@ On suit par un procédé adapté l'évolution de la concentration en MTS au cour
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\linewidth]{ste7_silicium_graph.png}
+    \includegraphics[width=0.9\linewidth]{ste7_silicium_graph_corr.png}
     \caption{Concentration en MTS en fonction du temps}
     \AMClabel{fig:graphe_mts}
 \end{figure}
@@ -114,7 +114,26 @@ $$
         \bonne{OK}
         }
     \explain{
-        La dérivée de $C(t) = 0,30 \cdot \mathrm{e}^{-0,035t}$ est $C'(t) = -0,0105 \mathrm{e}^{-0,035t}$.
+        Pour déterminer la dérivée de la fonction \( C(t) = 0,30 \cdot \mathrm{e}^{-0,035t} \), on utilise les règles de dérivation des fonctions exponentielles.\\
+        1. **Rappel de la règle de dérivation** :\\
+        La dérivée d'une fonction de la forme \( f(t) = a \cdot \mathrm{e}^{kt} \) est donnée par :
+        \[
+        f'(t) = a \cdot k \cdot \mathrm{e}^{kt}.
+        \]
+        2. **Application à \( C(t) \)** :\\
+        Ici, \( a = 0,30 \) et \( k = -0,035 \). En appliquant la règle de dérivation, on obtient :
+        \[
+        C'(t) = 0,30 \cdot (-0,035) \cdot \mathrm{e}^{-0,035t}.
+        \]
+        3. **Calcul de la dérivée** :\\
+        En effectuant la multiplication des constantes, on trouve :
+        \[
+        C'(t) = -0,0105 \cdot \mathrm{e}^{-0,035t}.
+        \]
+        Ainsi, la dérivée de la fonction \( C(t) = 0,30 \cdot \mathrm{e}^{-0,035t} \) est :
+        \[
+        C'(t) = -0,0105 \cdot \mathrm{e}^{-0,035t}.
+        \]
     }
 \end{questionmult}
 
@@ -130,7 +149,8 @@ $$
         \bonne{OKcomp}
     }
     \explain{
-    La dérivée seconde $C''(t) = 3,675 \times 10^{-4} \mathrm{e}^{-0,035t}$ est positive sur [0; 50]. Donc $C'(t)$ est croissante, et la vitesse de disparition (opposée de $C'(t)$) est décroissante.
+        \includegraphics[width=0.9\linewidth]{ste7_silicium_c_cp_cpp_plot.png}
+        La dérivée seconde $C''(t) = 3,675 \times 10^{-4} \mathrm{e}^{-0,035t}$ est positive sur [0; 50]. Donc $C'(t)$ est croissante, et la vitesse de disparition (opposée de $C'(t)$) est décroissante.
     }
 \end{questionmult}
 
