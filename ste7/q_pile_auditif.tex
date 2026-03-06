@@ -46,7 +46,7 @@ de \SI{-1.5}{\volt}.\\
         \bonne[A2]{valOK}
     }
     \explain{
-    La tension mesurée est $-1,50\ \mathrm{V}$ lorsque la borne COM est branchée sur l'électrode de carbone et la borne V sur l'électrode de zinc. Cela indique que l'électrode de carbone est la borne positive et l'électrode de zinc la borne négative.
+    La tension mesurée est de \SI{-1.5}{\volt}, lorsque la borne COM est branchée sur l'électrode de carbone et la borne V sur l'électrode de zinc. Cela indique que l'électrode de carbone est la borne positive et l'électrode de zinc la borne négative. Le COM est la référence zéro du voltmètre.
     }
 \end{questionmult}
 
@@ -87,7 +87,16 @@ $$
         \bonne{redoxOK}
     }
     \explain{
-    La première demi-équation correspond à l'oxydation du zinc à l'anode. La deuxième demi-équation correspond à la réduction du dioxyde de manganèse à la cathode.
+        La première demi-équation correspond à l'\textbf{oxydation du zinc} à l'anode. Lors de cette réaction, le zinc métallique $\ce{Zn(s)}$ libère deux électrons pour former des ions zinc $\ce{Zn^{2+}(aq)}$~:
+        \[
+        \ce{Zn(s) -> Zn^{2+}(aq) + 2 e-}.
+        \]
+        L'oxydation est un processus au cours duquel une espèce chimique \textbf{perd des électrons}.\\
+        La deuxième demi-équation correspond à la \textbf{réduction du dioxyde de manganèse} à la cathode. Lors de cette réaction, le dioxyde de manganèse $\ce{MnO2(s)}$ gagne un électrons pour former de l'oxyde de manganèse $\ce{MnO(OH)(s)}$~:
+        \[
+        \ce{MnO2(s) + H2O(l) + e- -> MnO(OH)(s) + HO-(aq)}.
+        \]
+        La réduction est un processus au cours duquel une espèce chimique \textbf{gagne des électrons}.
     }
 \end{questionmult}
 
@@ -101,10 +110,27 @@ $$
         \bonne{eqOK}
     }
     \explain{
-    L'équation de la réaction est obtenue en combinant les deux demi-équations, en tenant compte du nombre d'électrons échangés~:
-    $$
-    \ce{2 Zn(s) + MnO2(s) + H2O(l) -> 2 ZnO(s) + MnO2H(s)}
-    $$
+        Les deux demi-équations de départ sont~:\\
+        1. Demi-équation d'\textbf{oxydation} du zinc~:
+        \[
+        \ce{Zn(s) + 2 HO^{-}(aq) -> ZnO(s) + H2O(l) + 2 e-}.
+        \]
+        2. Demi-équation de \textbf{réduction} du dioxyde de manganèse~:
+        \[
+        \ce{MnO2(s) + H2O(l) + 1 e- -> MnO2H(s) + HO^{-}(aq)}.
+        \]
+        Pour équilibrer le nombre d'électrons échangés, on multiplie la demi-équation de réduction par 2 afin que les deux demi-équations impliquent le même nombre d'électrons (2 électrons)~:
+        \[
+        \ce{2 MnO2(s) + 2 H2O(l) + 2 e- -> 2 MnO2H(s) + 2 HO^{-}(aq)}.
+        \]
+        Ensuite, on combine les deux demi-équations équilibrées~:
+        \[
+        \ce{Zn(s) + 2 HO^{-}(aq) + 2 MnO2(s) + 2 H2O(l) -> ZnO(s) + H2O(l) + 2 e- + 2 MnO2H(s) + 2 HO^{-}(aq)}.
+        \]
+        En simplifiant l'équation globale (en annulant les espèces communes des deux côtés), on obtient~:
+        \[
+        \ce{Zn(s) + 2 MnO2(s) + H2O(l) -> ZnO(s) + 2 MnO2H(s)}.
+        \]
     }
 \end{questionmult}
 
@@ -183,7 +209,28 @@ Un des deux couples redox mis en jeu est le couple $\ce{O2(g) / H2O(l)}$.
         \bonne[A2]{Justification correcte}
     }
     \explain{
-    La demi-équation est $\ce{O2(g) + 2 H2O(l) + 4 e^{-} -> 4 HO^{-}(aq)}$. Le dioxygène est un oxydant car il gagne des électrons.
+     \textbf{En milieu alcalin}
+        Normalement, pour une pile alcaline, nous sommes en milieu basique (alcalin, d'où le nom), la réaction s'écrit donc comme ceci:\\
+        \begin{itemize}
+        \item Base de la demi-réaction~: \(\ce{O2(g) -> H2O(l)}\).
+        \item Équilibrage des atomes d'oxygène~: \(\ce{O2(g) -> 2 H2O(l)}\).
+        \item Équilibrage des atomes d'hydrogène~: \(\ce{O2(g) + 2 H2O(l) -> 4 HO^{-}(aq)}\).
+        \item Équilibrage des charges~: \(\ce{O2(g) + 2 H2O(l) + 4 e- -> 4 HO^{-}(aq)}\).
+        \end{itemize}
+        Demi-réaction finale~: \(\ce{O2(g) + 2 H2O(l) + 4 e- -> 4 HO^{-}(aq)}\).\\
+        \vspace{0.5cm}
+        \textbf{En milieu acide}
+        Cependant, en cours, nous n'avons vu que l'équilibrage en milieux acide par des ions \ce{H+}, vous pouvez-donc aussi le faire ainsi:\\
+        \begin{itemize}
+        \item Base de la demi-réaction~: \(\ce{O2(g) -> H2O(l)}\).
+        \item Équilibrage des atomes d'oxygène~: \(\ce{O2(g) -> 2 H2O(l)}\).
+        \item Équilibrage des atomes d'hydrogène~: \(\ce{O2(g) + 4 H^{+}(aq) -> 2 H2O(l)}\).
+        \item Équilibrage des charges~: \(\ce{O2(g) + 4 H^{+}(aq) + 4 e- -> 2 H2O(l)}\).
+        \end{itemize}
+        Demi-réaction finale~: \(\ce{O2(g) + 4 H^{+}(aq) + 4 e- -> 2 H2O(l)}\).\\
+        \vspace{0.5cm}
+        \textbf{Justification du caractère oxydant du dioxygène}
+        Le dioxygène \(\ce{O2(g)}\) est un \textbf{oxydant} car il gagne des électrons lors de la réaction. Dans les deux demi-réactions, \(\ce{O2(g)}\) est réduit en \(\ce{H2O(l)}\) (en milieu acide) ou en \(\ce{HO^{-}(aq)}\) (en milieu alcalin), ce qui montre qu'il capte des électrons. Un oxydant est une espèce chimique qui gagne des électrons lors d'une réaction d'oxydoréduction.
     }
 \end{questionmult}
 
@@ -197,7 +244,18 @@ Un des deux couples redox mis en jeu est le couple $\ce{O2(g) / H2O(l)}$.
         \bonne[A2]{valOK}
     }
     \explain{
-    La quantité d'électricité disponible est $Q = 182\ \mathrm{mA\cdot h} = 655,2\ \mathrm{C}$. La durée de fonctionnement est $t = \frac{Q}{I} = \frac{655,2}{2,0 \times 10^{-3}} = 327\,600\ \mathrm{s} = 91\ \mathrm{h}$.
+        La quantité d'électricité disponible est donnée en \(\mathrm{mA \cdot h}\). Pour la convertir en coulombs (\(\mathrm{C}\)), on utilise la relation \(1\ \mathrm{A \cdot h} = 3600\ \mathrm{C}\). Ainsi~:
+        \[
+        Q = 182\ \mathrm{mA \cdot h} = 182 \times 10^{-3} \times 3600\ \mathrm{C} = 655,2\ \mathrm{C}.
+        \]
+        La durée de fonctionnement \(t\) est calculée par \(t = \frac{Q}{I}\), où \(I = 2,0 \times 10^{-3}\ \mathrm{A}\)~:
+        \[
+        t = \frac{655,2\ \mathrm{C}}{2,0 \times 10^{-3}\ \mathrm{A}} = 327\,600\ \mathrm{s}.
+        \]
+        En convertissant en heures (\(1\ \mathrm{h} = 3600\ \mathrm{s}\))~:
+        \[
+        t = \frac{327\,600}{3600}\ \mathrm{h} = 91\ \mathrm{h}.
+        \]
     }
 \end{questionmult}
 
