@@ -52,7 +52,7 @@ Un voltmètre est branché aux bornes de la pile (schéma \AMCref{fig:pile_danie
         \bonne{OK}
     }
     \explain{
-    La tension mesurée est positive, ce qui indique que l'électrode de cuivre est la borne positive et l'électrode de zinc la borne négative.
+    La tension mesurée est positive, ce qui indique que l'électrode de cuivre est la borne positive et l'électrode de zinc la borne négative, car le COM est la référence zéro.
     }
 \end{questionmult}
 
@@ -77,7 +77,7 @@ Par la suite, on remplace le voltmètre par un ampèremètre en série avec une 
     $$
     \ce{Cu^{2+}(aq) + 2 e^{-} -> Cu(s)}
     $$
-    La réaction globale est~:
+    La réaction globale, obtenue en additionnant les deux demi-équations, est~:
     $$
     \ce{Zn(s) + Cu^{2+}(aq) -> Zn^{2+}(aq) + Cu(s)}
     $$
@@ -94,7 +94,10 @@ Par la suite, on remplace le voltmètre par un ampèremètre en série avec une 
         \bonne{OK}
    }
     \explain{
-    Les ions ammonium $\mathrm{NH_4^+}$ se déplacent vers la solution de sulfate de cuivre, et les ions nitrate $\mathrm{NO_3^-}$ se déplacent vers la solution de sulfate de zinc.
+        Dans une pile, le pont salin permet de maintenir l'électroneutralité des solutions en permettant la migration des ions entre les deux compartiments.\\
+        Les ions ammonium $\mathrm{NH_4^+}$ (aq) se déplacent vers la solution de sulfate de cuivre ($\mathrm{CuSO_4}$). Cela compense la diminution de la concentration en ions $\mathrm{Cu^{2+}}$ dans cette solution, due à leur réduction en cuivre métallique à la cathode.\\
+        Les ions nitrate $\mathrm{NO_3^-}$ (aq) se déplacent vers la solution de sulfate de zinc ($\mathrm{ZnSO_4}$). Cela compense l'augmentation de la concentration en ions $\mathrm{Zn^{2+}}$ dans cette solution, due à l'oxydation du zinc métallique en ions $\mathrm{Zn^{2+}}$ à l'anode.\\
+        Ces déplacements permettent de maintenir l'électroneutralité dans chaque compartiment de la pile.
     }
 \end{questionmult}
 
@@ -144,8 +147,7 @@ m(Zn) = 50,2 g.
     \AMClabel{fig:pile_alcaline}
 \end{wrapfigure}
 
-Les piles alcalines sont fabriquées sous forme de cylindres et de boutons. Une pile cylindrique est contenue dans un tube d'acier, qui sert de collecteur du courant de la cathode.  Le trou central de la cathode est revêtu d'un séparateur qui empêche le mélange des produits de l'anode et de la cathode et le court-circuit de l'élément de pile. Il faut que le séparateur puisse laisser passer les ions et rester stable dans une solution électrolytique fortement basique. Pour éviter la polarisation de la pile en fin de vie, on utilise plus de dioxyde de manganèse qu'il n'est nécessaire
-pour réagir avec la totalité du zinc.\\
+Les piles alcalines sont fabriquées sous forme de cylindres et de boutons. Une pile cylindrique est contenue dans un tube d'acier, qui sert de collecteur du courant de la cathode.  Le trou central de la cathode est revêtu d'un séparateur qui empêche le mélange des produits de l'anode et de la cathode et le court-circuit de l'élément de pile. Il faut que le séparateur puisse laisser passer les ions et rester stable dans une solution électrolytique fortement basique. Pour éviter la polarisation de la pile en fin de vie, on utilise plus de dioxyde de manganèse qu'il n'est nécessaire pour réagir avec la totalité du zinc.\\
 \emph{D’après https://fr.wikipedia.org/wiki/Pile\_alcaline}
 
 \WFclear
@@ -160,7 +162,7 @@ pour réagir avec la totalité du zinc.\\
         \bonne{OK}
     }
     \explain{
-    Le réactif limitant est le zinc, car il est entièrement consommé avant le dioxyde de manganèse.
+    Le réactif limitant est le zinc, car il est entièrement consommé avant le dioxyde de manganèse (selon l'énoncé).
     }
 \end{questionmult}
 
@@ -174,7 +176,8 @@ pour réagir avec la totalité du zinc.\\
         \bonne{OK}
     }
     \explain{
-    Dans une pile alcaline, l'oxydant est le dioxyde de manganèse $\ce{MnO2(s)}$ et le réducteur est le zinc $\ce{Zn(s)}$.
+        Dans cette pile alcaline, on observe que le zinc métallique est consommé. Cela signifie qu'il subit une oxydation : Le zinc est donc le réducteur car il perd des électrons.\\
+        Par conséquent, l'autre espèce impliquée dans la réaction, le dioxyde de manganèse, doit être réduit pour équilibrer les électrons. Il est donc l'oxydant de la pile.
     }
 \end{questionmult}
 
@@ -212,6 +215,7 @@ Une pile alcaline AA du commerce de type Power+ est reliée à une résistance d
         \bonne{Val}
     }
     \explain{
-        L'intensité moyenne délivrée par la pile Power+ est d'environ $\SI{100}{\milli\ampere}$. La capacité $Q_{P+}$ est donnée par $Q = I \times t = \SI{100e-3}{\ampere} \times (\SI{27}{\hour} \times \SI{3600}{\second\per\hour}) = \SI{9720}{\coulomb}$.
+        L'intensité moyenne délivrée par la pile Power+ est d'environ $\SI{100}{\milli\ampere}$. La capacité $Q_{P+}$ est donnée par $Q = I \times t = \SI{100e-3}{\ampere} \times (\SI{27}{\hour} \times \SI{3600}{\second\per\hour}) = \SI{9720}{\coulomb}$.\\
+        Note: l'intensité évolue tout au long de la décharge, la valeur de \SI{100}{\milli\ampere} est donnée de manière très approximative.
     }
 \end{questionmult}
