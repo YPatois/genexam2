@@ -67,11 +67,27 @@ Le suivi est réalisé en mettant en œuvre le protocole suivant~:
         \bonne{Soude}
     }
     \explain{
-    \begin{itemize}
-        \item Pour la soude~: $n_{\ce{HO^-}} = C \times V = 0,10~\mathrm{mol/L} \times 0,010~\mathrm{L} = 1,0 \times 10^{-3}~\mathrm{mol}$.
-        \item Pour l'éthanoate d'éthyle~: $m = \rho \times V = 0,925~\mathrm{g/mL} \times 2,0~\mathrm{mL} = 1,85~\mathrm{g}$.
-        \item Quantité de matière~: $n = \frac{m}{M} = \frac{1,85~\mathrm{g}}{88,0~\mathrm{g/mol}} = 2,10 \times 10^{-2}~\mathrm{mol}$.
-    \end{itemize}
+        Pour déterminer les quantités de matière initiales d'éthanoate d'éthyle et de soude, on procède comme suit :
+        \textbf{Pour la soude} :
+        La concentration molaire \(C\) est définie par la relation \(C = \frac{n}{V}\), où \(n\) est la quantité de matière (en \(\mathrm{mol}\)) et \(V\) le volume de la solution (en \(\mathrm{L}\)).
+        On peut donc exprimer la quantité de matière \(n\) comme suit :
+        \[
+        n_{\ce{HO^-}} = C \times V.
+        \]
+        En utilisant les valeurs données, \(C = \SI{0,10}{\mol\per\litre}\) et \(V = \SI{0,010}{\litre}\), on obtient :
+        \[
+        n_{\ce{HO^-}} = \SI{0,10}{\mol\per\litre} \times \SI{0,010}{\litre} = \SI{1,0e-3}{\mol}.
+        \]
+        \textbf{Pour l'éthanoate d'éthyle} :
+        La quantité de matière \(n\) est déterminée à partir de la masse \(m\) et de la masse molaire \(M\) selon la relation \(n = \frac{m}{M}\).\\
+        La masse \(m\) est calculée à partir de la masse volumique \(\rho\) et du volume \(V\) :
+        \[
+        m = \rho \times V = \SI{0,925}{\gram\per\milli\litre} \times \SI{2,0}{\milli\litre} = \SI{1,85}{\gram}.
+        \]
+        En utilisant la masse molaire \(M = \SI{88,0}{\gram\per\mol}\), on obtient la quantité de matière :
+        \[
+        n = \frac{m}{M} = \frac{\SI{1,85}{\gram}}{\SI{88,0}{\gram\per\mol}} = \SI{2,10e-2}{\mol}.
+        \]
     }
 \end{questionmult}
 
@@ -141,7 +157,7 @@ pH, on obtient le graphique Figure~\AMCref{fig:ethanoate_graph}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth, keepaspectratio]{ste7_ethanoate_graph.png}
+    \includegraphics[width=\linewidth, keepaspectratio]{ste7_ethanoate_graph_corr.png}
     \caption{Graphique de la concentration en ions hydroxyde en fonction du temps}
     \AMClabel{fig:ethanoate_graph}
 \end{figure}
