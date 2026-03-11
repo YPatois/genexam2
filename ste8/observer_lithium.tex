@@ -1,0 +1,110 @@
+\section{Stockage et restitution de l'énergie : la batterie lithium-ion}
+\textbf{Source du sujet :} Baccalauréat 2023, La Réunion
+
+\subsection{Introduction}
+Energy Observer est un bateau autonome en énergie. En l'absence de vent et par temps couvert, les apports extérieurs d'énergie sont insuffisants. Les moteurs électriques qui propulsent le bateau et les appareils à bord font appel à l'énergie stockée dans des batteries ou sous forme de dihydrogène.
+
+Cette partie se limitera à l'étude de la décharge d'une batterie lithium-ion, qui se comporte alors comme une pile dont voici un schéma simplifié :
+
+% Dans le corps du document, à l'endroit où vous voulez insérer l'image :
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ste7_observer_lithium_pile.png}
+    \caption{Schéma de la batterie lithium-ion du bateau Energy Observer}
+    \label{fig:batterie_lithium}
+\end{figure}
+
+\subsection{Données}
+Les ions lithium Li$^+$ de l'électrolyte peuvent se déplacer d'une électrode à l'autre en passant au travers d'un séparateur perméable à ces ions.
+
+Au cours de sa décharge, une batterie lithium-ion est le siège de transformations chimiques qui se déroulent au niveau de chaque électrode selon les équations de réactions électrochimiques suivantes :
+
+\begin{itemize}
+    \item À l'électrode en oxyde métallique : $\ce{Li_{(1-x)CoO2(s)} + x\ce{Li+} + x\ce{e-} -> LiCoO2(s)}$
+    \item À l'électrode en carbone-graphite : $\ce{Li_xC6(s) -> x\ce{Li+} + x\ce{e-} + 6C(s)}$
+\end{itemize}
+
+Cet exercice sera traité sans prêter attention à la valeur de $x$.
+
+\subsection{Questions}
+
+\begin{questionmult}{lithium1}
+    Justifier que lors de la décharge, l'électrode de carbone graphite est le siège d'une oxydation.
+
+    \begin{EnvQuadrillage}[NbCarreaux=18x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Libération d'électrons}\scoring{b=1}
+        \bonne[A2]{Réaction d'oxydation}\scoring{b=1}
+    }
+    \explain{
+        À l'électrode de carbone graphite, on observe une libération d'électrons : $\ce{Li_xC6(s)}$ est donc un réducteur qui s'oxyde. L'électrode de graphite est donc le siège d'une réaction d'oxydation.
+    }
+\end{questionmult}
+
+\begin{questionmult}{lithium2}
+    Sur le schéma de la batterie ci-dessous, indiquez :
+    \begin{itemize}
+        \item dans les 2 rectangles, les rôles d'anode ou de cathode joués par chaque électrode ;
+        \item la nature et le sens de déplacement des porteurs de charge circulant dans le circuit extérieur et le séparateur ;
+        \item dans les 2 cercles, la polarité de chaque électrode.
+    \end{itemize}
+    
+% Dans le corps du document, à l'endroit où vous voulez insérer l'image :
+    \centering
+    \includegraphics[width=0.8\textwidth]{ste7_observer_lithium_reponse.png}
+
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Anode/Cathode}\scoring{b=1}
+        \bonne[A2]{Déplacement des charges}\scoring{b=1}
+        \bonne[A3]{Polarité}\scoring{b=1}
+    }
+    \explain{
+    \begin{itemize}
+        \item L'électrode de carbone graphite, siège d'une réaction d'oxydation, est l'anode.
+        \item L'électrode en oxyde de lithium et de cobalt, siège d'une réaction de réduction, est la cathode.
+        \item Dans le circuit extérieur, les porteurs de charge sont des électrons. Ils sont libérés par l'électrode de carbone graphite et captés au niveau de l'électrode d'oxyde de lithium et de cobalt.
+        \item Dans le séparateur, les porteurs de charge sont des ions lithium Li$^+$, qui se déplacent dans le sens du courant électrique.
+        \item La polarité est la suivante : le pôle négatif est l'électrode de carbone graphite et le pôle positif est l'électrode d'oxyde de lithium et de cobalt.
+    \end{itemize}
+    }
+\end{questionmult}
+
+\begin{questionmult}{lithium3}
+    Déterminer la formule moléculaire de l'éthylène carbonate, un solvant organique utilisé dans l'électrolyte, à partir de sa formule semi-développée :
+    \begin{center}
+    \chemfig{[-6]O=[:30]C(=[:90]O)-[:150]O-[:210]}
+    \end{center}
+    \begin{EnvQuadrillage}[NbCarreaux=10x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Formule correcte}\scoring{b=1}
+    }
+    \explain{
+        La formule moléculaire de l'éthylène carbonate est $\ce{C3H4O3}$.
+    }
+\end{questionmult}
+
+\begin{questionmult}{lithium4}
+    Déterminer la configuration absolue (R ou S) de l'atome de carbone asymétrique dans le carbonate de propylène, dont la formule semi-développée est donnée ci-dessous :
+    \begin{center}
+    \chemfig{[-6]O=[:30]C(=[:90]O)-[:210]O-[:330]CH(-[:30]CH_3)-[:30]CH_3}
+    \end{center}
+    \begin{EnvQuadrillage}[NbCarreaux=10x6,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Configuration correcte}\scoring{b=1}
+    }
+    \explain{
+        La configuration absolue de l'atome de carbone asymétrique est $S$. Pour déterminer cela, on utilise les règles Cahn-Ingold-Prelog :
+        \begin{itemize}
+            \item Le groupe prioritaire est le groupe contenant l'oxygène (numéro atomique plus élevé).
+            \item Le groupe de plus faible priorité est l'hydrogène.
+            \item En orientant la molécule de sorte que le groupe de plus faible priorité soit dirigé vers l'arrière, les trois autres groupes sont classés dans le sens anti-horaire, ce qui correspond à la configuration $S$.
+        \end{itemize}
+    }
+\end{questionmult}

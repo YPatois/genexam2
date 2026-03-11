@@ -1,0 +1,280 @@
+\section{Comparaison des piles pour appareil auditif}
+\textbf{Source du sujet~:} Baccalauréat STL Physique-Chimie, Centres étrangers – 2022.
+
+\subsection{Introduction}
+Pour alimenter un appareil auditif, deux types de piles boutons sont disponibles~:
+\begin{itemize}
+    \item une pile bouton zinc-manganèse ;
+    \item une pile bouton zinc-air.
+\end{itemize}
+
+Leurs caractéristiques sont les suivantes~:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Type de pile & Quantité d'électricité disponible & Masse de la pile & Tension & Intensité du courant \\
+\hline
+zinc-manganèse & à déterminer & 0,5 g & 1,5 V & 2,0 mA \\
+\hline
+zinc-air & 182 mA·h & 0,5 g & 1,5 V & 2,0 mA \\
+\hline
+\end{tabular}
+\end{center}
+
+L'objectif de l'exercice est de déterminer la pile à privilégier pour une plus grande autonomie de fonctionnement de l'appareil auditif.
+
+\subsection{Données}
+\begin{itemize}
+    \item Masses molaires atomiques~: $M(\mathrm{Zn}) = \SI{65}{\gram\per\mole}$ ; $M(\mathrm{Mn}) = \SI{55}{\gram\per\mole}$ ; $M(\mathrm{O}) = \SI{16}{\gram\per\mole}$ ; $M(\mathrm{H}) = \SI{1,0}{\gram\per\mole}$ ;
+    \item Constante de Faraday~: $F = \SI{9,65e4}{\coulomb\per\mole}$.
+\end{itemize}
+
+\subsection{Partie A~: Étude de la pile zinc-manganèse}
+Dans une pile bouton zinc-manganèse, une électrode contient du zinc $\ce{Zn(s)}$ et l'autre du dioxyde de manganèse $\ce{MnO2(s)}$ et du carbone $\ce{C(s)}$. Le carbone n'intervient pas dans le couple de la demi-pile mais permet notamment la conduction du courant.\\
+Afin de déterminer la polarité de la pile, on branche la borne COM d’un voltmètre à
+l’électrode de carbone et la borne V à l’électrode de zinc, on mesure alors une tension
+de \SI{-1.5}{\volt}.\\
+
+\begin{questionmult}{pileA1}
+    Déduire de la mesure de la tension à vide la polarité de chaque électrode en précisant le raisonnement.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x3,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{idOK}
+        \bonne[A2]{valOK}
+    }
+    \explain{
+    La tension mesurée est de \SI{-1.5}{\volt}, lorsque la borne COM est branchée sur l'électrode de carbone et la borne V sur l'électrode de zinc. Cela indique que l'électrode de carbone est la borne positive et l'électrode de zinc la borne négative. Le COM est la référence zéro du voltmètre.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA2}
+    Indiquer la polarité des bornes de la pile, le sens de déplacement des électrons ainsi que le sens du courant sur la figure.
+
+    \includegraphiccorr[width=0.6\linewidth]{ste7_pile_auditif_pile}
+
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{PolOK}
+        \bonne[A2]{SensOK}
+    }
+    \explain{
+        Par convention, le sens du courant électrique est défini comme le sens de déplacement des charges positives. Ainsi, le courant circule de la borne positive vers la borne négative de la pile.\\
+        Les électrons, chargés négativement, sont attirés par la borne positive. Ils se déplacent donc de l'électrode de zinc (borne négative) vers l'électrode de carbone (borne positive). Le courant électrique, lui, circule dans le sens opposé au déplacement des électrons, c'est-à-dire de l'électrode de carbone vers l'électrode de zinc.\\
+        \textbf{Note utile :} Dans la plupart des piles, la borne négative est de plus grande taille que la borne positive. Cela permet de les distinguer facilement.
+    }
+\end{questionmult}
+
+ \vspace{0.5cm}
+
+Les demi-équations électrochimiques se produisant aux électrodes de la pile sont les suivantes~:
+
+$$
+\ce{Zn(s) + 2 HO^{-}(aq) -> ZnO(s) + H2O(l) + 2 e^{-}}
+$$
+
+$$
+\ce{MnO2(s) + H2O(l) + 1 e^{-} -> MnO2H(s) + HO^{-}(aq)}
+$$
+
+\begin{questionmult}{pileA3}
+    Associer chaque demi-équation électrochimique à l'électrode correspondante et préciser si elle est le siège d'une oxydation ou d'une réduction.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{assOK}
+        \bonne{redoxOK}
+    }
+    \explain{
+        La première demi-équation correspond à l'\textbf{oxydation du zinc} à l'anode. Lors de cette réaction, le zinc métallique $\ce{Zn(s)}$ libère deux électrons pour former des ions zinc $\ce{Zn^{2+}(aq)}$~:
+        \[
+        \ce{Zn(s) -> Zn^{2+}(aq) + 2 e-}.
+        \]
+        L'oxydation est un processus au cours duquel une espèce chimique \textbf{perd des électrons}.\\
+        La deuxième demi-équation correspond à la \textbf{réduction du dioxyde de manganèse} à la cathode. Lors de cette réaction, le dioxyde de manganèse $\ce{MnO2(s)}$ gagne un électrons pour former de l'oxyde de manganèse $\ce{MnO(OH)(s)}$~:
+        \[
+        \ce{MnO2(s) + H2O(l) + e- -> MnO(OH)(s) + HO-(aq)}.
+        \]
+        La réduction est un processus au cours duquel une espèce chimique \textbf{gagne des électrons}.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA4}
+    Établir l'équation de la réaction modélisant le fonctionnement de la pile, en précisant la démarche.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x8,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{idK}
+        \bonne{eqOK}
+    }
+    \explain{
+        Les deux demi-équations de départ sont~:\\
+        1. Demi-équation d'\textbf{oxydation} du zinc~:
+        \[
+        \ce{Zn(s) + 2 HO^{-}(aq) -> ZnO(s) + H2O(l) + 2 e-}.
+        \]
+        2. Demi-équation de \textbf{réduction} du dioxyde de manganèse~:
+        \[
+        \ce{MnO2(s) + H2O(l) + 1 e- -> MnO2H(s) + HO^{-}(aq)}.
+        \]
+        Pour équilibrer le nombre d'électrons échangés, on multiplie la demi-équation de réduction par 2 afin que les deux demi-équations impliquent le même nombre d'électrons (2 électrons)~:
+        \[
+        \ce{2 MnO2(s) + 2 H2O(l) + 2 e- -> 2 MnO2H(s) + 2 HO^{-}(aq)}.
+        \]
+        Ensuite, on combine les deux demi-équations équilibrées~:
+        \[
+        \ce{Zn(s) + 2 HO^{-}(aq) + 2 MnO2(s) + 2 H2O(l) -> ZnO(s) + H2O(l) + 2 e- + 2 MnO2H(s) + 2 HO^{-}(aq)}.
+        \]
+        En simplifiant l'équation globale (en annulant les espèces communes des deux côtés), on obtient~:
+        \[
+        \ce{Zn(s) + 2 MnO2(s) + H2O(l) -> ZnO(s) + 2 MnO2H(s)}.
+        \]
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA5}
+    Sachant que la masse initiale de l'électrode en zinc est $m_{\mathrm{Zn}} = 55\ \mathrm{mg}$, déterminer la quantité de matière initiale de zinc $n_{\mathrm{Zn}}$ présente dans la pile.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x3,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{idOK}
+        \bonne[A2]{valOK}
+    }
+    \explain{
+        La quantité de matière $n$ est définie comme le rapport de la masse $m$ d'une espèce chimique à sa masse molaire $M$, selon la relation : $n = \frac{m}{M}$.\\
+        Pour le zinc, la masse initiale est $m_{\mathrm{Zn}} = 55~\mathrm{mg} = 55 \times 10^{-3}~\mathrm{g}$, et la masse molaire du zinc est $M(\mathrm{Zn}) = 65~\mathrm{g/mol}$.\\
+        En substituant ces valeurs dans la formule, on obtient la quantité de matière initiale de zinc :\\
+        $n_{\mathrm{Zn}} = \frac{m_{\mathrm{Zn}}}{M(\mathrm{Zn})} = \frac{55 \times 10^{-3}~\mathrm{g}}{65~\mathrm{g/mol}} = 8,46 \times 10^{-4}~\mathrm{mol}$.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA6}
+    En admettant que le zinc est entièrement consommé et que le dioxyde de manganèse $\ce{MnO2(s)}$ est en excès, déduire la quantité de matière $n_{\mathrm{e}^{-}}$ d'électrons échangés au cours de la transformation chimique.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x3,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{idOK}
+        \bonne[A2]{valOK}
+    }
+    \explain{
+    Chaque mole de zinc libère 2 moles d'électrons. Donc, $n_{\mathrm{e}^{-}} = 2 \times n_{\mathrm{Zn}} = 1,69 \times 10^{-3}\ \mathrm{mol}$.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA7}
+    Vérifier que la valeur de la quantité d'électricité disponible dans la pile est voisine de $Q_{1} = 164\ \mathrm{C}$.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x3,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{idOK}
+        \bonne[A2]{valOK}
+    }
+    \explain{
+    La quantité d'électricité est donnée par $Q = n_{\mathrm{e}^{-}} \times F = 1,69 \times 10^{-3} \times 9,65 \times 10^{4} = 163\ \mathrm{C}$.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileA8}
+    Calculer la durée de fonctionnement de la pile zinc-manganèse.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x3,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{idOK}
+        \bonne[A2]{valOK}
+    }
+    \explain{
+    La durée de fonctionnement est donnée par $t = \frac{Q}{I} = \frac{163}{2,0 \times 10^{-3}} = 81\,500\ \mathrm{s} = 22,6\ \mathrm{h}$.
+    }
+\end{questionmult}
+
+\subsection{Partie B~: Étude de la pile zinc-air}
+L'équation de la réaction modélisant le fonctionnement de la pile correspond à l'oxydation du zinc en oxyde de zinc par le dioxygène de l'air~:
+
+$$
+\ce{2 Zn(s) + O2(g) -> 2 ZnO(s)}
+$$
+
+Un des deux couples redox mis en jeu est le couple $\ce{O2(g) / H2O(l)}$.
+
+\begin{questionmult}{pileB1}
+    Écrire l'équation de demi-réaction électrochimique correspondant à ce couple et justifier le caractère oxydant du dioxygène.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{Équation correcte}
+        \bonne[A2]{Justification correcte}
+    }
+    \explain{
+     \textbf{En milieu alcalin}\\
+        Normalement, pour une pile alcaline, nous sommes en milieu basique (alcalin, d'où le nom), la réaction s'écrit donc comme ceci:\\
+        \begin{itemize}
+        \item Base de la demi-réaction~: \(\ce{O2(g) -> H2O(l)}\).
+        \item Équilibrage des atomes d'oxygène~: \(\ce{O2(g) -> 2 H2O(l)}\).
+        \item Équilibrage des atomes d'hydrogène~: \(\ce{O2(g) + 2 H2O(l) -> 4 HO^{-}(aq)}\).
+        \item Équilibrage des charges~: \(\ce{O2(g) + 2 H2O(l) + 4 e- -> 4 HO^{-}(aq)}\).
+        \end{itemize}
+        Demi-réaction finale~: \(\ce{O2(g) + 2 H2O(l) + 4 e- -> 4 HO^{-}(aq)}\).\\
+        \vspace{0.5cm}
+        \textbf{En milieu acide}\\
+        Cependant, en cours, nous n'avons vu que l'équilibrage en milieux acide par des ions \ce{H+}, vous pouvez-donc aussi le faire ainsi:\\
+        \begin{itemize}
+        \item Base de la demi-réaction~: \(\ce{O2(g) -> H2O(l)}\).
+        \item Équilibrage des atomes d'oxygène~: \(\ce{O2(g) -> 2 H2O(l)}\).
+        \item Équilibrage des atomes d'hydrogène~: \(\ce{O2(g) + 4 H^{+}(aq) -> 2 H2O(l)}\).
+        \item Équilibrage des charges~: \(\ce{O2(g) + 4 H^{+}(aq) + 4 e- -> 2 H2O(l)}\).
+        \end{itemize}
+        Demi-réaction finale~: \(\ce{O2(g) + 4 H^{+}(aq) + 4 e- -> 2 H2O(l)}\).\\
+        \vspace{0.5cm}
+        \textbf{Justification du caractère oxydant du dioxygène}\\
+        Le dioxygène \(\ce{O2(g)}\) est un \textbf{oxydant} car il gagne des électrons lors de la réaction. Dans les deux demi-réactions, \(\ce{O2(g)}\) est réduit en \(\ce{H2O(l)}\) (en milieu acide) ou en \(\ce{HO^{-}(aq)}\) (en milieu alcalin), ce qui montre qu'il capte des électrons. Un oxydant est une espèce chimique qui gagne des électrons lors d'une réaction d'oxydoréduction.
+    }
+\end{questionmult}
+
+\begin{questionmult}{pileB2}
+    Calculer la durée de fonctionnement de la pile zinc-air en vous aidant de ses caractéristiques.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{idOK}
+        \bonne[A2]{valOK}
+    }
+    \explain{
+        La quantité d'électricité disponible est donnée en \(\mathrm{mA \cdot h}\). Pour la convertir en coulombs (\(\mathrm{C}\)), on utilise la relation \(1\ \mathrm{A \cdot h} = 3600\ \mathrm{C}\). Ainsi~:
+        \[
+        Q = 182\ \mathrm{mA \cdot h} = 182 \times 10^{-3} \times 3600\ \mathrm{C} = 655,2\ \mathrm{C}.
+        \]
+        La durée de fonctionnement \(t\) est calculée par \(t = \frac{Q}{I}\), où \(I = 2,0 \times 10^{-3}\ \mathrm{A}\)~:
+        \[
+        t = \frac{655,2\ \mathrm{C}}{2,0 \times 10^{-3}\ \mathrm{A}} = 327\,600\ \mathrm{s}.
+        \]
+        En convertissant en heures (\(1\ \mathrm{h} = 3600\ \mathrm{s}\))~:
+        \[
+        t = \frac{327\,600}{3600}\ \mathrm{h} = 91\ \mathrm{h}.
+        \]
+    }
+\end{questionmult}
+
+\subsection{Partie C~: Choix de la pile à privilégier}
+\begin{questionmult}{pileC1}
+    À l'aide des parties A et B et des informations disponibles, indiquer le type de pile qu'il faudrait privilégier pour l'alimentation d'un appareil auditif. Justifier la réponse.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne[A1]{id}
+        \bonne[A2]{OK}
+    }
+    \explain{
+    La pile zinc-air offre une autonomie de 91 h, contre 22,6 h pour la pile zinc-manganèse. Il est donc préférable de privilégier la pile zinc-air pour une plus grande autonomie.
+    }
+\end{questionmult}

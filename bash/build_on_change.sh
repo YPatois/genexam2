@@ -5,7 +5,7 @@ export SCRIPTBASEDIR
 
 source $SCRIPTBASEDIR/../vault/vault.sh
 
-TEXDIR=$SCRIPTBASEDIR/../ste7
+TEXDIR=$SCRIPTBASEDIR/../ste8
 
 # Global variable to store the PID of the last action
 PREV_PID=""

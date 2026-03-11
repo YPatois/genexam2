@@ -1,0 +1,173 @@
+\section{Dépôt chimique en phase vapeur du carbure de silicium}
+\textbf{Source du sujet~:} Baccalauréat STL Biotechnologies, Centres étrangers – 18 mai 2022.
+
+\subsection{Introduction}
+Le carbure de silicium, de formule SiC, a été découvert par Jons Jacob Berzelius en 1824 lors d'une expérience pour synthétiser du diamant. Il est devenu un matériau incontournable pour la fabrication d'instruments d'optique. Par exemple, il a été utilisé pour garantir la stabilité thermomécanique du télescope spatial infrarouge Herschel, développé par l'agence spatiale européenne et lancé en 2009. En particulier, la face optique des miroirs peut être revêtue de carbure de silicium par dépôt chimique en phase vapeur (ou CVD pour l'anglais "chemical vapor deposition") afin de masquer toute porosité résiduelle et obtenir une surface polissable parfaite.
+
+Dans ce procédé, un solide inerte servant de support est exposé à une ou plusieurs espèces chimiques en phase gazeuse qui se décomposent à sa surface pour former le matériau désiré. Parmi celles-ci, le méthyltrichlorosilane de formule $\ce{CH3SiCl3}$ est très souvent choisi. Par la suite, pour des raisons de simplification, il sera noté MTS.
+
+\vspace{0.5cm}
+
+On considère une enceinte vide, de volume constant, thermostatée à la température $T_{2} =~ \SI{1200}{~\kelvin}$, dans laquelle, au temps $t = \SI{0}{\minute}$, on introduit une certaine quantité de MTS.
+
+À cette température, la transformation permettant la formation de carbure de silicium peut être considérée comme totale.
+
+L'équation de la réaction modélisant la transformation chimique au cours de laquelle le MTS se décompose est la suivante~:
+$$
+\ce{CH3SiCl3(g) -> SiC(s) + 3HCl(g)}
+$$
+
+On suit par un procédé adapté l'évolution de la concentration en MTS au cours du temps. On obtient ainsi le graphe suivant~:
+
+\begin{figure}[h]
+    \centering
+    \includegraphicscorr[width=0.9\linewidth]{ste7_silicium_graph}
+    \caption{Concentration en MTS en fonction du temps}
+    \AMClabel{fig:graphe_mts}
+\end{figure}
+
+\subsection{Questions}
+
+\begin{questionmult}{sicQ1}
+    Déterminer le temps de demi-réaction $t_{1/2}$ dans ces conditions expérimentales en expliquant votre démarche.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}
+        \bonne{Method}
+        \bonne{valOK}
+    }
+    \explain{
+    Pour déterminer le temps de demi-réaction \(t_{1/2}\) graphiquement~:
+    \begin{itemize}
+        \item Repèrer la concentration $C_0$ sur le graphique. Ici, $C_0 = 0,30$ mol/L.
+        \item Repérer le point où $C(t) = \frac{C_0}{2} = \SI{0,15}{\mol\per\liter}$.
+        \item Lire la valeur de \(t\) correspondant à ce point sur l'axe des abscisses~: ici $t_{1/2} = \SI{20}{\minute}$.
+    \end{itemize}    
+    }
+\end{questionmult}
+
+\begin{questionmult}{sicQ2}
+    En supposant que la réaction est d'ordre 1, on rappelle que $t_{1/2} = \frac{\ln 2}{k}$ avec $k$ la constante de vitesse de la réaction. Déterminer la valeur de $k$ dont on précisera l'unité.\\
+    \begin{EnvQuadrillage}[NbCarreaux=14x2,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}
+        \bonne{nbOK}
+        \bonne{unitOK}
+    }
+    \explain{
+        Pour déterminer la constante de vitesse $k$, on utilise la relation entre le temps de demi-réaction et la constante de vitesse~: $t_{1/2} = \frac{\ln 2}{k}$.\\
+        À partir des données expérimentales, on a mesuré un temps de demi-réaction $t_{1/2} = \SI{20}{\minute}$. En réarrangeant la relation pour isoler $k$, on obtient~: $k = \frac{\ln 2}{t_{1/2}}$.\\
+        En substituant la valeur de $t_{1/2}$, on calcule $k$ comme suit~: $k = \frac{0,693}{\SI{20}{\minute}} = \SI{0,035}{\per\minute}$.\\
+        Ainsi, la constante de vitesse $k$ est de $\SI{0,035}{\per\minute}$.
+    }
+\end{questionmult}
+
+\begin{questionmult}{sicQ3}
+    Déterminer graphiquement la valeur de la vitesse de disparition du MTS à l'instant $t = \SI{10}{\minute}$.\\
+    \begin{EnvQuadrillage}[NbCarreaux=14x2,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise[F]{NA}\scoring{b=0}
+        \bonne{ID}
+        \bonne{val1O}
+    }
+    \explain{
+    La vitesse de disparition du MTS à $t = \SI{10}{\minute}$ est déterminée par la pente de la tangente à la courbe $C(t)$ en $t = \SI{10}{\minute}$. En utilisant les valeurs $C(\SI{5}{\minute}) = \SI{0,25}{\mol\per\liter}$ et $C(\SI{15}{\minute}) = \SI{0,175}{\mol\per\liter}$, la pente est calculée par~:
+    \[ v_{10} = \frac{C(\SI{15}{\minute}) - C(\SI{5}{\minute})}{\SI{10}{\minute} - \SI{5}{\minute}} = \SI{0,05}{\mol\per\liter\per\minute}. \]
+    }
+\end{questionmult}
+
+\begin{questionmult}{sicQ4}
+    \AMClabel{sicQ4}
+    La vitesse de disparition du MTS est de $\SI{1,0e-2}{\mol\per\liter\per\minute}$ à $t = \SI{1}{\minute}$ et de $\SI{3,5e-3}{\mol\per\liter\per\minute}$ à $t = \SI{30}{\minute}$\\
+    Conclure en discutant de l'évolution au cours du temps de la vitesse de disparition du MTS lorsque la concentration évolue.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x3,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}
+        \bonne{OK}
+    }
+    \explain{
+    Les vitesses de disparition du MTS sont de $1,0 \times 10^{-2}$ mol.L$^{-1}$.min$^{-1}$ à $t = 1$ min et de $3,5 \times 10^{-3}$ mol.L$^{-1}$.min$^{-1}$ à $t = 30$ min. La vitesse de disparition diminue au cours du temps.
+    }
+\end{questionmult}
+
+\subsection{Modélisation mathématique}
+
+On modélise la concentration en MTS exprimée en mol.L$^{-1}$ en fonction du temps $t$ exprimé en minute, par la fonction $C$, définie sur l'intervalle [0; 50] par~:
+$$
+C(t) = 0,30 \cdot \mathrm{e}^{-0,035t}
+$$
+
+\begin{questionmult}{sicQ5}
+    On note $C'$ la fonction dérivée de la fonction $C$ sur l'intervalle [0; 50]. Déterminer l'expression de $C'(t)$ pour $t$ appartenant à [0; 50].\\
+    \begin{EnvQuadrillage}[NbCarreaux=14x4,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{ID}
+        \bonne{OK}
+        }
+    \explain{
+        Pour déterminer la dérivée de la fonction \( C(t) = 0,30 \cdot \mathrm{e}^{-0,035t} \), on utilise les règles de dérivation des fonctions exponentielles.\\
+        1. **Rappel de la règle de dérivation** :\\
+        La dérivée d'une fonction de la forme \( f(t) = a \cdot \mathrm{e}^{kt} \) est donnée par :
+        \[
+        f'(t) = a \cdot k \cdot \mathrm{e}^{kt}.
+        \]
+        2. **Application à \( C(t) \)** :\\
+        Ici, \( a = 0,30 \) et \( k = -0,035 \). En appliquant la règle de dérivation, on obtient :
+        \[
+        C'(t) = 0,30 \cdot (-0,035) \cdot \mathrm{e}^{-0,035t}.
+        \]
+        3. **Calcul de la dérivée** :\\
+        En effectuant la multiplication des constantes, on trouve :
+        \[
+        C'(t) = -0,0105 \cdot \mathrm{e}^{-0,035t}.
+        \]
+        Ainsi, la dérivée de la fonction \( C(t) = 0,30 \cdot \mathrm{e}^{-0,035t} \) est :
+        \[
+        C'(t) = -0,0105 \cdot \mathrm{e}^{-0,035t}.
+        \]
+    }
+\end{questionmult}
+
+\begin{questionmult}{sicQ6}
+    On rappelle que la vitesse de disparition de MTS est égale à l'opposé de la fonction dérivée $C'$. On note $C''$ la fonction dérivée de $C'$. On admet que $C''(t) = 3,675 \cdot 10^{-4} \mathrm{e}^{-0,035t}$ pour $t$ appartenant à [0; 50]. Étudier le sens de variation de la vitesse de réaction au cours du temps. Comparer à la question \AMCref{sicQ4}.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x6,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{IDsens}
+        \bonne{OKsens}
+        \bonne{IDcomp}
+        \bonne{OKcomp}
+    }
+    \explain{
+        \includegraphics[width=0.9\linewidth]{ste7_silicium_c_cp_cpp_plot.png}
+        La dérivée seconde $C''(t) = 3,675 \times 10^{-4} \mathrm{e}^{-0,035t}$ est positive sur [0; 50]. Donc $C'(t)$ est croissante, et la vitesse de disparition (opposée de $C'(t)$) est décroissante.
+    }
+\end{questionmult}
+
+\begin{questionmult}{sicQ7}
+    On considère que la transformation chimique de décomposition de MTS peut être stoppée lorsqu'il ne reste que $10\%$ de la concentration initiale de MTS. Déterminer l'instant $t$ à partir duquel la transformation chimique peut être stoppée. On donnera la valeur exacte, puis la valeur arrondie à la minute près.\\
+    \begin{EnvQuadrillage}[NbCarreaux=19x6,Grille=Seyes,Marge=1]
+    \end{EnvQuadrillage}
+    \AMCOpen{}{
+        \mauvaise{NA}\scoring{b=0}
+        \bonne{idOK}
+        \bonne{mtdOK}
+        \bonne{valOK}
+   }
+    \explain{
+    On résout $C(t) = 0,03$~:
+    $$
+    0,30 \cdot \mathrm{e}^{-0,035t} = 0,03 \implies t = \frac{\ln 10}{0,035} \approx 66 \text{ min}.
+    $$
+    }
+\end{questionmult}
