@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage{environ}
 \usepackage{siunitx}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc,ensemble,completemulti]{automultiplechoice}
 
 %%% Environnement pour les réponses en rouge
-\newenvironment{reponse}
+\newenvironment{reponse_ok}
 {
     \par\noindent
     \begingroup\color{red}
@@ -12,6 +13,10 @@
 {
     \endgroup\par
 }
+
+\NewEnviron{reponse}{}
+
+\graphicspath{ {./images/} }
 
 %%%%commande création sujet
 \newcommand{\sujet}{%
@@ -59,9 +64,6 @@ Durée : 10 minutes.
 
 % \AMCaddpagesto{3}
 
-
-
-
 %%% début de l'en-tête de la feuille de réponses
 
 \begin{center}
@@ -101,42 +103,6 @@ Durée : 10 minutes.
 %%% Fin Options
 
 %%% groupes
-
-\element{general}{
-  \begin{question}{prez}    
-    Parmi les personnalités suivantes, laquelle a été présidente de la république française~?
-    \begin{reponses}
-      \bonne{René Coty}
-      \mauvaise{Alain Prost}
-      \mauvaise{Marcel Proust}
-      \mauvaise{Claude Monet}
-    \end{reponses}
-  \end{question}
-}
-
-\element{general}{
-  \begin{questionmult}{pref}    
-    Parmi les villes suivantes, lesquelles sont des préfectures~?
-    \begin{reponses}
-      \bonne{Poitiers}
-      \mauvaise{Sainte-Menehould}
-      \bonne{Avignon}
-    \end{reponses}
-  \end{questionmult}
-}
-
-\element{general}{
-  \begin{question}{nb-ue}
-    Combien d'états sont membres de l'Union Européenne en janvier 2009~?
-    \begin{reponseshoriz}[o]
-      \mauvaise{15}
-      \mauvaise{21}
-      \mauvaise{25}
-      \bonne{27}
-      \mauvaise{31}
-    \end{reponseshoriz}
-  \end{question}
-}
 
 %%%% fin des groupes
 
