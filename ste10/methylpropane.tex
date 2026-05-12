@@ -1,0 +1,94 @@
+\section{Cinétique de l’hydrolyse du 2-chloro-2-méthylpropane}
+
+Le 2-chloro-2-méthylpropane est un liquide incolore et inflammable. Il est utilisé dans l’industrie comme réactif dans la synthèse de nombreuses espèces chimiques d’intérêt. Lorsqu’il est mélangé à l’eau, il se produit une transformation chimique lente et totale. L’équation de la réaction modélisant cette transformation est~:
+
+\medskip
+\noindent
+\schemestart
+\footnotesize\chemfig{Cl-[:180]C(-[:180]H_3C)(-[:90]CH_3)-[:270]CH_3}({\itshape aq})\+\chemfig{H_2O}({\itshape l})\arrow
+\footnotesize\chemfig{OH-[:180]C(-[:180]H_3C)(-[:90]CH_3)-[:270]CH_3}({\itshape l})\+\chemfig{H_3O^+}({\itshape aq})\+\chemfig{Cl^{-}}({\itshape aq})
+\schemestop
+\smallskip
+
+L’objectif de l’exercice est de modéliser l’évolution au cours du temps de la concentration en 2-chloro-2-méthylpropane.
+
+On réalise expérimentalement le suivi cinétique d’un mélange réactionnel, dont la concentration en 2-chloro-2-méthylpropane est $C_0 = \SI{9,0e-2}{\mol\per\liter}$ à l’instant $t = 0$.
+
+Le graphique fourni dans le document réponse DR1 en page 11 (à rendre avec la copie) représente l’évolution de la concentration en 2-chloro-2-méthylpropane, notée $C$, en fonction du temps.
+
+Dans les conditions de l’expérience, le 2-chloro-2-méthylpropane est le réactif limitant.
+
+\textbf{Q1.} Sur le document réponse DR1 en page 11 (à rendre avec la copie), déterminer graphiquement la valeur du temps de demi-réaction, noté $t_{1/2}$. La construction graphique doit apparaître sur le document réponse.
+
+\begin{reponse}
+On peut estimer que $t_{1/2} \approx \SI{15,5}{\minute}$.
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q2.} Donner la définition de la vitesse de disparition $v$ du 2-chloro-2-méthylpropane en utilisant une relation littérale entre la vitesse $v$, la concentration $C$ et le temps $t$.
+
+\begin{reponse}
+La vitesse de disparition du 2-chloro-2-méthylpropane correspond à l’opposé de la dérivée de sa concentration par rapport au temps~:
+\[
+v = -\frac{dC}{dt}
+\]
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q3.} En considérant $y(0) = 0{,}090$, montrer que pour tout $t \geq 0$~: $y(t) = 0{,}090 \times e^{-0{,}046t}$.
+
+\begin{reponse}
+On a bien~:
+\[
+y(t) = 0{,}090 \times e^{-0{,}046t}
+\]
+car~:
+\[
+y(0) = 0{,}090 \times e^{-0{,}046 \times 0} = 0{,}090 \times 1 = 0{,}090
+\]
+Et~:
+\[
+y'(t) = -0{,}046 \times 0{,}090 \times e^{-0{,}046t} = -0{,}046 \times y(t)
+\]
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q4.} Déterminer $\lim_{t \to +\infty} y(t)$.
+
+\begin{reponse}
+\[
+\lim_{t \to +\infty} y(t) = \lim_{t \to +\infty} (0{,}090 \times e^{-0{,}046t}) = 0{,}090 \times \lim_{t \to +\infty} (e^{-0{,}046t}) = 0
+\]
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q5.} Résoudre l’équation $y(t) = \frac{0{,}090}{2}$. Donner le résultat sous forme exacte puis une valeur approchée à $10^{-1}$.
+
+\begin{reponse}
+On a~:
+\[
+0{,}090 \times e^{-0{,}046t} = \frac{0{,}090}{2}
+\]
+\[
+e^{-0{,}046t} = \frac{1}{2}
+\]
+En prenant le logarithme~:
+\[
+-0{,}046t = \ln\left(\frac{1}{2}\right) = -\ln(2)
+\]
+\[
+t = \frac{\ln(2)}{0{,}046} \approx \SI{15{,}1}{\minute}
+\]
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q6.} Interpréter les résultats obtenus avec le modèle aux questions 4 et 5, en les confrontant aux résultats expérimentaux déduits graphiquement.
+
+\begin{reponse}
+Ce résultat est proche du résultat obtenu graphiquement à la question 2 ($t_{1/2} \approx \SI{15{,}5}{\minute}$).
+\end{reponse}
