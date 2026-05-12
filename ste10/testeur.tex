@@ -1,0 +1,208 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{csvsimple}%
+
+\usepackage[francais,bloc,ensemble,completemulti]{automultiplechoice}
+
+%%%%commande création sujet
+\newcommand{\sujet}{%
+%
+\exemplaire{1}{%
+
+%%% debut de l'en-tête des copies :  
+\begin{center}
+\noindent{}\fbox{\vspace*{3mm}
+         \Large\bf\nom{}~\prenom{}\normalsize{}% 
+          \vspace*{3mm}
+      }
+\end{center}
+
+\noindent{\bf QCM  \hfill TEST}
+
+\vspace*{.5cm}
+\begin{minipage}{.4\linewidth}
+  \centering\large\bf Test\\ Examen du 01/01/2008
+\end{minipage}
+
+\begin{center}\em
+Durée : 10 minutes.
+
+  Aucun document n'est autorisé.
+  L'usage de la calculatrice est interdit.
+
+  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
+  présenter zéro, une ou plusieurs bonnes réponses. Les autres ont
+  une unique bonne réponse.
+
+  Des points négatifs pourront être affectés à de \emph{très
+    mauvaises} réponses.
+\end{center}
+\vspace{1ex}
+%%% fin de l'en-tête
+
+\restituegroupe{general}
+
+\clearpage
+
+%\AMCcleardoublepage   
+
+% \AMCaddpagesto{3}
+
+
+
+
+%%% début de l'en-tête de la feuille de réponses
+
+\begin{center}
+
+{\large\bf Feuille de réponses :}
+
+\noindent{}\champnom{\fbox{%
+         \Large\bf\nom{}~\prenom{}\normalsize{} 
+          \vspace*{1mm}
+      }}
+\end{center}
+
+
+\begin{center}
+  \bf\em Les réponses aux questions sont à donner exclusivement sur cette feuille :
+  les réponses données sur les feuilles précédentes ne seront pas prises en compte.
+\end{center}
+
+
+\AMCassociation{\id}
+
+\formulaire
+
+%\AMCaddpagesto{2}
+
+}%exempalire
+}%sujet
+
+\begin{document}
+
+%%%Options
+\AMCrandomseed{1237893}
+
+\def\AMCformQuestion#1{{\sc Question #1 :}}
+
+\setdefaultgroupmode{withoutreplacement}
+%%% Fin Options
+
+%%% groupes
+
+
+    \begin{question}{drone-mouvement-q2}
+        À l'aide du document 1, déterminer la distance parcourue par le drone pendant les 3 premières secondes de la phase de décollage.
+        \begin{choices}
+            \choice{5,00 m}
+            \choice{6,50 m}
+            \choice[!]{7,05 m}
+            \choice{8,00 m}
+        \end{choices}
+    \end{question}
+
+    \begin{question}{drone-mouvement-q3}
+        À l'aide du document 2, calculer la valeur de l'accélération \( a_z \) du drone pendant la phase de décollage. Préciser si cette valeur est cohérente avec le document 3.
+        \begin{choices}
+            \choice{0,90 m·s\(^{-2}\)}
+            \choice{1,00 m·s\(^{-2}\)}
+            \choice[!]{1,10 m·s\(^{-2}\), cohérente avec le document 3.}
+            \choice{1,20 m·s\(^{-2}\)}
+        \end{choices}
+    \end{question}
+}
+
+\element{general}{
+    \begin{questionmult}{drone-mouvement-q4}
+        Montrer que la valeur de la résultante des forces \( \vec{F}_{\text{totale}} \) exercées sur le drone pendant ce mouvement est \( F_{\text{totale}} = 9,8 \times 10^{-1} \, \text{N} \).
+        \AMCnumericChoices{0.98}{digits=2,sign=false,decimals=2}
+    \end{questionmult}
+
+    \begin{question}{drone-mouvement-q5}
+        Rappeler des caractéristiques du poids \( \vec{P} \). Donner l'expression de sa valeur et la calculer. On donne \( g = 9,81 \, \text{m·s}^{-2} \).
+        \begin{choices}
+            \choice{Le poids est une force horizontale, dirigée vers la droite, de valeur \( P = m \cdot g \).}
+            \choice[!]{Le poids est une force verticale, dirigée vers le bas, de valeur \( P = m \cdot g \).}
+            \choice{Le poids est une force verticale, dirigée vers le haut, de valeur \( P = m / g \).}
+            \choice{Le poids est une force horizontale, dirigée vers la gauche, de valeur \( P = g / m \).}
+        \end{choices}
+    \end{question}
+
+    \begin{questionmult}{drone-mouvement-q5-calcul}
+        Calculer la valeur du poids \( P \) avec \( m = 0,895 \, \text{kg} \) et \( g = 9,81 \, \text{m·s}^{-2} \).
+        \AMCnumericChoices{8.78}{digits=2,sign=false,decimals=2}
+    \end{questionmult}
+}
+
+\element{general}{
+    \begin{question}{drone-mouvement-q6}
+        En expliquant le raisonnement suivi, déterminer la direction, le sens et la valeur de la force \( \vec{F}_{\text{air}} \).
+        \begin{choices}
+            \choice{Horizontale, vers la droite, \( F_{\text{air}} = 9,8 \, \text{N} \).}
+            \choice[!]{Verticale, vers le haut, \( F_{\text{air}} = 10,76 \, \text{N} \).}
+            \choice{Verticale, vers le bas, \( F_{\text{air}} = 8,78 \, \text{N} \).}
+            \choice{Horizontale, vers la gauche, \( F_{\text{air}} = 0,98 \, \text{N} \).}
+        \end{choices}
+    \end{question}
+}
+
+\element{general}{
+    \begin{questionmult}{drone-telecommande-q7}
+        Calculer la longueur d'onde du signal utilisé pour piloter le drone. On donne \( c = 3,00 \times 10^8 \, \text{m·s}^{-1} \) et \( f = 2,400 \, \text{GHz} \).
+        \AMCnumericChoices{0.125}{digits=3,sign=false,decimals=3}
+    \end{questionmult}
+
+    \begin{question}{drone-telecommande-q8}
+        Déterminer si les antennes qui équipent la télécommande sont du type quart d'onde ou demi-onde.
+        \begin{choices}
+            \choice{Demi-onde.}
+            \choice[!]{Quart d'onde.}
+        \end{choices}
+    \end{question}
+}
+
+
+
+
+\element{general}{
+  \begin{question}{prez}    
+    Parmi les personnalités suivantes, laquelle a été présidente de la république française~?
+    \begin{reponses}
+      \bonne{René Coty}
+      \mauvaise{Alain Prost}
+      \mauvaise{Marcel Proust}
+      \mauvaise{Claude Monet}
+    \end{reponses}
+  \end{question}
+}
+
+\element{general}{
+  \begin{questionmult}{pref}    
+    Parmi les villes suivantes, lesquelles sont des préfectures~?
+    \begin{reponses}
+      \bonne{Poitiers}
+      \mauvaise{Sainte-Menehould}
+      \bonne{Avignon}
+    \end{reponses}
+  \end{questionmult}
+}
+
+\element{general}{
+  \begin{question}{nb-ue}
+    Combien d'états sont membres de l'Union Européenne en janvier 2009~?
+    \begin{reponseshoriz}[o]
+      \mauvaise{15}
+      \mauvaise{21}
+      \mauvaise{25}
+      \bonne{27}
+      \mauvaise{31}
+    \end{reponseshoriz}
+  \end{question}
+}
+
+%%%% fin des groupes
+
+\csvreader[head to column names]{liste.csv}{}{\sujet}
+
+\end{document}
