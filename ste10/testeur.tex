@@ -4,6 +4,56 @@
 
 \usepackage[francais,bloc,ensemble,completemulti]{automultiplechoice}
 
+
+\newcommand{\sujet}{
+\exemplaire{1}{%
+
+\AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
+\AMCopenOpts{boxframerule=0pt,lineheight=0pt,width=0pt,boxframerulecol=white,
+    dots=false,framerule=0pt,framerulecol=white}
+
+%%% debut de l'en-tête des copies~:
+\begin{center}
+\vfill
+\noindent{\large \bf Classe de \niveau{}°\classe{}}
+
+\vspace*{3mm}
+
+{\Large\bf Évaluation sur table STL - Physique-Chimie\\
+11/03/2026}
+
+\vfill
+\namefield{\noindent{}\fbox{\vspace*{3mm}
+         \Huge\bf\prenom{}~\nom{}\normalsize{}%
+         \vspace*{3mm}
+      }}
+\end{center}
+\vfill
+
+\begin{center}
+\textbf{Durée~: une heure.}
+\vspace*{5mm}
+
+  Aucun document n'est autorisé.
+  L'usage de la calculatrice est autorisée en mode examen.
+
+  Ce n'est pas un QCM!
+
+\end{center}
+\vspace{1ex}
+\vfill
+\pagebreak
+%%% fin de l'en-tête
+
+\restituegroupe{groupes}
+
+
+\AMCassociation{\id}
+
+	  } % End \exemplaire{1}{%
+} % End \newcommand{\sujet}{
+
+
 %%%%commande création sujet
 \newcommand{\sujet}{%
 %

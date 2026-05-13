@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage{geometry}
+%\usepackage{geometry}
 \usepackage{environ}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -8,8 +8,12 @@
 \usepackage[version=4]{mhchem}
 \usepackage{chemfig}
 \usepackage{mol2chemfig}
+\usepackage{pgfmath}
 \usepackage{csvsimple}%
 \usepackage[francais,bloc]{automultiplechoice}
+
+\def\yseed{10}
+\pgfmathsetseed{\yseed}
 
 %%% Environnement pour les réponses en rouge
 \newenvironment{reponse_ok}
@@ -47,20 +51,54 @@
               \vspace*{3mm}
             }}
     \end{center}
+    \vfill
+
+    \begin{center}
+      \textbf{Durée~: une heure.}
+
+      \vspace*{5mm}
+      Aucun document n'est autorisé.
+      
+      L'usage de la calculatrice est autorisée en mode examen.
+
+      Ce n'est pas un QCM!
+    \end{center}
+    \vspace{1ex}
+    \vfill
     \pagebreak
 
     \restituegroupe{groupes}
-    
+
     \AMCassociation{\id}
   }
 }
 
 \begin{document}
   \element{groupes}{
-    \include{drone.tex}
-    %\include{methylpropane.tex}
-    %\include{acide_amine.tex}
-    %\include{luge_ete.tex}
+    % Premier tirage (physique)
+    \pgfmathrandom{}
+    \let\yranOne\pgfmathresult
+    \pgfmathparse{\yranOne > 0.5 ? 1 : 0}
+    \let\fileChoiceOne\pgfmathresult
+    
+    \ifnum\fileChoiceOne=1
+      \input{drone.tex}
+    \else
+      \input{luge_ete.tex}
+    \fi
+
+    % Second tirage (chimie)
+    \pgfmathrandom{}
+    \let\yranTwo\pgfmathresult
+    \pgfmathparse{\yranTwo> 0.5 ? 1 : 0}
+    \let\fileChoiceTwo\pgfmathresult
+    
+    \ifnum\fileChoiceTwo=1
+      \input{methylpropane.tex}
+    \else
+      \input{acide_amine.tex}
+    \fi
+
     \AMCcleardoublepage
   }
   \csvreader[head to column names]{liste.csv}{}{\sujet}
