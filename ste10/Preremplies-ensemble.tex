@@ -5,6 +5,7 @@
 \usepackage{wrapfig}
 \usepackage{hyperref}
 \usepackage[locale = FR]{siunitx}
+\usepackage[version=4]{mhchem}
 \usepackage{chemfig}
 \usepackage{mol2chemfig}
 %\usepackage[francais,bloc,ensemble,completemulti]{automultiplechoice}
@@ -21,14 +22,16 @@
 
 \NewEnviron{reponse}{}
 
+\NewEnviron{hide}{}
+
 \graphicspath{ {./images/} }
 
 
 \begin{document}
 
-%\include{drone.tex}
-%\include{methylpropane.tex}
-%\include{acide_amine.tex}
+\include{drone.tex}
+\include{methylpropane.tex}
+\include{acide_amine.tex}
 \include{luge_ete.tex}
 
 \end{document}
