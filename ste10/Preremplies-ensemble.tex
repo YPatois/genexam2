@@ -8,7 +8,8 @@
 \usepackage[version=4]{mhchem}
 \usepackage{chemfig}
 \usepackage{mol2chemfig}
-%\usepackage[francais,bloc,ensemble,completemulti]{automultiplechoice}
+\usepackage{csvsimple}%
+\usepackage[francais,bloc]{automultiplechoice}
 
 %%% Environnement pour les réponses en rouge
 \newenvironment{reponse_ok}
@@ -27,11 +28,40 @@
 \graphicspath{ {./images/} }
 
 
+\newcommand{\sujet}{
+  \exemplaire{1}{%
+    \AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
+
+    \begin{center}
+      \vfill
+      \noindent{\large \bf Classe de \niveau{}°\classe{}}
+
+      \vspace*{3mm}
+
+      {\Large\bf Évaluation sur table STL - Physique-Chimie\\
+      13/05/2026}
+
+      \vfill
+      \namefield{\noindent{}\fbox{\vspace*{3mm}
+              \Huge\bf\prenom{}~\nom{}\normalsize{}%
+              \vspace*{3mm}
+            }}
+    \end{center}
+    \pagebreak
+
+    \restituegroupe{groupes}
+    
+    \AMCassociation{\id}
+  }
+}
+
 \begin{document}
-
-\include{drone.tex}
-\include{methylpropane.tex}
-\include{acide_amine.tex}
-\include{luge_ete.tex}
-
+  \element{groupes}{
+    \include{drone.tex}
+    %\include{methylpropane.tex}
+    %\include{acide_amine.tex}
+    %\include{luge_ete.tex}
+    \AMCcleardoublepage
+  }
+  \csvreader[head to column names]{liste.csv}{}{\sujet}
 \end{document}
