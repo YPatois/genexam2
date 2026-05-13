@@ -3,7 +3,7 @@
 \usepackage{environ}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage[locale = FR]{siunitx}
 \usepackage[version=4]{mhchem}
 \usepackage{chemfig}
@@ -14,6 +14,8 @@
 
 \def\yseed{10}
 \pgfmathsetseed{\yseed}
+\AMCrandomseed{\yseed}
+\graphicspath{ {./images/} }
 
 %%% Environnement pour les réponses en rouge
 \newenvironment{reponse_ok}
@@ -27,15 +29,9 @@
 
 \NewEnviron{reponse}{}
 
-\NewEnviron{hide}{}
-
-\graphicspath{ {./images/} }
-
-
+\AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
 \newcommand{\sujet}{
   \exemplaire{1}{%
-    \AMCsetFoot{\niveau{} \classe{} -- \prenom{}~\nom{} -- \thepage}
-
     \begin{center}
       \vfill
       \noindent{\large \bf Classe de \niveau{}°\classe{}}
