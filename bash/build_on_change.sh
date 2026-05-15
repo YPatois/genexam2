@@ -5,7 +5,7 @@ export SCRIPTBASEDIR
 
 source $SCRIPTBASEDIR/../vault/vault.sh
 
-TEXDIR=$SCRIPTBASEDIR/../ste8
+TEXDIR=$SCRIPTBASEDIR/../ste10
 
 # Global variable to store the PID of the last action
 PREV_PID=""
@@ -14,6 +14,10 @@ function latex_run() {
     latexfile=$1
     pdflatex -interaction=nonstopmode $latexfile >& ${latexfile}.ylog
     if [ $? -ne 0 ]; then
+        echo
+        echo
+        echo " =================    LaTeX Error   ====================="
+        echo
         cat ${latexfile}.ylog
     fi
     return 0
@@ -43,10 +47,11 @@ function handle_change() {
         make
         echo "In $WORKDIR making pdfs"
         #amc_build
-        latex_run testeur.tex &
-        latex_run Preremplies.tex
-        wait
+        #latex_run testeur.tex
+        latex_run Preremplies-ensemble.tex
+        #wait
         echo "build done"
+	echo
     ) &
     PREV_PID=$!
 }

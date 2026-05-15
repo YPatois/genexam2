@@ -10,7 +10,7 @@
 \usepackage{mol2chemfig}
 \usepackage{pgfmath}
 \usepackage{csvsimple}%
-\usepackage[francais,bloc]{automultiplechoice}
+\usepackage[francais,bloc,nowatermark]{automultiplechoice}
 
 \def\yseed{10}
 \pgfmathsetseed{\yseed}
@@ -34,7 +34,7 @@
   \exemplaire{1}{%
     \begin{center}
       \vfill
-      \noindent{\large \bf Classe de \niveau{}°\classe{}}
+      \noindent{\large \bf Classe de \niveau{} \classe{}}
 
       \vspace*{3mm}
 
@@ -84,7 +84,7 @@
     \fi
 
     \clearpage
-    
+
     % Second tirage (chimie)
     \pgfmathrandom{}
     \let\yranTwo\pgfmathresult
