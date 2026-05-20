@@ -1,0 +1,108 @@
+
+\section{Mouvement d’un drone}
+Un drone utilisé en surveillance géographique a été filmé pendant la phase de
+décollage, durant laquelle son mouvement est vertical ascendant.
+Les caractéristiques du mouvement ainsi mesurées figurent sur les documents 1, 2
+et 3.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{ste10_drone_doc1}
+    \caption{Évolution de l’altitude $z$ du drone en fonction du temps}
+    \AMClabel{fig:ste10_drone_doc1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{ste10_drone_doc2}
+    \caption{Évolution de la vitesse $V_Z$ du drone en fonction du temps}
+    \AMClabel{fig:ste10_drone_doc2}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{ste10_drone_doc3}
+    \caption{Évolution de l’accélération $a_Z$ du drone en fonction du temps}
+    \AMClabel{fig:ste10_drone_doc3}
+\end{figure}
+
+\subsection{Étude du mouvement du drone pendant le décollage}
+
+\textbf{Q1.} Grâce aux documents 1, 2 et 3, déterminer le type de mouvement dont le drone est animé lors du décollage. Justifier votre réponse à l’aide de deux arguments.
+
+\begin{reponse}
+L’accélération a une valeur constante et la vitesse augmente de façon affine~:
+Le mouvement est donc uniformément accéléré.
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q2.} À l’aide du document 1, déterminer la distance parcourue par le drone pendant les 3 premières secondes de la phase de décollage.
+
+\begin{reponse}
+Pendant les 3 premières secondes, le drone a parcouru \SI{7,05}{\meter}.
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q3.} À l’aide du document 2, calculer la valeur de l’accélération $a_z$ du drone pendant la phase de décollage. Préciser si cette valeur est cohérente avec le document~3.
+
+\begin{reponse}
+On a~:
+\[
+a_z \approx \frac{\Delta v_z}{\Delta t} = \frac{v_z(B) - v_z(A)}{t(B) - t(A)}
+\]
+
+\[
+a_z \approx \frac{(3{,}45 - 0{,}15)\,\si{\meter\per\second}}{(3 - 0)\,\si{\second}} \approx \SI{1{,}1}{\meter\per\second\squared}
+\]
+
+Cette valeur est bien celle que l’on peut lire sur le document~3.
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q4.} Montrer que la valeur de la résultante des forces $\vec{F}_{\text{totale}}$ exercées sur le drone pendant ce mouvement est $F_{\text{totale}} = \SI{9{,}8e-1}{\newton}$.
+
+\begin{reponse}
+D’après la 2\textsuperscript{e} loi de Newton~: $\vec{F}_{\text{totale}} = m \cdot \vec{a}$
+
+Donc $F_{\text{totale}} = m \times a_z$
+
+\[
+F_{\text{totale}} = 0{,}895\,\si{\kilo\gram} \times \SI{1{,}1}{\meter\per\second\squared} = \SI{0{,}9845}{\newton} \approx \SI{9{,}8e-1}{\newton}
+\]
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q5.} Rappeler des caractéristiques du poids $\vec{P}$. Donner l’expression de sa valeur et la calculer. On donne la valeur de l’intensité de la pesanteur~: $g = \SI{9{,}81}{\meter\per\second\squared}$.
+
+\begin{reponse}
+Le poids est une force verticale, dirigée vers le bas, de valeur $P = m \cdot g$.
+
+\[
+P = 0{,}895\,\si{\kilo\gram} \times \SI{9{,}81}{\newton\per\kilo\gram} = \SI{8{,}78}{\newton}
+\]
+\end{reponse}
+\vspace{1em}
+
+\noindent
+\textbf{Q6.} En expliquant le raisonnement suivi, déterminer la direction, le sens et la valeur de la force $\vec{F}_{\text{air}}$. On s’aidera d’un schéma modélisant la situation, sans souci d’échelle.
+
+\begin{reponse}
+Pour décoller, il faut que $\vec{F}_{\text{totale}} = \vec{F}_{\text{air}} + \vec{P}$ soit verticale et dirigée vers le haut.
+Donc $\vec{F}_{\text{air}}$ doit être verticale et dirigée vers le haut et de valeur supérieure au poids.
+
+On a donc~: $F_{\text{totale}} = F_{\text{air}} - P$
+
+\[
+F_{\text{air}} = F_{\text{totale}} + P
+\]
+
+\[
+F_{\text{air}} = \SI{9{,}8e-1}{\newton} + \SI{8{,}78}{\newton} = \SI{10{,}76}{\newton}
+\]
+\end{reponse}
